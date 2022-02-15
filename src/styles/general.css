@@ -1,0 +1,28 @@
+/* .nav-bar-item:hover {
+	--tw-bg-opacity: 1 !important;
+	background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important;
+} */
+
+.nav-bar-item {
+	margin: auto 10px;
+	font-size: 18px;
+}
+
+.nav-bar-item:hover {
+	font-size: 1.125rem !important;
+	text-decoration: inherit;
+	color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
+	background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important;
+}
+
+h1 {
+	margin: auto 10px auto auto;
+}
+
+/* * {
+	border: 1px solid red;
+} */
+
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+	margin: auto 10px;
+}
