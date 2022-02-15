@@ -1,0 +1,46 @@
+{
+	"projects": [
+		{
+			"id": 1,
+			"url_preview": "https://jaime00.github.io/shortly",
+			"url_code": "https://github.com/jaime00/shortly",
+			"title": "Shortly - Frontend Mentor",
+			"description": "Solution for Frontend Mentor Web Challenge Integrating Shortcode URL Shortening API and storing in browser.",
+			"img": "https://raw.githubusercontent.com/jaime00/shortly/main/src/assets/images/preview.jpg",
+			"stack": ["HTML", "CSS", "JS", "REACT JS"]
+		},
+		{
+			"id": 2,
+			"url_preview": "https://jaime00.github.io/google-clone",
+			"url_code": "https://github.com/jaime00/google-clone",
+			"title": "google clone",
+			"description": "This is a web layout challenge with HTML, CSS, JS. Trying to clone the main google search screen.",
+			"img": "https://camo.githubusercontent.com/8e783a2ee1d9e6cdf8aa8d7306333704f87f546529c5424678dbf35620a03764/68747470733a2f2f77696b69696d672e746f6a7369616274762e636f6d2f77696b6970656469612f636f6d6d6f6e732f7468756d622f632f63312f476f6f676c655f486f6d65706167652e7376672f3132303070782d476f6f676c655f486f6d65706167652e7376672e706e67",
+			"stack": ["HTML", "CSS", "JS"]
+		},
+		{
+			"id": 3,
+			"url_preview": "https://github.com/jaime00/google-clone",
+			"url_code": "https://github.com/jaime00/shortly",
+			"title": "Shortly - Frontend Mentor",
+			"description": "Solution for Frontend Mentor Web Challenge Integrating Shortcode URL Shortening API and storing in browser.",
+			"img": "https://raw.githubusercontent.com/jaime00/shortly/main/src/assets/images/preview.jpg",
+			"stack": ["HTML", "CSS", "JS", "REACT JS"]
+		}
+	],
+	"work_experience": [
+		{
+			"company": "Extreme Technologies",
+			"position": "Technical Leader",
+			"year_initial": "2020",
+			"year_end": "Now"
+		},
+		{
+			"company": "Extreme Technologies",
+			"position": "Web Developer",
+			"year_initial": "2019",
+			"year_end": "2020"
+		}
+	],
+	"curriculum": "https://drive.google.com/file/d/1LxqGuGQxgpdih2ApBJ4i0fefbE8Kbrm8/view?usp=sharing"
+}
