@@ -3,11 +3,11 @@ import { Link } from 'wouter'
 import { ReactComponent as LinkedinIcon } from '../../assets/images/icons/linkedin.svg'
 import { ReactComponent as InstagramIcon } from '../../assets/images/icons/instagram.svg'
 import { ReactComponent as GithubIcon } from '../../assets/images/icons/github.svg'
-import { getCurriculum } from '../../services'
+import { getCurriculumUrl } from '../../services'
 import Top from '../Top'
 
 export default function Footer() {
-	const url = getCurriculum()
+	const curriculumUrl = getCurriculumUrl()
 	return (
 		<div className="flex flex-col mx-auto max-w-6xl justify-center px-4 prose prose-lg md:prose-xl dark:prose-dark relative p-4 bg-white sm:p-6 dark:bg-gray-800 font-sans">
 			<hr className="my-12 dark:border-gray-700" />
@@ -38,7 +38,7 @@ export default function Footer() {
 							<h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Extra</h3>
 							<ul>
 								<li className="mb-4">
-									<a href={url} target="_blank" rel="noreferrer" className="text-gray-600 hover:underline dark:text-gray-400">
+									<a href={curriculumUrl} target="_blank" rel="noreferrer" className="text-gray-600 hover:underline dark:text-gray-400">
 										Resume
 									</a>
 								</li>
@@ -50,20 +50,30 @@ export default function Footer() {
 							</ul>
 						</div>
 					</div>
-					<div className="flex items-center">
+					<div className="flex items-center sm:mt-5">
 						<Top />
 					</div>
 				</div>
 				<div className="sm:flex sm:items-center sm:justify-between">
 					<span className="text-base text-gray-500 sm:text-center dark:text-gray-400">© 2022 Jaime Torres</span>
 					<div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-						<a href="https://www.linkedin.com/in/jaime00" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-black dark:hover:text-white">
+						<a
+							href="https://www.linkedin.com/in/jaime00"
+							target="_blank"
+							rel="noreferrer"
+							className="hover:rotate-6 transition text-gray-500 hover:text-black dark:hover:text-white"
+						>
 							<LinkedinIcon />{' '}
 						</a>
-						<a href="https://www.instagram.com/imjaimito/" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-black dark:hover:text-white">
+						<a
+							href="https://www.instagram.com/imjaimito/"
+							target="_blank"
+							rel="noreferrer"
+							className="hover:rotate-6 text-gray-500 hover:text-black dark:hover:text-white"
+						>
 							<InstagramIcon />{' '}
 						</a>
-						<a href="https://github.com/jaime00" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-black dark:hover:text-white">
+						<a href="https://github.com/jaime00" target="_blank" rel="noreferrer" className="hover:rotate-6 text-gray-500 hover:text-black dark:hover:text-white">
 							<GithubIcon />
 						</a>
 					</div>

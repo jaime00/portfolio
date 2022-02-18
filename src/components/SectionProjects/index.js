@@ -12,7 +12,7 @@ export default function SectionProjects() {
 				<p className="md:text-xl">Check out some of my most recent projects.</p>
 				<ListOfProjects limit={quantityOfProjectsInHome} />
 				<div className='mt-10 mx-5 w-50'>
-					<Button to="/projects">Se all projects</Button>
+					<Button to="/projects">See all projects</Button>
 				</div>
 			</div>
 		</div>

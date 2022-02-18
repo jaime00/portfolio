@@ -3,20 +3,19 @@ import image_profile from '../../assets/images/profile_image.png'
 import ButtonDarkMode from '../ButtonDarkMode'
 import NavBarOptions from '../NavBarOptions/'
 
-export default function NavBar({ handleClick, isDark }) {
+export default function NavBar({ changeMode, isDark }) {
 	return (
 		<nav className="px-4 py-3 max-w-6xl mx-auto bg-white border-gray-200 rounded dark:bg-gray-800">
 			<div className="container flex flex-wrap justify-between items-center mx-auto">
 				<Link to="/" className="flex">
-					<img alt="Jaime Torres" src={image_profile} className="cursor-pointer col-span-1 rounded-full w-11" />
+					<img loading='lazy' alt="Jaime Torres" src={image_profile} className="cursor-pointer col-span-1 rounded-full w-11" />
 				</Link>
 				<div className="flex md:order-2">
-					<ButtonDarkMode handleClick={handleClick} isDark={isDark} />
+					<ButtonDarkMode changeMode={changeMode} isDark={isDark} />
 					<button
-						data-collapse-toggle="mobile-menu-4"
+						data-collapse-toggle="navbar"
 						type="button"
-						className="inline-flex items-center p-2 sm:ml-5 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-						aria-controls="mobile-menu-4"
+						className="inline-flex items-center p-2 ml-5 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
 						aria-expanded="false"
 					>
 						<span className="sr-only">Open main menu</span>
