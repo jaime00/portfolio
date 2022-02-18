@@ -12,10 +12,11 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Background from './components/Background'
 
 function App() {
 	const [isDark, setIsDark] = useState(false)
-	function handleClick() {
+	const changeMode = () => {
 		if (isDark) {
 			document.documentElement.classList.remove('dark')
 		} else {
@@ -25,7 +26,8 @@ function App() {
 	}
 	return (
 		<div className="dark:bg-gray-800 pt-2">
-			<NavBar handleClick={handleClick} isDark={isDark} />
+			<Background />
+			<NavBar changeMode={changeMode} isDark={isDark} />
 			<ScrollToTop>
 				<Route path="/">
 					<Home />
@@ -41,7 +43,7 @@ function App() {
 				</Route>
 			</ScrollToTop>
 			<Footer />
-			{/* <Redirect to="/" /> */}
+			<Redirect to="/" />
 		</div>
 	)
 }

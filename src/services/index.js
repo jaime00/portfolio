@@ -24,9 +24,9 @@ const getStudyExperience = ({ limit } = { limit: null }) => {
 	}
 }
 
-const getCurriculum = () => DataSite.curriculum
+const getCurriculumUrl = () => DataSite.curriculum_url
 
-const getClasses = ({ isDark }) => {
+const getStyleButton = ({ isDark }) => {
 	let classes = `bg-gray-900 text-sm md:text-xl md:w-auto md:inline-flex py-3 px-2 md:px-12 rounded-full w-full text-white dark:bg-gray-200 dark:text-midnight items-center justify-center 
     hover:ring-4 hover:ring-gray-300 font-medium text-center mr-2 mb-2 dark:hover:ring-teal-500 dark:text-gray-900`
 	if (!isDark)
@@ -35,4 +35,4 @@ const getClasses = ({ isDark }) => {
 	return classes
 }
 
-export { getProjects, getWorkExperience, getStudyExperience, getCurriculum, getClasses }
+export { getProjects, getWorkExperience, getStudyExperience, getCurriculumUrl, getStyleButton }

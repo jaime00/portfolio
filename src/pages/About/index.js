@@ -2,7 +2,6 @@ import React from 'react'
 import MyHistory from '../../components/MyHistory'
 import Separator from '../../components/Separator'
 import WorkExperience from '../../components/WorkExperience'
-import StudyExperience from '../../components/StudyExperience'
 
 export default function About() {
 	return (
@@ -10,7 +9,6 @@ export default function About() {
 			<MyHistory />
 			<Separator />
 			<WorkExperience />
-			{/* <StudyExperience /> */}
 		</div>
 	)
 }

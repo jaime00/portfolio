@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'wouter'
-import { getClasses } from '../../services'
+import { getStyleButton } from '../../services'
 
-export default function Button({ children, isDark = true, to = '/', download = false, type = false }) {
-	let classes = getClasses({ isDark })
-	const handleClick = () => download && window.open(download)
-	if (download) {
+export default function Button({ children, isDark = true, to = '/', openUrl = false, type = false }) {
+	const classes = getStyleButton({ isDark })
+	const handleClick = () => openUrl && window.open(openUrl)
+	if (openUrl) {
 		return (
 			<button aria-label="button" type="button" className={classes} onClick={handleClick}>
 				{children}

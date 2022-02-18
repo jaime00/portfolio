@@ -1,11 +1,10 @@
 import React from 'react'
 import Button from '../../components/Button'
-import { getCurriculum, getWorkExperience } from '../../services'
+import { getCurriculumUrl, getWorkExperience } from '../../services'
 
 export default function WorkExperience() {
 	const experiences = getWorkExperience()
-	const url = getCurriculum()
-	console.log(experiences)
+	const url = getCurriculumUrl()
 	return (
 		<div className="mt-6 space-y-6 text-xl text-gray-600 dark:text-gray-300">
 			<h2 className="text-gray-900 dark:text-white text-3xl font-bold">Work experience</h2>
@@ -22,7 +21,7 @@ export default function WorkExperience() {
 					</div>
 				))}
 			</div>
-			<Button download={url}>View my resume</Button>
+			<Button openUrl={url}>View my resume</Button>
 		</div>
 	)
 }

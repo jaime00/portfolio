@@ -11,7 +11,7 @@ export default function Contact() {
 				<div className="col-span-3">
 					<p className="mb-10 text-xl">Got a question, proposal or project or want to work together on something? Feel free to reach out.</p>
 					<Button type="email" className="mt-100 text-">
-						Send me mail
+						Send me an mail
 					</Button>
 				</div>
 				<div className="col-span-2 mt-10">
@@ -44,6 +44,7 @@ export default function Contact() {
 							}}
 						/>
 						<img
+							loading="lazy"
 							alt="article cover"
 							src={ilustration_computer}
 							decoding="async"

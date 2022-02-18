@@ -9,7 +9,7 @@ export default function Presentation() {
 			</h1>
 			<div className="mx-auto order-1 md:order-2">
 				<span>
-					<img alt="Jaime Torres" src={image_profile} className="col-span-1 rounded-full" />
+					<img loading='lazy' alt="Jaime Torres" src={image_profile} className="col-span-1 rounded-full" />
 				</span>
 			</div>
 		</div>

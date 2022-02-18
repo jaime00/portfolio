@@ -1,14 +1,11 @@
 import { useEffect } from 'react'
 import { useLocation } from 'wouter'
 
-const ScrollToTop = (props) => {
+export default function ScrollToTop({ children }) {
 	const location = useLocation()
 	useEffect(() => {
-		// window.scrollTo(0, 0)
 		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
 	}, [location])
 
-	return <>{props.children}</>
+	return <>{children}</>
 }
-
-export default ScrollToTop

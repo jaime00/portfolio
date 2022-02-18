@@ -12,7 +12,6 @@ export default function GoToOption({ url, title, icon, id }) {
 				<div className="tooltip-arrow" data-popper-arrow></div>
 			</div>
 			<a className="mr-4" href={url} target="_blank" rel="noreferrer" data-tooltip-target={`tooltip-${id}`} data-tooltip-placement="bottom">
-				{/* <img src={IconExternalLink} className="mr-2 w-6" /> */}
 				{icon}
 			</a>
 		</>

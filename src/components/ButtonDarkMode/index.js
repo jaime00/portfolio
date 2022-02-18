@@ -33,14 +33,14 @@ const TurnLight = () => (
 	</svg>
 )
 
-export default function ButtonDarkMode({ handleClick, isDark }) {
+export default function ButtonDarkMode({ changeMode, isDark }) {
 	return (
 		<button
 			aria-label="Toggle Dark Mode"
 			type="button"
 			className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full dark:bg-midnight general-ring-state
 			hover:ring-4 hover:ring-gray-700"
-			onClick={handleClick}
+			onClick={changeMode}
 		>
 			<div>{isDark ? <TurnDark /> : <TurnLight className='text-yellow-300' />}</div>
 		</button>
