@@ -1,6 +1,6 @@
-import React from 'react'
 import BackOne from '../../assets/images/background_one.avif'
 import BackTwo from '../../assets/images/background_two.avif'
+
 export default function Background() {
 	return (
 		<div className="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">

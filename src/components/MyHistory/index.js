@@ -1,4 +1,3 @@
-import React from 'react'
 import image_profile from '../../assets/images/profile_image.png'
 import Titles from '../../components/Titles'
 

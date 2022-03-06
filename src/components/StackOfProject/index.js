@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function StackOfProject({ stacks }) {
 	return (
 		<div className="flex items-baseline flex-wrap">

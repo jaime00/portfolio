@@ -1,4 +1,3 @@
-import React from 'react'
 import DetailOfProject from '../DetailOfProject'
 import StackOfProject from '../StackOfProject'
 

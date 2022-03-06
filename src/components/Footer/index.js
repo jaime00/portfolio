@@ -1,10 +1,9 @@
-import React from 'react'
 import { Link } from 'wouter'
 import { ReactComponent as LinkedinIcon } from '../../assets/images/icons/linkedin.svg'
 import { ReactComponent as InstagramIcon } from '../../assets/images/icons/instagram.svg'
 import { ReactComponent as GithubIcon } from '../../assets/images/icons/github.svg'
-import { getCurriculumUrl } from '../../services'
 import Top from '../Top'
+import { getCurriculumUrl } from '../../services'
 
 export default function Footer() {
 	const curriculumUrl = getCurriculumUrl()
@@ -50,7 +49,7 @@ export default function Footer() {
 							</ul>
 						</div>
 					</div>
-					<div className="flex items-center sm:mt-5">
+					<div className="flex items-center mt-7">
 						<Top />
 					</div>
 				</div>
