@@ -1,4 +1,3 @@
-import React from 'react'
 import MyHistory from '../../components/MyHistory'
 import Separator from '../../components/Separator'
 import WorkExperience from '../../components/WorkExperience'

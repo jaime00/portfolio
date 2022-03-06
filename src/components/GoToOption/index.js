@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function GoToOption({ url, title, icon, id }) {
 	return (
 		<>

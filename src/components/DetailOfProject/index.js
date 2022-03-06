@@ -1,8 +1,7 @@
-import React from 'react'
-import GoToOption from '../GoToOption'
-
 import { ReactComponent as ExternalLink } from '../../assets/images/icons/external_link.svg'
 import { ReactComponent as Code } from '../../assets/images/icons/code.svg'
+
+import GoToOption from '../GoToOption'
 
 export default function DetailOfProject(props) {
 	const { url_preview, url_code, title, description, id } = props

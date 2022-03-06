@@ -1,5 +1,4 @@
-import React from 'react'
-import { Link } from 'wouter'
+import NavLink from '../NavLink'
 
 export default function NavBarOptions() {
 	const collapseNavbar = () => window.toggleCollapse('navbar', false)
@@ -9,26 +8,18 @@ export default function NavBarOptions() {
 				<li className="hidden">
 					<span className="capsize">Home</span>
 				</li>
-				<Link onClick={collapseNavbar} to="/" aria-current="page">
-					<li className="cursor-pointer nav-bar-item block px-4 py-1 rounded-full md:bg-transparent transition-all dark:text-gray-400">
-						<span className="capsize">Home</span>
-					</li>
-				</Link>
-				<Link onClick={collapseNavbar} to="/about" aria-current="page">
-					<li className="cursor-pointer nav-bar-item block px-4 py-1 rounded-full md:bg-transparent transition-all dark:text-gray-400">
-						<span className="capsize">About</span>
-					</li>
-				</Link>
-				<Link onClick={collapseNavbar} to="/projects" aria-current="page">
-					<li className="cursor-pointer nav-bar-item block px-4 py-1 rounded-full md:bg-transparent transition-all dark:text-gray-400">
-						<span className="capsize">Projects</span>
-					</li>
-				</Link>
-				<Link onClick={collapseNavbar} to="/contact">
-					<li className="cursor-pointer nav-bar-item block px-4 py-1 rounded-full md:bg-transparent transition-all dark:text-gray-400">
-						<span className="capsize">Contact</span>
-					</li>
-				</Link>
+				<NavLink onClick={collapseNavbar} to="/" aria-current="page">
+					Home
+				</NavLink>
+				<NavLink onClick={collapseNavbar} to="/about" aria-current="page">
+					About
+				</NavLink>
+				<NavLink onClick={collapseNavbar} to="/projects" aria-current="page">
+					Projects
+				</NavLink>
+				<NavLink onClick={collapseNavbar} to="/contact">
+					Contact
+				</NavLink>
 			</ul>
 		</div>
 	)

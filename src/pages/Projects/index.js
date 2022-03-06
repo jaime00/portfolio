@@ -1,4 +1,3 @@
-import React from 'react'
 import ListOfProjects from '../../components/ListOfProjects'
 import Titles from '../../components/Titles'
 

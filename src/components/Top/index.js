@@ -1,4 +1,3 @@
-import React from 'react'
 import { ReactComponent as TopIcon } from '../../assets/images/icons/top.svg'
 
 export default function Top() {
