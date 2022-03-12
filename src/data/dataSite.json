@@ -6,8 +6,8 @@
 			"url_code": "https://github.com/jaime00/shortly",
 			"title": "Shortly - Frontend Mentor",
 			"description": "Solution for Frontend Mentor Web Challenge Integrating Shortcode URL Shortening API and storing in browser.",
-			"img": "https://raw.githubusercontent.com/jaime00/shortly/main/src/assets/images/preview.jpg",
-			"stack": ["HTML", "CSS", "JS", "REACT JS"]
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1647122613/projects/shortly/ilustrations/page_preview_npliw4.jpg",
+			"stack": ["REACT JS", "CSS", "BOOTSTRAP"]
 		},
 		{
 			"id": 2,
@@ -15,8 +15,17 @@
 			"url_code": "https://github.com/jaime00/google-clone",
 			"title": "Google Clone",
 			"description": "This is a web layout challenge with HTML, CSS, JS. Trying to clone the main google search screen.",
-			"img": "https://camo.githubusercontent.com/8e783a2ee1d9e6cdf8aa8d7306333704f87f546529c5424678dbf35620a03764/68747470733a2f2f77696b69696d672e746f6a7369616274762e636f6d2f77696b6970656469612f636f6d6d6f6e732f7468756d622f632f63312f476f6f676c655f486f6d65706167652e7376672f3132303070782d476f6f676c655f486f6d65706167652e7376672e706e67",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1647122537/projects/google-clone/page_preview_vijawd.png",
 			"stack": ["HTML", "CSS", "JS"]
+		},
+		{
+			"id": 3,
+			"url_preview": "https://www.jaime00.me",
+			"url_code": "https://github.com/jaime00/portfolio",
+			"title": "Personal Portfolio",
+			"description": "My portfolio powered by React.js, styled with Tailwind CSS and animated with Motion Framer. 👌",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1647122413/projects/portfolio/ilustrations/page_preview_xjsyzr.png",
+			"stack": ["React JS", "Tailwind CSS"]
 		}
 	],
 	"work_experience": [
