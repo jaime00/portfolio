@@ -1,4 +1,4 @@
-[![GitHub Banner](https://res.cloudinary.com/personal-jaime00/image/upload/v1646537341/projects/portfolio/Portfolio_Main_Ilustration_g8coal.png)](http://www.jaime00.me)
+[![GitHub Banner](https://res.cloudinary.com/personal-jaime00/image/upload/v1647122413/projects/portfolio/ilustrations/page_preview_xjsyzr.png)](http://www.jaime00.me)
 # portfolio
 
 - **Framework**: [React.js](https://reactjs.org/)
