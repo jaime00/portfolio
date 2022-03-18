@@ -17,15 +17,6 @@
 			"description": "This is a web layout challenge with HTML, CSS, JS. Trying to clone the main google search screen.",
 			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1647122537/projects/google-clone/page_preview_vijawd.png",
 			"stack": ["HTML", "CSS", "JS"]
-		},
-		{
-			"id": 3,
-			"url_preview": "https://www.jaime00.me",
-			"url_code": "https://github.com/jaime00/portfolio",
-			"title": "Personal Portfolio",
-			"description": "My portfolio powered by React.js, styled with Tailwind CSS and animated with Motion Framer. 👌",
-			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1647122413/projects/portfolio/ilustrations/page_preview_xjsyzr.png",
-			"stack": ["React JS", "Tailwind CSS"]
 		}
 	],
 	"work_experience": [
