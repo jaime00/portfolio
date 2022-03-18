@@ -7,6 +7,8 @@
 - **Base Components**: [Flowbite](https://flowbite.com/)
 - **Routing**: [Wouter](https://www.npmjs.com/package/wouter/)
 - **Deployment**: [Netlify](https://www.netlify.com)
+- **Open Graph Images**: [Cloudinary](https://cloudinary.com/)
+ 
 
 ## Project Overview
 
