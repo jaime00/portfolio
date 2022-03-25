@@ -21,10 +21,16 @@
 	],
 	"work_experience": [
 		{
+			"company": "Qrvey",
+			"position": "Frontend Developer",
+			"year_initial": "2022",
+			"year_end": "Now"
+		},
+		{
 			"company": "Extreme Technologies",
 			"position": "Technical Leader",
 			"year_initial": "2020",
-			"year_end": "Now"
+			"year_end": "2022"
 		},
 		{
 			"company": "Extreme Technologies",
