@@ -65,7 +65,7 @@ export default function Footer() {
 							<LinkedinIcon />{' '}
 						</a>
 						<a
-							href="https://www.instagram.com/imjaimito/"
+							href="https://www.instagram.com/imjaimetorres/"
 							target="_blank"
 							rel="noreferrer"
 							className="hover:rotate-6 text-gray-500 hover:text-black dark:hover:text-white"

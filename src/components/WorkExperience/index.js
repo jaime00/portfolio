@@ -15,7 +15,7 @@ export default function WorkExperience() {
 						<span className="w-full border-t border-gray-300 border-dashed shrink dark:border-gray-700"></span>
 						<span className="flex-none">{position}</span>
 						<span className="flex-none">
-							{year_initial} - {year_end}
+							({year_initial} - {year_end})
 						</span>
 					</div>
 				))}

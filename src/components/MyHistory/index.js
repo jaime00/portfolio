@@ -8,20 +8,20 @@ export default function MyHistory() {
 			<section className="text-xl leading-8 text-gray-600 dark:text-gray-300">
 				<br />
 				<p>
-					I'm a <b>Systems Engineer</b>, creative developer specializing in <b>Frontend</b>. With more than 2 years of experience adding value to
+					I'm a <b>Systems Engineer</b>, creative developer specializing in <b>Frontend</b>. With more than 4 years of experience adding value to
 					business processes in the commercial and public service sectors.
 				</p>
 				<br />
 				<p>
-					In addition to being a <b>Web Developer</b>, i have also worked as <b>Technical Lead</b>, implementing functional, scalable and reusable
+					In addition to being a <b>Fullstack Developer</b>, i have also worked as <b>Technical Lead</b>, implementing functional, scalable and reusable
 					code solutions throughout my career, aligned with user needs and business goals. In addition to technically coordinating and mentoring a
 					development team in their day-to-day activities, careers and technical growth.
 				</p>
 				<br />
 
 				<p>
-					Experience and advanced knowledge in technologies such as <b>React JS</b>, <b>Typescript</b>, <b>Styled Components</b>, <b>Context</b>,{' '}
-					<b>Motion framer</b>, version control with <b>Git</b>, management of agile work methodologies such as <b>SCRUM</b> and <b>Kanban</b>.
+					Experience and advanced knowledge in technologies such as <b>React JS</b>, <b>Stencil JS</b>, <b>Typescript</b>, <b>Web Components</b>,{' '}
+					<b>Motion framer</b>, version control with <b>Git</b>, design patterns, <b>SOLID</b> and <b>Clean Code</b> principles, management of agile work methodologies such as <b>SCRUM</b> and <b>Kanban</b>.
 				</p>
 				<div className="mt-5 grid grid-cols-1 gap-0 md:grid-cols-4 md:gap-x-5">
 					<div className="col-span-1">
