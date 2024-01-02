@@ -42,7 +42,6 @@
 		]
 	},
 	"devDependencies": {
-		"@tailwindcss/jit": "^0.1.18",
 		"autoprefixer": "^10.4.2",
 		"chokidar-cli": "^3.0.0",
 		"concurrently": "^7.0.0",
