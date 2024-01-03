@@ -12,7 +12,7 @@ export default function DetailOfProject(props) {
 				<span className="text-sm text-gray-600 dark:text-gray-400">{description}</span>
 				<div className="flex flex-row mt-3">
 					<GoToOption url={url_preview} title="Preview" icon={<ExternalLink />} id={id + 1} />
-					<GoToOption url={url_code} title="Go to code" icon={<Code />} id={id + 2} />
+					{url_code && <GoToOption url={url_code} title="Go to code" icon={<Code />} id={id + 2} />}
 				</div>
 			</div>
 		</>
