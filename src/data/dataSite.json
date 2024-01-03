@@ -7,16 +7,33 @@
 			"title": "Shortly - Frontend Mentor",
 			"description": "Solution for Frontend Mentor Web Challenge Integrating Shortcode URL Shortening API and storing in browser.",
 			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1647122613/projects/shortly/ilustrations/page_preview_npliw4.jpg",
-			"stack": ["REACT JS", "CSS", "BOOTSTRAP"]
+			"stack": ["Javascript", "REACT JS", "Wouter", "BOOTSTRAP"]
 		},
 		{
 			"id": 2,
+			"url_preview": "https://pekus-login.netlify.app",
+			"title": "Pekus App",
+			"description": "This is the advancement of a web platform, specialises in the efficient management of PQRs.",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1/projects/pekus/oldwc9jkricp6md5eqvf",
+			"stack": ["Javascript", "React JS", "Headless UI", "Flowbite"]
+		},
+		{
+			"id": 3,
 			"url_preview": "https://jaime00.github.io/google-clone",
 			"url_code": "https://github.com/jaime00/google-clone",
 			"title": "Google Clone",
 			"description": "This is a web layout challenge with HTML, CSS, JS. Trying to clone the main google search screen.",
 			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1647122537/projects/google-clone/page_preview_vijawd.png",
-			"stack": ["HTML", "CSS", "JS"]
+			"stack": ["Javascript", "HTML", "CSS Vanilla"]
+		},
+		{
+			"id": 3,
+			"url_preview": "https://countries-hub.netlify.app",
+			"url_code": "https://github.com/jaime00/countries-hub",
+			"title": "Countries Hub",
+			"description": "Solution for a technical test integrating Restcountries API and storing in browser.",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1/projects/countries-hub/Countries_Hub_Main_Ilustration_fpm2cl",
+			"stack": ["React JS", "CSS Vanilla", "Wouter"]
 		}
 	],
 	"work_experience": [
