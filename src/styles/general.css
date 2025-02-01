@@ -3,10 +3,9 @@
 }
 
 .nav-bar-item:hover {
-	font-size: 1.125rem !important;
-	text-decoration: inherit;
-	color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
-	background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important;
+	/* font-size: 1.025rem !important; */
+	/* color: rgb(75 85 99 / var(--tw-text-opacity)) !important; */
+	/* background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important; */
 }
 
 h1 {

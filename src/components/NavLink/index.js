@@ -1,13 +1,19 @@
-import { Link, useLocation } from 'wouter'
+import { Link, useLocation } from 'wouter';
 
 export default function NavLink(props) {
-	const [location] = useLocation()
-	const isBold = location === props.to ? { fontWeight: 'bold' } : {}
-	return (
-		<Link {...props}>
-			<li style={isBold} className="cursor-pointer nav-bar-item block px-4 py-1 rounded-full md:bg-transparent transition-all dark:text-gray-400">
-				<span className="capsize">{props.children}</span>
-			</li>
-		</Link>
-	)
+  const [location] = useLocation();
+  const styles =
+    location === props.to
+      ? { fontWeight: '', backgroundColor: 'rgb(20 184 166 / 0.7)', color: 'white' }
+      : {};
+  return (
+    <Link {...props}>
+      <li
+        style={styles}
+        className="cursor-pointer nav-bar-item hover:bg-gray-200 block px-4 py-1 rounded-full md:bg-transparent transition-all dark:text-gray-400"
+      >
+        <span className="capsize">{props.children}</span>
+      </li>
+    </Link>
+  );
 }
