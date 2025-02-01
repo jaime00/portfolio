@@ -1,4 +1,3 @@
-import useLocation from 'wouter/use-location';
 import NavLink from '../NavLink';
 
 

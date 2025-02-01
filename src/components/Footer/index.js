@@ -1,6 +1,5 @@
 import { Link } from 'wouter'
 import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg'
-import { ReactComponent as InstagramIcon } from '../../assets/icons/instagram.svg'
 import { ReactComponent as GithubIcon } from '../../assets/icons/github.svg'
 import Top from '../Top'
 import { getCurriculumUrl } from '../../services'
