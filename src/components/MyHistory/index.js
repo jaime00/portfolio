@@ -1,4 +1,4 @@
-import image_profile from '../../assets/images/profile_image.png'
+import image_profile from '../../assets/images/profile_image.jpeg'
 import Titles from '../../components/Titles'
 
 export default function MyHistory() {
@@ -8,7 +8,7 @@ export default function MyHistory() {
 			<section className="text-xl leading-8 text-gray-600 dark:text-gray-300">
 				<br />
 				<p>
-					I'm a <b>Systems Engineer</b>, creative developer specializing in <b>Frontend</b>. With more than 4 years of experience adding value to
+					I'm a <b>Systems Engineer</b>, creative developer specializing in <b>Frontend</b>. With more than 5 years of experience adding value to
 					business processes in the commercial and public service sectors.
 				</p>
 				<br />
@@ -20,8 +20,8 @@ export default function MyHistory() {
 				<br />
 
 				<p>
-					Experience and advanced knowledge in technologies such as <b>React JS</b>, <b>Stencil JS</b>, <b>Typescript</b>, <b>Web Components</b>,{' '}
-					<b>Motion framer</b>, version control with <b>Git</b>, design patterns, <b>SOLID</b> and <b>Clean Code</b> principles, management of agile work methodologies such as <b>SCRUM</b> and <b>Kanban</b>.
+					Experience and advanced knowledge in technologies such as <b>React JS</b>, <b>Next JS</b>, <b>Stencil JS</b>, <b>Typescript</b>, <b>Web Components</b>,{' '}
+					<b>Motion framer</b>, <b>Micro Frontends</b>, <b>GraphQL</b>, version control with <b>Git</b>, design patterns, <b>SOLID</b> and <b>Clean Code</b> principles, management of agile work methodologies such as <b>SCRUM</b> and <b>Kanban</b>.
 				</p>
 				<div className="mt-5 grid grid-cols-1 gap-0 md:grid-cols-4 md:gap-x-5">
 					<div className="col-span-1">

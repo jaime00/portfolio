@@ -1,7 +1,7 @@
 import { Link } from 'wouter'
-import { ReactComponent as LinkedinIcon } from '../../assets/images/icons/linkedin.svg'
-import { ReactComponent as InstagramIcon } from '../../assets/images/icons/instagram.svg'
-import { ReactComponent as GithubIcon } from '../../assets/images/icons/github.svg'
+import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg'
+import { ReactComponent as InstagramIcon } from '../../assets/icons/instagram.svg'
+import { ReactComponent as GithubIcon } from '../../assets/icons/github.svg'
 import Top from '../Top'
 import { getCurriculumUrl } from '../../services'
 
@@ -63,14 +63,6 @@ export default function Footer() {
 							className="hover:rotate-6 transition text-gray-500 hover:text-black dark:hover:text-white"
 						>
 							<LinkedinIcon />{' '}
-						</a>
-						<a
-							href="https://www.instagram.com/imjaimetorres/"
-							target="_blank"
-							rel="noreferrer"
-							className="hover:rotate-6 text-gray-500 hover:text-black dark:hover:text-white"
-						>
-							<InstagramIcon />{' '}
 						</a>
 						<a href="https://github.com/jaime00" target="_blank" rel="noreferrer" className="hover:rotate-6 text-gray-500 hover:text-black dark:hover:text-white">
 							<GithubIcon />

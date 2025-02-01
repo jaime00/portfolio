@@ -1,5 +1,5 @@
-import { ReactComponent as ExternalLink } from '../../assets/images/icons/external_link.svg'
-import { ReactComponent as Code } from '../../assets/images/icons/code.svg'
+import { ReactComponent as ExternalLink } from '../../assets/icons/external_link.svg'
+import { ReactComponent as Code } from '../../assets/icons/code.svg'
 
 import GoToOption from '../GoToOption'
 
