@@ -1,4 +1,4 @@
-import { ReactComponent as TopIcon } from '../../assets/images/icons/top.svg'
+import { ReactComponent as TopIcon } from '../../assets/icons/top.svg'
 
 export default function Top() {
 	const handleClick = () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })

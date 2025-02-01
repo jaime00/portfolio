@@ -10,14 +10,6 @@
 			"stack": ["Javascript", "REACT JS", "Wouter", "BOOTSTRAP"]
 		},
 		{
-			"id": 2,
-			"url_preview": "https://pekus-login.netlify.app",
-			"title": "Pekus App",
-			"description": "This is the advancement of a web platform, specialises in the efficient management of PQRs.",
-			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1/projects/pekus/oldwc9jkricp6md5eqvf",
-			"stack": ["Javascript", "React JS", "Headless UI", "Flowbite"]
-		},
-		{
 			"id": 3,
 			"url_preview": "https://jaime00.github.io/google-clone",
 			"url_code": "https://github.com/jaime00/google-clone",
@@ -38,15 +30,27 @@
 	],
 	"work_experience": [
 		{
-			"company": "Qrvey",
+			"company": "IA interactive",
 			"position": "Frontend Developer",
-			"year_initial": "Mar 2022",
-			"year_end": "Dic 2023"
+			"year_initial": "Jul 2024",
+			"year_end": "Now"
 		},
 		{
-			"company": "Extreme Technologies",
+			"company": "LinkTIC S.A.S",
+			"position": "Frontend Developer",
+			"year_initial": "Mar 2024",
+			"year_end": "Jun 2024"
+		},
+		{
+			"company": "Qrvey",
+			"position": "Frontend Developer",
+			"year_initial": "Apr 2022",
+			"year_end": "Dec 2023"
+		},
+		{
+			"company": "Extreme Technologies S.A.",
 			"position": "Technical Lead",
-			"year_initial": "Dec 2020",
+			"year_initial": "Jan 2021",
 			"year_end": "Mar 2022"
 		},
 		{
@@ -54,6 +58,59 @@
 			"position": "Fullstack Developer",
 			"year_initial": "Nov 2019",
 			"year_end": "Dec 2020"
+		}
+	],
+	"experiences": [
+		{
+			"link": "https://www.ia.com.mx",
+			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738382362/projects/portfolio/experiences/IA.jpg",
+			"items": [
+				"Development of dynamic and maintainable web modules.",
+				"Ensuring the quality of delivered applications and their code.",
+				"Implementation of unit testing in multiple projects using Mocha JS.",
+				"Design and implementation of solutions for requests and problems focused on business logic."
+			]
+		},
+		{
+			"link": "https://linktic.com",
+			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738383855/projects/portfolio/experiences/LINKTIC.png",
+			"items": [
+				"Development of frontend applications using Svelte and React, focusing on performance and user experience.",
+				"Optimization of web applications, implementing lazy loading, code splitting, and asset improvement for high performance.",
+				"Advanced consumption of REST and GraphQL APIs, efficiently integrating backend services.",
+				"Application of SOLID, DRY, and modularity principles to ensure clean and scalable code.",
+				"Development of unit tests and integration with Jest and React Testing Library, ensuring code quality."
+			]
+		},
+		{
+			"link": "https://qrvey.com",
+			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738384285/projects/portfolio/experiences/QRVEY.jpg",
+			"items": [
+				"Development of highly customizable integrated graphics to enhance data analysis and improve strategic decision-making.",
+				"Experience in optimizing the speed and scalability of web components.",
+				"Use of graphic libraries such as EChart, Devextreme, D3."
+			]
+		},
+		{
+			"link": "https://www.extreme.com.co/extreme",
+			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738385846/projects/portfolio/experiences/EXTREME.jpg",
+			"items": [
+				"Coordinate the development team of over 6 people in their daily activities, sprints, and technical growth.",
+				"Technical and conceptual support to team members during sprints.",
+				"Ensure the quality and best practices of code in delivered modules.",
+				"Identify and provide solutions to improve development processes and quality.",
+				"Standard code declaration and best practices based on CLEAN CODE."
+			]
+		},
+		{
+			"link": "https://www.extreme.com.co/extreme",
+			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738385846/projects/portfolio/experiences/EXTREME.jpg",
+			"items": [
+				"Development of dynamic and maintainable web modules.",
+				"Ensuring the quality of delivered applications and their code.",
+				"Implementation of unit testing in multiple projects using Mocha JS.",
+				"Design and implementation of solutions for requests and problems focused on business logic."
+			]
 		}
 	],
 	"curriculum_url": "https://drive.google.com/file/d/1C5WGDJmgjSU-As9GOcBB_XGbrUUZRNil/view?usp=sharing"

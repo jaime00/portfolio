@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './styles/output.css'
 import './styles/general.css'
-import 'flowbite'
 import { Route, Redirect } from 'wouter'
 
 import NavBar from './components/NavBar'
@@ -13,6 +12,7 @@ import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Background from './components/Background'
+import Experiences from './pages/Experiences';
 
 function App() {
 	const [isDark, setIsDark] = useState(false)
@@ -40,6 +40,9 @@ function App() {
 				</Route>
 				<Route path="/contact">
 					<Contact />
+				</Route>
+				<Route path="/experiences">
+					<Experiences />
 				</Route>
 			</ScrollToTop>
 			<Footer />

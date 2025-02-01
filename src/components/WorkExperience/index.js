@@ -10,8 +10,8 @@ export default function WorkExperience() {
 			<p>Here's a brief rundown of my most recent experiences.</p>
 			<div className="space-y-2">
 				{experiences.map(({ company, position, year_initial, year_end }, i) => (
-					<div className="flex items-center space-x-3 group" key={i}>
-						<span className="flex-none text-gray-900 gover-hover:underline dark:text-white">{company}</span>
+					<div className="flex items-center space-x-1 group" key={i}>
+						<span className="flex-none text-gray-700 gover-hover:underline dark:text-white font-normal text-lg">{company}</span>
 						<span className="w-full border-t border-gray-300 border-dashed shrink dark:border-gray-700"></span>
 						<span className="flex-none">{position}</span>
 						<span className="flex-none">
@@ -20,7 +20,10 @@ export default function WorkExperience() {
 					</div>
 				))}
 			</div>
-			<Button openUrl={url}>View my resume</Button>
+			<div className='flex gap-2 mt-4'>
+				<Button to='/experiences'>Learn more</Button>
+				<Button openUrl={url} isDark={false}>View my resume</Button>
+			</div>
 		</div>
 	)
 }

@@ -1,6 +1,6 @@
 export default function StackOfProject({ stacks }) {
 	return (
-		<div className="flex items-baseline flex-wrap">
+		<div className="flex items-baseline flex-wrap min-h-[54px]">
 			{stacks.map((stack, i) => {
 				return (
 					<span
