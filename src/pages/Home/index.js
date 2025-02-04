@@ -9,7 +9,7 @@ export default function Home() {
       <Main />
       <Separator />
       <SectionProjects />
-      <div className="mt-5 flex flex-col mx-auto max-w-6xl justify-center px-4 relative font-sans dark:text-white">
+      <div className="my-5 flex flex-col mx-auto max-w-6xl justify-center px-4 relative font-sans dark:text-white">
         <WorkExperience />
       </div>
     </>

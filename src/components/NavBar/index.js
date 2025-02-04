@@ -12,7 +12,7 @@ export default function NavBar({ changeMode, isDark }) {
             loading="lazy"
             alt="Jaime Torres"
             src={image_profile}
-            className="cursor-pointer col-span-1 rounded-full w-11"
+            className="cursor-pointer col-span-1 flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full dark:bg-midnight general-ring-state hover:ring-4 hover:ring-teal-400 hover:ring-opacity-30"
           />
         </Link>
         <div className="flex md:order-2">
