@@ -23,15 +23,15 @@ export default function MyHistory() {
 					Experience and advanced knowledge in technologies such as <b>React JS</b>, <b>Next JS</b>, <b>Stencil JS</b>, <b>Typescript</b>, <b>Web Components</b>,{' '}
 					<b>Motion framer</b>, <b>Micro Frontends</b>, <b>GraphQL</b>, version control with <b>Git</b>, design patterns, <b>SOLID</b> and <b>Clean Code</b> principles, management of agile work methodologies such as <b>SCRUM</b> and <b>Kanban</b>.
 				</p>
-				<div className="mt-5 grid grid-cols-1 gap-0 md:grid-cols-4 md:gap-x-5">
-					<div className="col-span-1">
-						<span>
+				<div className="mt-5 grid grid-cols-1 gap-0 md:grid-cols-4 md:gap-x-10">
+					<div className="col-span-1 self-center">
+						<span className='flex justify-center'>
 							<span></span>
 							<img
 								data-nimg="responsive"
 								alt="Jaime Torres"
 								src={image_profile}
-								className="col-span-1 rounded-xl group-hover:opacity-75"
+								className="hover:scale-[102%] transition duration-500 ease-in-out col-span-1 rounded-xl group-hover:opacity-75"
 								decoding="async"
 								sizes="100vw"
 							/>

@@ -1,8 +1,9 @@
-export default function ExperienceLogo({ link, src }) {
+export default function ExperienceLogo({ link, src, isRotate }) {
+  const hoverClasses = isRotate ? 'hover:transform hover:rotate-3' : 'hover:scale-[102%]';
   return (
     <a href={link} target="_blank" rel="noreferrer">
       <img
-        className="col-span-1 rounded-xl hover:scale-[102%] transition duration-500 ease-in-out cursor-pointer"
+        className={`col-span-1 rounded-xl ${hoverClasses} transition duration-500 ease-in-out cursor-pointer`}
         src={src}
         alt="ListIcon"
         width={300}

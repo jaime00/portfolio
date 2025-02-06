@@ -1,12 +1,21 @@
 import NavLink from '../NavLink';
 
+export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
+  const collapseNavbar = () => setMenuIsOpen(!menuIsOpen);
+  const classesExtends = menuIsOpen ? '' : 'hidden';
 
-export default function NavBarOptions() {
-  // const collapseNavbar = () => window.toggleCollapse('navbar', false)
-  const collapseNavbar = () => {};
+  // if (menuIsOpen) {
+  //   return (
+  //     <div className='modaljaime absolute top-0 left-0 right-0 bottom-0 bg-black flex items-center justify-center' style={{ overflow: 'hidden' }}>
+  //       <div className='bg-white p-4 rounded-lg'>
+  //         <p>Modal content goes here</p>
+  //       </div>
+  //     </div>
+  //   )
+  // }
   return (
     <div
-      className="text-2xl hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
+      className={`text-2xl ${classesExtends} justify-between items-center w-full md:flex md:w-auto md:order-1`}
       id="navbar"
     >
       <ul className="space-x-8 text-lg flex flex-col md:flex-row text-center">

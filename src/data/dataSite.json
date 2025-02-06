@@ -69,7 +69,8 @@
 				"Ensuring the quality of delivered applications and their code.",
 				"Implementation of unit testing in multiple projects using Mocha JS.",
 				"Design and implementation of solutions for requests and problems focused on business logic."
-			]
+			],
+			"rotate": true
 		},
 		{
 			"link": "https://linktic.com",
@@ -80,7 +81,8 @@
 				"Advanced consumption of REST and GraphQL APIs, efficiently integrating backend services.",
 				"Application of SOLID, DRY, and modularity principles to ensure clean and scalable code.",
 				"Development of unit tests and integration with Jest and React Testing Library, ensuring code quality."
-			]
+			],
+			"rotate": false
 		},
 		{
 			"link": "https://qrvey.com",
@@ -89,7 +91,8 @@
 				"Development of highly customizable integrated graphics to enhance data analysis and improve strategic decision-making.",
 				"Experience in optimizing the speed and scalability of web components.",
 				"Use of graphic libraries such as EChart, Devextreme, D3."
-			]
+			],
+			"rotate": false
 		},
 		{
 			"link": "https://www.extreme.com.co/extreme",
@@ -100,7 +103,8 @@
 				"Ensure the quality and best practices of code in delivered modules.",
 				"Identify and provide solutions to improve development processes and quality.",
 				"Standard code declaration and best practices based on CLEAN CODE."
-			]
+			],
+			"rotate": false
 		},
 		{
 			"link": "https://www.extreme.com.co/extreme",
@@ -110,7 +114,8 @@
 				"Ensuring the quality of delivered applications and their code.",
 				"Implementation of unit testing in multiple projects using Mocha JS.",
 				"Design and implementation of solutions for requests and problems focused on business logic."
-			]
+			],
+			"rotate": true
 		}
 	],
 	"curriculum_url": "https://drive.google.com/file/d/1C5WGDJmgjSU-As9GOcBB_XGbrUUZRNil/view?usp=sharing"
