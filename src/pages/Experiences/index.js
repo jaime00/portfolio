@@ -19,7 +19,11 @@ export default function Experiences() {
             key={index}
             className="grid xxs:grid-cols-1 md:grid-cols-2 gap-10 self-center items-center justify-items-center"
           >
-            <ExperienceLogo link={experience.link} src={experience.src} />
+            <ExperienceLogo 
+              link={experience.link} 
+              src={experience.src} 
+              isRotate={experience.rotate}
+            />
             <ExperienceDescription
               year_initial={workExperiences[index].year_initial}
               year_end={workExperiences[index].year_end}
