@@ -2,8 +2,10 @@ import { Link } from 'wouter';
 import image_profile from '../../assets/images/profile_image.jpeg';
 import ButtonDarkMode from '../ButtonDarkMode';
 import NavBarOptions from '../NavBarOptions/';
+import { useState } from 'react';
 
 export default function NavBar({ changeMode, isDark }) {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
     <nav className="px-4 py-3 max-w-6xl mx-auto bg-white border-gray-200 rounded dark:bg-gray-800">
       <div className="mt-3 container flex flex-wrap justify-between items-center mx-auto">
@@ -12,12 +14,13 @@ export default function NavBar({ changeMode, isDark }) {
             loading="lazy"
             alt="Jaime Torres"
             src={image_profile}
-            className="cursor-pointer col-span-1 flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full dark:bg-midnight general-ring-state hover:ring-4 hover:ring-teal-400 hover:ring-opacity-30"
+            className="cursor-pointer col-span-1 flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full dark:bg-midnight general-ring-state transition-all hover:scale-110 active:scale-95"
           />
         </Link>
         <div className="flex md:order-2">
           <ButtonDarkMode changeMode={changeMode} isDark={isDark} />
           <button
+            onClick={() => setMenuIsOpen(!menuIsOpen)}
             data-collapse-toggle="navbar"
             type="button"
             className="inline-flex items-center p-2 ml-5 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -50,7 +53,7 @@ export default function NavBar({ changeMode, isDark }) {
             </svg>
           </button>
         </div>
-        <NavBarOptions />
+        <NavBarOptions menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       </div>
     </nav>
   );
