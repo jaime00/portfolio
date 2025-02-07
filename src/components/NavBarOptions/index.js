@@ -31,7 +31,7 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
         <NavLink onClick={collapseNavbar} to="/experiences">
           Experiences
         </NavLink>
-        <NavLink onClick={collapseNavbar} to="/projects" aria-current="page">
+        <NavLink onClick={collapseNavbar} to="/side-projects" aria-current="page">
           Projects
         </NavLink>
         <NavLink onClick={collapseNavbar} to="/contact">
