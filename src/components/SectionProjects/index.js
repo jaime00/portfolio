@@ -15,7 +15,7 @@ export default function SectionProjects() {
 
         {quantityOfProjectsInHome > 3 && (
           <div className="mt-10 mx-5 w-50">
-            <Button to="/projects">See all projects</Button>
+            <Button to="/side-projects">See all projects</Button>
           </div>
         )}
       </div>

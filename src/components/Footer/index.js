@@ -26,7 +26,7 @@ export default function Footer() {
 									</Link>
 								</li>
 								<li className="mb-4">
-									<Link to="/projects" className="text-gray-600 hover:underline dark:text-gray-400">
+									<Link to="/side-projects" className="text-gray-600 hover:underline dark:text-gray-400">
 										Projects
 									</Link>
 								</li>
