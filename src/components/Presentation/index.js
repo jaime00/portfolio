@@ -1,13 +1,28 @@
+import { useEffect } from 'react';
 import image_profile from '../../assets/images/profile_image.jpeg';
+import terminalText from '../../utils/terminalText';
 
 export default function Presentation() {
+  useEffect(() => {
+    terminalText(['React JS.', 'Next JS.', 'Stencil JS.', 'Typescript.', 'Web Components.'], 'text');
+    // terminalText(['Web Components.'], 'text');
+  }, []);
   return (
     <div className="grid items-center grid-cols-1 mt-12 text-center md:mt-24 md:text-left md:grid-cols-6 mb-5">
-      <h1 className="text-left mx-2 order-2 col-span-5 text-gray-900 dark:text-white font-extrabold text-4xl leading-tight md:order-1 sm:text-5xl">
-        I'm <span className="text-teal-400 dark:text-teal-300">Jaime</span>. I'm a
-        Software Developer specialized in{' '}
-        <span className="text-teal-400 dark:text-teal-300">Frontend</span>.
-      </h1>
+      <div className='col-span-5 mx-2'>
+        <p class="text-gray-400 font-medium mb-5 text-left">
+          +5 years of experience in web development
+        </p>
+        <h1 className="text-left order-2 text-gray-900 dark:text-white font-extrabold text-4xl leading-tight md:order-1 sm:text-5xl">
+          I'm <span className="text-teal-400 dark:text-teal-300">Jaime</span>. I'm a
+          <span className="text-teal-400 dark:text-teal-300"> Frontend</span> Developer specialized in{" "}
+          <span id='text' className='text-teal-400 dark:text-teal-300'></span>
+          {/* <div class='console-container text-teal-400 dark:text-teal-300 inline'>
+            
+            <span className='invisible'>ssssssssssssssssssssssss</span>
+          </div> */}
+        </h1>
+      </div>
       <div className="mx-auto order-1 hidden md:block">
         <span>
           <img

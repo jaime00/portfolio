@@ -5,7 +5,7 @@ export default function Project(props) {
 	const { url_preview, url_code, title, description, img, stack, id } = props
 	return (
 		<>
-			<div className="wrapper antialiased text-gray-900 w-[405px]">
+			<div className="wrapper antialiased text-gray-900 w-[405px] hover:scale-105 transition-all duration-700">
 				<div>
 					<img
 						style={{

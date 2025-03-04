@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './styles/output.css';
 import './styles/general.css';
 import { Route, Redirect, Switch } from 'wouter';
@@ -15,13 +15,22 @@ import Background from './components/Background';
 import Experiences from './pages/Experiences';
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(!!eval(localStorage.isDark));
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
   const changeMode = () => {
     if (isDark) {
       document.documentElement.classList.remove('dark');
     } else {
       document.documentElement.classList.add('dark');
     }
+    localStorage.isDark = !isDark;
     setIsDark(!isDark);
   };
   return (
@@ -46,7 +55,7 @@ function App() {
             <Experiences />
           </Route>
           <Route>
-		  <Redirect to="/" />
+            <Redirect to="/" />
           </Route>
         </Switch>
       </ScrollToTop>

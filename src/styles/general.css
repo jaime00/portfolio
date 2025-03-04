@@ -23,3 +23,5 @@ button {
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
 	margin: 5px 10px;
 }
+
+
