@@ -1,20 +1,20 @@
 import { Link } from 'wouter'
 import { getStyleButton } from '../../services'
 
-export default function Button({ children, isDark = true, to = '/', openUrl = false, type = false }) {
+export default function Button({ children, isDark = true, to = '/', openUrl = false, type = false, style = {} }) {
 	const classes = getStyleButton({ isDark })
 	const handleClick = () => openUrl && window.open(openUrl)
 	if (openUrl) {
 		return (
-			<button aria-label="button" type="button" className={classes} onClick={handleClick}>
+			<button style={style} aria-label="button" type="button" className={classes} onClick={handleClick}>
 				{children}
 			</button>
 		)
 	} else {
 		if (type) {
 			return (
-				<a href="mailto:jtorres6100@gmail.com">
-					<button aria-label="button" type="button" className={classes}>
+				<a href="mailto:imjaimetorresv@gmail.com">
+					<button style={style} aria-label="button" type="button" className={classes}>
 						{children}
 					</button>
 				</a>
@@ -22,7 +22,7 @@ export default function Button({ children, isDark = true, to = '/', openUrl = fa
 		} else {
 			return (
 				<Link to={to}>
-					<button aria-label="button" type="button" className={classes}>
+					<button style={style} aria-label="button" type="button" className={classes}>
 						{children}
 					</button>
 				</Link>
