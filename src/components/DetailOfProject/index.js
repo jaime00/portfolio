@@ -10,7 +10,7 @@ export default function DetailOfProject(props) {
 			<h4 className="mt-5 text-xl font-semibold  leading-tight ">{title}</h4>
 			<div className="mt-4">
 				<span className="text-sm text-gray-600 dark:text-gray-400">{description}</span>
-				<div className="flex flex-row mt-3">
+				<div className="flex flex-row mt-auto absolute bottom-11">
 					<GoToOption url={url_preview} title="Preview" icon={<ExternalLink />} id={id + 1} />
 					{url_code && <GoToOption url={url_code} title="Go to code" icon={<Code />} id={id + 2} />}
 				</div>

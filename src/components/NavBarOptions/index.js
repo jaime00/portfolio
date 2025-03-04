@@ -1,7 +1,11 @@
 import NavLink from '../NavLink';
 
 export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
-  const collapseNavbar = () => setMenuIsOpen(!menuIsOpen);
+  const collapseNavbar = () => {
+    if (window.innerWidth < 768) {
+      setMenuIsOpen(false)
+    }
+  };
   const classesExtends = menuIsOpen ? '' : 'hidden';
 
   // if (menuIsOpen) {

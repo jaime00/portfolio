@@ -37,7 +37,7 @@
 		},
 		{
 			"company": "LinkTIC S.A.S",
-			"position": "Frontend Developer",
+			"position": "Frontend Developer - Part time",
 			"year_initial": "Mar 2024",
 			"year_end": "Jun 2024"
 		},
@@ -55,7 +55,7 @@
 		},
 		{
 			"company": "Extreme Technologies",
-			"position": "Fullstack Developer",
+			"position": "Frontend Developer",
 			"year_initial": "Nov 2019",
 			"year_end": "Dec 2020"
 		}
@@ -65,11 +65,10 @@
 			"link": "https://www.ia.com.mx",
 			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738382362/projects/portfolio/experiences/IA.jpg",
 			"items": [
-				"Developed and maintained the web platform redesign of a largest movie theater chain in Latin America.",
-				"Led the implementation and optimization of interactive animations using Framer",
-				"Motion on the food screen and search section, improving user experience and interface fluidity.",
-				"Managed movie theater selection, ticket reservation, food ordering, and loyalty with 'Cine Puntos', as well as maintaining payment integrations with DeUna and Aplazo in Mexico.",
-				"Using technologies such as React, Next, GraphQL, Framer Motion, Hooks, Sass, Tailwind CSS."
+				"Developed and maintained the redesign of the web platform of a major Latin American movie theater chain.",
+				"I led the implementation and optimization of interactive animations using Framer Motion in the food screen and search section, improving user experience and interface fluidity.",
+				"Managed cinema selection, ticket booking, food ordering and loyalty with 'Cine Puntos', as well as maintaining payment integrations with DeUna and Aplazo in Mexico.",
+				"Use of technologies such as React, Next, GraphQL, Framer Motion, Hooks, Sass, Tailwind CSS."
 			],
 			"rotate": true
 		},
@@ -77,10 +76,9 @@
 			"link": "https://linktic.com",
 			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738383855/projects/portfolio/experiences/LINKTIC.png",
 			"items": [
-				"Frontend application development using Svelte and React, with a focus on performance and",
-				"user experience.",
-				"Web application optimization, implementing lazy loading, code splitting and asset enhancement for high performance.",
-				"Advanced consumption of REST and GraphQL APIs, efficiently integrating backend services.",
+				"Frontend application development using Svelte and React, with focus on performance and user experience.",
+				"Optimization of web applications, implementing lazy loading, code splitting and asset enhancement for high performance.",
+				"Advanced consumption of REST APIs and GraphQL, efficiently integrating backend services.",
 				"Application of SOLID, DRY and modularity principles to ensure clean and scalable code.",
 				"Development of unit tests and integration with Jest, ensuring code quality."
 			],
@@ -90,10 +88,9 @@
 			"link": "https://qrvey.com",
 			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738384285/projects/portfolio/experiences/QRVEY.jpg",
 			"items": [
-				"Development of highly customizable embedded graphics to enhance data analytics and improve strategic decision making.",
-				"Experience in optimizing the speed and scalability of web components.",
-				"Use of technologies such as Javascript, Typescript, Stencil JS for Web Components, React,",
-				"Testing with Mocha, Styled Components, Sass, Tailwind CSS.",
+				"Development of highly customizable embedded graphs to enhance data analytics and improve strategic decision making.",
+				"Experience in speed optimization and scalability of web components.",
+				"Use of technologies such as Javascript, Typescript, Stencil JS for Web Components, React, Testing with Mocha, Styled Components, Sass, Tailwind CSS.",
 				"Use of graphic libraries such as EChart, Devextreme, D3."
 			],
 			"rotate": false
@@ -102,11 +99,11 @@
 			"link": "https://www.extreme.com.co/extreme",
 			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738385846/projects/portfolio/experiences/EXTREME.jpg",
 			"items": [
-				"Coordinate the development team of 6+ people in their daily activities, careers and technical growth.",
+				"Coordinate development team of 6+ people in their daily activities, sprints and technical growth.",
 				"Technical and conceptual support to team members during sprints.",
-				"Ensure quality and best code practices in delivered modules.",
-				"Identify and provide solutions to improve development and quality processes.",
-				"Standard code declaration and best practices based on CLEAN CODE.",
+				"Ensure quality and code best practices in delivered modules.",
+				"Identify and provide solutions to improve development processes and quality.",
+				"Standard code statement and best practices based on CLEAN CODE.",
 				"Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Boostrap."
 			],
 			"rotate": false
@@ -116,9 +113,8 @@
 			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738385846/projects/portfolio/experiences/EXTREME.jpg",
 			"items": [
 				"Development of dynamic and maintainable web modules.",
-				"Guaranteeing the quality of the delivered applications and their code.",
-				"Implemented the use of unit tests in multiple projects using Jest JS.",
-				"Design and implementation of solutions for requests and incidents focused on business logic.",
+				"Ensuring the quality of delivered applications and their code.",
+				"Implemented the use of unit testing in multiple projects using Jest JS. Design and implementation of solutions for requests and issues focused on business logic.",
 				"Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Boostrap."
 			],
 			"rotate": true
