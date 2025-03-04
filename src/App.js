@@ -15,14 +15,14 @@ import Background from './components/Background';
 import Experiences from './pages/Experiences';
 
 function App() {
-  const [isDark, setIsDark] = useState(!!eval(localStorage.isDark));
+  const [isDark, setIsDark] = useState(localStorage.isDark === 'true');
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, []);
+  }, [isDark]);
 
   const changeMode = () => {
     if (isDark) {
