@@ -40,7 +40,7 @@ function App() {
       <ScrollToTop>
         <Switch>
           <Route path="/">
-            <Home />
+            <Home isDark={isDark} />
           </Route>
           <Route path="/about">
             <About />
