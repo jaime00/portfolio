@@ -15,7 +15,7 @@ export default function Presentation() {
         <h1 className="text-left order-2 text-gray-900 dark:text-white font-extrabold text-4xl leading-tight md:order-1 sm:text-5xl">
           I'm <span className="text-teal-400 dark:text-teal-300">Jaime</span>. I'm a
           <span className="text-teal-400 dark:text-teal-300"> Frontend</span> Developer specialized in{" "}
-          <div className='console-container inline-block'>
+          <div className='console-container inline-block text-teal-400 dark:text-teal-300'>
             <span id='text'></span>
           </div>
         </h1>
