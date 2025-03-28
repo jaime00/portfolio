@@ -13,7 +13,7 @@ export default function MyHistory() {
 				</p>
 				<br />
 				<p>
-					In addition to being a <b>Fullstack Developer</b>, i have also worked as <b>Technical Lead</b>, implementing functional, scalable and reusable
+					In addition to being a <b><em>Frontend Developer</em></b>, i have also worked as <b>Technical Lead</b>, implementing functional, scalable and reusable
 					code solutions throughout my career, aligned with user needs and business goals. In addition to technically coordinating and mentoring a
 					development team in their day-to-day activities, careers and technical growth.
 				</p>
