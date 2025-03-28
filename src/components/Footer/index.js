@@ -7,7 +7,7 @@ import { getCurriculumUrl } from '../../services'
 export default function Footer() {
 	const curriculumUrl = getCurriculumUrl()
 	return (
-		<div className="flex flex-col mx-auto max-w-6xl justify-center px-4 prose prose-lg md:prose-xl dark:prose-dark relative p-4 bg-white sm:p-6 dark:bg-gray-800 font-sans">
+		<div className="animate-fade flex flex-col mx-auto max-w-6xl justify-center px-4 prose prose-lg md:prose-xl dark:prose-dark relative p-4 bg-white sm:p-6 dark:bg-gray-800 font-sans">
 			<hr className="my-12 dark:border-gray-700" />
 			<footer className="">
 				<div className="md:flex md:justify-between mx-5 mb-12 align-middle">

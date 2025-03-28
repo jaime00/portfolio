@@ -727,6 +727,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 .animate-carousel-item {
   animation: carousel-keyframe 30s linear infinite;
 }
+@keyframes fade-in-keyframe {
+
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.animate-fade {
+  animation: fade-in-keyframe 1000ms;
+}
 .cursor-pointer {
   cursor: pointer;
 }

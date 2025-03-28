@@ -1,4 +1,4 @@
-import image_profile from '../../assets/images/profile_image.jpeg'
+import image_profile from '../../assets/images/profile_image.jpg'
 import Titles from '../../components/Titles'
 
 export default function MyHistory() {
@@ -28,6 +28,7 @@ export default function MyHistory() {
 						<span className='flex justify-center'>
 							<span></span>
 							<img
+								lazy="true"
 								data-nimg="responsive"
 								alt="Jaime Torres"
 								src={image_profile}

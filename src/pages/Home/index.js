@@ -5,7 +5,7 @@ import Bottom from '../../components/Bottom';
 
 export default function Home({ isDark }) {
   return (
-    <div>
+    <div className='animate-fade'>
       <div>
         <Main isDark={isDark}/>
         {/* <Separator /> */}

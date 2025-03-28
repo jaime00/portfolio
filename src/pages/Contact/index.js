@@ -11,7 +11,7 @@ export default function Contact() {
     height: '65px',
   };
   return (
-    <div className="mt-8 my-5 flex-col mx-auto max-w-6xl justify-center px-4 bg-white dark:text-white dark:bg-gray-800 prose prose-lg md:prose-xl dark:prose-dark relative font-sans">
+    <div className="animate-fade mt-8 my-5 flex-col mx-auto max-w-6xl justify-center px-4 bg-white dark:text-white dark:bg-gray-800 prose prose-lg md:prose-xl dark:prose-dark relative font-sans">
       <Titles className="float-left" title="Contact" subtitle="Interested in my work?" />
       <div className="grid items-center grid-cols-1 md:grid-cols-5 gap-y-8 md:gap-x-12 my-auto">
         <div className="col-span-3">
@@ -35,11 +35,12 @@ export default function Contact() {
           </div>
         </div>
         <div className="col-span-2 mt-10 hidden md:block">
-			<img
-				src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/vintage-computer-PzwixPG5hMbJUAXd7D6bPoJUrS7JTJ.png"
-				alt="Vintage computer with drop shadow"
-				className="drop-shadow-effect select-none pointer-events-none"
-			/>
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/vintage-computer-PzwixPG5hMbJUAXd7D6bPoJUrS7JTJ.png"
+            alt="Vintage computer with drop shadow"
+            className="drop-shadow-effect select-none pointer-events-none"
+            lazy="true"
+          />
         </div>
       </div>
     </div>
