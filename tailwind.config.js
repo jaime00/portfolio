@@ -19,17 +19,13 @@ module.exports = {
 					'100%': { transform: 'translateX(-1000%)' },
 				},
 				'fade-in-keyframe': {
-					'0%': { 
-						opacity: 0.4,
-					},
-					'100%': { 
-						opacity: 1,
-					},
+					"0%": { opacity: 0.7, transform: "translateY(0px) scale(0.99)" },
+					"100%": { opacity: 1, transform: "translateY(0px) scale(1)" },
 				},
 			},
 			animation: {
 				'carousel-item': 'carousel-keyframe 30s linear infinite',
-				'fade': 'fade-in-keyframe 1000ms',
+				'fade': "fade-in-keyframe 1s ease-out forwards",
 			},
 		},
 	},
