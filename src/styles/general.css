@@ -1,27 +1,29 @@
 body {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 .nav-bar-item {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 .nav-bar-item:hover {
-	/* font-size: 1.025rem !important; */
-	/* color: rgb(75 85 99 / var(--tw-text-opacity)) !important; */
-	/* background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important; */
+  /* font-size: 1.025rem !important; */
+  /* color: rgb(75 85 99 / var(--tw-text-opacity)) !important; */
+  /* background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important; */
 }
 
 h1 {
-	margin: auto 10px auto auto;
+  margin: auto 10px auto auto;
 }
 
 button {
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
 }
 
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
-	margin: 5px 10px;
+  margin: 5px 10px;
 }
 
-
+.drop-shadow-effect {
+  filter: drop-shadow(0px 15px 20px rgba(0, 0, 0, 0.6)) hue-rotate(90deg) !important;
+}
