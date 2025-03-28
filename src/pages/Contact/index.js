@@ -1,4 +1,4 @@
-import ilustration_computer from '../../assets/images/ilustration_computer.png'
+import vintage_computer from '../../assets/images/vintage-computer.png'
 import Button from '../../components/Button'
 import Titles from '../../components/Titles'
 import { ReactComponent as WhatsappIcon } from '../../assets/icons/whatsapp.svg'
@@ -8,7 +8,8 @@ import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg'
 export default function Contact() {
 	const commonStyles = {
 		padding: '15px',
-		width: 'auto',
+		width: '65px',
+		height: '65px',
 	}
 	return (
 		<div className="mt-8 my-5 flex-col mx-auto max-w-6xl justify-center px-4 bg-white dark:text-white dark:bg-gray-800 prose prose-lg md:prose-xl dark:prose-dark relative font-sans">
@@ -16,7 +17,7 @@ export default function Contact() {
 			<div className="grid items-center grid-cols-1 md:grid-cols-5 gap-y-8 md:gap-x-12 my-auto">
 				<div className="col-span-3">
 					<p className="mb-10 text-xl">Got a question, proposal or project or want to work together on something? Feel free to reach out.</p>
-					<div className="text-center">
+					<div className="text-center flex gap-3 justify-center">
 						<Button type="email" style={commonStyles}>
 							<EmailIcon />
 						</Button>
@@ -63,10 +64,10 @@ export default function Contact() {
 						<img
 							loading="lazy"
 							alt="article cover"
-							src={ilustration_computer}
+							src={vintage_computer}
 							decoding="async"
 							data-nimg="responsive"
-							className="rounded-xl group-hover:opacity-75"
+							className="rounded-xl group-hover:opacity-75 select-none pointer-events-none"
 							style={{
 								position: 'absolute',
 								inset: '0px',
@@ -82,9 +83,10 @@ export default function Contact() {
 								minHeight: '100%',
 								maxHeight: '100%',
 								objectFit: 'cover',
+								filter: "hue-rotate(90deg)"
 							}}
 							sizes="100vw"
-							srcSet={ilustration_computer}
+							srcSet={vintage_computer}
 						/>
 					</span>
 				</div>

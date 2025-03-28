@@ -9,7 +9,7 @@ export default function CarouselOfTechnologies({ isDark }) {
   console.log("isDark: ", isDark);
   return (
     <div
-      className={`pointer-events-none font-lato text-lg leading-6 flex justify-center items-center mx-auto my-6 overflow-hidden rounded-md relative w-2/4 before:left-0 before:bg-gradient-to-r ${
+      className={`select-none pointer-events-none font-lato text-lg leading-6 flex justify-center items-center mx-auto my-6 overflow-hidden rounded-md relative w-2/4 before:left-0 before:bg-gradient-to-r ${
         isDark ? 'before:from-[#1f2a37]' : 'before:from-white'
       } to-transparent before:z-10 before:absolute before:top-0 before:bottom-0 before:w-[190px] after:right-0 after:bg-gradient-to-l ${
         isDark ? 'after:from-[#1f2a37]' : 'after:from-white'
