@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import image_profile from '../../assets/images/profile_image.jpeg';
+import image_profile from '../../assets/images/profile_image.jpg';
 import ButtonDarkMode from '../ButtonDarkMode';
 import NavBarOptions from '../NavBarOptions/';
 import { useState } from 'react';
@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function NavBar({ changeMode, isDark }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
-    <nav className="px-4 py-3 max-w-6xl mx-auto bg-white border-gray-200 rounded dark:bg-gray-800">
+    <nav className="animate-fade px-4 py-3 max-w-6xl mx-auto bg-white border-gray-200 rounded dark:bg-gray-800">
       <div className="mt-3 container flex flex-wrap justify-between items-center mx-auto">
         <Link to="/" className="flex">
           <img

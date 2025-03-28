@@ -18,9 +18,18 @@ module.exports = {
 					'0%': { transform: 'translateX(1000%)' },
 					'100%': { transform: 'translateX(-1000%)' },
 				},
+				'fade-in-keyframe': {
+					'0%': { 
+						opacity: 0.4,
+					},
+					'100%': { 
+						opacity: 1,
+					},
+				},
 			},
 			animation: {
 				'carousel-item': 'carousel-keyframe 30s linear infinite',
+				'fade': 'fade-in-keyframe 1000ms',
 			},
 		},
 	},
