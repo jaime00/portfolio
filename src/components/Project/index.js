@@ -8,10 +8,10 @@ export default function Project(props) {
 			<div className="wrapper antialiased text-gray-900 min-w-[350px] max-w-[405px]">
 				<div className='overflow-hidden hover:rounded-lg'>
 					<img
+						lazy="true"
 						style={{
 							height: '260px',
 						}}
-						loading="lazy"
 						src={img}
 						alt={title}
 						className="w-full object-center rounded-lg shadow-md transition-all duration-700 hover:scale-110 object-cover"

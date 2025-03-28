@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import image_profile from '../../assets/images/profile_image.jpeg';
+import image_profile from '../../assets/images/profile_image.jpg';
 import terminalText from '../../utils/terminalText';
 
 export default function Presentation() {
@@ -23,7 +23,7 @@ export default function Presentation() {
       <div className="mx-auto order-1 hidden md:block">
         <span>
           <img
-            loading="lazy"
+            lazy="true"
             alt="Jaime Torres"
             src={image_profile}
             className="col-span-1 rounded-full opacity-100"

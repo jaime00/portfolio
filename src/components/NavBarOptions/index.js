@@ -19,26 +19,26 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
   // }
   return (
     <div
-      className={`text-2xl ${classesExtends} justify-between items-center w-full md:flex md:w-auto md:order-1`}
+      className={`select-none text-2xl ${classesExtends} justify-between items-center w-full md:flex md:w-auto md:order-1`}
       id="navbar"
     >
       <ul className="space-x-8 text-lg flex flex-col md:flex-row text-center">
         <li className="hidden">
           <span className="capsize">Home</span>
         </li>
-        <NavLink onClick={collapseNavbar} to="/" aria-current="page">
+        <NavLink className="pointer-events-none" onClick={collapseNavbar} to="/" aria-current="page">
           Home
         </NavLink>
-        <NavLink onClick={collapseNavbar} to="/about" aria-current="page">
+        <NavLink className="pointer-events-none" onClick={collapseNavbar} to="/about" aria-current="page">
           About
         </NavLink>
-        <NavLink onClick={collapseNavbar} to="/experiences">
+        <NavLink className="pointer-events-none" onClick={collapseNavbar} to="/experiences">
           Experiences
         </NavLink>
-        <NavLink onClick={collapseNavbar} to="/side-projects" aria-current="page">
+        <NavLink className="pointer-events-none" onClick={collapseNavbar} to="/side-projects" aria-current="page">
           Projects
         </NavLink>
-        <NavLink onClick={collapseNavbar} to="/contact">
+        <NavLink className="pointer-events-none" onClick={collapseNavbar} to="/contact">
           Contact
         </NavLink>
       </ul>
