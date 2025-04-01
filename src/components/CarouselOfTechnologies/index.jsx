@@ -6,7 +6,14 @@ import nextIcon from '../../assets/icons/next.png';
 import React from 'react';
 
 export default function CarouselOfTechnologies({ isDark }) {
-  console.log("isDark: ", isDark);
+  const technologies = [
+    { src: typescriptIcon, alt: 'TypeScript Logo' },
+    { src: reactIcon, alt: 'React Logo' },
+    { src: javascriptIcon, alt: 'JavaScript Logo' },
+    { src: angularIcon, alt: 'Angular Logo' },
+    { src: nextIcon, alt: 'Next.js Logo' },
+  ];
+
   return (
     <div
       className={`select-none pointer-events-none font-lato text-lg leading-6 flex justify-center items-center mx-auto my-6 overflow-hidden rounded-md relative w-2/4 before:left-0 before:bg-gradient-to-r ${
@@ -15,45 +22,13 @@ export default function CarouselOfTechnologies({ isDark }) {
         isDark ? 'after:from-[#1f2a37]' : 'after:from-white'
       } to-transparent after:z-10 after:absolute after:top-0 after:bottom-0 after:w-[190px]`}
     >
-      {[1, 2, 3, 4, 5, 3, 3, 3, 3, 3, 3, 3, 1, 2, 3, 4, 5, 3, 3, 3, 3, 3, 3, 3].map((_, index) => (
-        <React.Fragment key={index}>
-          <div className="animate-carousel-item px-1">
-            <img
-              className="min-w-[40px] min-h-[40px]"
-              src={typescriptIcon}
-              alt="Company logo 1"
-            />
+      {[...Array(25)].flatMap(() =>
+        technologies.map((tech, index) => (
+          <div key={index} className="animate-carousel-item px-1">
+            <img className="min-w-[40px] min-h-[40px]" src={tech.src} alt={tech.alt} />
           </div>
-          <div className="animate-carousel-item px-1">
-            <img
-              className="min-w-[40px] min-h-[40px]"
-              src={reactIcon}
-              alt="Company logo 1"
-            />
-          </div>
-          <div className="animate-carousel-item px-1">
-            <img
-              className="min-w-[40px] min-h-[40px]"
-              src={javascriptIcon}
-              alt="Company logo 1"
-            />
-          </div>
-          <div className="animate-carousel-item px-1">
-            <img
-              className="min-w-[40px] min-h-[40px]"
-              src={angularIcon}
-              alt="Company logo 1"
-            />
-          </div>
-          <div className="animate-carousel-item px-1">
-            <img
-              className="min-w-[40px] min-h-[40px]"
-              src={nextIcon}
-              alt="Company logo 1"
-            />
-          </div>
-        </React.Fragment>
-      ))}
+        ))
+      )}
     </div>
   );
 }
