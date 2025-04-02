@@ -3,15 +3,17 @@ import angularIcon from '../../assets/icons/angular.png';
 import typescriptIcon from '../../assets/icons/ts.png';
 import javascriptIcon from '../../assets/icons/js.png';
 import nextIcon from '../../assets/icons/next.png';
+import svelteIcon from '../../assets/icons/svelte.png';
 import React from 'react';
 
 export default function CarouselOfTechnologies({ isDark }) {
   const technologies = [
-    { src: typescriptIcon, alt: 'TypeScript Logo' },
     { src: reactIcon, alt: 'React Logo' },
-    { src: javascriptIcon, alt: 'JavaScript Logo' },
-    { src: angularIcon, alt: 'Angular Logo' },
     { src: nextIcon, alt: 'Next.js Logo' },
+    { src: svelteIcon, alt: 'Svelte Logo' },
+    { src: typescriptIcon, alt: 'TypeScript Logo' },
+    { src: angularIcon, alt: 'Angular Logo' },
+    { src: javascriptIcon, alt: 'JavaScript Logo' },
   ];
 
   return (
