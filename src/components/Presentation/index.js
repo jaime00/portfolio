@@ -3,7 +3,7 @@ import image_profile from '../../assets/images/profile_image.jpg';
 import terminalText from '../../utils/terminalText';
 import workIcon from '../../assets/icons/code-gray.png';
 
-export default function Presentation() {
+export default function Presentation({ isDark }) {
   useEffect(() => {
     terminalText(['React JS.', 'Next JS.', 'Svelte. ', 'Stencil JS.', 'Typescript.', 'Web Components.'], 'text');
   }, []);
@@ -15,15 +15,15 @@ export default function Presentation() {
         </p>
         <div className='flex flex-col gap-2'>
           <h2 className="text-left order-2 text-gray-900 dark:text-white font-extrabold text-4xl md:order-1 sm:text-5xl">
-            I'm <span className="text-teal-300">Jaime</span>
+            I'm <span className="text-gradient-teal">Jaime</span>
           </h2>
           <h2 className="text-left order-2 text-gray-900 dark:text-white font-extrabold text-4xl leading-tight md:order-1 sm:text-5xl">
             I'm a{" "}
-            <span className="text-teal-300"> Frontend Developer</span>
+            <span className="text-gradient-teal"> Frontend Developer</span>
           </h2>
           <h2 className="text-left order-2 text-gray-900 dark:text-white font-extrabold text-4xl leading-tight md:order-1 sm:text-5xl">
              specialized in{" "}
-            <div className='console-container inline-block text-teal-300'>
+            <div className={`console-container inline-block text-gradient-teal`}>
               <span id='text'></span>
             </div>
           </h2>
