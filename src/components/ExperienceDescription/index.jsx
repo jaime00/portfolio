@@ -1,4 +1,4 @@
-import RelumeIcon from '../../assets/icons/relume-icon.svg';
+import { ArrowRightIcon } from '../../assets/animatedIcons/ArrowRightIcon';
 
 export default function ExperienceDescription({
   year_initial,
@@ -14,7 +14,7 @@ export default function ExperienceDescription({
       <h3 className="mb-5 text-3xl font-medium">{position}</h3>
       {items.map((detail, index) => (
         <div className="flex gap-3" key={index}>
-          <img src={RelumeIcon} alt="" />
+          <ArrowRightIcon className="text-gray-500 dark:text-gray-300" size={25}/>
           <p className="text-housplit-blue-color text-sm text-left" key={index}>
             {detail}
           </p>
