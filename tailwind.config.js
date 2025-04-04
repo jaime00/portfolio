@@ -27,6 +27,9 @@ module.exports = {
 				'carousel-item': 'carousel-keyframe 30s linear infinite',
 				'fade': "fade-in-keyframe 1s ease-out forwards",
 			},
+			screens: {
+				'min-1045': '1045px',
+			},
 		},
 	},
 	variants: {},

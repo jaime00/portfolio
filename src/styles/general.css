@@ -29,8 +29,24 @@ button {
 }
 
 .text-gradient-teal {
-  background: linear-gradient(90deg, rgb(87, 215, 196) 0%, rgba(94,234,212,1) 30%, #2dd4bf 50%, rgba(94,234,212,1) 70%, #2dd4bf 98%, rgba(94,234,212,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(87, 215, 196) 0%,
+    rgba(94, 234, 212, 1) 30%,
+    #2dd4bf 50%,
+    rgba(94, 234, 212, 1) 70%,
+    #2dd4bf 98%,
+    rgba(94, 234, 212, 1) 100%
+  );
   background-clip: text;
   background-size: 100%;
   -webkit-text-fill-color: transparent;
+}
+
+.mask-image {
+  /* personaje pequeño */
+  /* mask-image: linear-gradient(black 60%, transparent); */
+
+  /* personaje grande */
+  mask-image: linear-gradient(black 89%, transparent);
 }
