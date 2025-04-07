@@ -686,8 +686,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[22px\] {
   width: 22px;
 }
-.w-\[310px\] {
-  width: 310px;
+.w-auto {
+  width: auto;
 }
 .min-w-\[40px\] {
   min-width: 40px;

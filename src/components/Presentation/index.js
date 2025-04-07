@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 // import image_profile from '../../assets/images/profile_image.jpg';
-import image_profile from '../../assets/images/personGPT3.png';
+import image_profile from '../../assets/images/personGPT4.png';
 import terminalText from '../../utils/terminalText';
 import workIcon from '../../assets/icons/code-gray.png';
 
@@ -47,7 +47,7 @@ export default function Presentation({ isDark }) {
           height="415"
           alt="Jaime Torres"
           src={image_profile || '/placeholder.svg'}
-          className="col-span-1 w-[310px] min-1045:h-[415px] h-0"
+          className="col-span-1 w-auto min-1045:h-[415px] h-0"
         />
       </div>
     </div>
