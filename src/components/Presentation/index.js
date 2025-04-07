@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-// import image_profile from '../../assets/images/profile_image.jpg';
-import image_profile from '../../assets/images/personGPT4.png';
+import image_profile from '../../assets/images/personGPT5.png';
 import terminalText from '../../utils/terminalText';
 import workIcon from '../../assets/icons/code-gray.png';
 
