@@ -1,5 +1,5 @@
 import { MoonIcon } from "../../assets/animatedIcons/Moon";
-import { SunMoonIcon } from "../../assets/animatedIcons/SunMoonIcon";
+import { SunIcon } from "../../assets/animatedIcons/SunIcon";
 
 
 export default function ButtonDarkMode({ changeMode, isDark }) {
@@ -11,7 +11,7 @@ export default function ButtonDarkMode({ changeMode, isDark }) {
 			hover:ring-4 hover:ring-gray-700"
 			onClick={changeMode}
 		>
-			<div>{isDark ? <SunMoonIcon className='text-gray-600' /> : <MoonIcon className='text-gray-600' />}</div>
+			<div>{isDark ? <SunIcon className='text-gray-600' /> : <MoonIcon className='text-gray-600' />}</div>
 		</button>
 	)
 }
