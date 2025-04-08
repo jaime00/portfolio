@@ -13,9 +13,9 @@ export default function ExperienceDescription({
       </p>
       <h3 className="mb-5 text-3xl font-medium">{position}</h3>
       {items.map((detail, index) => (
-        <div className="flex gap-3" key={index}>
+        <div className="flex gap-3" key={`experience-description-${index}`}>
           <ArrowRightIcon className="text-gray-500 dark:text-gray-300" size={25}/>
-          <p className="text-housplit-blue-color text-sm text-left" key={index}>
+          <p className="text-housplit-blue-color text-sm text-left">
             {detail}
           </p>
         </div>

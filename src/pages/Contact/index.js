@@ -45,9 +45,10 @@ export default function Contact() {
         </div>
         <div className="col-span-2 mt-10 hidden md:block">
           <img
+            data-src={VintageComputer}
             src={VintageComputer}
             alt="Vintage computer with drop shadow"
-            className="drop-shadow-effect select-none pointer-events-none"
+            className="animate-fade lozad drop-shadow-effect select-none pointer-events-none"
             loading="lazy"
           />
         </div>
