@@ -53,3 +53,39 @@ button {
   /* personaje grande */
   mask-image: linear-gradient(black 89%, transparent);
 }
+
+
+
+html {
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #85cbd3;
+  --sb-thumb-border-color: white;
+  --sb-size: 16px;
+}
+html.dark {
+  --sb-track-color: #1f2a37;
+  --sb-thumb-color: #5d666f;
+  --sb-thumb-border-color: #1f2a37;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 8px;
+  border: 4px solid var(--sb-thumb-border-color);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
