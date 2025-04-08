@@ -13,8 +13,11 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Background from './components/Background';
 import Experiences from './pages/Experiences';
+import lozad from 'lozad';
 
 function App() {
+  const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+  observer.observe();
   const [isDark, setIsDark] = useState(localStorage.isDark === 'true');
   useEffect(() => {
     if (isDark) {

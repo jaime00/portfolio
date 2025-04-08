@@ -1,6 +1,9 @@
 body {
   scroll-behavior: smooth;
 }
+html.dark {
+  background-color: #1f2a37;
+}
 .nav-bar-item {
   font-size: 18px;
 }
