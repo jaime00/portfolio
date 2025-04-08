@@ -14,6 +14,30 @@ export default function CarouselOfTechnologies({ isDark }) {
     { src: typescriptIcon, alt: 'TypeScript Logo' },
     { src: angularIcon, alt: 'Angular Logo' },
     { src: javascriptIcon, alt: 'JavaScript Logo' },
+    { src: reactIcon, alt: 'React Logo' },
+    { src: nextIcon, alt: 'Next.js Logo' },
+    { src: svelteIcon, alt: 'Svelte Logo' },
+    { src: typescriptIcon, alt: 'TypeScript Logo' },
+    { src: angularIcon, alt: 'Angular Logo' },
+    { src: javascriptIcon, alt: 'JavaScript Logo' },
+    { src: reactIcon, alt: 'React Logo' },
+    { src: nextIcon, alt: 'Next.js Logo' },
+    { src: svelteIcon, alt: 'Svelte Logo' },
+    { src: typescriptIcon, alt: 'TypeScript Logo' },
+    { src: angularIcon, alt: 'Angular Logo' },
+    { src: javascriptIcon, alt: 'JavaScript Logo' },
+    { src: reactIcon, alt: 'React Logo' },
+    { src: nextIcon, alt: 'Next.js Logo' },
+    { src: svelteIcon, alt: 'Svelte Logo' },
+    { src: typescriptIcon, alt: 'TypeScript Logo' },
+    { src: angularIcon, alt: 'Angular Logo' },
+    { src: javascriptIcon, alt: 'JavaScript Logo' },
+    { src: reactIcon, alt: 'React Logo' },
+    { src: nextIcon, alt: 'Next.js Logo' },
+    { src: svelteIcon, alt: 'Svelte Logo' },
+    { src: typescriptIcon, alt: 'TypeScript Logo' },
+    { src: angularIcon, alt: 'Angular Logo' },
+    { src: javascriptIcon, alt: 'JavaScript Logo' },
   ];
 
   return (
@@ -24,13 +48,11 @@ export default function CarouselOfTechnologies({ isDark }) {
         isDark ? 'after:from-[#1f2a37]' : 'after:from-white'
       } to-transparent after:z-10 after:absolute after:top-0 after:bottom-0 after:w-[190px]`}
     >
-      {[...Array(25)].flatMap(() =>
-        technologies.map((tech, index) => (
-          <div key={index} className="animate-carousel-item px-1">
-            <img className="min-w-[40px] min-h-[40px]" src={tech.src} alt={tech.alt} />
-          </div>
-        ))
-      )}
+      {technologies.map((tech, index) => (
+        <div key={index} className="animate-carousel-item px-1">
+          <img className="min-w-[40px] min-h-[40px]" src={tech.src} alt={tech.alt} />
+        </div>
+      ))}
     </div>
   );
 }
