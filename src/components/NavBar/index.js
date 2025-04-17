@@ -1,20 +1,34 @@
 import { Link } from 'wouter';
-import image_profile from '../../assets/images/profile_image.jpg';
+import image_profile from '../../assets/images/person-head.png';
 import ButtonDarkMode from '../ButtonDarkMode';
 import NavBarOptions from '../NavBarOptions/';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function NavBar({ changeMode, isDark }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10); // Cambia el valor si quieres que aparezca antes o después
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <nav className="animate-fade px-4 py-3 max-w-6xl mx-auto bg-white border-gray-200 rounded dark:bg-gray-800">
+    <nav
+      className={`fixed z-[999999] left-0 top-0 right-0 w-[100vw] animate-fade px-4 py-3 max-w-6xl mx-auto border-gray-200 rounded transition-colors duration-300 ${
+        scrolled ? 'bg-white/20 dark:bg-gray-800/20' : 'bg-transparent'
+      }`}
+    >
       <div className="mt-3 container flex flex-wrap justify-between items-center mx-auto">
         <Link to="/" className="flex">
           <img
             loading="lazy"
             alt="Jaime Torres"
             src={image_profile}
-            className="select-none cursor-pointer col-span-1 flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full dark:bg-midnight general-ring-state transition-all hover:scale-110 active:scale-95"
+            className="select-none cursor-pointer col-span-1 flex items-center justify-center w-auto h-12 rounded-full dark:bg-midnight general-ring-state transition-all hover:scale-110 active:scale-95 duration-500"
           />
         </Link>
         <div className="flex md:order-2">
