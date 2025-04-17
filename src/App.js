@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import './styles/output.css';
 import './styles/general.css';
 import { Route, Redirect, Switch } from 'wouter';
@@ -40,28 +40,30 @@ function App() {
     <div className="dark:bg-gray-800 pt-2">
       <Background />
       <NavBar changeMode={changeMode} isDark={isDark} />
-      <ScrollToTop>
-        <Switch>
-          <Route path="/">
-            <Home isDark={isDark} />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/side-projects">
-            <Projects />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/experiences">
-            <Experiences />
-          </Route>
-          <Route>
-            <Redirect to="/" />
-          </Route>
-        </Switch>
-      </ScrollToTop>
+      <div className="mt-28">
+        <ScrollToTop>
+          <Switch>
+            <Route path="/">
+              <Home isDark={isDark} />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/side-projects">
+              <Projects />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/experiences">
+              <Experiences />
+            </Route>
+            <Route>
+              <Redirect to="/" />
+            </Route>
+          </Switch>
+        </ScrollToTop>
+      </div>
       <Footer />
     </div>
   );

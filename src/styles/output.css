@@ -467,6 +467,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .invisible {
   visibility: hidden;
 }
+.fixed {
+  position: fixed;
+}
 .absolute {
   position: absolute;
 }
@@ -500,6 +503,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .z-10 {
   z-index: 10;
+}
+.z-\[999999\] {
+  z-index: 999999;
 }
 .z-\[4\] {
   z-index: 4;
@@ -556,6 +562,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
+}
+.mt-28 {
+  margin-top: 7rem;
 }
 .mr-2 {
   margin-right: 0.5rem;
@@ -680,14 +689,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-2\/4 {
   width: 50%;
 }
+.w-\[100vw\] {
+  width: 100vw;
+}
+.w-auto {
+  width: auto;
+}
 .w-6 {
   width: 1.5rem;
 }
 .w-\[22px\] {
   width: 22px;
-}
-.w-auto {
-  width: auto;
 }
 .min-w-\[40px\] {
   min-width: 40px;
@@ -910,6 +922,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+.bg-white\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+.bg-transparent {
+  background-color: transparent;
 }
 .bg-black {
   --tw-bg-opacity: 1;
@@ -1342,6 +1360,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+.dark .dark\:bg-gray-800\/20 {
+  background-color: rgb(31 41 55 / 0.2);
 }
 .dark .dark\:text-gray-900 {
   --tw-text-opacity: 1;

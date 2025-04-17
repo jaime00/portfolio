@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ruslan+Display&display=swap');
+
 body {
   scroll-behavior: smooth;
 }
@@ -54,8 +57,6 @@ button {
   mask-image: linear-gradient(black 89%, transparent);
 }
 
-
-
 html {
   --sb-track-color: #ffffff;
   --sb-thumb-color: #85cbd3;
@@ -69,7 +70,7 @@ html.dark {
 }
 
 body::-webkit-scrollbar {
-  width: var(--sb-size)
+  width: var(--sb-size);
 }
 
 body::-webkit-scrollbar-track {
@@ -85,7 +86,18 @@ body::-webkit-scrollbar-thumb {
 
 @supports not selector(::-webkit-scrollbar) {
   body {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
+}
+
+.black-ops-one-regular {
+  font-family: 'Black Ops One', system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ruslan-display-regular {
+  font-family: "Ruslan Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
