@@ -2,12 +2,12 @@
 	"projects": [
 		{
 			"id": 1,
-			"url_preview": "https://jaime00.github.io/shortly",
-			"url_code": "https://github.com/jaime00/shortly",
-			"title": "Shortly - Frontend Mentor",
-			"description": "Solution for Frontend Mentor Web Challenge Integrating Shortcode URL Shortening API and storing in browser.",
-			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1647122613/projects/shortly/ilustrations/page_preview_npliw4.jpg",
-			"stack": ["Javascript", "REACT JS", "Wouter", "BOOTSTRAP"]
+			"url_preview": "https://www.npmjs.com/package/git-flow-js",
+			"url_code": "https://github.com/jaime00/git-flow-js",
+			"title": "CLI - Git Flow JS",
+			"description": "CLI tool that simplifies branch management in Git. It automates common workflows and maintains a consistent branch structure.",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234028/projects/git-flow-js/preview.png",
+			"stack": ["Javascript", "esbuild", "clack/prompts", "chalk"]
 		},
 		{
 			"id": 3,
