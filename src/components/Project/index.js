@@ -14,10 +14,10 @@ export default function Project(props) {
 						}}
 						src={img}
 						alt={title}
-						className="w-full object-center rounded-lg shadow-md transition-all duration-700 group-hover:scale-110 object-cover"
+						className="w-full rounded-lg shadow-md transition-all duration-700 group-hover:scale-110 object-cover object-top"
 					/>
 					<div className="relative px-4 -mt-16">
-						<div className="bg-white dark:bg-gray-900 dark:text-white p-5 rounded-lg shadow-lg h-72 sm:pb-5">
+						<div className="bg-white dark:bg-gray-900 dark:text-white p-5 rounded-lg shadow-lg h-80 sm:pb-5">
 							<StackOfProject stacks={stack} />
 							<DetailOfProject url_preview={url_preview} url_code={url_code} title={title} description={description} id={id} />
 						</div>
