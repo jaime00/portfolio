@@ -2,30 +2,28 @@
 	"projects": [
 		{
 			"id": 1,
+			"url_preview": "https://cinepolis.com/mx",
+			"title": "Rediseño web - Cinepolis",
+			"description": "Web platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
+			"stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"]
+		},		
+		{
+			"id": 2,
+			"url_preview": "https://linktic.com/proyectos/proyecto-negos/",
+			"title": "Negos",
+			"description": "Web platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
+			"stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"]
+		},
+		{
+			"id": 3,
 			"url_preview": "https://www.npmjs.com/package/git-flow-js",
 			"url_code": "https://github.com/jaime00/git-flow-js",
 			"title": "CLI - Git Flow JS",
 			"description": "CLI tool that simplifies branch management in Git. It automates common workflows and maintains a consistent branch structure.",
 			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234028/projects/git-flow-js/preview.png",
 			"stack": ["Javascript", "esbuild", "clack/prompts", "chalk"]
-		},
-		{
-			"id": 3,
-			"url_preview": "https://jaime00.github.io/google-clone",
-			"url_code": "https://github.com/jaime00/google-clone",
-			"title": "Google Clone",
-			"description": "This is a web layout challenge with HTML, CSS, JS. Trying to clone the main google search screen.",
-			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1647122537/projects/google-clone/page_preview_vijawd.png",
-			"stack": ["Javascript", "HTML", "CSS Vanilla"]
-		},
-		{
-			"id": 3,
-			"url_preview": "https://countries-hub.netlify.app",
-			"url_code": "https://github.com/jaime00/countries-hub",
-			"title": "Countries Hub",
-			"description": "Solution for a technical test integrating Restcountries API and storing in browser.",
-			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1/projects/countries-hub/Countries_Hub_Main_Ilustration_fpm2cl",
-			"stack": ["React JS", "CSS Vanilla", "Wouter"]
 		}
 	],
 	"work_experience": [
