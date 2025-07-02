@@ -10,7 +10,7 @@
 		},		
 		{
 			"id": 2,
-			"url_preview": "https://linktic.com/proyectos/proyecto-negos/",
+			"url_preview": "https://www.negos.co",
 			"title": "Negos",
 			"description": "Web platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
 			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
@@ -18,11 +18,11 @@
 		},
 		{
 			"id": 3,
-			"url_preview": "https://www.npmjs.com/package/git-flow-js",
-			"url_code": "https://github.com/jaime00/git-flow-js",
-			"title": "CLI - Git Flow JS",
+			"url_preview": "https://www.npmjs.com/package/eazy-git",
+			"url_code": "https://github.com/jaime00/eazy-git",
+			"title": "Eazy Git",
 			"description": "CLI tool that simplifies branch management in Git. It automates common workflows and maintains a consistent branch structure.",
-			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234028/projects/git-flow-js/preview.png",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",
 			"stack": ["Javascript", "esbuild", "clack/prompts", "chalk"]
 		}
 	],
