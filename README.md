@@ -1,4 +1,4 @@
-[![GitHub Banner](https://res.cloudinary.com/personal-jaime00/image/upload/v1647122413/projects/portfolio/ilustrations/page_preview_xjsyzr.png)](http://www.jaime00.me)
+[![GitHub Banner](https://github.com/user-attachments/assets/ae64656b-0764-40df-b68b-b7ac49e3b487)](http://www.jaime00.me)
 
 # Portfolio
 
