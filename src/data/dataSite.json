@@ -3,7 +3,7 @@
 		{
 			"id": 1,
 			"url_preview": "https://cinepolis.com/mx",
-			"title": "Rediseño web - Cinepolis",
+			"title": "Cinepolis Web Redesign",
 			"description": "Web platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
 			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
 			"stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"]
