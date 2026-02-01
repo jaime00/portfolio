@@ -1,4 +1,4 @@
-[![GitHub Banner](https://github.com/user-attachments/assets/c402292f-a1b0-40dc-8a51-e09287debe17)](http://www.jaime00.me)
+[![GitHub Banner](https://github.com/user-attachments/assets/c402292f-a1b0-40dc-8a51-e09287debe17)](https://jaime00portfolio.netlify.app)
 
 # Portfolio
 
