@@ -73,7 +73,7 @@ The application will open at `http://localhost:3000`
 
 The portfolio showcases several projects including:
 
-- **Cinepolis Redesign** - Web platform for movie lovers with ticket purchasing and seat selection
+- **Cinepolis Web Redesign** - Web platform for movie lovers with ticket purchasing and seat selection
 - **Negos** - Inventory management platform for business owners
 - **Eazy Git** - CLI tool that simplifies Git branch management
 
