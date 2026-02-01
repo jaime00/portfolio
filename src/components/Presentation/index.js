@@ -21,7 +21,7 @@ export default function Presentation({ isDark }) {
     <div className="grid items-center grid-cols-1 mt-12 text-center md:mt-24 md:text-left md:grid-cols-6 mb-5 relative">
       <div className="col-span-5 mx-2">
         <p className="text-gray-400 text-lg font-medium mb-5 text-left flex gap-3 items-center">
-          <img className="w-[22px] h-[22px]" src={workIcon} alt="workIcon" /> Over 5 years
+          <img className="w-[22px] h-[22px]" src={workIcon} alt="workIcon" /> Over 6 years
           of experience in web development
         </p>
         <div className="flex flex-col gap-2">
