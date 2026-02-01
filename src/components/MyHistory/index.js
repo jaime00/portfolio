@@ -8,7 +8,7 @@ export default function MyHistory() {
 			<section className="text-xl leading-8 text-gray-600 dark:text-gray-300">
 				<br />
 				<p>
-					I'm a <b>Systems Engineer</b>, creative developer specializing in <b>Frontend</b>. With more than 5 years of experience adding value to
+					I'm a <b>Systems Engineer</b>, creative developer specializing in <b>Frontend</b>. With more than 6 years of experience adding value to
 					business processes in the commercial and public service sectors.
 				</p>
 				<br />
