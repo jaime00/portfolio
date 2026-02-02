@@ -1,60 +1,60 @@
-'use client';
+'use client'
 
-import { motion, useAnimation } from 'motion/react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { motion, useAnimation } from 'motion/react'
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
 
 const svgVariants = {
   normal: {
-    rotate: 0,
+    rotate: 0
   },
   animate: {
-    rotate: [0, -10, 10, -5, 5, 0],
-  },
-};
+    rotate: [0, -10, 10, -5, 5, 0]
+  }
+}
 
 const svgTransition = {
   duration: 1.2,
-  ease: 'easeInOut',
-};
+  ease: 'easeInOut'
+}
 
 const MoonIcon = forwardRef(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-    const controls = useAnimation();
-    const isControlledRef = useRef(false);
+    const controls = useAnimation()
+    const isControlledRef = useRef(false)
 
     useImperativeHandle(ref, () => {
-      isControlledRef.current = true;
+      isControlledRef.current = true
 
       return {
         startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
-      };
-    });
+        stopAnimation: () => controls.start('normal')
+      }
+    })
 
     const handleMouseEnter = useCallback(
       (e) => {
         if (!isControlledRef.current) {
-          controls.start('animate');
+          controls.start('animate')
         } else {
-          onMouseEnter?.(e);
+          onMouseEnter?.(e)
         }
       },
       [controls, onMouseEnter]
-    );
+    )
 
     const handleMouseLeave = useCallback(
       (e) => {
         if (!isControlledRef.current) {
-          controls.start('normal');
+          controls.start('normal')
         } else {
-          onMouseLeave?.(e);
+          onMouseLeave?.(e)
         }
       },
       [controls, onMouseLeave]
-    );
+    )
     return (
       <div
-        className={`${className} cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`}
+        className={`${className} hover:bg-accent flex cursor-pointer select-none items-center justify-center rounded-md p-2 transition-colors duration-200`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
@@ -76,10 +76,10 @@ const MoonIcon = forwardRef(
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
         </motion.svg>
       </div>
-    );
+    )
   }
-);
+)
 
-MoonIcon.displayName = 'MoonIcon';
+MoonIcon.displayName = 'MoonIcon'
 
-export { MoonIcon };
+export { MoonIcon }

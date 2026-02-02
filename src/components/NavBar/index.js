@@ -1,34 +1,34 @@
-import { Link } from 'wouter';
-import image_profile from '../../assets/images/person-head.png';
-import ButtonDarkMode from '../ButtonDarkMode';
-import NavBarOptions from '../NavBarOptions/';
-import { useEffect, useState } from 'react';
+import image_profile from '../../assets/images/person-head.png'
+import ButtonDarkMode from '../ButtonDarkMode'
+import NavBarOptions from '../NavBarOptions/'
+import { useEffect, useState } from 'react'
+import { Link } from 'wouter'
 
 export default function NavBar({ changeMode, isDark }) {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10); // Cambia el valor si quieres que aparezca antes o después
-    };
+      setScrolled(window.scrollY > 10) // Cambia el valor si quieres que aparezca antes o después
+    }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   return (
     <nav
-      className={`fixed z-[999999] left-0 top-0 right-0 w-[100vw] animate-fade px-4 py-3 max-w-6xl mx-auto border-gray-200 rounded transition-colors duration-300 ${
+      className={`fixed left-0 top-0 right-0 z-[999999] mx-auto w-[100vw] max-w-6xl animate-fade rounded border-gray-200 px-4 py-3 transition-colors duration-300 ${
         scrolled ? 'bg-white/20 dark:bg-gray-800/20' : 'bg-transparent'
       }`}
     >
-      <div className="mt-3 container flex flex-wrap justify-between items-center mx-auto">
+      <div className="container mx-auto mt-3 flex flex-wrap items-center justify-between">
         <Link to="/" className="flex">
           <img
             loading="lazy"
             alt="Jaime Torres"
             src={image_profile}
-            className="select-none cursor-pointer col-span-1 flex items-center justify-center w-auto h-12 rounded-full dark:bg-midnight general-ring-state transition-all hover:scale-110 active:scale-95 duration-500"
+            className="dark:bg-midnight general-ring-state col-span-1 flex h-12 w-auto cursor-pointer select-none items-center justify-center rounded-full transition-all duration-500 hover:scale-110 active:scale-95"
           />
         </Link>
         <div className="flex md:order-2">
@@ -37,12 +37,12 @@ export default function NavBar({ changeMode, isDark }) {
             onClick={() => setMenuIsOpen(!menuIsOpen)}
             data-collapse-toggle="navbar"
             type="button"
-            className="inline-flex items-center p-2 ml-5 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="ml-5 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
             aria-expanded="false"
           >
             <span className="sr-only">Open main menu</span>
             <svg
-              className="w-6 h-6"
+              className="h-6 w-6"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ export default function NavBar({ changeMode, isDark }) {
               ></path>
             </svg>
             <svg
-              className="hidden w-6 h-6"
+              className="hidden h-6 w-6"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -70,5 +70,5 @@ export default function NavBar({ changeMode, isDark }) {
         <NavBarOptions menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       </div>
     </nav>
-  );
+  )
 }
