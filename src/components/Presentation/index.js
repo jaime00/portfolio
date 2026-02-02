@@ -20,9 +20,9 @@ export default function Presentation({ isDark }) {
   return (
     <div className="relative mt-12 mb-5 grid grid-cols-1 items-center text-center md:mt-24 md:grid-cols-6 md:text-left">
       <div className="col-span-5 mx-2">
-        <p className="text-gray-400 text-lg font-medium mb-5 text-left flex gap-3 items-center">
-          <img className="w-[22px] h-[22px]" src={workIcon} alt="workIcon" /> Over 6 years
-          of experience in web development
+        <p className="mb-5 flex items-center gap-3 text-left text-lg font-medium text-gray-400">
+          <img className="h-[22px] w-[22px]" src={workIcon} alt="workIcon" />{' '}
+          Over 6 years of experience in web development
         </p>
         <div className="flex flex-col gap-2">
           <h2 className="order-2 text-left text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl md:order-1">
