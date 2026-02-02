@@ -1,122 +1,122 @@
 {
-  "projects": [
-    {
-      "id": 1,
-      "url_preview": "https://cinepolis.com/mx",
-      "title": "Rediseño web - Cinepolis",
-      "description": "Web platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
-      "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
-      "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"]
-    },
-    {
-      "id": 2,
-      "url_preview": "https://www.negos.co",
-      "title": "Negos",
-      "description": "Web platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
-      "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
-      "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"]
-    },
-    {
-      "id": 3,
-      "url_preview": "https://www.npmjs.com/package/eazy-git",
-      "url_code": "https://github.com/jaime00/eazy-git",
-      "title": "Eazy Git",
-      "description": "CLI tool that simplifies branch management in Git. It automates common workflows and maintains a consistent branch structure.",
-      "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",
-      "stack": ["Javascript", "esbuild", "clack/prompts", "chalk"]
-    }
-  ],
-  "work_experience": [
-    {
-      "company": "IA interactive",
-      "position": "Frontend Developer",
-      "year_initial": "Jul 2024",
-      "year_end": "Now"
-    },
-    {
-      "company": "LinkTIC S.A.S",
-      "position": "Frontend Developer - Part time",
-      "year_initial": "Mar 2024",
-      "year_end": "Jun 2024"
-    },
-    {
-      "company": "Qrvey",
-      "position": "Frontend Developer",
-      "year_initial": "Apr 2022",
-      "year_end": "Dec 2023"
-    },
-    {
-      "company": "Extreme Technologies S.A.",
-      "position": "Technical Lead",
-      "year_initial": "Jan 2021",
-      "year_end": "Mar 2022"
-    },
-    {
-      "company": "Extreme Technologies",
-      "position": "Frontend Developer",
-      "year_initial": "Nov 2019",
-      "year_end": "Dec 2020"
-    }
-  ],
-  "experiences": [
-    {
-      "link": "https://www.ia.com.mx",
-      "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738382362/projects/portfolio/experiences/IA.jpg",
-      "items": [
-        "Developed and maintained the redesign of the web platform of a major Latin American movie theater chain.",
-        "I led the implementation and optimization of interactive animations using Framer Motion in the food screen and search section, improving user experience and interface fluidity.",
-        "Managed cinema selection, ticket booking, food ordering and loyalty with 'Cine Puntos', as well as maintaining payment integrations with DeUna and Aplazo in Mexico.",
-        "Use of technologies such as React, Next, GraphQL, Framer Motion, Hooks, Sass, Tailwind CSS."
-      ],
-      "rotate": true
-    },
-    {
-      "link": "https://linktic.com",
-      "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738383855/projects/portfolio/experiences/LINKTIC.png",
-      "items": [
-        "Frontend application development using Svelte and React, with focus on performance and user experience.",
-        "Optimization of web applications, implementing lazy loading, code splitting and asset enhancement for high performance.",
-        "Advanced consumption of REST APIs and GraphQL, efficiently integrating backend services.",
-        "Application of SOLID, DRY and modularity principles to ensure clean and scalable code.",
-        "Development of unit tests and integration with Jest, ensuring code quality."
-      ],
-      "rotate": false
-    },
-    {
-      "link": "https://qrvey.com",
-      "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738384285/projects/portfolio/experiences/QRVEY.jpg",
-      "items": [
-        "Development of highly customizable embedded graphs to enhance data analytics and improve strategic decision making.",
-        "Experience in speed optimization and scalability of web components.",
-        "Use of technologies such as Javascript, Typescript, Stencil JS for Web Components, React, Testing with Mocha, Styled Components, Sass, Tailwind CSS.",
-        "Use of graphic libraries such as EChart, Devextreme, D3."
-      ],
-      "rotate": false
-    },
-    {
-      "link": "https://www.extreme.com.co/extreme",
-      "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738385846/projects/portfolio/experiences/EXTREME.jpg",
-      "items": [
-        "Coordinate development team of 6+ people in their daily activities, sprints and technical growth.",
-        "Technical and conceptual support to team members during sprints.",
-        "Ensure quality and code best practices in delivered modules.",
-        "Identify and provide solutions to improve development processes and quality.",
-        "Standard code statement and best practices based on CLEAN CODE.",
-        "Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Boostrap."
-      ],
-      "rotate": false
-    },
-    {
-      "link": "https://www.extreme.com.co/extreme",
-      "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738385846/projects/portfolio/experiences/EXTREME.jpg",
-      "items": [
-        "Development of dynamic and maintainable web modules.",
-        "Ensuring the quality of delivered applications and their code.",
-        "Implemented the use of unit testing in multiple projects using Jest JS. Design and implementation of solutions for requests and issues focused on business logic.",
-        "Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Boostrap."
-      ],
-      "rotate": true
-    }
-  ],
-  "curriculum_url": "https://drive.google.com/file/d/1vcgZElLnbo8v4fBwRxsp-XMY_iWOyl2R/view?usp=sharing"
+	"projects": [
+		{
+			"id": 1,
+			"url_preview": "https://cinepolis.com/mx",
+			"title": "Cinepolis Web Redesign",
+			"description": "Web platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
+			"stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"]
+		},
+		{
+			"id": 2,
+			"url_preview": "https://www.negos.co",
+			"title": "Negos",
+			"description": "Web platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
+			"stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"]
+		},
+		{
+			"id": 3,
+			"url_preview": "https://www.npmjs.com/package/eazy-git",
+			"url_code": "https://github.com/jaime00/eazy-git",
+			"title": "Eazy Git",
+			"description": "CLI tool that simplifies branch management in Git. It automates common workflows and maintains a consistent branch structure.",
+			"img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",
+			"stack": ["Javascript", "esbuild", "clack/prompts", "chalk"]
+		}
+	],
+	"work_experience": [
+		{
+			"company": "IA interactive",
+			"position": "Frontend Developer",
+			"year_initial": "Jul 2024",
+			"year_end": "Now"
+		},
+		{
+			"company": "LinkTIC S.A.S",
+			"position": "Frontend Developer - Part time",
+			"year_initial": "Mar 2024",
+			"year_end": "Jun 2024"
+		},
+		{
+			"company": "Qrvey",
+			"position": "Frontend Developer",
+			"year_initial": "Apr 2022",
+			"year_end": "Dec 2023"
+		},
+		{
+			"company": "Extreme Technologies S.A.",
+			"position": "Technical Lead",
+			"year_initial": "Jan 2021",
+			"year_end": "Mar 2022"
+		},
+		{
+			"company": "Extreme Technologies",
+			"position": "Frontend Developer",
+			"year_initial": "Nov 2019",
+			"year_end": "Dec 2020"
+		}
+	],
+	"experiences": [
+		{
+			"link": "https://www.ia.com.mx",
+			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738382362/projects/portfolio/experiences/IA.jpg",
+			"items": [
+				"Developed and maintained the redesign of the web platform of a major Latin American movie theater chain.",
+				"I led the implementation and optimization of interactive animations using Framer Motion in the food screen and search section, improving user experience and interface fluidity.",
+				"Managed cinema selection, ticket booking, food ordering and loyalty with 'Cine Puntos', as well as maintaining payment integrations with DeUna and Aplazo in Mexico.",
+				"Use of technologies such as React, Next, GraphQL, Framer Motion, Hooks, Sass, Tailwind CSS."
+			],
+			"rotate": true
+		},
+		{
+			"link": "https://linktic.com",
+			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738383855/projects/portfolio/experiences/LINKTIC.png",
+			"items": [
+				"Frontend application development using Svelte and React, with focus on performance and user experience.",
+				"Optimization of web applications, implementing lazy loading, code splitting and asset enhancement for high performance.",
+				"Advanced consumption of REST APIs and GraphQL, efficiently integrating backend services.",
+				"Application of SOLID, DRY and modularity principles to ensure clean and scalable code.",
+				"Development of unit tests and integration with Jest, ensuring code quality."
+			],
+			"rotate": false
+		},
+		{
+			"link": "https://qrvey.com",
+			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738384285/projects/portfolio/experiences/QRVEY.jpg",
+			"items": [
+				"Development of highly customizable embedded graphs to enhance data analytics and improve strategic decision making.",
+				"Experience in speed optimization and scalability of web components.",
+				"Use of technologies such as Javascript, Typescript, Stencil JS for Web Components, React, Testing with Mocha, Styled Components, Sass, Tailwind CSS.",
+				"Use of graphic libraries such as EChart, Devextreme, D3."
+			],
+			"rotate": false
+		},
+		{
+			"link": "https://www.extreme.com.co/extreme",
+			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738385846/projects/portfolio/experiences/EXTREME.jpg",
+			"items": [
+				"Coordinate development team of 6+ people in their daily activities, sprints and technical growth.",
+				"Technical and conceptual support to team members during sprints.",
+				"Ensure quality and code best practices in delivered modules.",
+				"Identify and provide solutions to improve development processes and quality.",
+				"Standard code statement and best practices based on CLEAN CODE.",
+				"Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Boostrap."
+			],
+			"rotate": false
+		},
+		{
+			"link": "https://www.extreme.com.co/extreme",
+			"src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738385846/projects/portfolio/experiences/EXTREME.jpg",
+			"items": [
+				"Development of dynamic and maintainable web modules.",
+				"Ensuring the quality of delivered applications and their code.",
+				"Implemented the use of unit testing in multiple projects using Jest JS. Design and implementation of solutions for requests and issues focused on business logic.",
+				"Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Boostrap."
+			],
+			"rotate": true
+		}
+	],
+	"curriculum_url": "https://drive.google.com/file/d/1vcgZElLnbo8v4fBwRxsp-XMY_iWOyl2R/view?usp=sharing"
 }

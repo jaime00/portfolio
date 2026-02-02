@@ -2,29 +2,22 @@ import image_profile from '../../assets/images/profile_image.jpg'
 import Titles from '../../components/Titles'
 
 export default function MyHistory() {
-  return (
-    <div className="">
-      <Titles title="About me" subtitle="Here's my story." />
-      <section className="text-xl leading-8 text-gray-600 dark:text-gray-300">
-        <br />
-        <p>
-          I'm a <b>Systems Engineer</b>, creative developer specializing in{' '}
-          <b>Frontend</b>. With more than 5 years of experience adding value to
-          business processes in the commercial and public service sectors.
-        </p>
-        <br />
-        <p>
-          In addition to being a{' '}
-          <b>
-            <em>Frontend Developer</em>
-          </b>
-          , i have also worked as <b>Technical Lead</b>, implementing
-          functional, scalable and reusable code solutions throughout my career,
-          aligned with user needs and business goals. In addition to technically
-          coordinating and mentoring a development team in their day-to-day
-          activities, careers and technical growth.
-        </p>
-        <br />
+	return (
+		<div className="">
+			<Titles title="About me" subtitle="Here's my story." />
+			<section className="text-xl leading-8 text-gray-600 dark:text-gray-300">
+				<br />
+				<p>
+					I'm a <b>Systems Engineer</b>, creative developer specializing in <b>Frontend</b>. With more than 6 years of experience adding value to
+					business processes in the commercial and public service sectors.
+				</p>
+				<br />
+				<p>
+					In addition to being a <b><em>Frontend Developer</em></b>, i have also worked as <b>Technical Lead</b>, implementing functional, scalable and reusable
+					code solutions throughout my career, aligned with user needs and business goals. In addition to technically coordinating and mentoring a
+					development team in their day-to-day activities, careers and technical growth.
+				</p>
+				<br />
 
         <p>
           Experience and advanced knowledge in technologies such as{' '}
