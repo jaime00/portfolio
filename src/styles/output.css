@@ -1370,16 +1370,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-.hover\:bg-gray-200:hover {
+.hover\:bg-gray-300:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
+.hover\:text-gray-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
 .hover\:underline:hover {
   text-decoration-line: underline;
+}
+.hover\:opacity-70:hover {
+  opacity: 0.7;
 }
 .hover\:ring-4:hover {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
@@ -1487,6 +1494,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.dark .dark\:hover\:opacity-100:hover {
+  opacity: 1;
 }
 .dark .dark\:hover\:ring-teal-500:hover {
   --tw-ring-opacity: 1;
