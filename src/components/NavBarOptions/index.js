@@ -1,12 +1,12 @@
-import NavLink from '../NavLink';
+import NavLink from '../NavLink'
 
 export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
   const collapseNavbar = () => {
     if (window.innerWidth < 768) {
       setMenuIsOpen(false)
     }
-  };
-  const classesExtends = menuIsOpen ? '' : 'hidden';
+  }
+  const classesExtends = menuIsOpen ? '' : 'hidden'
 
   // if (menuIsOpen) {
   //   return (
@@ -19,29 +19,52 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
   // }
   return (
     <div
-      className={`select-none text-2xl ${classesExtends} justify-between items-center w-full md:flex md:w-auto md:order-1`}
+      className={`select-none text-2xl ${classesExtends} w-full items-center justify-between md:order-1 md:flex md:w-auto`}
       id="navbar"
     >
-      <ul className="space-x-8 text-lg flex flex-col md:flex-row text-center">
+      <ul className="flex flex-col space-x-8 text-center text-lg md:flex-row">
         <li className="hidden">
           <span className="capsize">Home</span>
         </li>
-        <NavLink className="pointer-events-none" onClick={collapseNavbar} to="/" aria-current="page">
+        <NavLink
+          className="pointer-events-none"
+          onClick={collapseNavbar}
+          to="/"
+          aria-current="page"
+        >
           Home
         </NavLink>
-        <NavLink className="pointer-events-none" onClick={collapseNavbar} to="/about" aria-current="page">
+        <NavLink
+          className="pointer-events-none"
+          onClick={collapseNavbar}
+          to="/about"
+          aria-current="page"
+        >
           About
         </NavLink>
-        <NavLink className="pointer-events-none" onClick={collapseNavbar} to="/experiences">
+        <NavLink
+          className="pointer-events-none"
+          onClick={collapseNavbar}
+          to="/experiences"
+        >
           Experiences
         </NavLink>
-        <NavLink className="pointer-events-none" onClick={collapseNavbar} to="/side-projects" aria-current="page">
+        <NavLink
+          className="pointer-events-none"
+          onClick={collapseNavbar}
+          to="/side-projects"
+          aria-current="page"
+        >
           Projects
         </NavLink>
-        <NavLink className="pointer-events-none" onClick={collapseNavbar} to="/contact">
+        <NavLink
+          className="pointer-events-none"
+          onClick={collapseNavbar}
+          to="/contact"
+        >
           Contact
         </NavLink>
       </ul>
     </div>
-  );
+  )
 }

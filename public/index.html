@@ -1,60 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="title" content="Jaime Torres" />
+    <meta name="description" content="Jaime Torres" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Jaime Torres</title>
+    <style>
+      html,
+      body,
+      #root {
+        height: 100%;
+      }
+    </style>
+  </head>
 
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="theme-color" content="#000000" />
-	<meta name="title" content="Jaime Torres" />
-	<meta name="description" content="Jaime Torres" />
-	<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-	<title>Jaime Torres</title>
-	<style>
-		html, body, #root {
-			height: 100%
-		}
-	</style>
-</head>
+  <body>
+    <script>
+      function toggleThemeAtHTMLClasses(isDark) {
+        if (isDark) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      }
+      function handleSetTheme() {
+        // Check if the user has set a theme preference
+        const isDarkTheme = localStorage?.isDark
+          ? JSON.parse(localStorage?.isDark)
+          : undefined
+        if (typeof isDarkTheme === 'boolean') {
+          toggleThemeAtHTMLClasses(isDarkTheme)
+          return
+        }
 
-<body>
-	<script>
-		function toggleThemeAtHTMLClasses(isDark) {
-			if (isDark) {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.remove('dark');
-			}
-		}
-		function handleSetTheme() {
-			// Check if the user has set a theme preference
-			const isDarkTheme = localStorage?.isDark ? JSON.parse(localStorage?.isDark) : undefined;
-			if (typeof isDarkTheme === 'boolean') {
-				toggleThemeAtHTMLClasses(isDarkTheme);
-				return;
-			}
+        // Check if the user has a system preference
+        const mql = window.matchMedia('(prefers-color-scheme: dark)')
+        const hasMediaQueryPreference =
+          window.matchMedia && typeof mql.matches === 'boolean'
 
-			// Check if the user has a system preference
-			const mql = window.matchMedia('(prefers-color-scheme: dark)');
-			const hasMediaQueryPreference = window.matchMedia && typeof mql.matches === 'boolean';
-			
-			if (hasMediaQueryPreference) {
-				localStorage.isDark = mql.matches;
-				toggleThemeAtHTMLClasses(mql.matches);
-				return;
-			}
-			localStorage.isDark = false;
-			toggleThemeAtHTMLClasses(false)
-		}
-		handleSetTheme();
-	</script>
-	<noscript>You need to enable JavaScript to run this app.</noscript>
-	<div id="root"></div>
+        if (hasMediaQueryPreference) {
+          localStorage.isDark = mql.matches
+          toggleThemeAtHTMLClasses(mql.matches)
+          return
+        }
+        localStorage.isDark = false
+        toggleThemeAtHTMLClasses(false)
+      }
+      handleSetTheme()
+    </script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
 
-	<script src="https://raw.githubusercontent.com/w3c/IntersectionObserver/master/polyfill/intersection-observer.js"></script>
-	<!-- Lozad.js from CDN -->
-	<script src="https://cdn.jsdelivr.net/npm/lozad"></script>
-</body>
-
+    <script src="https://raw.githubusercontent.com/w3c/IntersectionObserver/master/polyfill/intersection-observer.js"></script>
+    <!-- Lozad.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lozad"></script>
+  </body>
 </html>

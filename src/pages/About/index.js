@@ -1,14 +1,14 @@
-import React from 'react';
-import MyHistory from '../../components/MyHistory';
-import Separator from '../../components/Separator';
-import WorkExperience from '../../components/WorkExperience';
+import MyHistory from '../../components/MyHistory'
+import Separator from '../../components/Separator'
+import WorkExperience from '../../components/WorkExperience'
+import React from 'react'
 
 export default function About() {
   return (
-    <section className="animate-fade mt-8 my-5 flex flex-col mx-auto max-w-6xl justify-center px-4 bg-white dark:bg-gray-800 dark:text-white prose prose-lg md:prose-xl dark:prose-dark relative font-sans">
+    <section className="prose prose-lg md:prose-xl dark:prose-dark relative my-5 mx-auto mt-8 flex max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
       <MyHistory />
       <Separator />
       <WorkExperience />
     </section>
-  );
+  )
 }

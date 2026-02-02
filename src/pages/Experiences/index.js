@@ -1,27 +1,27 @@
-import Titles from '../../components/Titles';
-import { getExperiences, getWorkExperience } from '../../services';
-import ExperienceLogo from '../../components/ExperienceLogo';
-import ExperienceDescription from '../../components/ExperienceDescription';
+import ExperienceDescription from '../../components/ExperienceDescription'
+import ExperienceLogo from '../../components/ExperienceLogo'
+import Titles from '../../components/Titles'
+import { getExperiences, getWorkExperience } from '../../services'
 
 export default function Experiences() {
-  const experiences = getExperiences();
-  const workExperiences = getWorkExperience();
+  const experiences = getExperiences()
+  const workExperiences = getWorkExperience()
   return (
-    <div className="animate-fade mt-8 my-5 flex-col mx-auto max-w-6xl justify-center px-4 bg-white dark:text-white dark:bg-gray-800 prose prose-lg md:prose-xl dark:prose-dark relative font-sans">
+    <div className="prose prose-lg md:prose-xl dark:prose-dark relative my-5 mx-auto mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
       <Titles
         className="text-center"
         title="Work Experiences"
         subtitle="Key moments in my career"
       />
-      <div className="flex flex-col justify-center px-10 gap-16 xxs:py-20 mt-14">
+      <div className="xxs:py-20 mt-14 flex flex-col justify-center gap-16 px-10">
         {experiences.map((experience, index) => (
           <div
             key={index}
-            className="grid xxs:grid-cols-1 md:grid-cols-2 gap-10 self-center items-center justify-items-center"
+            className="xxs:grid-cols-1 grid items-center justify-items-center gap-10 self-center md:grid-cols-2"
           >
-            <ExperienceLogo 
-              link={experience.link} 
-              src={experience.src} 
+            <ExperienceLogo
+              link={experience.link}
+              src={experience.src}
               isRotate={experience.rotate}
             />
             <ExperienceDescription
@@ -34,5 +34,5 @@ export default function Experiences() {
         ))}
       </div>
     </div>
-  );
+  )
 }

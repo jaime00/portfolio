@@ -1,12 +1,12 @@
 export default function Titles({ title, subtitle }) {
   return (
     <h1 className="mx-auto mb-5">
-      <span className="block text-base font-semibold tracking-wide text-center text-teal-500 uppercase dark:text-teal-400">
+      <span className="block text-center text-base font-semibold uppercase tracking-wide text-teal-500 dark:text-teal-400">
         {title}
       </span>
-      <span className="block my-6 max-w-2xl mx-auto text-4xl font-bold leading-10 text-center sm:text-5xl">
+      <span className="my-6 mx-auto block max-w-2xl text-center text-4xl font-bold leading-10 sm:text-5xl">
         {subtitle}
       </span>
     </h1>
-  );
+  )
 }

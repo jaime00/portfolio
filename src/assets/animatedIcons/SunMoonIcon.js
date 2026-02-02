@@ -1,75 +1,75 @@
-import { motion, useAnimation } from 'motion/react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { motion, useAnimation } from 'motion/react'
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
 
 const sunVariants = {
   normal: {
-    rotate: 0,
+    rotate: 0
   },
   animate: {
     rotate: [0, -5, 5, -2, 2, 0],
     transition: {
       duration: 1.5,
-      ease: 'easeInOut',
-    },
-  },
-};
+      ease: 'easeInOut'
+    }
+  }
+}
 
 const moonVariants = {
   normal: { opacity: 1 },
   animate: (i) => ({
     opacity: [0, 1],
-    transition: { delay: i * 0.1, duration: 0.3 },
-  }),
-};
+    transition: { delay: i * 0.1, duration: 0.3 }
+  })
+}
 
 const SunMoonIcon = forwardRef(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-    const sunControls = useAnimation();
-    const moonControls = useAnimation();
-    const isControlledRef = useRef(false);
+    const sunControls = useAnimation()
+    const moonControls = useAnimation()
+    const isControlledRef = useRef(false)
 
     useImperativeHandle(ref, () => {
-      isControlledRef.current = true;
+      isControlledRef.current = true
 
       return {
         startAnimation: () => {
-          sunControls.start('animate');
-          moonControls.start('animate');
+          sunControls.start('animate')
+          moonControls.start('animate')
         },
         stopAnimation: () => {
-          sunControls.start('normal');
-          moonControls.start('normal');
-        },
-      };
-    });
+          sunControls.start('normal')
+          moonControls.start('normal')
+        }
+      }
+    })
 
     const handleMouseEnter = useCallback(
       (e) => {
         if (!isControlledRef.current) {
-          sunControls.start('animate');
-          moonControls.start('animate');
+          sunControls.start('animate')
+          moonControls.start('animate')
         } else {
-          onMouseEnter?.(e);
+          onMouseEnter?.(e)
         }
       },
       [sunControls, moonControls, onMouseEnter]
-    );
+    )
 
     const handleMouseLeave = useCallback(
       (e) => {
         if (!isControlledRef.current) {
-          sunControls.start('normal');
-          moonControls.start('normal');
+          sunControls.start('normal')
+          moonControls.start('normal')
         } else {
-          onMouseLeave?.(e);
+          onMouseLeave?.(e)
         }
       },
       [sunControls, moonControls, onMouseLeave]
-    );
+    )
 
     return (
       <div
-        className={`${className} cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`}
+        className={`${className} hover:bg-accent flex cursor-pointer select-none items-center justify-center rounded-md p-2 transition-colors duration-200`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
@@ -100,7 +100,7 @@ const SunMoonIcon = forwardRef(
             'M2 12h2',
             'M20 12h2',
             'm6.3 17.7-1.4 1.4',
-            'm19.1 4.9-1.4 1.4',
+            'm19.1 4.9-1.4 1.4'
           ].map((d, index) => (
             <motion.path
               key={d}
@@ -113,10 +113,10 @@ const SunMoonIcon = forwardRef(
           ))}
         </svg>
       </div>
-    );
+    )
   }
-);
+)
 
-SunMoonIcon.displayName = 'SunMoonIcon';
+SunMoonIcon.displayName = 'SunMoonIcon'
 
-export { SunMoonIcon };
+export { SunMoonIcon }
