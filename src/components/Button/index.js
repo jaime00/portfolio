@@ -1,5 +1,5 @@
-import { Link } from 'wouter';
-import { getStyleButton } from '../../services';
+import { getStyleButton } from '../../services'
+import { Link } from 'wouter'
 
 export default function Button({
   children,
@@ -7,15 +7,15 @@ export default function Button({
   to = '/',
   openUrl = null,
   type = null,
-  style = {},
+  style = {}
 }) {
-  const classes = getStyleButton({ isDark });
+  const classes = getStyleButton({ isDark })
 
   const renderButton = (content) => (
     <button style={style} aria-label="button" type="button" className={classes}>
       {content}
     </button>
-  );
+  )
 
   if (openUrl) {
     return (
@@ -26,14 +26,16 @@ export default function Button({
         className={classes}
         onClick={() => window.open(openUrl)}
       >
-      	{children}
+        {children}
       </button>
-    );
+    )
   }
 
   if (type) {
-    return <a href="mailto:imjaimetorresv@gmail.com">{renderButton(children)}</a>;
+    return (
+      <a href="mailto:imjaimetorresv@gmail.com">{renderButton(children)}</a>
+    )
   }
 
-  return <Link to={to}>{renderButton(children)}</Link>;
+  return <Link to={to}>{renderButton(children)}</Link>
 }

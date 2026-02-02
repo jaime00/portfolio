@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import image_profile from '../../assets/images/personGPT5.png';
-import terminalText from '../../utils/terminalText';
-import workIcon from '../../assets/icons/code-gray.png';
+import workIcon from '../../assets/icons/code-gray.png'
+import image_profile from '../../assets/images/personGPT5.png'
+import terminalText from '../../utils/terminalText'
+import { useEffect } from 'react'
 
 export default function Presentation({ isDark }) {
   useEffect(() => {
@@ -12,43 +12,46 @@ export default function Presentation({ isDark }) {
         'Svelte. ',
         'Stencil JS.',
         'Typescript.',
-        'Web Components.',
+        'Web Components.'
       ],
       'text'
-    );
-  }, []);
+    )
+  }, [])
   return (
-    <div className="grid items-center grid-cols-1 mt-12 text-center md:mt-24 md:text-left md:grid-cols-6 mb-5 relative">
+    <div className="relative mt-12 mb-5 grid grid-cols-1 items-center text-center md:mt-24 md:grid-cols-6 md:text-left">
       <div className="col-span-5 mx-2">
-        <p className="text-gray-400 text-lg font-medium mb-5 text-left flex gap-3 items-center">
-          <img className="w-[22px] h-[22px]" src={workIcon} alt="workIcon" /> Over 5 years
-          of experience in web development
+        <p className="mb-5 flex items-center gap-3 text-left text-lg font-medium text-gray-400">
+          <img className="h-[22px] w-[22px]" src={workIcon} alt="workIcon" />{' '}
+          Over 5 years of experience in web development
         </p>
         <div className="flex flex-col gap-2">
-          <h2 className="text-left order-2 text-gray-900 dark:text-white font-extrabold text-4xl md:order-1 sm:text-5xl">
+          <h2 className="order-2 text-left text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl md:order-1">
             I'm <span className="text-gradient-teal">Jaime</span>
           </h2>
-          <h2 className="text-left order-2 text-gray-900 dark:text-white font-extrabold text-4xl leading-tight md:order-1 sm:text-5xl">
-            I'm a <span className="text-gradient-teal"> Frontend Developer</span>
+          <h2 className="order-2 text-left text-4xl font-extrabold leading-tight text-gray-900 dark:text-white sm:text-5xl md:order-1">
+            I'm a{' '}
+            <span className="text-gradient-teal"> Frontend Developer</span>
           </h2>
-          <h2 className="text-left order-2 text-gray-900 dark:text-white font-extrabold text-4xl leading-tight md:order-1 sm:text-5xl">
+          <h2 className="order-2 text-left text-4xl font-extrabold leading-tight text-gray-900 dark:text-white sm:text-5xl md:order-1">
             specialized in{' '}
-            <div className={`console-container inline-block text-gradient-teal`}>
+            <div
+              className={`console-container text-gradient-teal inline-block`}
+            >
               <span id="text"></span>
             </div>
           </h2>
         </div>
       </div>
 
-      <div className="pointer-events-none select-none z-[4] bottom-[60px] justify-end top-0 right-0 h-[415px] absolute min-1045:opacity-100 opacity-0 transition-opacity duration-700 ease-in-out mask-image">
+      <div className="mask-image pointer-events-none absolute bottom-[60px] top-0 right-0 z-[4] h-[415px] select-none justify-end opacity-0 transition-opacity duration-700 ease-in-out min-1045:opacity-100">
         <img
           width="310"
           height="415"
           alt="Jaime Torres"
           src={image_profile || '/placeholder.svg'}
-          className="col-span-1 w-auto min-1045:h-[415px] h-0"
+          className="col-span-1 h-0 w-auto min-1045:h-[415px]"
         />
       </div>
     </div>
-  );
+  )
 }

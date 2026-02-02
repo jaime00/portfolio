@@ -1,11 +1,11 @@
-import Button from '../Button';
-import Presentation from '../Presentation';
-import CarouselOfTechnologies from '../CarouselOfTechnologies';
+import Button from '../Button'
+import CarouselOfTechnologies from '../CarouselOfTechnologies'
+import Presentation from '../Presentation'
 
 export default function Main({ isDark }) {
   return (
-    <main className="h-[83vh] flex flex-col mx-auto max-w-6xl justify-center px-4 bg-white dark:bg-gray-800 prose prose-lg md:prose-xl dark:prose-dark relative font-sans">
-      <div className="container mx-auto flex flex-wrap flex-col gap-6">
+    <main className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto flex h-[83vh] max-w-6xl flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800">
+      <div className="container mx-auto flex flex-col flex-wrap gap-6">
         <Presentation isDark={isDark} />
         <div className="my-5 space-y-6 md:space-y-0 md:space-x-4">
           <Button isDark={true} to="/contact">
@@ -18,5 +18,5 @@ export default function Main({ isDark }) {
         <CarouselOfTechnologies isDark={isDark} />
       </div>
     </main>
-  );
+  )
 }

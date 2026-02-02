@@ -1,52 +1,55 @@
 {
-	"name": "portfolio",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"@testing-library/jest-dom": "^5.16.2",
-		"@testing-library/react": "^12.1.2",
-		"@testing-library/user-event": "^13.5.0",
-		"lozad": "^1.16.0",
-		"motion": "^12.6.3",
-		"postcss-cli": "^9.1.0",
-		"react": "^19.1.0",
-		"react-dom": "^19.1.0",
-		"react-jsx-runtime": "^1.0.0-alpha.1",
-		"react-scripts": "5.0.0",
-		"wouter": "^2.8.0-alpha.2"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "npm run watch:css && react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject",
-		"watch:css": "postcss src/styles/tailwind.css -o src/styles/output.css",
-		"watch": "chokidar \"./src/**/*.js\" -c \"npm run watch:css\"",
-		"dev": "concurrently \"npm run watch\" \"npm run start\""
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"devDependencies": {
-		"autoprefixer": "^10.4.2",
-		"chokidar-cli": "^3.0.0",
-		"concurrently": "^7.0.0",
-		"postcss": "^8.4.6",
-		"tailwindcss": "^3.0.18"
-	}
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "lozad": "^1.16.0",
+    "motion": "^12.6.3",
+    "postcss-cli": "^9.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-jsx-runtime": "^1.0.0-alpha.1",
+    "react-scripts": "5.0.0",
+    "wouter": "^2.8.0-alpha.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "npm run watch:css && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "watch:css": "postcss src/styles/tailwind.css -o src/styles/output.css",
+    "watch": "chokidar \"./src/**/*.js\" -c \"npm run watch:css\"",
+    "dev": "concurrently \"npm run watch\" \"npm run start\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "autoprefixer": "^10.4.2",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^7.0.0",
+    "postcss": "^8.4.6",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^3.0.18"
+  }
 }

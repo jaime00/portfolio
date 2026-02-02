@@ -1,16 +1,16 @@
 export default function StackOfProject({ stacks }) {
-	return (
-		<div className="flex items-baseline flex-wrap min-h-[54px]">
-			{stacks.map((stack, i) => {
-				return (
-					<span
-						key={i}
-						className={`bg-teal-400 opacity-50 dark:opacity-80 text-white text-xs px-2 m-1 inline-block rounded-full font-semibold tracking-wide uppercase`}
-					>
-						{stack}
-					</span>
-				)
-			})}
-		</div>
-	)
+  return (
+    <div className="flex min-h-[54px] flex-wrap items-baseline">
+      {stacks.map((stack, i) => {
+        return (
+          <span
+            key={i}
+            className={`m-1 inline-block rounded-full bg-teal-400 px-2 text-xs font-semibold uppercase tracking-wide text-white opacity-50 dark:opacity-80`}
+          >
+            {stack}
+          </span>
+        )
+      })}
+    </div>
+  )
 }

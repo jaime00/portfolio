@@ -1,36 +1,40 @@
-import Button from '../../components/Button';
-import Titles from '../../components/Titles';
-import { ReactComponent as WhatsappIcon } from '../../assets/icons/whatsapp.svg';
-import { ReactComponent as EmailIcon } from '../../assets/icons/email.svg';
-import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg';
-import VintageComputer from '../../assets/images/vintage-computer.png';
+import { ReactComponent as EmailIcon } from '../../assets/icons/email.svg'
+import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg'
+import { ReactComponent as WhatsappIcon } from '../../assets/icons/whatsapp.svg'
+import VintageComputer from '../../assets/images/vintage-computer.png'
+import Button from '../../components/Button'
+import Titles from '../../components/Titles'
 
 export default function Contact() {
   const commonButtonStyles = {
     padding: '15px',
     width: '65px',
-    height: '65px',
-  };
+    height: '65px'
+  }
 
   const contactMethods = [
     { type: 'email', icon: <EmailIcon /> },
     { openUrl: 'https://www.linkedin.com/in/jaime00/', icon: <LinkedinIcon /> },
     {
       openUrl: 'https://api.whatsapp.com/send?phone=573015834942',
-      icon: <WhatsappIcon />,
-    },
-  ];
+      icon: <WhatsappIcon />
+    }
+  ]
 
   return (
-    <div className="animate-fade mt-8 my-5 flex-col mx-auto max-w-6xl justify-center px-4 bg-white dark:text-white dark:bg-gray-800 prose prose-lg md:prose-xl dark:prose-dark relative font-sans">
-      <Titles className="float-left" title="Contact" subtitle="Interested in my work?" />
-      <div className="grid items-center grid-cols-1 md:grid-cols-5 gap-y-8 md:gap-x-12 my-auto">
+    <div className="prose prose-lg md:prose-xl dark:prose-dark relative my-5 mx-auto mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
+      <Titles
+        className="float-left"
+        title="Contact"
+        subtitle="Interested in my work?"
+      />
+      <div className="my-auto grid grid-cols-1 items-center gap-y-8 md:grid-cols-5 md:gap-x-12">
         <div className="col-span-3">
           <p className="mb-10 text-xl">
-            Got a question, proposal or project or want to work together on something?
-            Feel free to reach out.
+            Got a question, proposal or project or want to work together on
+            something? Feel free to reach out.
           </p>
-          <div className="text-center flex gap-3 justify-center">
+          <div className="flex justify-center gap-3 text-center">
             {contactMethods.map((method, index) => (
               <Button
                 key={index}
@@ -48,11 +52,11 @@ export default function Contact() {
             data-src={VintageComputer}
             src={VintageComputer}
             alt="Vintage computer with drop shadow"
-            className="animate-fade lozad drop-shadow-effect select-none pointer-events-none"
+            className="lozad drop-shadow-effect pointer-events-none animate-fade select-none"
             loading="lazy"
           />
         </div>
       </div>
     </div>
-  );
+  )
 }
