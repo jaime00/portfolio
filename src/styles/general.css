@@ -26,7 +26,7 @@ button {
   transition-duration: 0.15s;
 }
 
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+.space-x-8 > :not([hidden]) {
   margin: 5px 10px;
 }
 

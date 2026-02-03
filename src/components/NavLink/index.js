@@ -14,7 +14,7 @@ export default function NavLink(props) {
     <Link {...props}>
       <li
         style={styles}
-        className="nav-bar-item block cursor-pointer rounded-full px-4 py-1 transition-all hover:rotate-3 hover:transform hover:bg-gray-300 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:bg-transparent"
+        className="nav-bar-item block cursor-pointer rounded-full px-4 py-1 transition-all hover:scale-105 hover:rotate-3 hover:transform hover:bg-gray-300 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:bg-transparent"
       >
         <span className="capsize">{props.children}</span>
       </li>
