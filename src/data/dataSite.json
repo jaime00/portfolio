@@ -18,20 +18,21 @@
     },
     {
       "id": 3,
+      "url_preview": "https://smooth-components.netlify.app",
+      "title": "smooth-components",
+      "description": "Library of beautifully designed, reusable UI components for React. Whether you're building a portfolio, dashboard, or e-commerce site.",
+      "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1770778874/projects/smooth-components/landing.png.png",
+      "stack": ["Typescript", "vite", "Wouter", "Motion"],
+      "url_code": "https://www.npmjs.com/package/smooth-components"
+    },
+    {
+      "id": 4,
       "url_preview": "https://www.npmjs.com/package/eazy-git",
       "url_code": "https://github.com/jaime00/eazy-git",
       "title": "Eazy Git",
       "description": "CLI tool that simplifies branch management in Git. It automates common workflows and maintains a consistent branch structure.",
       "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",
       "stack": ["Javascript", "esbuild", "clack/prompts", "chalk"]
-    },
-    {
-      "id": 4,
-      "url_preview": "https://www.npmjs.com/package/smooth-components",
-      "title": "smooth-components",
-      "description": "Library of beautifully designed, reusable UI components for React. Whether you're building a portfolio, dashboard, or e-commerce site.",
-      "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",
-      "stack": ["Typescript", "vite"]
     }
   ],
   "work_experience": [
