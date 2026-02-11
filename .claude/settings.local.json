@@ -7,7 +7,14 @@
       "Bash(git push:*)",
       "Bash(npx browserslist@latest:*)",
       "Bash(npm run build:css:*)",
-      "Bash(npx tailwindcss:*)"
+      "Bash(npx tailwindcss:*)",
+      "Bash(for component in Background Bottom Button ButtonDarkMode CarouselOfTechnologies DetailOfProject ExperienceDescription ExperienceLogo Footer GoToOption ListOfProjects Main MyHistory NavBar NavBarOptions NavLink Presentation Project ScrollToTop SectionProjects Separator StackOfProject Titles Top WorkExperience)",
+      "Bash(do)",
+      "Bash(if ! grep -r \"import.*$component\" /Users/jaimetorres/Desktop/PERSONAL/PROJECTS/portfolio/src --include=\"*.js\" --include=\"*.jsx\")",
+      "Bash(then)",
+      "Bash(echo:*)",
+      "Bash(fi)",
+      "Bash(done)"
     ]
   }
 }

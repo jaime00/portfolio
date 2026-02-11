@@ -16,14 +16,6 @@ const getWorkExperience = ({ limit } = { limit: null }) => {
   }
 }
 
-const getStudyExperience = ({ limit } = { limit: null }) => {
-  if (limit && limit > 0) {
-    return DataSite.study_experience.slice(0, limit)
-  } else {
-    return DataSite.study_experience
-  }
-}
-
 const getExperiences = () => DataSite.experiences
 
 const getCurriculumUrl = () => DataSite.curriculum_url
@@ -41,7 +33,6 @@ export {
   getProjects,
   getExperiences,
   getWorkExperience,
-  getStudyExperience,
   getCurriculumUrl,
   getStyleButton
 }
