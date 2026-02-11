@@ -2,85 +2,63 @@
 
 # Portfolio
 
-A modern, responsive portfolio website showcasing my professional experience, projects, and skills as a Frontend Developer. Built with React and featuring smooth animations and an intuitive user experience.
+Personal portfolio built with React 19, showcasing my work as a Frontend Developer — professional experience at companies like Cinepolis, Qrvey, and IA Interactive, along with side projects and open-source tools.
 
-## ✨ Features
+**[Live site](https://jaime00portfolio.netlify.app)**
 
-- 📱 Fully responsive design
-- 🎨 Modern UI with Tailwind CSS
-- ✨ Smooth animations with Motion (Framer Motion)
-- 🌙 Dark mode support
-- 🚀 Fast performance with React 19
-- 📄 Dynamic content management
-- 🎯 SEO optimized
+## Tech Stack
 
-## 🛠️ Tech Stack
+| Category       | Technology                                                        |
+| -------------- | ----------------------------------------------------------------- |
+| Framework      | [React 19](https://react.dev) + [CRA](https://create-react-app.dev) via [Craco](https://craco.js.org) |
+| Styling        | [Tailwind CSS 3](https://tailwindcss.com)                         |
+| Animations     | [Motion](https://motion.dev) (Framer Motion)                      |
+| Routing        | [Wouter](https://github.com/molefrog/wouter)                      |
+| Lazy Loading   | [Lozad.js](https://apoorv.pro/lozad.js/)                          |
+| Images         | [Cloudinary](https://cloudinary.com)                               |
+| Deployment     | [Netlify](https://www.netlify.com)                                 |
 
-- **Framework**: [React.js](https://reactjs.org/) (v19.1.0)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (v3.0.18)
-- **Animations**: [Motion](https://motion.dev/) (v12.6.3)
-- **Base Components**: [Flowbite](https://flowbite.com/)
-- **Routing**: [Wouter](https://www.npmjs.com/package/wouter/) (v2.8.0)
-- **Lazy Loading**: [Lozad.js](https://apoorv.pro/lozad.js/)
-- **Deployment**: [Netlify](https://www.netlify.com)
-- **Assets & Images**: [Cloudinary](https://cloudinary.com/)
-
-## 📂 Project Structure
-
-- `src/components/*` - Reusable React components used throughout the website
-- `src/pages/*` - Main page components (Home, About, Projects, Experiences, Contact)
-- `src/data/*` - JSON data containing projects, work experience, and site information
-- `src/services/*` - API services and data fetching utilities
-- `src/assets/*` - Images, illustrations, and static assets
-- `src/styles/*` - Global styles and Tailwind CSS configuration
-- `src/utils/*` - Helper functions and utilities
-- `public/*` - Static files including robots.txt and index.html
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Installation
+## Getting Started
 
 ```bash
-# Clone the repository
+# Clone and install
 git clone https://github.com/jaime00/portfolio.git
-
-# Navigate to the project directory
 cd portfolio
-
-# Install dependencies
 npm install
 
-# Start the development server
+# Start development (dev server + Tailwind CSS watcher)
 npm run dev
 ```
 
-The application will open at `http://localhost:3000`
+The app runs at `http://localhost:3000`.
 
-## 📜 Available Scripts
+## Scripts
 
-- `npm start` - Runs the app in development mode
-- `npm run dev` - Runs with CSS watching for Tailwind changes
-- `npm run build` - Builds the app for production
-- `npm test` - Runs the test suite
-- `npm run watch:css` - Compiles Tailwind CSS
+| Command             | Description                                     |
+| ------------------- | ----------------------------------------------- |
+| `npm run dev`       | Dev server + Tailwind CSS watcher (concurrently)|
+| `npm start`         | Dev server only (Craco)                         |
+| `npm run build`     | Production build                                |
+| `npm run watch:css` | Compile Tailwind CSS                            |
+| `npm test`          | Run tests (Jest, watch mode)                    |
 
-## 🎨 Featured Projects
+## Project Structure
 
-The portfolio showcases several projects including:
+```
+src/
+├── assets/        # Local images and static assets
+├── components/    # Reusable UI components (one folder per component)
+├── data/          # dataSite.json — projects, experience, site content
+├── pages/         # Page components (Home, About, Projects, Experiences, Contact)
+├── services/      # Data getters (getProjects, getWorkExperience, etc.)
+├── styles/        # Tailwind source, generated output, and custom CSS
+└── utils/         # Helper functions
+```
 
-- **Cinepolis Web Redesign** - Web platform for movie lovers with ticket purchasing and seat selection
-- **Negos** - Inventory management platform for business owners
-- **Eazy Git** - CLI tool that simplifies Git branch management
+## Contact
 
-## 📫 Contact
+Reach out through the [contact form](https://jaime00portfolio.netlify.app/contact) or connect on [GitHub](https://github.com/jaime00).
 
-Feel free to reach out through the contact form on the website or connect with me on [GitHub](https://github.com/jaime00).
+## License
 
-## 📄 License
-
-This project is open source and available under the MIT License.
+MIT
