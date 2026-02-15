@@ -16,7 +16,7 @@ export default function Contact() {
 
   const contactMethods = [
     { type: 'email', icon: <MailCheckIcon /> },
-    { openUrl: 'https://www.linkedin.com/in/jaime00/', icon: <LinkedinIcon /> },
+    { openUrl: 'https://linkedin.com/in/jaimetorresv', icon: <LinkedinIcon /> },
     {
       openUrl: 'https://api.whatsapp.com/send?phone=573015834942',
       icon: <WhatsappIcon />

@@ -4,7 +4,7 @@
       {
         "id": 1,
         "url_preview": "https://cinepolis.com/mx",
-        "title": "Cinepolis Web Redesign",
+        "title": "Cinepolis WEB",
         "description": "Web platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
         "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"]
@@ -40,7 +40,7 @@
       {
         "id": 1,
         "url_preview": "https://cinepolis.com/mx",
-        "title": "Cinepolis Rediseño Web",
+        "title": "Cinepolis WEB",
         "description": "Plataforma web para amantes del cine para explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
         "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"]
@@ -76,7 +76,7 @@
   "work_experience": {
     "en": [
       {
-        "company": "IA interactive",
+        "company": "IA Interactive",
         "position": "Frontend Developer",
         "year_initial": "Jul 2024",
         "year_end": "Now"
@@ -95,7 +95,7 @@
       },
       {
         "company": "Extreme Technologies S.A.",
-        "position": "Technical Lead",
+        "position": "Tech Lead",
         "year_initial": "Jan 2021",
         "year_end": "Mar 2022"
       },
@@ -108,7 +108,7 @@
     ],
     "es": [
       {
-        "company": "IA interactive",
+        "company": "IA Interactive",
         "position": "Desarrollador Frontend",
         "year_initial": "Jul 2024",
         "year_end": "Ahora"
