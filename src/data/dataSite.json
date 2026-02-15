@@ -5,26 +5,26 @@
         "id": 1,
         "url_preview": "https://cinepolis.com/mx",
         "title": "Cinepolis WEB",
-        "description": "Web platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
+        "description": "WEB platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
         "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"]
       },
       {
         "id": 2,
-        "url_preview": "https://www.negos.co",
-        "title": "Negos",
-        "description": "Web platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
-        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"]
-      },
-      {
-        "id": 3,
         "url_preview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
         "description": "Library of beautifully designed, reusable UI components for React. Whether you're building a portfolio, dashboard, or e-commerce site.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1770778874/projects/smooth-components/landing.png.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
         "url_code": "https://www.npmjs.com/package/smooth-components"
+      },
+      {
+        "id": 3,
+        "url_preview": "https://www.negos.co",
+        "title": "Negos",
+        "description": "WEB platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
+        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"]
       },
       {
         "id": 4,
@@ -41,26 +41,26 @@
         "id": 1,
         "url_preview": "https://cinepolis.com/mx",
         "title": "Cinepolis WEB",
-        "description": "Plataforma web para amantes del cine para explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
+        "description": "Plataforma WEB para amantes del cine para explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
         "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"]
       },
       {
         "id": 2,
-        "url_preview": "https://www.negos.co",
-        "title": "Negos",
-        "description": "Plataforma web que simplifica la gestión de inventario. Permite a los propietarios de negocios subir, organizar y actualizar productos rápidamente y sin intermediarios.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
-        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"]
-      },
-      {
-        "id": 3,
         "url_preview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
         "description": "Biblioteca de componentes UI bellamente diseñados y reutilizables para React. Ya sea que estés construyendo un portafolio, dashboard o sitio de comercio electrónico.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1770778874/projects/smooth-components/landing.png.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
         "url_code": "https://www.npmjs.com/package/smooth-components"
+      },
+      {
+        "id": 3,
+        "url_preview": "https://www.negos.co",
+        "title": "Negos",
+        "description": "Plataforma WEB que simplifica la gestión de inventario. Permite a los propietarios de negocios subir, organizar y actualizar productos rápidamente y sin intermediarios.",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
+        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"]
       },
       {
         "id": 4,
@@ -145,7 +145,7 @@
         "link": "https://www.ia.com.mx",
         "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738382362/projects/portfolio/experiences/IA.jpg",
         "items": [
-          "Developed and maintained the redesign of the web platform of a major Latin American movie theater chain.",
+          "Developed and maintained the redesign of the WEB platform of a major Latin American movie theater chain.",
           "I led the implementation and optimization of interactive animations using Framer Motion in the food screen and search section, improving user experience and interface fluidity.",
           "Managed cinema selection, ticket booking, food ordering and loyalty with 'Cine Puntos', as well as maintaining payment integrations with DeUna and Aplazo in Mexico.",
           "Use of technologies such as React, Next, GraphQL, Framer Motion, Hooks, Sass, Tailwind CSS."
@@ -157,7 +157,7 @@
         "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738383855/projects/portfolio/experiences/LINKTIC.png",
         "items": [
           "Frontend application development using Svelte and React, with focus on performance and user experience.",
-          "Optimization of web applications, implementing lazy loading, code splitting and asset enhancement for high performance.",
+          "Optimization of WEB applications, implementing lazy loading, code splitting and asset enhancement for high performance.",
           "Advanced consumption of REST APIs and GraphQL, efficiently integrating backend services.",
           "Application of SOLID, DRY and modularity principles to ensure clean and scalable code.",
           "Development of unit tests and integration with Jest, ensuring code quality."
