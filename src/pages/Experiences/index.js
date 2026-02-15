@@ -2,16 +2,18 @@ import ExperienceDescription from '../../components/ExperienceDescription'
 import ExperienceLogo from '../../components/ExperienceLogo'
 import Titles from '../../components/Titles'
 import { getExperiences, getWorkExperience } from '../../services'
+import { useTranslation } from '../../i18n'
 
 export default function Experiences() {
-  const experiences = getExperiences()
-  const workExperiences = getWorkExperience()
+  const { t, language } = useTranslation()
+  const experiences = getExperiences(language)
+  const workExperiences = getWorkExperience({ lang: language })
   return (
     <div className="prose prose-lg md:prose-xl dark:prose-dark relative my-5 mx-auto mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
       <Titles
         className="text-center"
-        title="Work Experiences"
-        subtitle="Key moments in my career"
+        title={t('experiences.title')}
+        subtitle={t('experiences.subtitle')}
       />
       <div className="xxs:py-20 mt-14 flex flex-col justify-center gap-16 px-10">
         {experiences.map((experience, index) => (

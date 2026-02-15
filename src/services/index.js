@@ -1,32 +1,36 @@
 import DataSite from '../data/dataSite.json'
 
-const getProjects = ({ limit } = { limit: null }) => {
+const getProjects = ({ limit, lang = 'en' } = { limit: null, lang: 'en' }) => {
+  const projects = DataSite.projects[lang] || DataSite.projects.en
   if (limit && limit > 0) {
-    return DataSite.projects.slice(0, limit)
+    return projects.slice(0, limit)
   } else {
-    return DataSite.projects
+    return projects
   }
 }
 
-const getWorkExperience = ({ limit } = { limit: null }) => {
+const getWorkExperience = (
+  { limit, lang = 'en' } = { limit: null, lang: 'en' }
+) => {
+  const workExp = DataSite.work_experience[lang] || DataSite.work_experience.en
   if (limit && limit > 0) {
-    return DataSite.work_experience.slice(0, limit)
+    return workExp.slice(0, limit)
   } else {
-    return DataSite.work_experience
+    return workExp
   }
 }
 
-const getExperiences = () => DataSite.experiences
+const getExperiences = (lang = 'en') =>
+  DataSite.experiences[lang] || DataSite.experiences.en
 
-const getCurriculumUrl = () => DataSite.curriculum_url
+const getCurriculumUrl = (lang = 'en') =>
+  DataSite.curriculum_url[lang] || DataSite.curriculum_url.en
 
 const getStyleButton = ({ isDark }) => {
-  let classes = `bg-gray-900 text-sm md:text-xl md:w-auto md:inline-flex py-3 px-2 md:px-12 rounded-full w-full text-white dark:bg-gray-200 dark:text-midnight items-center justify-center 
-    hover:ring-4 hover:ring-gray-300 font-medium text-center mr-2 dark:hover:ring-teal-500 dark:text-gray-900`
-  if (!isDark)
-    classes = `text-sm md:text-xl md:w-auto md:inline-flex py-3 px-2 md:px-12 rounded-full w-full bg-gray-200 dark:bg-gray-900 text-midnight dark:text-white items-center justify-center font-medium
-    hover:ring-4 hover:ring-gray-700`
-  return classes
+  const base = `text-sm md:text-xl md:w-auto md:inline-flex py-3 px-2 md:px-12 rounded-full w-full items-center justify-center font-medium text-center mr-2 transition-all`
+  if (isDark)
+    return `${base} bg-gradient-to-r from-teal-500 to-teal-400 text-white shadow-md shadow-teal-500/20 hover:shadow-lg hover:shadow-teal-500/25 hover:brightness-105 dark:from-teal-400 dark:to-emerald-400 dark:shadow-teal-400/10 dark:text-gray-900`
+  return `${base} bg-gray-200 text-gray-900 hover:ring-4 hover:ring-teal-500/30 dark:bg-gray-900 dark:text-white dark:hover:ring-teal-400/30`
 }
 
 export {

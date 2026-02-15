@@ -19,7 +19,7 @@ export default function Project(props) {
             />
           </div>
           <div className="relative -mt-16 px-4">
-            <div className="h-80 rounded-lg bg-white p-5 shadow-lg dark:bg-gray-900 dark:text-white sm:pb-5">
+            <div className="min-h-[20rem] rounded-lg bg-white p-5 shadow-lg dark:bg-gray-900 dark:text-white sm:pb-5">
               <StackOfProject stacks={stack} />
               <DetailOfProject
                 url_preview={url_preview}

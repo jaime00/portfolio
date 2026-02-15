@@ -1,11 +1,13 @@
-import { ReactComponent as GithubIcon } from '../../assets/icons/github.svg'
-import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg'
+import { GithubIcon } from '../../assets/animatedIcons/GithubIcon'
+import { LinkedinIcon } from '../../assets/animatedIcons/LinkedinIcon'
 import { getCurriculumUrl } from '../../services'
 import Top from '../Top'
 import { Link } from 'wouter'
+import { useTranslation } from '../../i18n'
 
 export default function Footer() {
-  const curriculumUrl = getCurriculumUrl()
+  const { t, language } = useTranslation()
+  const curriculumUrl = getCurriculumUrl(language)
   return (
     <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto flex max-w-6xl animate-fade flex-col justify-center bg-white p-4 px-4 font-sans dark:bg-gray-800 sm:p-6">
       <hr className="my-12 dark:border-gray-700" />
@@ -14,7 +16,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 sm:gap-20">
             <div>
               <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-                General
+                {t('footer.general')}
               </h3>
               <ul>
                 <li className="mb-4">
@@ -22,7 +24,7 @@ export default function Footer() {
                     to="/"
                     className="text-gray-600 hover:underline dark:text-gray-400"
                   >
-                    Home
+                    {t('common.home')}
                   </Link>
                 </li>
                 <li className="mb-4">
@@ -30,7 +32,7 @@ export default function Footer() {
                     to="/about"
                     className="text-gray-600 hover:underline dark:text-gray-400"
                   >
-                    About
+                    {t('common.about')}
                   </Link>
                 </li>
                 <li className="mb-4">
@@ -38,14 +40,14 @@ export default function Footer() {
                     to="/side-projects"
                     className="text-gray-600 hover:underline dark:text-gray-400"
                   >
-                    Projects
+                    {t('common.projects')}
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
               <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-                Extra
+                {t('footer.extra')}
               </h3>
               <ul>
                 <li className="mb-4">
@@ -55,7 +57,7 @@ export default function Footer() {
                     rel="noreferrer"
                     className="text-gray-600 hover:underline dark:text-gray-400"
                   >
-                    Resume
+                    {t('footer.resume')}
                   </a>
                 </li>
                 <li className="mb-4">
@@ -63,7 +65,7 @@ export default function Footer() {
                     to="/contact"
                     className="text-gray-600 hover:underline dark:text-gray-400"
                   >
-                    Contact
+                    {t('common.contact')}
                   </Link>
                 </li>
               </ul>
@@ -75,7 +77,7 @@ export default function Footer() {
         </div>
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-base text-gray-500 dark:text-gray-400 sm:text-center">
-            © 2022 Jaime Torres
+            {t('footer.copyright')}
           </span>
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <a

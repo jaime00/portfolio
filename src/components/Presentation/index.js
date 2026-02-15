@@ -2,8 +2,10 @@ import workIcon from '../../assets/icons/code-gray.png'
 import image_profile from '../../assets/images/personGPT5.png'
 import terminalText from '../../utils/terminalText'
 import { useEffect } from 'react'
+import { useTranslation } from '../../i18n'
 
 export default function Presentation({ isDark }) {
+  const { t } = useTranslation()
   useEffect(() => {
     terminalText(
       [
@@ -22,18 +24,20 @@ export default function Presentation({ isDark }) {
       <div className="col-span-5 mx-2">
         <p className="mb-5 flex items-center gap-3 text-left text-lg font-medium text-gray-400">
           <img className="h-[22px] w-[22px]" src={workIcon} alt="workIcon" />{' '}
-          Over 6 years of experience in web development
+          {t('home.yearsExperience')}
         </p>
         <div className="flex flex-col gap-2">
-          <h2 className="order-2 text-left text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl md:order-1">
-            I'm <span className="text-gradient-teal">Jaime</span>
+          <h2 className="order-2 text-left text-3xl font-extrabold text-gray-900 dark:text-white sm:text-5xl md:order-1 min-445:text-4xl">
+            {t('home.iam')} <span className="text-gradient-teal">Jaime</span>
           </h2>
-          <h2 className="order-2 text-left text-4xl font-extrabold leading-tight text-gray-900 dark:text-white sm:text-5xl md:order-1">
-            I'm a{' '}
-            <span className="text-gradient-teal"> Frontend Developer</span>
+          <h2 className="order-2 text-left text-3xl font-extrabold leading-tight text-gray-900 dark:text-white sm:text-5xl md:order-1 min-445:text-4xl">
+            {t('home.iam')} {t('home.a')}{' '}
+            <span className="text-gradient-teal whitespace-nowrap">
+              {t('home.frontendDeveloper')}
+            </span>
           </h2>
-          <h2 className="order-2 text-left text-4xl font-extrabold leading-tight text-gray-900 dark:text-white sm:text-5xl md:order-1">
-            specialized in{' '}
+          <h2 className="order-2 text-left text-3xl font-extrabold leading-tight text-gray-900 dark:text-white sm:text-5xl md:order-1 min-445:text-4xl">
+            {t('home.specializedIn')}{' '}
             <div
               className={`console-container text-gradient-teal inline-block`}
             >

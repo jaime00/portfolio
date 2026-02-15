@@ -5,7 +5,7 @@ export default function StackOfProject({ stacks }) {
         return (
           <span
             key={i}
-            className={`m-1 inline-block rounded-full bg-teal-400 px-2 text-xs font-semibold uppercase tracking-wide text-white opacity-50 transition-opacity duration-200 hover:opacity-70 dark:opacity-80 dark:hover:opacity-100`}
+            className={`m-1 inline-block rounded-full bg-gradient-to-r from-teal-500 to-teal-400 px-2 text-xs font-semibold uppercase tracking-wide text-white shadow-md shadow-teal-500/20 transition-all duration-200 hover:shadow-lg hover:shadow-teal-500/25 hover:brightness-105 dark:from-teal-400 dark:to-emerald-400 dark:text-gray-900 dark:shadow-teal-400/10`}
           >
             {stack}
           </span>
