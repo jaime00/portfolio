@@ -1,0 +1,68 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "experiences": "Experiences",
+    "contact": "Contact"
+  },
+  "nav": {
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "home": {
+    "yearsExperience": "Over 6 years of experience in web development",
+    "iam": "I'm",
+    "a": "a",
+    "frontendDeveloper": "Frontend Developer",
+    "specializedIn": "specialized in",
+    "contactMe": "Contact me",
+    "moreAboutMe": "More about me",
+    "workExperience": "Work experience",
+    "workExperienceSubtitle": "Here's a brief rundown of my most recent experiences.",
+    "learnMore": "Learn more",
+    "viewResume": "View my resume",
+    "iLoveSharing": "I love sharing my knowledge and learning new things.",
+    "checkProjects": "Check out some of my most recent projects.",
+    "seeAllProjects": "See all projects"
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "Here's my story.",
+    "systemsEngineer": "Systems Engineer",
+    "frontend": "Frontend",
+    "yearsExperience": "With more than 6 years of experience adding value to business processes in the commercial and public service sectors.",
+    "technicalLead": "Technical Lead",
+    "careerDescription": "Implementing functional, scalable and reusable code solutions throughout my career, aligned with user needs and business goals. In addition to technically coordinating and mentoring a development team in their day-to-day activities, careers and technical growth.",
+    "technologies": "Experience and advanced knowledge in technologies such as React JS, Next JS, Stencil JS, Typescript, Web Components, Motion framer, Micro Frontends, GraphQL, version control with Git, design patterns, SOLID and Clean Code principles, management of agile work methodologies such as SCRUM and Kanban.",
+    "skills": "Skills in problem solving, teamwork, learning ability and adaptability to different environments. Lover of great challenges and with a great investigative character.",
+    "findMe": "If you want to know a little more you can find me on",
+    "linkedin": "Linkedin",
+    "github": "Github",
+    "openSource": "and take a look at my open source projects."
+  },
+  "projects": {
+    "title": "Side Projects",
+    "subtitle": "A selection of my favorite works.",
+    "viewProject": "View project"
+  },
+  "experiences": {
+    "title": "Work Experiences",
+    "subtitle": "Key moments in my career"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Interested in my work?",
+    "question": "Got a question, proposal or project or want to work together on something? Feel free to reach out."
+  },
+  "footer": {
+    "general": "General",
+    "extra": "Extra",
+    "resume": "Resume",
+    "copyright": "© 2022 Jaime Torres"
+  },
+  "languages": {
+    "spanish": "Español",
+    "english": "English"
+  }
+}

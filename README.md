@@ -8,15 +8,15 @@ Personal portfolio built with React 19, showcasing my work as a Frontend Develop
 
 ## Tech Stack
 
-| Category       | Technology                                                        |
-| -------------- | ----------------------------------------------------------------- |
-| Framework      | [React 19](https://react.dev) + [CRA](https://create-react-app.dev) via [Craco](https://craco.js.org) |
-| Styling        | [Tailwind CSS 3](https://tailwindcss.com)                         |
-| Animations     | [Motion](https://motion.dev) (Framer Motion)                      |
-| Routing        | [Wouter](https://github.com/molefrog/wouter)                      |
-| Lazy Loading   | [Lozad.js](https://apoorv.pro/lozad.js/)                          |
-| Images         | [Cloudinary](https://cloudinary.com)                               |
-| Deployment     | [Netlify](https://www.netlify.com)                                 |
+| Category     | Technology                                                                                            |
+| ------------ | ----------------------------------------------------------------------------------------------------- |
+| Framework    | [React 19](https://react.dev) + [CRA](https://create-react-app.dev) via [Craco](https://craco.js.org) |
+| Styling      | [Tailwind CSS 3](https://tailwindcss.com)                                                             |
+| Animations   | [Motion](https://motion.dev) (Framer Motion)                                                          |
+| Routing      | [Wouter](https://github.com/molefrog/wouter)                                                          |
+| Lazy Loading | [Lozad.js](https://apoorv.pro/lozad.js/)                                                              |
+| Images       | [Cloudinary](https://cloudinary.com)                                                                  |
+| Deployment   | [Netlify](https://www.netlify.com)                                                                    |
 
 ## Getting Started
 
@@ -34,13 +34,13 @@ The app runs at `http://localhost:3000`.
 
 ## Scripts
 
-| Command             | Description                                     |
-| ------------------- | ----------------------------------------------- |
-| `npm run dev`       | Dev server + Tailwind CSS watcher (concurrently)|
-| `npm start`         | Dev server only (Craco)                         |
-| `npm run build`     | Production build                                |
-| `npm run watch:css` | Compile Tailwind CSS                            |
-| `npm test`          | Run tests (Jest, watch mode)                    |
+| Command             | Description                                      |
+| ------------------- | ------------------------------------------------ |
+| `npm run dev`       | Dev server + Tailwind CSS watcher (concurrently) |
+| `npm start`         | Dev server only (Craco)                          |
+| `npm run build`     | Production build                                 |
+| `npm run watch:css` | Compile Tailwind CSS                             |
+| `npm test`          | Run tests (Jest, watch mode)                     |
 
 ## Project Structure
 

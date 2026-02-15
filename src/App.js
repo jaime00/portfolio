@@ -7,6 +7,7 @@ import Contact from './pages/Contact'
 import Experiences from './pages/Experiences'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
+import { LanguageProvider } from './i18n'
 import './styles/general.css'
 import './styles/output.css'
 import lozad from 'lozad'
@@ -35,35 +36,37 @@ function App() {
     setIsDark(!isDark)
   }
   return (
-    <div className="pt-2 dark:bg-gray-800">
-      <Background />
-      <NavBar changeMode={changeMode} isDark={isDark} />
-      <div className="mt-28">
-        <ScrollToTop>
-          <Switch>
-            <Route path="/">
-              <Home isDark={isDark} />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/side-projects">
-              <Projects />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/experiences">
-              <Experiences />
-            </Route>
-            <Route>
-              <Redirect to="/" />
-            </Route>
-          </Switch>
-        </ScrollToTop>
+    <LanguageProvider>
+      <div className="pt-2 dark:bg-gray-800">
+        <Background />
+        <NavBar changeMode={changeMode} isDark={isDark} />
+        <div className="mt-28">
+          <ScrollToTop>
+            <Switch>
+              <Route path="/">
+                <Home isDark={isDark} />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/side-projects">
+                <Projects />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
+              <Route path="/experiences">
+                <Experiences />
+              </Route>
+              <Route>
+                <Redirect to="/" />
+              </Route>
+            </Switch>
+          </ScrollToTop>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </LanguageProvider>
   )
 }
 

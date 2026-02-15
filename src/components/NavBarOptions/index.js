@@ -1,20 +1,22 @@
 import { createPortal } from 'react-dom'
 import { Link, useLocation } from 'wouter'
 import NavLink from '../NavLink'
+import { useTranslation } from '../../i18n'
 
 export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
   const [location] = useLocation()
+  const { t } = useTranslation()
 
   const collapseNavbar = () => {
     setMenuIsOpen(false)
   }
 
   const menuItems = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About' },
-    { to: '/experiences', label: 'Experiences' },
-    { to: '/side-projects', label: 'Projects' },
-    { to: '/contact', label: 'Contact' }
+    { to: '/', label: t('common.home') },
+    { to: '/about', label: t('common.about') },
+    { to: '/experiences', label: t('common.experiences') },
+    { to: '/side-projects', label: t('common.projects') },
+    { to: '/contact', label: t('common.contact') }
   ]
 
   // Modal de pantalla completa en mobile (renderizado fuera del navbar usando Portal)
@@ -75,26 +77,13 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
   return (
     <>
       {mobileModal}
-      <div
-        className="hidden w-full select-none items-center justify-between text-2xl md:order-1 md:flex md:w-auto"
-        id="navbar"
-      >
-        <ul className="flex flex-row space-x-8 text-center text-lg">
-          <NavLink onClick={collapseNavbar} to="/">
-            Home
-          </NavLink>
-          <NavLink onClick={collapseNavbar} to="/about">
-            About
-          </NavLink>
-          <NavLink onClick={collapseNavbar} to="/experiences">
-            Experiences
-          </NavLink>
-          <NavLink onClick={collapseNavbar} to="/side-projects">
-            Projects
-          </NavLink>
-          <NavLink onClick={collapseNavbar} to="/contact">
-            Contact
-          </NavLink>
+      <div className="hidden select-none items-center md:flex" id="navbar">
+        <ul className="flex items-center gap-2 text-lg">
+          {menuItems.map((item) => (
+            <NavLink key={item.to} onClick={collapseNavbar} to={item.to}>
+              {item.label}
+            </NavLink>
+          ))}
         </ul>
       </div>
     </>

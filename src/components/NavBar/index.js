@@ -1,5 +1,6 @@
 import image_profile from '../../assets/images/person-head.png'
 import ButtonDarkMode from '../ButtonDarkMode'
+import LanguageSelector from '../LanguageSelector'
 import NavBarOptions from '../NavBarOptions/'
 import { useEffect, useState } from 'react'
 import { Link } from 'wouter'
@@ -10,7 +11,7 @@ export default function NavBar({ changeMode, isDark }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10) // Cambia el valor si quieres que aparezca antes o después
+      setScrolled(window.scrollY > 10)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -22,25 +23,32 @@ export default function NavBar({ changeMode, isDark }) {
         scrolled ? 'bg-white/20 dark:bg-gray-800/20' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto mt-3 flex flex-wrap items-center justify-between">
-        <Link to="/" className="flex">
+      <div className="mx-auto mt-3 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex shrink-0">
           <img
             loading="lazy"
             alt="Jaime Torres"
             src={image_profile}
-            className="dark:bg-midnight general-ring-state col-span-1 flex h-12 w-auto cursor-pointer select-none items-center justify-center rounded-full transition-all duration-500 hover:scale-110 active:scale-95"
+            className="dark:bg-midnight general-ring-state h-12 w-auto cursor-pointer select-none rounded-full transition-all duration-500 hover:scale-110 active:scale-95"
           />
         </Link>
-        <div className="flex md:order-2">
+
+        {/* Nav links - desktop */}
+        <NavBarOptions menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+
+        {/* Actions */}
+        <div className="flex shrink-0 items-center gap-2">
+          <LanguageSelector />
           <ButtonDarkMode changeMode={changeMode} isDark={isDark} />
           <button
             onClick={() => setMenuIsOpen(!menuIsOpen)}
             data-collapse-toggle="navbar"
             type="button"
-            className={`ml-5 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden ${menuIsOpen ? 'opacity-0 pointer-events-none' : ''}`}
+            className={`ml-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden ${menuIsOpen ? 'pointer-events-none opacity-0' : ''}`}
             aria-expanded={menuIsOpen}
           >
-            <span className="sr-only">example</span>
+            <span className="sr-only">Menu</span>
             <svg
               className="h-6 w-6"
               fill="currentColor"
@@ -55,7 +63,6 @@ export default function NavBar({ changeMode, isDark }) {
             </svg>
           </button>
         </div>
-        <NavBarOptions menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       </div>
     </nav>
   )

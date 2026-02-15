@@ -1,0 +1,68 @@
+{
+  "common": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "experiences": "Experiencias",
+    "contact": "Contacto"
+  },
+  "nav": {
+    "menu": "Menú",
+    "close": "Cerrar"
+  },
+  "home": {
+    "yearsExperience": "Más de 6 años de experiencia en desarrollo web",
+    "iam": "Soy",
+    "a": "un",
+    "frontendDeveloper": "Desarrollador Frontend",
+    "specializedIn": "especializado en",
+    "contactMe": "Contáctame",
+    "moreAboutMe": "Más sobre mí",
+    "workExperience": "Experiencia laboral",
+    "workExperienceSubtitle": "Aquí te presento un resumen de mis experiencias más recientes.",
+    "learnMore": "Ver más",
+    "viewResume": "Ver mi currículum",
+    "iLoveSharing": "Me encanta compartir mi conocimiento y aprender cosas nuevas.",
+    "checkProjects": "Echa un vistazo a algunos de mis proyectos más recientes.",
+    "seeAllProjects": "Ver todos los proyectos"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "Aquí está mi historia.",
+    "systemsEngineer": "Ingeniero de Sistemas",
+    "frontend": "Frontend",
+    "yearsExperience": "Con más de 6 años de experiencia agregando valor a los procesos comerciales en los sectores de servicios comerciales y públicos.",
+    "technicalLead": "Líder Técnico",
+    "careerDescription": "Implementando soluciones de código funcionales, escalables y reutilizables a lo largo de mi carrera, alineadas con las necesidades del usuario y los objetivos comerciales. Además de coordinar técnicamente y mentorizar a un equipo de desarrollo en sus actividades diarias, carreras y crecimiento técnico.",
+    "technologies": "Experiencia y conocimiento avanzado en tecnologías como React JS, Next JS, Stencil JS, Typescript, Web Components, Motion framer, Micro Frontends, GraphQL, control de versiones con Git, patrones de diseño, principios SOLID y Clean Code, manejo de metodologías ágiles de trabajo como SCRUM y Kanban.",
+    "skills": "Habilidades para resolver problemas, trabajo en equipo, capacidad de aprendizaje y adaptabilidad a diferentes entornos. Amante de grandes desafíos y con un gran carácter investigativo.",
+    "findMe": "Si quieres saber un poco más puedes encontrarme en",
+    "linkedin": "Linkedin",
+    "github": "Github",
+    "openSource": "y échale un vistazo a mis proyectos de código abierto."
+  },
+  "projects": {
+    "title": "Proyectos Personales",
+    "subtitle": "Una selección de mis trabajos favoritos.",
+    "viewProject": "Ver proyecto"
+  },
+  "experiences": {
+    "title": "Experiencias Laborales",
+    "subtitle": "Momentos clave en mi carrera"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Interesado en mi trabajo?",
+    "question": "¿Tienes alguna pregunta, propuesta o proyecto o quieres trabajar juntos en algo? No dudes en contactarme."
+  },
+  "footer": {
+    "general": "General",
+    "extra": "Extra",
+    "resume": "Currículum",
+    "copyright": "© 2022 Jaime Torres"
+  },
+  "languages": {
+    "spanish": "Español",
+    "english": "English"
+  }
+}
