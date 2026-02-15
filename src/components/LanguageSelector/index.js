@@ -30,7 +30,7 @@ export default function LanguageSelector() {
       title={nextLang === 'es' ? 'Cambiar a Espanol' : 'Switch to English'}
     >
       <span className="flex items-center gap-1.5">
-        {flags[nextLang]}
+        {flags[language]}
         <span className="text-xs font-semibold uppercase text-gray-700">
           {nextLang}
         </span>
