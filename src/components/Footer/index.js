@@ -81,7 +81,7 @@ export default function Footer() {
           </span>
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <a
-              href="https://www.linkedin.com/in/jaime00"
+              href="https://linkedin.com/in/jaimetorresv"
               target="_blank"
               rel="noreferrer"
               className="text-gray-500 transition hover:rotate-6 hover:text-black dark:hover:text-white"

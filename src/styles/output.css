@@ -658,6 +658,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .inline-block {
   display: inline-block;
 }
+.inline {
+  display: inline;
+}
 .flex {
   display: flex;
 }
@@ -684,9 +687,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-8 {
   height: 2rem;
-}
-.h-\[22px\] {
-  height: 22px;
 }
 .h-\[415px\] {
   height: 415px;
@@ -727,6 +727,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-5 {
   width: 1.25rem;
 }
+.w-\[4\.5rem\] {
+  width: 4.5rem;
+}
 .w-\[100vw\] {
   width: 100vw;
 }
@@ -738,9 +741,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-8 {
   width: 2rem;
-}
-.w-\[22px\] {
-  width: 22px;
 }
 .min-w-\[40px\] {
   min-width: 40px;
@@ -1118,11 +1118,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-semibold {
   font-weight: 600;
 }
-.font-extrabold {
-  font-weight: 800;
-}
 .font-bold {
   font-weight: 700;
+}
+.font-extrabold {
+  font-weight: 800;
 }
 .font-normal {
   font-weight: 400;
@@ -1175,6 +1175,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+.underline {
+  text-decoration-line: underline;
+}
+.decoration-current {
+  text-decoration-color: currentColor;
+}
+.underline-offset-2 {
+  text-underline-offset: 2px;
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;
@@ -1383,6 +1392,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
     scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.hover\:rotate-12:hover {
+  --tw-rotate: 12deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .hover\:scale-\[102\%\]:hover {
   --tw-scale-x: 102%;
   --tw-scale-y: 102%;
@@ -1400,6 +1415,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.hover\:scale-125:hover {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y))
     rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
     scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1435,8 +1457,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
+.hover\:text-teal-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(20 184 166 / var(--tw-text-opacity));
+}
 .hover\:underline:hover {
   text-decoration-line: underline;
+}
+.hover\:opacity-70:hover {
+  opacity: 0.7;
 }
 .hover\:shadow-lg:hover {
   --tw-shadow:
@@ -1470,6 +1499,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .hover\:brightness-105:hover {
   --tw-brightness: brightness(1.05);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
+}
+.hover\:drop-shadow-\[0_0_8px_rgba\(20\2c 184\2c 166\2c 0\.5\)\]:hover {
+  --tw-drop-shadow: drop-shadow(0 0 8px rgba(20, 184, 166, 0.5));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
     var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
     var(--tw-sepia) var(--tw-drop-shadow);

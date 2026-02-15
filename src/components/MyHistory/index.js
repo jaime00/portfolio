@@ -15,9 +15,8 @@ export default function MyHistory() {
         </p>
         <br />
         <p>
-          {t('about.frontend')}{' '}
           <b>
-            <em>Frontend Developer</em>
+            <em>{t('home.frontendDeveloper')}</em>
           </b>
           , {t('about.technicalLead')}, {t('about.careerDescription')}
         </p>
@@ -46,9 +45,10 @@ export default function MyHistory() {
               {t('about.findMe')}{' '}
               <b>
                 <a
-                  href="https://www.linkedin.com/in/jaime00"
+                  href="https://linkedin.com/in/jaimetorresv"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline decoration-current underline-offset-2 transition-opacity hover:opacity-70"
                 >
                   {t('about.linkedin')}
                 </a>
@@ -59,6 +59,7 @@ export default function MyHistory() {
                   href="https://github.com/jaime00"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline decoration-current underline-offset-2 transition-opacity hover:opacity-70"
                 >
                   {t('about.github')}
                 </a>

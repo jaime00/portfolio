@@ -11,7 +11,8 @@
     "close": "Close"
   },
   "home": {
-    "yearsExperience": "Over 6 years of experience in web development",
+    "yearsExperienceBefore": "Over",
+    "yearsExperienceAfter": "years of experience in web development",
     "iam": "I'm",
     "a": "a",
     "frontendDeveloper": "Frontend Developer",
@@ -32,7 +33,7 @@
     "systemsEngineer": "Systems Engineer",
     "frontend": "Frontend",
     "yearsExperience": "With more than 6 years of experience adding value to business processes in the commercial and public service sectors.",
-    "technicalLead": "Technical Lead",
+    "technicalLead": "Tech Lead",
     "careerDescription": "Implementing functional, scalable and reusable code solutions throughout my career, aligned with user needs and business goals. In addition to technically coordinating and mentoring a development team in their day-to-day activities, careers and technical growth.",
     "technologies": "Experience and advanced knowledge in technologies such as React JS, Next JS, Stencil JS, Typescript, Web Components, Motion framer, Micro Frontends, GraphQL, version control with Git, design patterns, SOLID and Clean Code principles, management of agile work methodologies such as SCRUM and Kanban.",
     "skills": "Skills in problem solving, teamwork, learning ability and adaptability to different environments. Lover of great challenges and with a great investigative character.",

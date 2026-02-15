@@ -25,7 +25,7 @@ export default function LanguageSelector() {
   return (
     <button
       onClick={() => changeLanguage(nextLang)}
-      className="dark:bg-midnight general-ring-state flex h-12 items-center justify-center rounded-full bg-gray-200 px-4 transition-shadow duration-200 hover:ring-4 hover:ring-gray-700 active:scale-95"
+      className="dark:bg-midnight general-ring-state flex h-12 w-[4.5rem] items-center justify-center rounded-full bg-gray-200 transition-shadow duration-200 hover:ring-4 hover:ring-gray-700"
       aria-label={`Switch to ${nextLang === 'es' ? 'Spanish' : 'English'}`}
       title={nextLang === 'es' ? 'Cambiar a Espanol' : 'Switch to English'}
     >

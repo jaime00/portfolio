@@ -11,7 +11,8 @@
     "close": "Cerrar"
   },
   "home": {
-    "yearsExperience": "Más de 6 años de experiencia en desarrollo web",
+    "yearsExperienceBefore": "Más de",
+    "yearsExperienceAfter": "años de experiencia en desarrollo web",
     "iam": "Soy",
     "a": "un",
     "frontendDeveloper": "Desarrollador Frontend",
