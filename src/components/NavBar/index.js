@@ -4,10 +4,13 @@ import LanguageSelector from '../LanguageSelector'
 import NavBarOptions from '../NavBarOptions/'
 import { useEffect, useState } from 'react'
 import { Link } from 'wouter'
+import { useTranslation } from '../../i18n'
 
 export default function NavBar({ changeMode, isDark }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [showTooltip, setShowTooltip] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,14 +28,36 @@ export default function NavBar({ changeMode, isDark }) {
     >
       <div className="mx-auto mt-3 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex shrink-0">
-          <img
-            loading="lazy"
-            alt="Jaime Torres"
-            src={image_profile}
-            className="dark:bg-midnight general-ring-state h-12 w-auto cursor-pointer select-none rounded-full transition-all duration-500 hover:scale-110 active:scale-95"
-          />
-        </Link>
+        <div
+          className="relative flex shrink-0"
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
+        >
+          <Link to="/">
+            <img
+              loading="lazy"
+              alt="Jaime Torres Icono Navbar"
+              src={image_profile}
+              className="dark:bg-midnight general-ring-state relative z-10 h-12 w-auto cursor-pointer select-none rounded-full transition-all duration-500 hover:scale-110 active:scale-95"
+            />
+          </Link>
+          <span
+            className={`pointer-events-none absolute top-full left-0 mt-2 whitespace-nowrap rounded-2xl bg-gradient-to-r from-teal-500 to-teal-400 px-4 py-2 text-left shadow-md shadow-teal-500/20 transition-all duration-300 dark:from-teal-400 dark:to-emerald-400 ${
+              showTooltip
+                ? 'translate-y-0 opacity-100'
+                : '-translate-y-2 opacity-0'
+            }`}
+          >
+            <span className="absolute -top-2 left-[18px] h-0 w-0 border-x-[6px] border-b-[8px] border-x-transparent border-b-teal-500 dark:border-b-teal-400" />
+            <span className="block text-sm font-bold text-gray-900 dark:text-gray-900">
+              {t('nav.tooltip_line1')}
+            </span>
+            <span className="block text-xs font-medium text-gray-800/80 dark:text-gray-800/70">
+              {t('nav.tooltip_line2')}{' '}
+              <span className="text-white">&#9825;</span>
+            </span>
+          </span>
+        </div>
 
         {/* Nav links - desktop */}
         <NavBarOptions menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />

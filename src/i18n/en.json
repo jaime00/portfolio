@@ -8,7 +8,9 @@
   },
   "nav": {
     "menu": "Menu",
-    "close": "Close"
+    "close": "Close",
+    "tooltip_line1": "Hey bro!",
+    "tooltip_line2": "What do you think of my website?"
   },
   "home": {
     "yearsExperienceBefore": "Over",

@@ -25,6 +25,9 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
     createPortal(
       <div
         className="fixed inset-0 z-[9999999] flex items-center justify-center bg-white/95 backdrop-blur-md dark:bg-gray-900/95 md:hidden"
+        style={{
+          boxShadow: 'inset 0 0 150px rgba(20, 184, 166, 0.15)'
+        }}
         onClick={() => setMenuIsOpen(false)}
       >
         <button
