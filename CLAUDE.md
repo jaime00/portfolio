@@ -24,6 +24,8 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 
 **Data flow:** Static data lives in `src/data/dataSite.json`. Service functions in `src/services/index.js` expose getters (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`). Components consume these — no external state management.
 
+**i18n:** Custom context-based system in `src/i18n/`. `LanguageProvider` wraps the app (in `App.js`) and exposes `useTranslation()` → `{ language, t, changeLanguage }`. UI strings live in `src/i18n/en.json` and `src/i18n/es.json`; use dot-notation keys with `t('section.key')`. Content data in `dataSite.json` is keyed by language (`projects.en`, `projects.es`); service functions accept a `lang` parameter. Language is auto-detected from browser and persisted in localStorage.
+
 **Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList and persisted in localStorage. Use Tailwind's `dark:` prefix for dark variants.
 
 ## Key Conventions
