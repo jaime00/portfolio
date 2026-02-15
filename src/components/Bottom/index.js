@@ -1,5 +1,3 @@
-import { ReactComponent as BottomIcon } from '../../assets/icons/bottom.svg'
-
 export default function Bottom() {
   const handleClick = () =>
     window.scrollTo({
