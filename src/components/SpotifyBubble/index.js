@@ -15,7 +15,7 @@ export default function SpotifyBubble() {
         whileTap={{ scale: 0.95 }}
         animate={{ rotate: isOpen ? 0 : 360 }}
         transition={{ duration: 0.4, ease: 'easeInOut' }}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1DB954] shadow-lg transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(29,185,84,0.5)]"
+        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1DB954] shadow-lg transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(29,185,84,0.5)]"
         aria-label="Toggle Spotify Player"
       >
         <svg
