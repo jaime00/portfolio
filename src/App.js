@@ -1,4 +1,5 @@
 import Background from './components/Background'
+import MusicPlayer from './components/MusicPlayer'
 import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import ScrollToTop from './components/ScrollToTop'
@@ -65,6 +66,7 @@ function App() {
           </ScrollToTop>
         </div>
         <Footer />
+        <MusicPlayer />
       </div>
     </LanguageProvider>
   )
