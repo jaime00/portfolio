@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react'
+import { Route, Redirect, Switch } from 'wouter'
+import lozad from 'lozad'
+
 import Background from './components/Background'
 import MusicPlayer from './components/MusicPlayer'
 import Footer from './components/Footer'
@@ -9,43 +13,40 @@ import Experiences from './pages/Experiences'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import { LanguageProvider } from './i18n'
+
 import './styles/general.css'
 import './styles/output.css'
-import lozad from 'lozad'
-import { useEffect, useState } from 'react'
-import { Route, Redirect, Switch } from 'wouter'
 
 function App() {
-  const observer = lozad() // lazy loads elements with default selector as ".lozad"
-  observer.observe()
-  const [isDark, setIsDark] = useState(localStorage.isDark === 'true')
+  const [isDarkState, setIsDarkState] = useState(localStorage.isDark === 'true')
+
   useEffect(() => {
-    if (isDark) {
+    const observer = lozad()
+    observer.observe()
+  }, [])
+
+  useEffect(() => {
+    if (isDarkState) {
       document.documentElement.classList.add('dark')
     } else {
       document.documentElement.classList.remove('dark')
     }
-  }, [isDark])
+  }, [isDarkState])
 
   const changeMode = () => {
-    if (isDark) {
-      document.documentElement.classList.remove('dark')
-    } else {
-      document.documentElement.classList.add('dark')
-    }
-    localStorage.isDark = !isDark
-    setIsDark(!isDark)
+    localStorage.isDark = !isDarkState
+    setIsDarkState(!isDarkState)
   }
   return (
     <LanguageProvider>
       <div className="pt-2 dark:bg-gray-800">
         <Background />
-        <NavBar changeMode={changeMode} isDark={isDark} />
+        <NavBar changeMode={changeMode} isDark={isDarkState} />
         <div className="mt-28">
           <ScrollToTop>
             <Switch>
               <Route path="/">
-                <Home isDark={isDark} />
+                <Home isDark={isDarkState} />
               </Route>
               <Route path="/about">
                 <About />
