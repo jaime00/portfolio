@@ -8,11 +8,8 @@ import { useTranslation } from '../../i18n'
 
 export default function Contact() {
   const { t } = useTranslation()
-  const commonButtonStyles = {
-    padding: '15px',
-    width: '65px',
-    height: '65px'
-  }
+  const commonButtonStyles =
+    '!flex !items-center !justify-center !w-[65px] !h-[65px] !p-[15px]'
 
   const contactMethods = [
     { type: 'email', icon: <MailCheckIcon /> },
@@ -39,7 +36,7 @@ export default function Contact() {
                 key={index}
                 type={method.type}
                 openUrl={method.openUrl}
-                style={commonButtonStyles}
+                className={commonButtonStyles}
               >
                 {method.icon}
               </Button>
