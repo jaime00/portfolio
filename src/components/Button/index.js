@@ -1,5 +1,6 @@
-import { getStyleButton } from '../../services'
 import { Link } from 'wouter'
+
+import { getStyleButton } from '../../services'
 
 export default function Button({
   children,
@@ -7,12 +8,12 @@ export default function Button({
   to = '/',
   openUrl = null,
   type = null,
-  style = {}
+  className = ''
 }) {
-  const classes = getStyleButton({ isDark })
+  const classes = `${getStyleButton({ isDark })} ${className}`
 
   const renderButton = (content) => (
-    <button style={style} aria-label="button" type="button" className={classes}>
+    <button aria-label="button" type="button" className={classes}>
       {content}
     </button>
   )
@@ -20,7 +21,6 @@ export default function Button({
   if (openUrl) {
     return (
       <button
-        style={style}
         aria-label="button"
         type="button"
         className={classes}
