@@ -3,7 +3,7 @@
     "en": [
       {
         "id": 1,
-        "url_preview": "https://cinepolis.com/mx",
+        "urlPreview": "https://cinepolis.com/mx",
         "title": "Cinepolis WEB",
         "description": "WEB platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
@@ -11,16 +11,16 @@
       },
       {
         "id": 2,
-        "url_preview": "https://smooth-components.netlify.app",
+        "urlPreview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
         "description": "Library of beautifully designed, reusable UI components for React. Whether you're building a portfolio, dashboard, or e-commerce site.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1770778874/projects/smooth-components/landing.png.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
-        "url_code": "https://www.npmjs.com/package/smooth-components"
+        "urlCode": "https://www.npmjs.com/package/smooth-components"
       },
       {
         "id": 3,
-        "url_preview": "https://www.negos.co",
+        "urlPreview": "https://www.negos.co",
         "title": "Negos",
         "description": "WEB platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
@@ -28,8 +28,8 @@
       },
       {
         "id": 4,
-        "url_preview": "https://www.npmjs.com/package/eazy-git",
-        "url_code": "https://github.com/jaime00/eazy-git",
+        "urlPreview": "https://www.npmjs.com/package/eazy-git",
+        "urlCode": "https://github.com/jaime00/eazy-git",
         "title": "Eazy Git",
         "description": "CLI tool that simplifies branch management in Git. It automates common workflows and maintains a consistent branch structure.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",
@@ -39,7 +39,7 @@
     "es": [
       {
         "id": 1,
-        "url_preview": "https://cinepolis.com/mx",
+        "urlPreview": "https://cinepolis.com/mx",
         "title": "Cinepolis WEB",
         "description": "Plataforma WEB para amantes del cine para explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
@@ -47,16 +47,16 @@
       },
       {
         "id": 2,
-        "url_preview": "https://smooth-components.netlify.app",
+        "urlPreview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
         "description": "Biblioteca de componentes UI bellamente diseñados y reutilizables para React. Ya sea que estés construyendo un portafolio, dashboard o sitio de comercio electrónico.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1770778874/projects/smooth-components/landing.png.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
-        "url_code": "https://www.npmjs.com/package/smooth-components"
+        "urlCode": "https://www.npmjs.com/package/smooth-components"
       },
       {
         "id": 3,
-        "url_preview": "https://www.negos.co",
+        "urlPreview": "https://www.negos.co",
         "title": "Negos",
         "description": "Plataforma WEB que simplifica la gestión de inventario. Permite a los propietarios de negocios subir, organizar y actualizar productos rápidamente y sin intermediarios.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
@@ -64,8 +64,8 @@
       },
       {
         "id": 4,
-        "url_preview": "https://www.npmjs.com/package/eazy-git",
-        "url_code": "https://github.com/jaime00/eazy-git",
+        "urlPreview": "https://www.npmjs.com/package/eazy-git",
+        "urlCode": "https://github.com/jaime00/eazy-git",
         "title": "Eazy Git",
         "description": "Herramienta CLI que simplifica la gestión de ramas en Git. Automatiza flujos de trabajo comunes y mantiene una estructura de ramas consistente.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",

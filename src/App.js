@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Route, Redirect, Switch } from 'wouter'
-import lozad from 'lozad'
 
 import Background from './components/Background'
 import MusicPlayer from './components/MusicPlayer'
@@ -19,11 +18,6 @@ import './styles/output.css'
 
 function App() {
   const [isDarkState, setIsDarkState] = useState(localStorage.isDark === 'true')
-
-  useEffect(() => {
-    const observer = lozad()
-    observer.observe()
-  }, [])
 
   useEffect(() => {
     if (isDarkState) {

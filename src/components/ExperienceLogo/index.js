@@ -5,7 +5,7 @@ export default function ExperienceLogo({ link, src, isRotate }) {
   return (
     <a href={link} target="_blank" rel="noreferrer">
       <img
-        lazy="true"
+        loading="lazy"
         className={`col-span-1 rounded-xl ${hoverClasses} cursor-pointer transition duration-500 ease-in-out`}
         src={src}
         alt="ListIcon"
