@@ -24,7 +24,7 @@ export default function Contact() {
   ]
 
   return (
-    <div className="prose prose-lg md:prose-xl dark:prose-dark relative my-5 mx-auto mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
+    <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto my-5 mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
       <Titles
         className="float-left"
         title={t('contact.title')}
@@ -48,11 +48,12 @@ export default function Contact() {
         </div>
         <div className="col-span-2 mt-10 hidden md:block">
           <img
-            data-src={VintageComputer}
             src={VintageComputer}
             alt="Vintage computer with drop shadow"
-            className="lozad drop-shadow-effect pointer-events-none animate-fade select-none"
+            className="drop-shadow-effect pointer-events-none animate-fade select-none"
             loading="lazy"
+            width={400}
+            height={400}
           />
         </div>
       </div>

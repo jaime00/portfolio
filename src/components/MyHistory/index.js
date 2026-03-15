@@ -28,13 +28,13 @@ export default function MyHistory() {
             <span className="flex justify-center">
               <span></span>
               <img
-                lazy="true"
-                data-nimg="responsive"
+                loading="lazy"
+                width={300}
+                height={300}
                 alt="Jaime Torres"
                 src={image_profile}
                 className="col-span-1 rounded-xl transition duration-500 ease-in-out hover:scale-[102%] group-hover:opacity-75"
                 decoding="async"
-                sizes="100vw"
               />
             </span>
           </div>
