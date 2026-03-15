@@ -1,4 +1,3 @@
-'use client'
 import { motion, useAnimation } from 'motion/react'
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
 
@@ -61,7 +60,7 @@ const ArrowRightIcon = forwardRef(
 
     return (
       <div
-        className={`${className} hover:bg-accent flex select-none items-center justify-center rounded-md p-2 transition-colors duration-200`}
+        className={`${className} hover:bg-accent flex select-none justify-center rounded-md p-1 transition-colors duration-200`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
@@ -95,4 +94,4 @@ const ArrowRightIcon = forwardRef(
 
 ArrowRightIcon.displayName = 'ArrowRightIcon'
 
-export { ArrowRightIcon }
+export default ArrowRightIcon

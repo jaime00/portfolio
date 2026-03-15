@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from '../../assets/animatedIcons/ArrowRightIcon'
+import ArrowRightIcon from '../../assets/animatedIcons/ArrowRightIcon'
 
 export default function ExperienceDescription({
   year_initial,
@@ -13,12 +13,17 @@ export default function ExperienceDescription({
       </p>
       <h3 className="mb-5 text-3xl font-medium">{position}</h3>
       {items.map((detail, index) => (
-        <div className="flex gap-3" key={`experience-description-${index}`}>
+        <div
+          className="flex items-start gap-3"
+          key={`experience-description-${index}`}
+        >
           <ArrowRightIcon
-            className="text-gray-500 dark:text-gray-300"
-            size={25}
+            className="shrink-0 text-gray-500 dark:text-gray-300"
+            size={20}
           />
-          <p className="text-housplit-blue-color text-left text-sm">{detail}</p>
+          <p className="text-housplit-blue-color text-left text-sm leading-[28px]">
+            {detail}
+          </p>
         </div>
       ))}
     </div>
