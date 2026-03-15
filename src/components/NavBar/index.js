@@ -1,9 +1,10 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'wouter'
+
 import image_profile from '../../assets/images/person-head.png'
 import ButtonDarkMode from '../ButtonDarkMode'
 import LanguageSelector from '../LanguageSelector'
 import NavBarOptions from '../NavBarOptions/'
-import { useEffect, useState } from 'react'
-import { Link } from 'wouter'
 import { useTranslation } from '../../i18n'
 
 export default function NavBar({ changeMode, isDark }) {
@@ -22,7 +23,7 @@ export default function NavBar({ changeMode, isDark }) {
   }, [])
   return (
     <nav
-      className={`fixed left-0 top-0 right-0 z-[999999] mx-auto w-[100vw] max-w-6xl animate-fade rounded border-gray-200 px-4 py-3 transition-colors duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-[999999] mx-auto w-[100vw] max-w-6xl animate-fade rounded border-gray-200 px-4 py-3 transition-colors duration-300 ${
         scrolled ? 'bg-white/20 dark:bg-gray-800/20' : 'bg-transparent'
       }`}
     >
@@ -36,13 +37,15 @@ export default function NavBar({ changeMode, isDark }) {
           <Link to="/">
             <img
               loading="lazy"
+              width={48}
+              height={48}
               alt="Jaime Torres Icono Navbar"
               src={image_profile}
               className="dark:bg-midnight general-ring-state relative z-10 h-12 w-auto cursor-pointer select-none rounded-full transition-all duration-500 hover:scale-110 active:scale-95"
             />
           </Link>
           <span
-            className={`pointer-events-none absolute top-full left-0 mt-2 whitespace-nowrap rounded-2xl bg-gradient-to-r from-teal-500 to-teal-400 px-4 py-2 text-left shadow-md shadow-teal-500/20 transition-all duration-300 dark:from-teal-400 dark:to-emerald-400 ${
+            className={`pointer-events-none absolute left-0 top-full mt-2 whitespace-nowrap rounded-2xl bg-gradient-to-r from-teal-500 to-teal-400 px-4 py-2 text-left shadow-md shadow-teal-500/20 transition-all duration-300 dark:from-teal-400 dark:to-emerald-400 ${
               showTooltip
                 ? 'translate-y-0 opacity-100'
                 : '-translate-y-2 opacity-0'

@@ -11,12 +11,6 @@ html.dark {
   font-size: 18px;
 }
 
-.nav-bar-item:hover {
-  /* font-size: 1.025rem !important; */
-  /* color: rgb(75 85 99 / var(--tw-text-opacity)) !important; */
-  /* background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important; */
-}
-
 h1 {
   margin: auto 10px auto auto;
 }
@@ -58,6 +52,7 @@ button {
 }
 
 html {
+  overflow-y: scroll;
   --sb-track-color: #ffffff;
   --sb-thumb-color: #85cbd3;
   --sb-thumb-border-color: white;
