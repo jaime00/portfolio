@@ -56,7 +56,8 @@
   "contact": {
     "title": "Contact",
     "subtitle": "Interested in my work?",
-    "question": "Got a question, proposal or project or want to work together on something? Feel free to reach out."
+    "question": "Got a question, proposal or project or want to work together on something? Feel free to reach out.",
+    "emailCopied": "Email copied to clipboard!"
   },
   "footer": {
     "general": "General",

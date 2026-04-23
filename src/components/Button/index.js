@@ -7,7 +7,7 @@ export default function Button({
   isDark = true,
   to = '/',
   openUrl = null,
-  type = null,
+  onClick = null,
   className = ''
 }) {
   const classes = `${getStyleButton({ isDark })} ${className}`
@@ -31,9 +31,16 @@ export default function Button({
     )
   }
 
-  if (type) {
+  if (onClick) {
     return (
-      <a href="mailto:imjaimetorresv@gmail.com">{renderButton(children)}</a>
+      <button
+        aria-label="button"
+        type="button"
+        className={classes}
+        onClick={onClick}
+      >
+        {children}
+      </button>
     )
   }
 

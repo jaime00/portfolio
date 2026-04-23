@@ -13,6 +13,7 @@
     "react-dom": "^19.1.0",
     "react-jsx-runtime": "^1.0.0-alpha.1",
     "react-scripts": "5.0.0",
+    "sonner": "^2.0.7",
     "wouter": "^2.8.0-alpha.2"
   },
   "scripts": {

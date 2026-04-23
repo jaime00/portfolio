@@ -4,6 +4,9 @@ import { ReactComponent as WhatsappIcon } from '../../assets/icons/whatsapp.svg'
 import VintageComputer from '../../assets/images/vintage-computer.png'
 import Button from '../../components/Button'
 import Titles from '../../components/Titles'
+import { motion } from 'motion/react'
+import { toast } from 'sonner'
+
 import { useTranslation } from '../../i18n'
 
 export default function Contact() {
@@ -11,8 +14,38 @@ export default function Contact() {
   const commonButtonStyles =
     '!flex !items-center !justify-center !w-[65px] !h-[65px] !p-[15px]'
 
+  const email = 'imjaimetorresv@gmail.com'
+
+  const CopiedIcon = () => (
+    <motion.svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-5 w-5 text-teal-500"
+      initial={{ scale: 0, rotate: -90 }}
+      animate={{ scale: 1, rotate: 0 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+    >
+      <motion.path
+        d="M20 6 9 17l-5-5"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 0.4, delay: 0.2, ease: 'easeOut' }}
+      />
+    </motion.svg>
+  )
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email)
+    toast(t('contact.emailCopied'), { icon: <CopiedIcon /> })
+  }
+
   const contactMethods = [
-    { type: 'email', icon: <MailCheckIcon /> },
+    { onClick: handleCopyEmail, icon: <MailCheckIcon /> },
     { openUrl: 'https://linkedin.com/in/jaimetorresv', icon: <LinkedinIcon /> },
     {
       openUrl: 'https://api.whatsapp.com/send?phone=573015834942',
@@ -34,7 +67,7 @@ export default function Contact() {
             {contactMethods.map((method, index) => (
               <Button
                 key={index}
-                type={method.type}
+                onClick={method.onClick}
                 openUrl={method.openUrl}
                 className={commonButtonStyles}
               >
