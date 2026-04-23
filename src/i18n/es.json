@@ -56,7 +56,8 @@
   "contact": {
     "title": "Contacto",
     "subtitle": "¿Interesado en mi trabajo?",
-    "question": "¿Tienes alguna pregunta, propuesta o proyecto o quieres trabajar juntos en algo? No dudes en contactarme."
+    "question": "¿Tienes alguna pregunta, propuesta o proyecto o quieres trabajar juntos en algo? No dudes en contactarme.",
+    "emailCopied": "Correo copiado en el portapapeles!"
   },
   "footer": {
     "general": "General",
