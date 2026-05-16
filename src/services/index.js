@@ -26,6 +26,38 @@ const getExperiences = (lang = 'en') =>
 const getCurriculumUrl = (lang = 'en') =>
   DataSite.curriculum_url[lang] || DataSite.curriculum_url.en
 
+const getYearsOfExperience = () => {
+  const jobs = DataSite.work_experience.en
+  const intervals = jobs.map((job) => {
+    const start = new Date(job.year_initial + ' 1')
+    const end =
+      job.year_end === 'Now' ? new Date() : new Date(job.year_end + ' 1')
+    return { start, end }
+  })
+
+  intervals.sort((a, b) => a.start - b.start)
+
+  const merged = [intervals[0]]
+  for (let i = 1; i < intervals.length; i++) {
+    const last = merged[merged.length - 1]
+    if (intervals[i].start <= last.end) {
+      last.end = new Date(Math.max(last.end, intervals[i].end))
+    } else {
+      merged.push(intervals[i])
+    }
+  }
+
+  const totalMonths = merged.reduce((sum, { start, end }) => {
+    return (
+      sum +
+      (end.getFullYear() - start.getFullYear()) * 12 +
+      (end.getMonth() - start.getMonth())
+    )
+  }, 0)
+
+  return Math.floor(totalMonths / 12)
+}
+
 const getStyleButton = ({ isDark }) => {
   const base = `text-sm md:text-xl md:w-auto md:inline-flex py-3 px-2 md:px-12 rounded-full w-full items-center justify-center font-medium text-center mr-2 transition-all`
   if (isDark)
@@ -38,5 +70,6 @@ export {
   getExperiences,
   getWorkExperience,
   getCurriculumUrl,
-  getStyleButton
+  getStyleButton,
+  getYearsOfExperience
 }
