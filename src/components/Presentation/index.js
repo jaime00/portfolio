@@ -2,13 +2,14 @@ import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 
 import { FolderCodeIcon } from '../../assets/animatedIcons/FolderCode'
-import image_profile from '../../assets/images/personGPT5.png'
+import image_profile from '../../assets/images/realCharacter.png'
+import { getYearsOfExperience } from '../../services'
 import terminalText from '../../utils/terminalText'
 import { useTranslation } from '../../i18n'
 
 export default function Presentation({ isDark }) {
   const { t } = useTranslation()
-  const targetYears = 6
+  const targetYears = getYearsOfExperience()
   const [count, setCount] = useState(1)
 
   useEffect(() => {
