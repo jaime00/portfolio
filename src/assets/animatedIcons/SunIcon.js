@@ -46,7 +46,7 @@ const SunIcon = forwardRef(
     )
     return (
       <div
-        className={`${className}cursor-pointer hover:bg-accent flex select-none items-center justify-center rounded-md p-2 transition-colors duration-200`}
+        className={`${className} hover:bg-accent flex cursor-pointer select-none items-center justify-center rounded-md p-2 transition-colors duration-200`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

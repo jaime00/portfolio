@@ -12,8 +12,8 @@ export default function Footer() {
     <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto flex max-w-6xl animate-fade flex-col justify-center bg-white p-4 px-4 font-sans dark:bg-gray-800 sm:p-6">
       <hr className="my-12 dark:border-gray-700" />
       <footer className="">
-        <div className="mx-5 mb-12 align-middle md:flex md:justify-between">
-          <div className="grid grid-cols-2 sm:gap-20">
+        <div className="mb-12 flex flex-col gap-8 sm:flex-row sm:justify-between">
+          <div className="grid grid-cols-2 gap-8 sm:gap-20">
             <div>
               <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                 {t('footer.general')}
@@ -71,15 +71,15 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="mt-7 flex items-center">
+          <div className="flex items-start">
             <Top />
           </div>
         </div>
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-base text-gray-500 dark:text-gray-400 sm:text-center">
+        <div className="flex items-center justify-between">
+          <span className="text-base text-gray-500 dark:text-gray-400">
             {t('footer.copyright')}
           </span>
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+          <div className="flex space-x-6">
             <a
               href="https://linkedin.com/in/jaimetorresv"
               target="_blank"

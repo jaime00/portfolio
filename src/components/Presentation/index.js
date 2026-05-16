@@ -23,7 +23,7 @@ export default function Presentation({ isDark }) {
       if (current >= targetYears) clearInterval(timer)
     }, interval)
     return () => clearInterval(timer)
-  }, [])
+  }, [targetYears])
 
   useEffect(() => {
     terminalText(
@@ -82,8 +82,6 @@ export default function Presentation({ isDark }) {
 
       <div className="mask-image pointer-events-none absolute bottom-[60px] right-0 top-0 z-[4] h-[415px] select-none justify-end opacity-0 transition-opacity duration-700 ease-in-out min-1045:opacity-100">
         <img
-          width="310"
-          height="415"
           fetchPriority="high"
           alt="Jaime Torres"
           src={image_profile || '/placeholder.svg'}

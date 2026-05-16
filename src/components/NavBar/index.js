@@ -33,7 +33,7 @@ export default function NavBar({ changeMode, isDark }) {
               height={48}
               alt="Jaime Torres Icono Navbar"
               src={image_profile}
-              className="dark:bg-midnight general-ring-state relative z-10 h-12 w-auto cursor-pointer select-none rounded-full transition-all duration-500 hover:scale-110 active:scale-95"
+              className="general-ring-state relative z-10 h-12 w-auto cursor-pointer select-none rounded-full transition-all duration-500 hover:scale-110 active:scale-95"
             />
           </Link>
         </div>

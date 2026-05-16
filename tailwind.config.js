@@ -8,6 +8,9 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        midnight: '#4b5563'
+      },
       backgroundImage: {
         'radial-gradient':
           'radial-gradient(circle, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 100%)',

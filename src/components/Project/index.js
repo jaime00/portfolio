@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import DetailOfProject from '../DetailOfProject'
 import StackOfProject from '../StackOfProject'
 
@@ -10,6 +11,8 @@ export default function Project({
   stack,
   id
 }) {
+  const [loaded, setLoaded] = useState(false)
+
   return (
     <>
       <div className="wrapper group min-w-[350px] max-w-[405px] pb-6 text-gray-900 antialiased">
@@ -21,7 +24,8 @@ export default function Project({
               height={260}
               src={img}
               alt={title}
-              className="h-[260px] w-full rounded-lg object-cover object-top shadow-md transition-all duration-700 group-hover:scale-110"
+              onLoad={() => setLoaded(true)}
+              className={`h-[260px] w-full rounded-lg object-cover object-top shadow-md transition-all duration-700 group-hover:scale-110 ${loaded ? 'opacity-100' : 'opacity-0'}`}
             />
           </div>
           <div className="relative -mt-16 px-4">

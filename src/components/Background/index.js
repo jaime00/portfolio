@@ -10,6 +10,7 @@ export default function Background() {
           <img
             src={BackOne}
             alt=""
+            fetchPriority="high"
             className="w-[71.75rem] max-w-none flex-none dark:hidden"
           />
         </picture>
@@ -18,6 +19,7 @@ export default function Background() {
           <img
             src={BackTwo}
             alt=""
+            fetchPriority="high"
             className="hidden w-[90rem] max-w-none flex-none dark:block"
           />
         </picture>
