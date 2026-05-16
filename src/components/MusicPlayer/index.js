@@ -259,6 +259,7 @@ export default function MusicPlayer() {
       </div>
 
       <motion.div
+        initial={false}
         animate={
           isOpen
             ? { opacity: 1, scale: 1, x: 0, filter: 'blur(0px)' }

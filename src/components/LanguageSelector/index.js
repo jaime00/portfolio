@@ -3,11 +3,14 @@ import { useTranslation } from '../../i18n'
 const flags = {
   en: (
     <svg viewBox="0 0 36 36" className="h-5 w-5" aria-hidden="true">
-      <rect fill="#00247D" width="36" height="36" rx="4" />
-      <path d="M0 0L36 36M36 0L0 36" stroke="#fff" strokeWidth="6" />
-      <path d="M0 0L36 36M36 0L0 36" stroke="#CF142B" strokeWidth="2" />
-      <path d="M18 0V36M0 18H36" stroke="#fff" strokeWidth="10" />
-      <path d="M18 0V36M0 18H36" stroke="#CF142B" strokeWidth="6" />
+      <rect fill="#B22234" width="36" height="36" rx="4" />
+      <rect fill="#fff" y="3" width="36" height="2.77" />
+      <rect fill="#fff" y="8.54" width="36" height="2.77" />
+      <rect fill="#fff" y="14.08" width="36" height="2.77" />
+      <rect fill="#fff" y="19.62" width="36" height="2.77" />
+      <rect fill="#fff" y="25.15" width="36" height="2.77" />
+      <rect fill="#fff" y="30.69" width="36" height="2.77" />
+      <rect fill="#3C3B6E" width="16" height="19.38" rx="2" />
     </svg>
   ),
   es: (
@@ -25,16 +28,11 @@ export default function LanguageSelector() {
   return (
     <button
       onClick={() => changeLanguage(nextLang)}
-      className="dark:bg-midnight general-ring-state flex h-12 w-[4.5rem] items-center justify-center rounded-full bg-gray-200 transition-shadow duration-200 hover:ring-4 hover:ring-gray-700"
+      className="general-ring-state flex h-12 w-12 items-center justify-center rounded-full border border-gray-200/80 bg-white/70 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/90 hover:shadow-md active:scale-95 dark:border-gray-500/30 dark:bg-white/10 dark:hover:border-gray-400/40 dark:hover:bg-white/20 dark:hover:shadow-none"
       aria-label={`Switch to ${nextLang === 'es' ? 'Spanish' : 'English'}`}
-      title={nextLang === 'es' ? 'Cambiar a Espanol' : 'Switch to English'}
+      title={nextLang === 'es' ? 'Cambiar a Español' : 'Switch to English'}
     >
-      <span className="flex items-center gap-1.5">
-        {flags[language]}
-        <span className="text-xs font-semibold uppercase text-gray-700">
-          {nextLang}
-        </span>
-      </span>
+      {flags[language]}
     </button>
   )
 }
