@@ -35,7 +35,6 @@ React 19 portfolio site using Create React App + Craco, Wouter routing, Tailwind
 
 - Routing: `wouter` (Route, Redirect, Switch)
 - Animations: `motion` (Framer Motion)
-- Lazy loading: `lozad`
 - CSS: `tailwindcss` + `postcss-cli`
 
 ## Code Style
@@ -50,16 +49,12 @@ React 19 portfolio site using Create React App + Craco, Wouter routing, Tailwind
 
 ### Imports
 
-Group imports in this order:
-
-1. External libraries (React, wouter, etc.)
-2. Internal components/services (relative paths)
-3. Styles
+Group imports in this order: external libraries, then internal (relative paths).
 
 ```javascript
+import React from 'react'
 import MyHistory from '../../components/MyHistory'
 import Separator from '../../components/Separator'
-import React from 'react'
 ```
 
 ### Component Pattern
@@ -129,7 +124,6 @@ export default function Button({ children, isDark = true, to = '/' }) {
 
 - Project previews hosted on Cloudinary
 - Local assets in `src/assets/`
-- Use `.lozad` class for lazy loading
 
 ## Error Handling
 
@@ -149,8 +143,8 @@ const projects = DataSite.projects[lang] || DataSite.projects.en
 
 ## Testing
 
-- Uses React Testing Library and Jest via react-scripts
-- Tests should live next to components (not yet present in codebase)
+- Uses React Testing Library and Jest via Craco
+- Tests not yet present in codebase
 - Run single tests with `-t` pattern: `npm test -- -t "Button renders"`
 
 ## Deployment

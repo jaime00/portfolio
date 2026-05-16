@@ -193,7 +193,7 @@ export default function MusicPlayer() {
   }, [isDragging, seekToPosition])
 
   return (
-    <div className="[&_button]:outline-none [&_*]:[-webkit-tap-highlight-color:transparent] fixed left-6 bottom-6 z-[999998] flex items-end gap-3">
+    <div className="fixed bottom-6 left-6 z-[999998] flex items-end gap-3 [&_*]:[-webkit-tap-highlight-color:transparent] [&_button]:outline-none">
       <audio ref={audioRef} preload="auto" />
 
       <div className="relative">

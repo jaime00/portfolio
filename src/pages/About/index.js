@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function About() {
   return (
-    <section className="prose prose-lg md:prose-xl dark:prose-dark relative my-5 mx-auto mt-8 flex max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
+    <section className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto my-5 mt-8 flex max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
       <MyHistory />
       <Separator />
       <WorkExperience />
