@@ -9,7 +9,7 @@ export default function Experiences() {
   const experiences = getExperiences(language)
   const workExperiences = getWorkExperience({ lang: language })
   return (
-    <div className="prose prose-lg md:prose-xl dark:prose-dark relative my-5 mx-auto mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
+    <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto my-5 mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
       <Titles
         className="text-center"
         title={t('experiences.title')}

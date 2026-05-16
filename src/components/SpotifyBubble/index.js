@@ -8,7 +8,7 @@ export default function SpotifyBubble() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="fixed left-6 bottom-6 z-[999998] flex items-end gap-3">
+    <div className="fixed bottom-6 left-6 z-[999998] flex items-end gap-3">
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.1 }}
