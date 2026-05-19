@@ -50,7 +50,7 @@ const FolderCodeIcon = forwardRef(
     )
 
     return (
-      <div
+      <span
         className={className}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -83,7 +83,7 @@ const FolderCodeIcon = forwardRef(
             variants={CODE_VARIANTS}
           />
         </svg>
-      </div>
+      </span>
     )
   }
 )
