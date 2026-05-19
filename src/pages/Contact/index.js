@@ -1,7 +1,7 @@
 import { MailCheckIcon } from '../../assets/animatedIcons/EmailCheckIcon'
 import { LinkedinIcon } from '../../assets/animatedIcons/LinkedinIcon'
 import { ReactComponent as WhatsappIcon } from '../../assets/icons/whatsapp.svg'
-import VintageComputer from '../../assets/images/vintage-computer.png'
+import CharacterSit from '../../assets/images/characterSit.png'
 import Button from '../../components/Button'
 import Titles from '../../components/Titles'
 import { motion } from 'motion/react'
@@ -44,6 +44,25 @@ export default function Contact() {
     toast(t('contact.emailCopied'), { icon: <CopiedIcon /> })
   }
 
+  const characterVariants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        delay: 0.2
+      }
+    },
+    float: {
+      y: [0, -12, 0],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: 'easeInOut'
+      }
+    }
+  }
+
   const contactMethods = [
     { onClick: handleCopyEmail, icon: <MailCheckIcon /> },
     { openUrl: 'https://linkedin.com/in/jaimetorresv', icon: <LinkedinIcon /> },
@@ -54,7 +73,7 @@ export default function Contact() {
   ]
 
   return (
-    <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto my-5 mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
+    <div className="relative mx-auto my-5 mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
       <Titles
         className="float-left"
         title={t('contact.title')}
@@ -76,15 +95,17 @@ export default function Contact() {
             ))}
           </div>
         </div>
-        <div className="col-span-2 mt-10 hidden pb-8 md:block">
-          <img
-            src={VintageComputer}
-            alt="Vintage computer with drop shadow"
-            // className="drop-shadow-effect pointer-events-none animate-fade select-none"
-            className="pointer-events-none animate-fade select-none"
+        <div className="col-span-2 mt-10 hidden pb-8 md:flex md:justify-center">
+          <motion.img
+            src={CharacterSit}
+            alt="Character on the side"
+            className="pointer-events-none select-none"
             loading="lazy"
-            width={400}
-            height={400}
+            width={305}
+            height={415}
+            variants={characterVariants}
+            initial="initial"
+            animate={['animate', 'float']}
           />
         </div>
       </div>

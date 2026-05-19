@@ -26,12 +26,25 @@ const getExperiences = (lang = 'en') =>
 const getCurriculumUrl = (lang = 'en') =>
   DataSite.curriculum_url[lang] || DataSite.curriculum_url.en
 
+const parseMonthYear = (dateStr) => {
+  if (dateStr === 'Now') return new Date()
+
+  const parts = dateStr.trim().split(' ')
+  const monthName = parts[0]
+  const year = parseInt(parts[1], 10)
+
+  // Create a temp date to get the month index (0-11)
+  const tempDate = new Date(`${monthName} 1, 2000`)
+  const monthIndex = tempDate.getMonth()
+
+  return new Date(year, monthIndex, 1)
+}
+
 const getYearsOfExperience = () => {
   const jobs = DataSite.work_experience.en
   const intervals = jobs.map((job) => {
-    const start = new Date(job.year_initial + ' 1')
-    const end =
-      job.year_end === 'Now' ? new Date() : new Date(job.year_end + ' 1')
+    const start = parseMonthYear(job.year_initial)
+    const end = parseMonthYear(job.year_end)
     return { start, end }
   })
 
