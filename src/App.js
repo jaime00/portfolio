@@ -4,12 +4,12 @@ import { Toaster } from 'sonner'
 
 import Background from './components/Background'
 import MusicPlayer from './components/MusicPlayer'
-import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import ScrollToTop from './components/ScrollToTop'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Experiences from './pages/Experiences'
+import Footer from './components/Footer'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import { LanguageProvider } from './i18n'
@@ -18,20 +18,22 @@ import './styles/general.css'
 import './styles/output.css'
 
 function App() {
-  const [isDarkState, setIsDarkState] = useState(localStorage.isDark === 'true')
+  const [isDarkStateV2, setIsDarkState] = useState(
+    localStorage.isDark === 'true'
+  )
 
   useEffect(() => {
-    if (isDarkState) {
+    if (isDarkStateV2) {
       document.documentElement.classList.add('dark')
     } else {
       document.documentElement.classList.remove('dark')
     }
-  }, [isDarkState])
+  }, [isDarkStateV2])
 
   const changeMode = () => {
     const toggleTheme = () => {
-      localStorage.isDark = !isDarkState
-      setIsDarkState(!isDarkState)
+      localStorage.isDark = !isDarkStateV2
+      setIsDarkState(!isDarkStateV2)
     }
     if (!document.startViewTransition) {
       toggleTheme()
@@ -58,12 +60,12 @@ function App() {
       />
       <div className="pt-2 dark:bg-gray-800">
         <Background />
-        <NavBar changeMode={changeMode} isDark={isDarkState} />
+        <NavBar changeMode={changeMode} isDark={isDarkStateV2} />
         <div className="mt-28">
           <ScrollToTop>
             <Switch>
               <Route path="/">
-                <Home isDark={isDarkState} />
+                <Home isDark={isDarkStateV2} />
               </Route>
               <Route path="/about">
                 <About />
