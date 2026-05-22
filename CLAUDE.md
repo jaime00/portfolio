@@ -22,11 +22,13 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 
 **Routing:** `App.js` defines all routes using Wouter — `/`, `/about`, `/side-projects`, `/experiences`, `/contact`. To add a page, create a component in `src/pages/` and register the route in `App.js`.
 
-**Data flow:** Static data lives in `src/data/dataSite.json`. Service functions in `src/services/index.js` expose getters (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`). Components consume these — no external state management.
+**Data flow:** Static data lives in `src/data/dataSite.json`. Service functions in `src/services/index.js` expose getters (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`, `getStyleButton`, `getYearsOfExperience`). Components never import `dataSite.json` directly — always go through services.
 
 **i18n:** Custom context-based system in `src/i18n/`. `LanguageProvider` wraps the app (in `App.js`) and exposes `useTranslation()` → `{ language, t, changeLanguage }`. UI strings live in `src/i18n/en.json` and `src/i18n/es.json`; use dot-notation keys with `t('section.key')`. Content data in `dataSite.json` is keyed by language (`projects.en`, `projects.es`); service functions accept a `lang` parameter. Language is auto-detected from browser and persisted in localStorage.
 
-**Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList and persisted in localStorage. Use Tailwind's `dark:` prefix for dark variants.
+**Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList using the View Transition API (`document.startViewTransition`). Persisted in `localStorage.isDark`. Use Tailwind's `dark:` prefix for dark variants.
+
+**Toasts:** Sonner is used for toast notifications.
 
 ## Key Conventions
 
@@ -36,3 +38,12 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 - **Images:** Project previews hosted on Cloudinary. Local assets in `src/assets/`. Lazy-loaded with Lozad (`.lozad` class).
 - **Custom Tailwind breakpoints:** `min-1045` and `min-445` (min-width).
 - **Prettier config:** No semicolons, single quotes, no trailing commas, 80 char width, Tailwind class sorting plugin.
+- **Pre-commit hook (Husky):** Runs Prettier on staged files only — no lint check on commit.
+- **No tests exist yet** in the codebase.
+
+## Adding a Page
+
+1. Create `src/pages/PageName/index.js`
+2. Register route in `src/App.js`
+3. Add NavBar link if needed
+4. Add i18n keys to `src/i18n/en.json` and `src/i18n/es.json`
