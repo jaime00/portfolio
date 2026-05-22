@@ -1,160 +1,46 @@
 # AGENTS.md
 
-Guidelines for AI coding agents working in this repository.
-
 ## Commands
 
 ```bash
-npm install                    # Install dependencies
-npm run dev                    # Development (dev server + Tailwind CSS watcher)
-npm start                      # Dev server only (Craco wrapping CRA)
-npm run build                  # Production build (watch:css then craco build → build/)
-npm run watch:css              # Compile src/styles/tailwind.css → src/styles/output.css
-npm test                       # Run tests (Jest via Craco, watch mode)
-npm test -- -t "<pattern>"     # Run single test by name/pattern
-npm test -- --watchAll=false   # Run tests once without watch
-npx eslint "src/**/*.{js,jsx}"  # Lint (no dedicated script)
+npm install              # Install
+npm run dev              # Dev server + Tailwind CSS watcher (concurrently)
+npm start                # Dev server only (Craco)
+npm run build            # watch:css then craco build → build/
+npm run watch:css        # Compile src/styles/tailwind.css → src/styles/output.css
+npm test                 # Jest via Craco (watch mode)
+npm test -- -t "<patt>"  # Single test
+npm test -- --watchAll=false  # Once
+npx eslint "src/**/*.{js,jsx}"  # Lint (eslintConfig in package.json)
 ```
 
 ## Architecture
 
-React 19 portfolio site using Create React App + Craco, Wouter routing, Tailwind CSS, and Motion (Framer Motion) for animations. Deployed to Netlify.
+React 19 + CRA/Craco + Wouter routing + Tailwind CSS 3 + Motion (Framer Motion) + Sonner (toasts).  
+Custom context-based i18n (`LanguageProvider` + `useTranslation`).  
+Lozad.js for lazy image loading.  
+Deployed to Netlify (`build/`, `npm run build`).
 
-**Directory structure:**
+**Entry:** `src/index.js` → `App.js`. Routes in `App.js` (`/`, `/about`, `/side-projects`, `/contact`, `/experiences`).
 
-- `src/index.js` → Entry point, mounts `<App />`
-- `src/App.js` → Routing configuration with Wouter, providers, dark mode state
-- `src/pages/` → Top-level route components (Home, About, Projects, Experiences, Contact)
-- `src/components/` → Reusable UI components (one folder per component, index.js barrel export)
-- `src/services/index.js` → Data access functions (getProjects, getWorkExperience, etc.)
-- `src/data/dataSite.json` → Static site data keyed by language
-- `src/i18n/` → Custom i18n system (LanguageProvider, useTranslation hook)
-- `src/styles/` → CSS files (tailwind.css source, output.css generated, general.css for custom styles)
+**Data flow:** Static content in `src/data/dataSite.json` (keyed by language). Accessed only through service functions in `src/services/index.js` (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`, `getStyleButton`, `getYearsOfExperience`). Components never import dataSite.json directly.
 
-**Key libraries:**
+**i18n:** UI strings in `src/i18n/en.json` / `es.json`, dot-notation keys, accessed via `t('section.key')`. Language auto-detected from browser, persisted in localStorage.
 
-- Routing: `wouter` (Route, Redirect, Switch)
-- Animations: `motion` (Framer Motion)
-- CSS: `tailwindcss` + `postcss-cli`
+## Style & Conventions
 
-## Code Style
+- **Prettier:** No semicolons, single quotes, no trailing commas, 80 width, `prettier-plugin-tailwindcss` for class sorting.
+- **Components:** One folder per component, `index.js` barrel export, default export, destructure props.
+- **Never edit `src/styles/output.css`** — it's generated from `tailwind.css`. Custom CSS (fonts, gradients, view transitions) in `general.css`.
+- **Dark mode:** Class-based (`darkMode: 'class'`). Toggle via `<html>` classList. Uses View Transition API (`document.startViewTransition`). Persisted in `localStorage.isDark`.
+- **Custom breakpoints:** `min-1045` (1045px), `min-445` (445px).
+- **Images:** Project previews on Cloudinary. Local assets in `src/assets/`. Lazy-loaded with Lozad (`.lozad` class).
+- **Pre-commit hook (Husky):** Runs `npx prettier` on staged files only (no lint check).
+- **No tests exist yet** in codebase.
 
-### Formatting (Prettier)
+## Adding a Page
 
-- No semicolons
-- Single quotes
-- Print width: 80 characters
-- No trailing commas
-- Tailwind class sorting via `prettier-plugin-tailwindcss`
-
-### Imports
-
-Group imports in this order: external libraries, then internal (relative paths).
-
-```javascript
-import React from 'react'
-import MyHistory from '../../components/MyHistory'
-import Separator from '../../components/Separator'
-```
-
-### Component Pattern
-
-- One folder per component with `index.js` barrel export
-- Use default exports for components
-- Destructure props in function signature with default values
-- Use named exports for utilities and hooks
-
-```javascript
-export default function Button({ children, isDark = true, to = '/' }) {
-  // ...
-}
-```
-
-### Naming Conventions
-
-- Components: PascalCase (e.g., `NavBar`, `WorkExperience`)
-- Functions/variables: camelCase (e.g., `getProjects`, `changeLanguage`)
-- CSS classes: Use Tailwind utilities, custom classes in `general.css`
-- Files: PascalCase for components (matches component name)
-
-### Dark Mode
-
-- Class-based: `darkMode: 'class'` in Tailwind config
-- Toggle by adding/removing `dark` class on `<html>` element
-- Use Tailwind's `dark:` prefix for variants
-- Persist preference in localStorage (`localStorage.isDark`)
-
-### i18n (Internationalization)
-
-- UI strings: `src/i18n/en.json` and `src/i18n/es.json` with dot-notation keys
-- Access translations via `useTranslation()` hook: `t('section.key')`
-- Content data in `dataSite.json` is keyed by language: `projects.en`, `projects.es`
-- Service functions accept `lang` parameter: `getProjects({ lang: 'en' })`
-- Language persisted in localStorage and auto-detected from browser
-
-### Data Flow
-
-- Static data lives in `src/data/dataSite.json`
-- Service functions in `src/services/index.js` expose getters
-- Components consume services — no external state management
-- Never access dataSite.json directly from components
-
-## Key Conventions
-
-### Tailwind-First Styling
-
-- Never edit `src/styles/output.css` directly — it's generated
-- Modify `src/styles/tailwind.css` or `tailwind.config.js`
-- Regenerate with `npm run watch:css` or run `npm run dev`
-- Custom CSS (fonts, scrollbars, gradients) lives in `src/styles/general.css`
-
-### Adding a New Page
-
-1. Create component in `src/pages/PageName/index.js`
-2. Register route in `src/App.js` following existing pattern
-3. Add navigation link in NavBar if needed
-4. Add i18n keys to `en.json` and `es.json`
-
-### Custom Tailwind Breakpoints
-
-- `min-1045`: 1045px minimum width
-- `min-445`: 445px minimum width
-
-### Images
-
-- Project previews hosted on Cloudinary
-- Local assets in `src/assets/`
-
-## Error Handling
-
-- Throw descriptive errors for context misuse:
-
-```javascript
-if (!context) {
-  throw new Error('useTranslation must be used within a LanguageProvider')
-}
-```
-
-- Provide fallbacks for missing translations/data:
-
-```javascript
-const projects = DataSite.projects[lang] || DataSite.projects.en
-```
-
-## Testing
-
-- Uses React Testing Library and Jest via Craco
-- Tests not yet present in codebase
-- Run single tests with `-t` pattern: `npm test -- -t "Button renders"`
-
-## Deployment
-
-- Platform: Netlify
-- Build command: `npm run build`
-- Publish directory: `build/`
-- Redirects configured in `public/_redirects`
-
-## Pre-Commit Hooks
-
-- Husky is configured (`npm run prepare` sets up hooks)
-- Ensure code passes linting before committing
+1. Create `src/pages/PageName/index.js`
+2. Register route in `src/App.js`
+3. Add NavBar link if needed
+4. Add i18n keys to `en.json` / `es.json`
