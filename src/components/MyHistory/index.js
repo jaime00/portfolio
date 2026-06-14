@@ -1,9 +1,12 @@
 import image_profile from '../../assets/images/profile_image.jpg'
+import AnimatedCounter from '../../components/AnimatedCounter'
 import Titles from '../../components/Titles'
 import { useTranslation } from '../../i18n'
+import { getYearsOfExperience } from '../../services'
 
 export default function MyHistory() {
   const { t } = useTranslation()
+  const targetYears = getYearsOfExperience()
   return (
     <div className="">
       <Titles title={t('about.title')} subtitle={t('about.subtitle')} />
@@ -11,7 +14,9 @@ export default function MyHistory() {
         <br />
         <p>
           {t('about.systemsEngineer')}, {t('about.frontend')}.{' '}
-          {t('about.yearsExperience')}
+          {t('about.yearsExperienceBefore')}{' '}
+          <AnimatedCounter target={targetYears} />{' '}
+          {t('about.yearsExperienceAfter')}
         </p>
         <br />
         <p>

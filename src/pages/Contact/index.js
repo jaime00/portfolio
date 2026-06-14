@@ -1,16 +1,19 @@
+import { CopyIcon } from '../../assets/animatedIcons/CopyIcon'
 import { MailCheckIcon } from '../../assets/animatedIcons/EmailCheckIcon'
 import { LinkedinIcon } from '../../assets/animatedIcons/LinkedinIcon'
 import { ReactComponent as WhatsappIcon } from '../../assets/icons/whatsapp.svg'
 import CharacterSit from '../../assets/images/characterSit.png'
 import Button from '../../components/Button'
 import Titles from '../../components/Titles'
-import { motion } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
+import { useState } from 'react'
 import { toast } from 'sonner'
 
 import { useTranslation } from '../../i18n'
 
 export default function Contact() {
   const { t } = useTranslation()
+  const [copied, setCopied] = useState(false)
 
   const email = 'imjaimetorresv@gmail.com'
 
@@ -39,6 +42,7 @@ export default function Contact() {
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email)
+    setCopied(true)
     toast(t('contact.emailCopied'), { icon: <CopiedIcon /> })
   }
 
@@ -62,7 +66,36 @@ export default function Contact() {
   }
 
   const contactMethods = [
-    { onClick: handleCopyEmail, icon: <MailCheckIcon />, label: 'Copy email' },
+    {
+      onClick: handleCopyEmail,
+      onMouseLeave: () => setCopied(false),
+      icon: (
+        <AnimatePresence mode="wait">
+          {copied ? (
+            <motion.div
+              key="copy"
+              initial={{ opacity: 0, scale: 0.6, rotate: -90 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              exit={{ opacity: 0, scale: 0.6 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <CopyIcon autoAnimate />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="mail"
+              initial={{ opacity: 0, scale: 0.6 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.6, rotate: 90 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <MailCheckIcon />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      ),
+      label: 'Copy email'
+    },
     {
       openUrl: 'https://linkedin.com/in/jaimetorresv',
       icon: <LinkedinIcon />,
@@ -93,6 +126,7 @@ export default function Contact() {
                 ariaLabel={method.label}
                 onClick={method.onClick}
                 openUrl={method.openUrl}
+                onMouseLeave={method.onMouseLeave}
               >
                 {method.icon}
               </Button>

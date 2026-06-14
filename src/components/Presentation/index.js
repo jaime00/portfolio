@@ -1,8 +1,8 @@
 import { motion } from 'motion/react'
-import { useEffect, useState } from 'react'
 
 import { FolderCodeIcon } from '../../assets/animatedIcons/FolderCode'
 import image_profile from '../../assets/images/realCharacter.png'
+import AnimatedCounter from '../AnimatedCounter'
 import { getYearsOfExperience } from '../../services'
 import { useTypewriter } from '../../hooks/useTypewriter'
 import { useTranslation } from '../../i18n'
@@ -10,20 +10,6 @@ import { useTranslation } from '../../i18n'
 export default function Presentation({ isDark }) {
   const { t } = useTranslation()
   const targetYears = getYearsOfExperience()
-  const [count, setCount] = useState(1)
-
-  useEffect(() => {
-    const duration = 1200
-    const steps = targetYears
-    const interval = duration / steps
-    let current = 1
-    const timer = setInterval(() => {
-      current += 1
-      setCount(current)
-      if (current >= targetYears) clearInterval(timer)
-    }, interval)
-    return () => clearInterval(timer)
-  }, [targetYears])
 
   const displayText = useTypewriter([
     'React JS.',
@@ -43,15 +29,7 @@ export default function Presentation({ isDark }) {
           </span>
           <span>
             {t('home.yearsExperienceBefore')}{' '}
-            <motion.span
-              key={count}
-              initial={{ y: -8, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.15, ease: 'easeOut' }}
-              className="inline font-bold"
-            >
-              {count}
-            </motion.span>{' '}
+            <AnimatedCounter target={targetYears} />{' '}
             {t('home.yearsExperienceAfter')}
           </span>
         </p>
