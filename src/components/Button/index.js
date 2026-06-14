@@ -10,7 +10,8 @@ export default function Button({
   onClick = null,
   className = '',
   ariaLabel = 'button',
-  size = 'default'
+  size = 'default',
+  onMouseLeave = null
 }) {
   const classes = `${getStyleButton({ isDark, size })} ${className}`
 
@@ -40,6 +41,7 @@ export default function Button({
         type="button"
         className={classes}
         onClick={onClick}
+        onMouseLeave={onMouseLeave}
       >
         {children}
       </button>
