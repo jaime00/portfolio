@@ -18,7 +18,7 @@ npx eslint "src/**/*.{js,jsx}"  # Lint (no dedicated script; eslintConfig in pac
 
 ## Architecture
 
-React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Motion (Framer Motion) for animations. Deployed to Netlify.
+React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Motion for animations. Deployed to Netlify.
 
 **Routing:** `App.js` defines all routes using Wouter — `/`, `/about`, `/side-projects`, `/experiences`, `/contact`. To add a page, create a component in `src/pages/` and register the route in `App.js`.
 
@@ -28,14 +28,18 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 
 **Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList using the View Transition API (`document.startViewTransition`). Persisted in `localStorage.isDark`. Use Tailwind's `dark:` prefix for dark variants.
 
+**Animations:** Import from `motion/react` (not `framer-motion`). Example: `import { motion, AnimatePresence } from 'motion/react'`.
+
 **Toasts:** Sonner is used for toast notifications.
 
 ## Key Conventions
 
 - **Tailwind-first styling.** Never edit `src/styles/output.css` directly — it's generated. Modify `src/styles/tailwind.css` or `tailwind.config.js` and regenerate with `npm run watch:css`.
 - **Custom CSS** (fonts, scrollbars, gradients) lives in `src/styles/general.css`.
-- **Component structure:** One folder per component with `index.js` barrel export.
+- **Component structure:** One folder per component with `index.js` barrel export. The only `.jsx` file is `CarouselOfTechnologies`.
 - **Images:** Project previews hosted on Cloudinary. Local assets in `src/assets/`. Lazy-loaded with Lozad (`.lozad` class).
+- **Public static assets:** Music files in `public/songs/`, album covers in `public/covers/`, vinyl image at `public/vinyl.png`.
+- **localStorage keys in use:** `isDark`, `language`, `music-index`, `music-time`, `music-playing`.
 - **Custom Tailwind breakpoints:** `min-1045` and `min-445` (min-width).
 - **Prettier config:** No semicolons, single quotes, no trailing commas, 80 char width, Tailwind class sorting plugin.
 - **Pre-commit hook (Husky):** Runs Prettier on staged files only — no lint check on commit.

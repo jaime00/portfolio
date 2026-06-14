@@ -8,12 +8,14 @@ export default function Button({
   to = '/',
   openUrl = null,
   onClick = null,
-  className = ''
+  className = '',
+  ariaLabel = 'button',
+  size = 'default'
 }) {
-  const classes = `${getStyleButton({ isDark })} ${className}`
+  const classes = `${getStyleButton({ isDark, size })} ${className}`
 
   const renderButton = (content) => (
-    <button aria-label="button" type="button" className={classes}>
+    <button aria-label={ariaLabel} type="button" className={classes}>
       {content}
     </button>
   )
@@ -21,7 +23,7 @@ export default function Button({
   if (openUrl) {
     return (
       <button
-        aria-label="button"
+        aria-label={ariaLabel}
         type="button"
         className={classes}
         onClick={() => window.open(openUrl)}
@@ -34,7 +36,7 @@ export default function Button({
   if (onClick) {
     return (
       <button
-        aria-label="button"
+        aria-label={ariaLabel}
         type="button"
         className={classes}
         onClick={onClick}

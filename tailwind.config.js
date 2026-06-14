@@ -1,20 +1,37 @@
 module.exports = {
   mode: 'jit',
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}',
-    './public/index.html',
-    './node_modules/flowbite/**/*.js'
-  ],
-  darkMode: 'class', // or 'media' or 'class'
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        midnight: '#4b5563'
+        primary: {
+          DEFAULT: '#14b8a6', // teal-500
+          light: '#5eead4', // teal-300
+          dark: '#0d9488' // teal-600
+        },
+        surface: {
+          DEFAULT: '#ffffff',
+          dark: '#1f2937' // gray-800
+        }
+      },
+      fontFamily: {
+        display: ['"Black Ops One"', 'system-ui'],
+        accent: ['"Ruslan Display"', 'sans-serif']
       },
       backgroundImage: {
         'radial-gradient':
           'radial-gradient(circle, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 100%)',
         'linear-gradient': 'linear-gradient(90deg, white, rgba(10,116,218,0))'
+      },
+      transitionDuration: {
+        fast: '150ms',
+        normal: '300ms',
+        slow: '500ms',
+        slower: '700ms'
+      },
+      transitionTimingFunction: {
+        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)'
       },
       keyframes: {
         'carousel-keyframe': {
@@ -22,13 +39,13 @@ module.exports = {
           '100%': { transform: 'translateX(-1000%)' }
         },
         'fade-in-keyframe': {
-          '0%': { opacity: 0.7, transform: 'translateY(0px) scale(0.99)' },
-          '100%': { opacity: 1, transform: 'translateY(0px) scale(1)' }
+          '0%': { opacity: 0, transform: 'translateY(12px) scale(0.98)' },
+          '100%': { opacity: 1, transform: 'translateY(0) scale(1)' }
         }
       },
       animation: {
         'carousel-item': 'carousel-keyframe 30s linear infinite',
-        fade: 'fade-in-keyframe 1s ease-out forwards'
+        fade: 'fade-in-keyframe 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards'
       },
       screens: {
         'min-1045': '1045px',

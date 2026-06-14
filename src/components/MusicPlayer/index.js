@@ -193,10 +193,10 @@ export default function MusicPlayer() {
   }, [isDragging, seekToPosition])
 
   return (
-    <div className="fixed bottom-6 left-6 z-[999998] flex items-end gap-3 [&_*]:[-webkit-tap-highlight-color:transparent] [&_button]:outline-none">
+    <div className="pointer-events-none fixed bottom-6 left-6 z-[999998] flex items-end gap-3 [&_*]:[-webkit-tap-highlight-color:transparent]">
       <audio ref={audioRef} preload="auto" />
 
-      <div className="relative">
+      <div className="pointer-events-auto relative">
         <AnimatePresence>
           {isPlaying && (
             <>
@@ -266,7 +266,7 @@ export default function MusicPlayer() {
             : { opacity: 0, scale: 0.5, x: -40, filter: 'blur(8px)' }
         }
         transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-        className={`origin-bottom-left ${!isOpen ? 'pointer-events-none' : ''}`}
+        className={`origin-bottom-left ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
       >
         <div className="flex w-[280px] gap-3 rounded-2xl border border-teal-500/10 bg-white/80 p-3 shadow-xl shadow-teal-500/5 backdrop-blur-md dark:border-teal-400/10 dark:bg-gray-800/80">
           <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg">
@@ -340,7 +340,7 @@ export default function MusicPlayer() {
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={prevTrack}
-                className="text-gray-400 outline-none transition-colors hover:text-teal-500 focus:outline-none dark:text-gray-500 dark:hover:text-teal-400"
+                className="text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -354,7 +354,7 @@ export default function MusicPlayer() {
               <motion.button
                 onClick={togglePlay}
                 whileTap={{ scale: 0.8, rotate: 15 }}
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-teal-400 text-white outline-none focus:outline-none"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-teal-400 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
               >
                 <AnimatePresence mode="wait">
                   {isPlaying ? (
@@ -382,7 +382,7 @@ export default function MusicPlayer() {
               </motion.button>
               <button
                 onClick={nextTrack}
-                className="text-gray-400 outline-none transition-colors hover:text-teal-500 focus:outline-none dark:text-gray-500 dark:hover:text-teal-400"
+                className="text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

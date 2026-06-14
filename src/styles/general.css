@@ -1,37 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ruslan+Display&display=swap');
 
 body {
   scroll-behavior: smooth;
 }
+
 html.dark {
-  background-color: #1f2a37;
-}
-.nav-bar-item {
-  font-size: 18px;
-}
-
-h1 {
-  margin: auto 10px auto auto;
-}
-
-button {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.15s;
-}
-
-.space-x-8 > :not([hidden]) {
-  margin: 5px 10px;
+  background-color: #1f2937;
 }
 
 .drop-shadow-effect {
-  filter: drop-shadow(0px 15px 20px rgba(0, 0, 0, 0.6)) hue-rotate(90deg) !important;
+  filter: drop-shadow(0px 15px 20px rgba(0, 0, 0, 0.6)) hue-rotate(90deg);
 }
 
 .text-gradient-teal {
   background: linear-gradient(
     90deg,
-    rgb(87, 215, 196) 0%,
+    rgb(45, 212, 191) 0%,
     rgba(94, 234, 212, 1) 30%,
     #2dd4bf 50%,
     rgba(94, 234, 212, 1) 70%,
@@ -44,10 +28,6 @@ button {
 }
 
 .mask-image {
-  /* personaje pequeño */
-  /* mask-image: linear-gradient(black 60%, transparent); */
-
-  /* personaje grande */
   mask-image: linear-gradient(black 89%, transparent);
 }
 

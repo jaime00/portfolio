@@ -18,7 +18,7 @@ export default function ExperienceDescription({
           key={`experience-description-${index}`}
         >
           <ArrowRightIcon
-            className="shrink-0 text-gray-500 dark:text-gray-300"
+            className="mt-1.5 shrink-0 text-gray-500 dark:text-gray-300"
             size={20}
           />
           <p className="text-housplit-blue-color text-left text-sm leading-[28px]">

@@ -49,8 +49,9 @@ export default function NavBar({ changeMode, isDark }) {
             onClick={() => setMenuIsOpen(!menuIsOpen)}
             data-collapse-toggle="navbar"
             type="button"
-            className={`ml-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden ${menuIsOpen ? 'pointer-events-none opacity-0' : ''}`}
+            className={`general-ring-state ml-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 md:hidden ${menuIsOpen ? 'pointer-events-none opacity-0' : ''}`}
             aria-expanded={menuIsOpen}
+            aria-label="Open menu"
           >
             <span className="sr-only">Menu</span>
             <svg
