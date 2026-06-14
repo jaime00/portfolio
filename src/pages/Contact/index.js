@@ -11,8 +11,6 @@ import { useTranslation } from '../../i18n'
 
 export default function Contact() {
   const { t } = useTranslation()
-  const commonButtonStyles =
-    '!flex !items-center !justify-center !w-[65px] !h-[65px] !p-[15px]'
 
   const email = 'imjaimetorresv@gmail.com'
 
@@ -64,11 +62,16 @@ export default function Contact() {
   }
 
   const contactMethods = [
-    { onClick: handleCopyEmail, icon: <MailCheckIcon /> },
-    { openUrl: 'https://linkedin.com/in/jaimetorresv', icon: <LinkedinIcon /> },
+    { onClick: handleCopyEmail, icon: <MailCheckIcon />, label: 'Copy email' },
+    {
+      openUrl: 'https://linkedin.com/in/jaimetorresv',
+      icon: <LinkedinIcon />,
+      label: 'LinkedIn'
+    },
     {
       openUrl: 'https://api.whatsapp.com/send?phone=573015834942',
-      icon: <WhatsappIcon />
+      icon: <WhatsappIcon />,
+      label: 'WhatsApp'
     }
   ]
 
@@ -86,9 +89,10 @@ export default function Contact() {
             {contactMethods.map((method, index) => (
               <Button
                 key={index}
+                size="icon"
+                ariaLabel={method.label}
                 onClick={method.onClick}
                 openUrl={method.openUrl}
-                className={commonButtonStyles}
               >
                 {method.icon}
               </Button>

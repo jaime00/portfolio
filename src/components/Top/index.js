@@ -4,11 +4,13 @@ export default function Top() {
   const handleClick = () =>
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   return (
-    <div
+    <button
+      type="button"
+      aria-label="Scroll to top"
       className="animate-bounce cursor-pointer text-gray-500 hover:text-black dark:hover:text-white"
       onClick={handleClick}
     >
       <TopIcon />
-    </div>
+    </button>
   )
 }

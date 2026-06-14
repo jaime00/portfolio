@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { FolderCodeIcon } from '../../assets/animatedIcons/FolderCode'
 import image_profile from '../../assets/images/realCharacter.png'
 import { getYearsOfExperience } from '../../services'
-import terminalText from '../../utils/terminalText'
+import { useTypewriter } from '../../hooks/useTypewriter'
 import { useTranslation } from '../../i18n'
 
 export default function Presentation({ isDark }) {
@@ -25,19 +25,15 @@ export default function Presentation({ isDark }) {
     return () => clearInterval(timer)
   }, [targetYears])
 
-  useEffect(() => {
-    terminalText(
-      [
-        'React JS.',
-        'Next JS.',
-        'Svelte. ',
-        'Stencil JS.',
-        'Typescript.',
-        'Web Components.'
-      ],
-      'text'
-    )
-  }, [])
+  const displayText = useTypewriter([
+    'React JS.',
+    'Next JS.',
+    'Svelte. ',
+    'Stencil JS.',
+    'Typescript.',
+    'Web Components.'
+  ])
+
   return (
     <div className="relative mb-5 mt-12 grid grid-cols-1 items-center text-center md:mt-24 md:grid-cols-6 md:text-left">
       <div className="col-span-5 mx-2">
@@ -71,23 +67,31 @@ export default function Presentation({ isDark }) {
           </h2>
           <h2 className="order-2 text-left text-3xl font-extrabold leading-tight text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl md:order-1">
             {t('home.specializedIn')}{' '}
-            <div
-              className={`console-container text-gradient-teal inline-block`}
-            >
-              <span id="text"></span>
+            <div className="console-container text-gradient-teal inline-block">
+              <span>
+                {displayText.visible}
+                <span style={{ visibility: 'hidden' }}>
+                  {displayText.hidden}
+                </span>
+              </span>
             </div>
           </h2>
         </div>
       </div>
 
-      <div className="mask-image pointer-events-none absolute bottom-[60px] right-0 top-0 z-[4] h-[415px] select-none justify-end opacity-0 transition-opacity duration-700 ease-in-out min-1045:opacity-100">
+      <motion.div
+        className="mask-image pointer-events-none absolute bottom-[60px] right-0 top-0 z-[4] h-[415px] select-none justify-end"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      >
         <img
           fetchPriority="high"
           alt="Jaime Torres"
           src={image_profile || '/placeholder.svg'}
           className="col-span-1 h-0 w-auto min-1045:h-[415px]"
         />
-      </div>
+      </motion.div>
     </div>
   )
 }

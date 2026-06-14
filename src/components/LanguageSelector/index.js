@@ -1,4 +1,5 @@
 import { useTranslation } from '../../i18n'
+import IconButton from '../IconButton'
 
 const flags = {
   en: (
@@ -26,13 +27,12 @@ export default function LanguageSelector() {
   const nextLang = language === 'en' ? 'es' : 'en'
 
   return (
-    <button
+    <IconButton
       onClick={() => changeLanguage(nextLang)}
-      className="general-ring-state flex h-12 w-12 items-center justify-center rounded-full border border-gray-200/80 bg-white/70 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/90 hover:shadow-md active:scale-95 dark:border-gray-500/30 dark:bg-white/10 dark:hover:border-gray-400/40 dark:hover:bg-white/20 dark:hover:shadow-none"
-      aria-label={`Switch to ${nextLang === 'es' ? 'Spanish' : 'English'}`}
+      ariaLabel={`Switch to ${nextLang === 'es' ? 'Spanish' : 'English'}`}
       title={nextLang === 'es' ? 'Cambiar a Español' : 'Switch to English'}
     >
       {flags[language]}
-    </button>
+    </IconButton>
   )
 }
