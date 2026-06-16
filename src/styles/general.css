@@ -95,9 +95,9 @@ html.dark::view-transition-old(root) {
   *,
   *::before,
   *::after {
-    animation-duration: revert !important;
-    animation-delay: revert !important;
-    transition-duration: revert !important;
-    transition-delay: revert !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

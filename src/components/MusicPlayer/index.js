@@ -193,7 +193,10 @@ export default function MusicPlayer() {
   }, [isDragging, seekToPosition])
 
   return (
-    <div className="pointer-events-none fixed bottom-6 left-6 z-[999998] flex items-end gap-3 [&_*]:[-webkit-tap-highlight-color:transparent]">
+    <aside
+      aria-label="Music player"
+      className="pointer-events-none fixed bottom-6 left-6 z-[999998] flex items-end gap-3 [&_*]:[-webkit-tap-highlight-color:transparent]"
+    >
       <audio ref={audioRef} preload="auto" />
 
       <div className="pointer-events-auto relative">
@@ -246,7 +249,7 @@ export default function MusicPlayer() {
               ? { rotate: { duration: 3, ease: 'linear', repeat: Infinity } }
               : { rotate: { duration: 0.4, ease: 'easeOut' } }
           }
-          className={`relative h-14 w-14 overflow-hidden rounded-full outline-none transition-shadow duration-500 [-webkit-tap-highlight-color:transparent] ${isPlaying ? 'shadow-[0_0_20px_rgba(20,184,166,0.4),0_0_40px_rgba(20,184,166,0.15)]' : 'shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_15px_rgba(20,184,166,0.3)]'}`}
+          className={`relative h-14 w-14 overflow-hidden rounded-full outline-none transition-shadow duration-500 [-webkit-tap-highlight-color:transparent] focus-visible:ring-2 focus-visible:ring-teal-500/50 focus-visible:ring-offset-2 ${isPlaying ? 'shadow-[0_0_20px_rgba(20,184,166,0.4),0_0_40px_rgba(20,184,166,0.15)]' : 'shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_15px_rgba(20,184,166,0.3)]'}`}
           aria-label="Toggle Music Player"
         >
           <img
@@ -317,11 +320,32 @@ export default function MusicPlayer() {
 
             <div
               ref={progressRef}
-              className="group relative h-1.5 w-full cursor-pointer rounded-full bg-gray-200 dark:bg-gray-700"
+              role="slider"
+              tabIndex={0}
+              aria-label="Song progress"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={Math.round(progress)}
+              className="group relative h-1.5 w-full cursor-pointer rounded-full bg-gray-200 focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:bg-gray-700"
               onMouseDown={handleProgressDown}
               onTouchStart={(e) => {
                 setIsDragging(true)
                 seekToPosition(e.touches[0].clientX)
+              }}
+              onKeyDown={(e) => {
+                const audio = audioRef.current
+                if (!audio || !audio.duration) return
+                const step = audio.duration * 0.05
+                if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+                  e.preventDefault()
+                  audio.currentTime = Math.min(
+                    audio.currentTime + step,
+                    audio.duration
+                  )
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+                  e.preventDefault()
+                  audio.currentTime = Math.max(audio.currentTime - step, 0)
+                }
               }}
             >
               <div
@@ -340,12 +364,14 @@ export default function MusicPlayer() {
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={prevTrack}
-                className="text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
+                aria-label="Previous track"
+                className="rounded p-1 text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
+                  aria-hidden="true"
                   className="h-4 w-4"
                 >
                   <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
@@ -354,6 +380,7 @@ export default function MusicPlayer() {
               <motion.button
                 onClick={togglePlay}
                 whileTap={{ scale: 0.8, rotate: 15 }}
+                aria-label={isPlaying ? 'Pause' : 'Play'}
                 className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-teal-400 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
               >
                 <AnimatePresence mode="wait">
@@ -382,12 +409,14 @@ export default function MusicPlayer() {
               </motion.button>
               <button
                 onClick={nextTrack}
-                className="text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
+                aria-label="Next track"
+                className="rounded p-1 text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
+                  aria-hidden="true"
                   className="h-4 w-4"
                 >
                   <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
@@ -397,6 +426,6 @@ export default function MusicPlayer() {
           </div>
         </div>
       </motion.div>
-    </div>
+    </aside>
   )
 }

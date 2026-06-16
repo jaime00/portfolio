@@ -22,7 +22,7 @@ export default function Footer() {
                 <li className="mb-4">
                   <Link
                     to="/"
-                    className="text-gray-600 hover:underline dark:text-gray-400"
+                    className="text-gray-800 hover:underline dark:text-gray-300"
                   >
                     {t('common.home')}
                   </Link>
@@ -30,7 +30,7 @@ export default function Footer() {
                 <li className="mb-4">
                   <Link
                     to="/about"
-                    className="text-gray-600 hover:underline dark:text-gray-400"
+                    className="text-gray-800 hover:underline dark:text-gray-300"
                   >
                     {t('common.about')}
                   </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
                 <li className="mb-4">
                   <Link
                     to="/side-projects"
-                    className="text-gray-600 hover:underline dark:text-gray-400"
+                    className="text-gray-800 hover:underline dark:text-gray-300"
                   >
                     {t('common.projects')}
                   </Link>
@@ -55,7 +55,7 @@ export default function Footer() {
                     href={curriculumUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-gray-600 hover:underline dark:text-gray-400"
+                    className="text-gray-800 hover:underline dark:text-gray-300"
                   >
                     {t('footer.resume')}
                   </a>
@@ -63,7 +63,7 @@ export default function Footer() {
                 <li className="mb-4">
                   <Link
                     to="/contact"
-                    className="text-gray-600 hover:underline dark:text-gray-400"
+                    className="text-gray-800 hover:underline dark:text-gray-300"
                   >
                     {t('common.contact')}
                   </Link>
@@ -76,7 +76,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-base text-gray-500 dark:text-gray-400">
+          <span className="text-base text-gray-700 dark:text-gray-300">
             {t('footer.copyright')}
           </span>
           <div className="flex space-x-6">
@@ -84,6 +84,7 @@ export default function Footer() {
               href="https://linkedin.com/in/jaimetorresv"
               target="_blank"
               rel="noreferrer"
+              aria-label="LinkedIn"
               className="text-gray-500 transition hover:rotate-6 hover:text-black dark:hover:text-white"
             >
               <LinkedinIcon />{' '}
@@ -92,6 +93,7 @@ export default function Footer() {
               href="https://github.com/jaime00"
               target="_blank"
               rel="noreferrer"
+              aria-label="GitHub"
               className="text-gray-500 hover:rotate-6 hover:text-black dark:hover:text-white"
             >
               <GithubIcon />

@@ -25,6 +25,7 @@ export default function Experiences() {
               link={experience.link}
               src={experience.src}
               isRotate={experience.rotate}
+              name={workExperiences[index]?.company}
             />
             <ExperienceDescription
               year_initial={workExperiences[index].year_initial}
