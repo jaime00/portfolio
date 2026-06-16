@@ -71,7 +71,7 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="flex items-start">
+          <div className="flex items-start justify-end">
             <Top />
           </div>
         </div>
