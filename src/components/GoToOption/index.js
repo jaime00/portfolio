@@ -14,6 +14,7 @@ export default function GoToOption({ url, title, icon, id }) {
         href={url}
         target="_blank"
         rel="noreferrer"
+        aria-label={title}
         data-tooltip-target={`tooltip-${id}`}
         data-tooltip-placement="bottom"
       >

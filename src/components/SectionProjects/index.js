@@ -10,7 +10,9 @@ export default function SectionProjects() {
     <div>
       <div className="relative mx-auto flex max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
         <h2 className="my-8 text-4xl font-bold">{t('home.iLoveSharing')}</h2>
-        <p className="md:text-xl">{t('home.checkProjects')}</p>
+        <p className="text-gray-700 dark:text-gray-300 md:text-xl">
+          {t('home.checkProjects')}
+        </p>
         <ListOfProjects limit={quantityOfProjectsInHome} />
 
         {quantityOfProjectsInHome > 3 && (

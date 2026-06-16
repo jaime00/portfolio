@@ -13,9 +13,9 @@ export default function DetailOfProject({
   const { t } = useTranslation()
   return (
     <>
-      <h4 className="mt-5 text-xl font-semibold leading-tight">{title}</h4>
+      <h3 className="mt-5 text-xl font-semibold leading-tight">{title}</h3>
       <div className="mt-4">
-        <span className="block text-sm text-gray-600 dark:text-gray-400 min-445:pb-10">
+        <span className="block text-sm text-gray-800 dark:text-gray-300 min-445:pb-10">
           {description}
         </span>
         <div className="bottom-11 mt-4 flex flex-row min-445:absolute min-445:mt-0">

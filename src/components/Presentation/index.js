@@ -34,16 +34,16 @@ export default function Presentation({ isDark }) {
           </span>
         </p>
         <div className="flex flex-col gap-2">
-          <h2 className="order-2 text-left text-3xl font-extrabold text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl md:order-1">
+          <h1 className="order-2 text-left text-3xl font-extrabold text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl md:order-1">
             {t('home.iam')} <span className="text-gradient-teal">Jaime</span>
-          </h2>
-          <h2 className="order-2 text-left text-3xl font-extrabold leading-tight text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl md:order-1">
+          </h1>
+          <h1 className="order-2 text-left text-3xl font-extrabold leading-tight text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl md:order-1">
             {t('home.iam')} {t('home.a')}{' '}
             <span className="text-gradient-teal whitespace-nowrap">
               {t('home.frontendDeveloper')}
             </span>
-          </h2>
-          <h2 className="order-2 text-left text-3xl font-extrabold leading-tight text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl md:order-1">
+          </h1>
+          <h1 className="order-2 text-left text-3xl font-extrabold leading-tight text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl md:order-1">
             {t('home.specializedIn')}{' '}
             <div className="console-container text-gradient-teal inline-block">
               <span>
@@ -53,7 +53,7 @@ export default function Presentation({ isDark }) {
                 </span>
               </span>
             </div>
-          </h2>
+          </h1>
         </div>
       </div>
 

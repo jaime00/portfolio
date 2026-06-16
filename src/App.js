@@ -42,7 +42,7 @@ function App() {
     }
   }
   return (
-    <MotionConfig reducedMotion="never">
+    <MotionConfig reducedMotion="user">
       <LanguageProvider>
         <Toaster
           position="bottom-center"
@@ -60,9 +60,15 @@ function App() {
           }}
         />
         <div className="pt-2 dark:bg-gray-800">
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999999] focus:rounded-lg focus:bg-teal-500 focus:px-4 focus:py-2 focus:text-white focus:outline-none"
+          >
+            Skip to content
+          </a>
           <Background />
           <NavBar changeMode={changeMode} isDark={isDarkState} />
-          <div className="mt-28">
+          <main id="main-content" className="mt-28">
             <ScrollToTop>
               <Switch>
                 <Route path="/">
@@ -85,7 +91,7 @@ function App() {
                 </Route>
               </Switch>
             </ScrollToTop>
-          </div>
+          </main>
           <Footer />
           <MusicPlayer />
         </div>

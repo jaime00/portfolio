@@ -1,14 +1,14 @@
-export default function ExperienceLogo({ link, src, isRotate }) {
+export default function ExperienceLogo({ link, src, isRotate, name }) {
   const hoverClasses = isRotate
     ? 'hover:transform hover:rotate-3'
     : 'hover:scale-[102%]'
   return (
-    <a href={link} target="_blank" rel="noreferrer">
+    <a href={link} target="_blank" rel="noreferrer" aria-label={name}>
       <img
         loading="lazy"
         className={`col-span-1 rounded-xl shadow-md ${hoverClasses} cursor-pointer transition duration-500 ease-in-out`}
         src={src}
-        alt="ListIcon"
+        alt={name || 'Company logo'}
         width={300}
         height={240}
       />

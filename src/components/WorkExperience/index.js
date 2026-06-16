@@ -7,7 +7,7 @@ export default function WorkExperience() {
   const experiences = getWorkExperience({ lang: language })
   const url = getCurriculumUrl(language)
   return (
-    <div className="mt-6 space-y-6 text-xl text-gray-600 dark:text-gray-300">
+    <div className="mt-6 space-y-6 text-xl text-gray-700 dark:text-gray-300">
       <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
         {t('home.workExperience')}
       </h2>
@@ -18,7 +18,7 @@ export default function WorkExperience() {
             className="group flex flex-none items-center space-x-1 truncate"
             key={i}
           >
-            <span className="gover-hover:underline flex-none text-lg font-normal text-gray-700 dark:text-white">
+            <span className="gover-hover:underline flex-none text-lg font-normal text-gray-800 dark:text-white">
               {company}
             </span>
             <span className="w-full shrink border-t border-dashed border-gray-300 dark:border-gray-700"></span>
