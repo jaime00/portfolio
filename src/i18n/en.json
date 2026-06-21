@@ -64,6 +64,17 @@
     "resume": "Resume",
     "copyright": "© 2026 Jaime Torres"
   },
+  "projectDetail": {
+    "backToProjects": "Back",
+    "role": "Role",
+    "duration": "Duration",
+    "team": "Team",
+    "viewLive": "View Live",
+    "viewCode": "View Code",
+    "nextProject": "Next Project",
+    "previousProject": "Previous Project",
+    "contactMe": "Contact me"
+  },
   "languages": {
     "spanish": "Español",
     "english": "English"

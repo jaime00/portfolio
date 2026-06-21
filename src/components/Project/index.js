@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLocation } from 'wouter'
 import DetailOfProject from '../DetailOfProject'
 import StackOfProject from '../StackOfProject'
 
@@ -9,15 +10,33 @@ export default function Project({
   description,
   img,
   stack,
-  id
+  id,
+  slug
 }) {
   const [loaded, setLoaded] = useState(false)
+  const [, navigate] = useLocation()
+
+  const handleCardClick = (e) => {
+    if (e.target.closest('a')) return
+    navigate(`/side-projects/${slug}`)
+  }
 
   return (
     <>
       <div className="wrapper group min-w-[350px] max-w-[405px] pb-6 text-gray-900 antialiased">
-        <div className="hover:rounded-lg">
-          <div className="overflow-hidden rounded-lg">
+        <div
+          role="link"
+          tabIndex={0}
+          onClick={handleCardClick}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault()
+              handleCardClick(e)
+            }
+          }}
+          className="cursor-pointer transition-transform duration-300 hover:-translate-y-1"
+        >
+          <div className="rounded-lg">
             <img
               loading="lazy"
               width={405}
@@ -25,11 +44,11 @@ export default function Project({
               src={img}
               alt={title}
               onLoad={() => setLoaded(true)}
-              className={`h-[260px] w-full rounded-lg object-cover object-top shadow-md transition-all duration-700 group-hover:scale-110 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+              className={`h-[260px] w-full rounded-lg object-cover object-top shadow-md transition-transform duration-700 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
             />
           </div>
           <div className="relative -mt-16 px-4">
-            <div className="min-h-[20rem] rounded-lg bg-white p-5 shadow-lg dark:bg-gray-900 dark:text-white sm:pb-5">
+            <div className="min-h-[20rem] rounded-lg bg-white p-5 shadow-lg transition-shadow duration-300 group-hover:shadow-xl dark:bg-gray-900 dark:text-white sm:pb-5">
               <StackOfProject stacks={stack} />
               <DetailOfProject
                 urlPreview={urlPreview}

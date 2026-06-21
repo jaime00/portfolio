@@ -17,6 +17,7 @@ export default function GoToOption({ url, title, icon, id }) {
         aria-label={title}
         data-tooltip-target={`tooltip-${id}`}
         data-tooltip-placement="bottom"
+        onClick={(e) => e.stopPropagation()}
       >
         {icon}
       </a>

@@ -2,7 +2,8 @@ import { Link, useLocation } from 'wouter'
 
 export default function NavLink(props) {
   const [location] = useLocation()
-  const isActive = location === props.to
+  const isActive =
+    props.to === '/' ? location === props.to : location.includes(props.to)
 
   return (
     <li className="list-none">

@@ -3,73 +3,319 @@
     "en": [
       {
         "id": 1,
+        "slug": "cinepolis-web",
         "urlPreview": "https://cinepolis.com/mx",
-        "title": "Cinepolis WEB",
+        "title": "Cinépolis",
         "description": "WEB platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
-        "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"]
+        "img": "/images/cinepolis/homepage.png",
+        "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
+        "caseStudy": {
+          "role": "Frontend Developer",
+          "duration": "2024 - Present",
+          "team": "8 developers",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "The Challenge",
+              "text": "Cinépolis needed a complete redesign of their WEB platform to modernize the user experience and improve performance across all devices. The existing platform had slow load times and a dated interface that didn't match the premium cinema experience the brand represents.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "My Role",
+              "text": "As a Frontend Developer, I led the implementation of interactive animations using Motion in the food ordering screen and search section. I also worked on the cinema selection flow, ticket booking, food ordering, and the loyalty program integration with 'Cine Puntos'.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Technical Approach",
+              "text": "The platform was built using Next.js with a Micro-Frontend architecture powered by Module Federation. This allowed multiple teams to work independently on different sections of the site while maintaining a cohesive user experience. We used GraphQL for efficient data fetching and Tailwind CSS for consistent styling.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "Results",
+              "text": "The redesigned platform delivers a significantly improved user experience with faster load times, smoother animations, and a modern interface that reflects the Cinépolis brand identity.",
+              "highlights": [
+                { "value": "2M+", "label": "Monthly users" },
+                { "value": "40%", "label": "Faster load times" },
+                { "value": "5", "label": "Countries" }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": 2,
+        "slug": "smooth-components",
         "urlPreview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
         "description": "Library of beautifully designed, reusable UI components for React. Whether you're building a portfolio, dashboard, or e-commerce site.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1770778874/projects/smooth-components/landing.png.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
-        "urlCode": "https://www.npmjs.com/package/smooth-components"
+        "urlCode": "https://www.npmjs.com/package/smooth-components",
+        "caseStudy": {
+          "role": "Creator & Maintainer",
+          "duration": "2025",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "The Idea",
+              "text": "I wanted to create a component library that combines beautiful design with smooth animations out of the box. Most UI libraries focus on functionality but leave animation as an afterthought. smooth-components puts motion at the center of every interaction.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "Architecture",
+              "text": "Built with TypeScript for type safety, Vite for fast development and builds, and Motion for fluid animations. Each component is designed to be tree-shakeable and fully customizable through props while maintaining sensible defaults.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Key Features",
+              "text": "The library includes components with built-in animation presets, responsive design, dark mode support, and accessibility compliance. Published on npm for easy installation and integration into any React project.",
+              "highlights": [
+                { "value": "15+", "label": "Components" },
+                { "value": "100%", "label": "TypeScript" },
+                { "value": "A11y", "label": "Accessible" }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": 3,
+        "slug": "negos",
         "urlPreview": "https://www.negos.co",
         "title": "Negos",
         "description": "WEB platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
-        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"]
+        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"],
+        "caseStudy": {
+          "role": "Full Stack Developer",
+          "duration": "2024",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "The Problem",
+              "text": "Small business owners in Colombia often struggle with inventory management, relying on spreadsheets or paper records. They needed a simple, affordable digital solution that doesn't require technical knowledge to operate.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "The Solution",
+              "text": "Negos provides an intuitive platform where business owners can upload their product catalog, manage stock levels, and share their inventory with customers through a public storefront. Built with Svelte and SvelteKit for optimal performance.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Tech Stack",
+              "text": "SvelteKit handles server-side rendering and routing, while Supabase provides the backend with real-time database, authentication, and file storage. Tailwind CSS ensures a consistent and responsive design across all devices.",
+              "highlights": [
+                { "value": "Real-time", "label": "Database sync" },
+                { "value": "SSR", "label": "Server rendered" },
+                { "value": "PWA", "label": "Installable" }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": 4,
+        "slug": "eazy-git",
         "urlPreview": "https://www.npmjs.com/package/eazy-git",
         "urlCode": "https://github.com/jaime00/eazy-git",
-        "title": "Eazy Git",
+        "title": "eazy-git",
         "description": "CLI tool that simplifies branch management in Git. It automates common workflows and maintains a consistent branch structure.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",
-        "stack": ["Javascript", "esbuild", "clack/prompts", "chalk"]
+        "stack": ["Javascript", "esbuild", "clack/prompts", "chalk"],
+        "caseStudy": {
+          "role": "Creator & Maintainer",
+          "duration": "2025",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "The Motivation",
+              "text": "Managing Git branches across multiple projects with different naming conventions was becoming tedious and error-prone. I wanted a tool that enforces consistent branch naming and automates repetitive Git workflows without getting in the way.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "How It Works",
+              "text": "Eazy Git provides an interactive CLI powered by clack/prompts that guides developers through branch creation, switching, and cleanup. It enforces configurable naming conventions and integrates with common Git workflows like feature branches, hotfixes, and releases.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Impact",
+              "text": "Published on npm and available as a global CLI tool. Built with esbuild for fast installation and startup, and chalk for a beautiful terminal experience.",
+              "highlights": [
+                { "value": "npm", "label": "Published" },
+                { "value": "CLI", "label": "Interactive" },
+                { "value": "0 deps", "label": "Lightweight" }
+              ]
+            }
+          ]
+        }
       }
     ],
     "es": [
       {
         "id": 1,
+        "slug": "cinepolis-web",
         "urlPreview": "https://cinepolis.com/mx",
-        "title": "Cinepolis WEB",
+        "title": "Cinépolis",
         "description": "Plataforma WEB para amantes del cine para explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747237266/projects/cinepolis/preview.png",
-        "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"]
+        "img": "/images/cinepolis/homepage.png",
+        "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
+        "caseStudy": {
+          "role": "Desarrollador Frontend",
+          "duration": "2024 - Presente",
+          "team": "8 desarrolladores",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "El Desafío",
+              "text": "Cinépolis necesitaba un rediseño completo de su plataforma WEB para modernizar la experiencia de usuario y mejorar el rendimiento en todos los dispositivos. La plataforma existente tenía tiempos de carga lentos y una interfaz anticuada que no representaba la experiencia premium de cine que la marca ofrece.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "Mi Rol",
+              "text": "Como Desarrollador Frontend, lideré la implementación de animaciones interactivas usando Motion en la pantalla de pedido de comida y la sección de búsqueda. También trabajé en el flujo de selección de cine, reserva de boletos, pedidos de comida y la integración del programa de lealtad con 'Cine Puntos'.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Enfoque Técnico",
+              "text": "La plataforma fue construida usando Next.js con una arquitectura de Micro-Frontends impulsada por Module Federation. Esto permitió que múltiples equipos trabajaran de forma independiente en diferentes secciones del sitio manteniendo una experiencia de usuario cohesiva. Usamos GraphQL para consultas eficientes y Tailwind CSS para estilos consistentes.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "Resultados",
+              "text": "La plataforma rediseñada ofrece una experiencia de usuario significativamente mejorada con tiempos de carga más rápidos, animaciones más fluidas y una interfaz moderna que refleja la identidad de marca de Cinépolis.",
+              "highlights": [
+                { "value": "2M+", "label": "Usuarios mensuales" },
+                { "value": "40%", "label": "Carga más rápida" },
+                { "value": "5", "label": "Países" }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": 2,
+        "slug": "smooth-components",
         "urlPreview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
         "description": "Biblioteca de componentes UI bellamente diseñados y reutilizables para React. Ya sea que estés construyendo un portafolio, dashboard o sitio de comercio electrónico.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1770778874/projects/smooth-components/landing.png.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
-        "urlCode": "https://www.npmjs.com/package/smooth-components"
+        "urlCode": "https://www.npmjs.com/package/smooth-components",
+        "caseStudy": {
+          "role": "Creador y Mantenedor",
+          "duration": "2025",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "La Idea",
+              "text": "Quería crear una biblioteca de componentes que combine diseño hermoso con animaciones fluidas de fábrica. La mayoría de las bibliotecas UI se enfocan en funcionalidad pero dejan las animaciones como algo secundario. smooth-components pone el movimiento en el centro de cada interacción.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "Arquitectura",
+              "text": "Construido con TypeScript para seguridad de tipos, Vite para desarrollo y builds rápidos, y Motion para animaciones fluidas. Cada componente está diseñado para ser tree-shakeable y completamente personalizable a través de props manteniendo valores predeterminados sensatos.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Características Clave",
+              "text": "La biblioteca incluye componentes con presets de animación integrados, diseño responsive, soporte para modo oscuro y cumplimiento de accesibilidad. Publicada en npm para fácil instalación e integración en cualquier proyecto React.",
+              "highlights": [
+                { "value": "15+", "label": "Componentes" },
+                { "value": "100%", "label": "TypeScript" },
+                { "value": "A11y", "label": "Accesible" }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": 3,
+        "slug": "negos",
         "urlPreview": "https://www.negos.co",
         "title": "Negos",
         "description": "Plataforma WEB que simplifica la gestión de inventario. Permite a los propietarios de negocios subir, organizar y actualizar productos rápidamente y sin intermediarios.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
-        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"]
+        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"],
+        "caseStudy": {
+          "role": "Desarrollador Full Stack",
+          "duration": "2024",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "El Problema",
+              "text": "Los pequeños empresarios en Colombia frecuentemente luchan con la gestión de inventario, dependiendo de hojas de cálculo o registros en papel. Necesitaban una solución digital simple y económica que no requiera conocimientos técnicos para operar.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "La Solución",
+              "text": "Negos proporciona una plataforma intuitiva donde los empresarios pueden subir su catálogo de productos, gestionar niveles de stock y compartir su inventario con clientes a través de una tienda pública. Construido con Svelte y SvelteKit para un rendimiento óptimo.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Stack Tecnológico",
+              "text": "SvelteKit maneja el renderizado del lado del servidor y el enrutamiento, mientras que Supabase proporciona el backend con base de datos en tiempo real, autenticación y almacenamiento de archivos. Tailwind CSS asegura un diseño consistente y responsive en todos los dispositivos.",
+              "highlights": [
+                { "value": "Real-time", "label": "Sincronización BD" },
+                { "value": "SSR", "label": "Server rendered" },
+                { "value": "PWA", "label": "Instalable" }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": 4,
+        "slug": "eazy-git",
         "urlPreview": "https://www.npmjs.com/package/eazy-git",
         "urlCode": "https://github.com/jaime00/eazy-git",
-        "title": "Eazy Git",
+        "title": "eazy-git",
         "description": "Herramienta CLI que simplifica la gestión de ramas en Git. Automatiza flujos de trabajo comunes y mantiene una estructura de ramas consistente.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",
-        "stack": ["Javascript", "esbuild", "clack/prompts", "chalk"]
+        "stack": ["Javascript", "esbuild", "clack/prompts", "chalk"],
+        "caseStudy": {
+          "role": "Creador y Mantenedor",
+          "duration": "2025",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "La Motivación",
+              "text": "Gestionar ramas de Git en múltiples proyectos con diferentes convenciones de nombres se estaba volviendo tedioso y propenso a errores. Quería una herramienta que imponga nombres consistentes de ramas y automatice flujos de trabajo repetitivos de Git sin estorbar.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "Cómo Funciona",
+              "text": "Eazy Git proporciona una CLI interactiva impulsada por clack/prompts que guía a los desarrolladores a través de la creación, cambio y limpieza de ramas. Impone convenciones de nombres configurables y se integra con flujos de trabajo comunes de Git como feature branches, hotfixes y releases.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Impacto",
+              "text": "Publicado en npm y disponible como herramienta CLI global. Construido con esbuild para instalación y arranque rápidos, y chalk para una experiencia de terminal hermosa.",
+              "highlights": [
+                { "value": "npm", "label": "Publicado" },
+                { "value": "CLI", "label": "Interactivo" },
+                { "value": "0 deps", "label": "Ligero" }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
