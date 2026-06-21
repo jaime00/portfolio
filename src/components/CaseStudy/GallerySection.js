@@ -10,7 +10,7 @@ export default function GallerySection({ section }) {
   return (
     <section className="mb-20">
       <motion.h2
-        className="text-gradient-teal mb-6 text-2xl font-bold md:text-3xl"
+        className="mb-6 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: '-80px' }}
@@ -36,7 +36,7 @@ export default function GallerySection({ section }) {
           <motion.button
             key={i}
             onClick={() => setLightboxIndex(i)}
-            className="cursor-pointer overflow-hidden rounded-xl shadow-lg transition-shadow hover:shadow-xl"
+            className="cursor-pointer overflow-hidden rounded-xl shadow-lg transition-shadow hover:shadow-xl dark:shadow-teal-500/10 dark:hover:shadow-teal-500/15"
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}

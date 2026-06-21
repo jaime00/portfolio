@@ -2,6 +2,8 @@ import HeroBanner from './HeroBanner'
 import NarrativeSection from './NarrativeSection'
 import GallerySection from './GallerySection'
 import VideoSection from './VideoSection'
+import FeaturesSection from './FeaturesSection'
+import CommandsSection from './CommandsSection'
 import ProjectNavigation from './ProjectNavigation'
 
 const sectionRenderers = {
@@ -9,7 +11,9 @@ const sectionRenderers = {
     <NarrativeSection key={i} section={section} index={i} />
   ),
   gallery: (section, i) => <GallerySection key={i} section={section} />,
-  video: (section, i) => <VideoSection key={i} section={section} />
+  video: (section, i) => <VideoSection key={i} section={section} />,
+  features: (section, i) => <FeaturesSection key={i} section={section} />,
+  commands: (section, i) => <CommandsSection key={i} section={section} />
 }
 
 export default function CaseStudy({ project, adjacentProjects }) {

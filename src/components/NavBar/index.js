@@ -19,8 +19,10 @@ export default function NavBar({ changeMode, isDark }) {
   }, [])
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-[999999] mx-auto w-[100vw] max-w-6xl animate-fade rounded border-gray-200 px-4 py-3 transition-colors duration-300 ${
-        scrolled ? 'bg-white/20 dark:bg-gray-800/20' : 'bg-transparent'
+      className={`fixed left-0 right-0 top-0 z-[999999] mx-auto w-[100vw] max-w-6xl animate-fade border-gray-200 px-4 py-3 transition-all duration-300 ${
+        scrolled
+          ? 'rounded-2xl bg-white/70 shadow-md backdrop-blur-md dark:bg-gray-800/70 dark:shadow-gray-900/30'
+          : 'bg-transparent'
       }`}
     >
       <div className="mx-auto mt-3 flex items-center justify-between">

@@ -5,7 +5,7 @@ import { useTranslation } from '../../i18n'
 export default function Projects() {
   const { t } = useTranslation()
   return (
-    <div className="relative mx-auto my-5 mt-8 flex max-w-6xl animate-fade flex-col justify-center px-4 font-sans dark:text-white">
+    <div className="relative mx-auto mb-5 mt-8 flex max-w-6xl animate-fade flex-col justify-center px-4 font-sans dark:text-white">
       <Titles title={t('projects.title')} subtitle={t('projects.subtitle')} />
       <ListOfProjects />
     </div>

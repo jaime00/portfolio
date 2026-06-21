@@ -42,7 +42,7 @@ export default function CarouselOfTechnologies({ isDark }) {
 
   return (
     <div
-      className={`font-lato pointer-events-none relative mx-auto my-6 flex w-2/4 select-none items-center justify-center overflow-hidden rounded-md text-lg leading-6 before:left-0 before:bg-gradient-to-r ${
+      className={`font-lato carousel-pause relative mx-auto my-6 flex w-2/4 select-none items-center justify-center overflow-hidden rounded-md text-lg leading-6 before:left-0 before:bg-gradient-to-r ${
         isDark ? 'before:from-[#1f2a37]' : 'before:from-white'
       } to-transparent before:absolute before:bottom-0 before:top-0 before:z-10 before:w-[190px] after:right-0 after:bg-gradient-to-l ${
         isDark ? 'after:from-[#1f2a37]' : 'after:from-white'

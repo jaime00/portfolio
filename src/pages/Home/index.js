@@ -12,7 +12,7 @@ export default function Home({ isDark }) {
         <Bottom />
         <div
           id="work-experience-container"
-          className="relative mx-auto my-5 flex max-w-6xl flex-col justify-center px-4 font-sans dark:text-white"
+          className="relative mx-auto mb-5 mt-8 flex max-w-6xl flex-col justify-center px-4 font-sans dark:text-white"
         >
           <WorkExperience />
         </div>
