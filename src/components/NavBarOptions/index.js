@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { createPortal } from 'react-dom'
 import { Link, useLocation } from 'wouter'
@@ -11,6 +12,15 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
   const collapseNavbar = () => {
     setMenuIsOpen(false)
   }
+
+  useEffect(() => {
+    if (!menuIsOpen) return
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setMenuIsOpen(false)
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [menuIsOpen, setMenuIsOpen])
 
   const menuItems = [
     { to: '/', label: t('common.home') },

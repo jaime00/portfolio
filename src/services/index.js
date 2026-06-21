@@ -85,11 +85,28 @@ const getStyleButton = ({ isDark, size } = {}) => {
   return `${base} bg-gray-200 text-gray-900 hover:ring-4 hover:ring-teal-500/30 dark:bg-gray-900 dark:text-white dark:hover:ring-teal-400/30`
 }
 
+const getProjectBySlug = (slug, lang = 'en') => {
+  const projects = DataSite.projects[lang] || DataSite.projects.en
+  return projects.find((p) => p.slug === slug) || null
+}
+
+const getAdjacentProjects = (slug, lang = 'en') => {
+  const projects = DataSite.projects[lang] || DataSite.projects.en
+  const index = projects.findIndex((p) => p.slug === slug)
+  if (index === -1) return { prev: null, next: null }
+  return {
+    prev: index > 0 ? projects[index - 1] : projects[projects.length - 1],
+    next: index < projects.length - 1 ? projects[index + 1] : projects[0]
+  }
+}
+
 export {
   getProjects,
   getExperiences,
   getWorkExperience,
   getCurriculumUrl,
   getStyleButton,
-  getYearsOfExperience
+  getYearsOfExperience,
+  getProjectBySlug,
+  getAdjacentProjects
 }

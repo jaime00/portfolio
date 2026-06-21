@@ -13,6 +13,7 @@ import Contact from './pages/Contact'
 import Experiences from './pages/Experiences'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
+import ProjectDetail from './pages/ProjectDetail'
 import { LanguageProvider } from './i18n'
 
 import './styles/general.css'
@@ -42,7 +43,7 @@ function App() {
     }
   }
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig reducedMotion="never">
       <LanguageProvider>
         <Toaster
           position="bottom-center"
@@ -79,6 +80,9 @@ function App() {
                 </Route>
                 <Route path="/side-projects">
                   <Projects />
+                </Route>
+                <Route path="/side-projects/:slug">
+                  {(params) => <ProjectDetail slug={params.slug} />}
                 </Route>
                 <Route path="/contact">
                   <Contact />

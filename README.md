@@ -2,7 +2,7 @@
 
 # Portfolio
 
-Personal portfolio built with React 19, showcasing my work as a Frontend Developer — professional experience at companies like Cinepolis, Qrvey, and IA Interactive, along with side projects and open-source tools.
+Personal portfolio built with React 19, showcasing my work as a Frontend Developer — professional experience at companies like Cinépolis, Qrvey, and IA Interactive, along with side projects and open-source tools.
 
 **[Live site](https://jaime00portfolio.netlify.app)**
 
