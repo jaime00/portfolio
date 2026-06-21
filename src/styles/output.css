@@ -1294,6 +1294,9 @@ video {
 .object-cover {
   object-fit: cover;
 }
+.object-left {
+  object-position: left;
+}
 .object-top {
   object-position: top;
 }

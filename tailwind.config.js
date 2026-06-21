@@ -47,6 +47,9 @@ module.exports = {
         'carousel-item': 'carousel-keyframe 30s linear infinite',
         fade: 'fade-in-keyframe 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards'
       },
+      scale: {
+        103: '1.03'
+      },
       screens: {
         'min-1045': '1045px',
         'min-445': '445px'
