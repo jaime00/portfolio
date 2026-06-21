@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { Link } from 'wouter'
 import { motion } from 'motion/react'
 import { ChevronLeftIcon } from '../../assets/animatedIcons/BackIcon'
@@ -20,7 +20,6 @@ const SLUG_ICONS = {
 
 export default function HeroBanner({ project }) {
   const { t } = useTranslation()
-  const [loaded, setLoaded] = useState(false)
   const arrowRef = useRef(null)
   const backRef = useRef(null)
   const SlugIcon = SLUG_ICONS[project.slug]
@@ -67,16 +66,16 @@ export default function HeroBanner({ project }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease }}
         >
-          <div className="relative h-full overflow-hidden rounded-3xl">
+          <motion.div
+            className="relative h-full overflow-hidden rounded-2xl shadow-lg"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.7, ease }}
+          >
             <motion.img
               src={img}
               alt={title}
-              onLoad={() => setLoaded(true)}
-              className={`aspect-video w-full object-cover object-top transition-opacity duration-700 min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px] ${loaded ? 'opacity-100' : 'opacity-0'}`}
+              className={`${project.slug === 'smooth-components' ? 'object-cover' : ''} ${project.slug === 'eazy-git' ? 'object-cover object-left' : ''} min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px]`}
               loading="eager"
-              initial={{ scale: 1.06 }}
-              animate={loaded ? { scale: 1.01 } : { scale: 1.06 }}
-              transition={{ duration: 1.2, ease }}
             />
             {urlPreview && (
               <a
@@ -91,15 +90,18 @@ export default function HeroBanner({ project }) {
                 <ArrowSquareRightIcon ref={arrowRef} size={22} />
               </a>
             )}
-          </div>
+          </motion.div>
         </motion.div>
 
-        <div className="flex flex-col gap-4">
+        <div
+          className="flex flex-col gap-4"
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.7, ease }}
+        >
           <motion.div
             className="relative rounded-3xl bg-gray-100 p-6 dark:bg-gray-900 min-445:p-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease }}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.7, ease }}
           >
             {SlugIcon && (
               <SlugIcon
@@ -172,9 +174,8 @@ export default function HeroBanner({ project }) {
           {lastHighlights && (
             <motion.div
               className="flex flex-1 flex-col justify-center rounded-3xl bg-gradient-to-br from-teal-500/10 to-emerald-500/10 p-6 dark:from-teal-400/10 dark:to-emerald-400/10"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4, ease }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.7, ease }}
             >
               <div className="grid grid-cols-2 gap-4 min-1045:grid-cols-1">
                 {lastHighlights.slice(0, 2).map((h, i) => (

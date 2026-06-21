@@ -51,7 +51,7 @@
         "urlPreview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
         "description": "Library of beautifully designed, reusable UI components for React. Whether you're building a portfolio, dashboard, or e-commerce site.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1770778874/projects/smooth-components/landing.png.png",
+        "img": "/images/smooth-components.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
         "urlCode": "https://www.npmjs.com/package/smooth-components",
         "caseStudy": {
@@ -210,7 +210,7 @@
         "urlPreview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
         "description": "Biblioteca de componentes UI bellamente diseñados y reutilizables para React. Ya sea que estés construyendo un portafolio, dashboard o sitio de comercio electrónico.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1770778874/projects/smooth-components/landing.png.png",
+        "img": "/images/smooth-components.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
         "urlCode": "https://www.npmjs.com/package/smooth-components",
         "caseStudy": {

@@ -21,7 +21,7 @@ export default function ExperienceDescription({
             className="mt-[6.8px] shrink-0 text-gray-500 dark:text-gray-300"
             size={20}
           />
-          <p className="text-housplit-blue-color text-left text-sm leading-[28px]">
+          <p className="text-left text-sm leading-[28px] text-gray-600 dark:text-gray-300">
             {detail}
           </p>
         </div>
