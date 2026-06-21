@@ -135,24 +135,44 @@
           "sections": [
             {
               "type": "narrative",
-              "title": "The Motivation",
-              "text": "Managing Git branches across multiple projects with different naming conventions was becoming tedious and error-prone. I wanted a tool that enforces consistent branch naming and automates repetitive Git workflows without getting in the way.",
-              "imagePosition": "right"
+              "text": "If you work with Git constantly **—especially from the terminal—** and manage a somewhat complex branching strategy, **this one is for you**.\n\nPersonally, I'd rather work straight from the terminal than use visual clients like **GitHub Desktop or SourceTree**. I like having full control over every step of the flow. If you're that kind of developer too, `eazy-git` will probably interest you."
             },
             {
               "type": "narrative",
-              "title": "How It Works",
-              "text": "Eazy Git provides an interactive CLI powered by clack/prompts that guides developers through branch creation, switching, and cleanup. It enforces configurable naming conventions and integrates with common Git workflows like feature branches, hotfixes, and releases.",
-              "imagePosition": "left"
+              "title": "🤔 But… What Is eazy-git?",
+              "text": "eazy-git is an open-source tool that works as a command-line interface **(CLI)**. It automates common Git tasks like creating branches, committing, pushing changes, merging, and more, all with simplified commands. Its main goal is to help you keep a standardized branch structure while you save time and focus on what really matters: **the business logic.**"
+            },
+            {
+              "type": "features",
+              "title": "What Problem Does It Solve?",
+              "text": "On many teams we follow a strategy where we must:",
+              "items": [
+                "Create **\"original\"** branches based on `master`.",
+                "Spawn several **\"temporary\"** branches to later auto-merge into `develop` or `release`.",
+                "Avoid mistakes with branch naming.",
+                "Install dependencies with manual configuration."
+              ],
+              "footer": "All of this can become repetitive and prone to human error. eazy-git automates a big part of this flow. Even tasks like installing dependencies with private tokens or running the dev server cleanly (we remove the `.next` folder and run `npm run dev` again) are simplified with simple, custom commands already built into the tool."
+            },
+            {
+              "type": "features",
+              "title": "🎯 Why Use eazy-git?",
+              "items": [
+                "Standardizes common Git operations (pull, push, commit, checkout…).",
+                "Minimizes errors when creating or switching branches.",
+                "Bundles handy extra commands for `npm` projects and web environments.",
+                "Ideal for Unix terminals (Linux, macOS, Git Bash on Windows)."
+              ]
             },
             {
               "type": "narrative",
-              "title": "Impact",
-              "text": "Published on npm and available as a global CLI tool. Built with esbuild for fast installation and startup, and chalk for a beautiful terminal experience.",
+              "title": "🧠 Conclusion",
+              "hideHighlightsGrid": true,
+              "text": "**eazy-git** is an excellent option if you want to **optimize your terminal-based Git workflow.**\n\nIt lets you work faster, cleaner, and with fewer errors thanks to preconfigured commands that adapt to your branching strategy and development environment. It also automates common manual tasks, like authentication and dependency installation.\n\nIf you work on large projects or with separate environments (like **DEV, UAT, PROD**), this tool can **save you hours of repetitive work** and help you keep a clear, tidy branch structure.",
               "highlights": [
                 { "value": "npm", "label": "Published" },
                 { "value": "CLI", "label": "Interactive" },
-                { "value": "0 deps", "label": "Lightweight" }
+                { "value": "Open", "label": "Source" }
               ]
             }
           ]
@@ -294,24 +314,44 @@
           "sections": [
             {
               "type": "narrative",
-              "title": "La Motivación",
-              "text": "Gestionar ramas de Git en múltiples proyectos con diferentes convenciones de nombres se estaba volviendo tedioso y propenso a errores. Quería una herramienta que imponga nombres consistentes de ramas y automatice flujos de trabajo repetitivos de Git sin estorbar.",
-              "imagePosition": "right"
+              "text": "Si trabajas con Git de forma constante **—especialmente desde la terminal—** y manejas una estrategia de ramas algo compleja, **este blog es para ti**.\n\nPersonalmente, prefiero trabajar directamente desde la terminal en lugar de usar clientes visuales como **GitHub Desktop o SourceTree**. Me gusta tener control total sobre cada paso del flujo. Si tú también eres de ese tipo de desarrolladores, probablemente `eazy-git` te va a interesar."
             },
             {
               "type": "narrative",
-              "title": "Cómo Funciona",
-              "text": "Eazy Git proporciona una CLI interactiva impulsada por clack/prompts que guía a los desarrolladores a través de la creación, cambio y limpieza de ramas. Impone convenciones de nombres configurables y se integra con flujos de trabajo comunes de Git como feature branches, hotfixes y releases.",
-              "imagePosition": "left"
+              "title": "🤔 Pero… ¿Qué es eazy-git?",
+              "text": "Es una herramienta open source que funciona como interfaz de línea de comandos **(CLI)**. Automatiza tareas comunes de Git como crear ramas, hacer commits, pushear cambios, hacer merge y más, todo con comandos simplificados. Su objetivo principal es ayudarte a mantener una estructura de ramas estandarizada mientras ahorras tiempo y te enfocas en lo realmente importante: **la lógica de negocio.**"
+            },
+            {
+              "type": "features",
+              "title": "¿Qué problema resuelve?",
+              "text": "En muchos equipos seguimos una estrategia donde debemos:",
+              "items": [
+                "Crear ramas **«originales»** con base en `master`.",
+                "Generar varias ramas **«temporales»** para posteriormente mergear automáticamente con `develop` o `release`.",
+                "Evitar errores con la nomenclatura de las ramas.",
+                "Instalar dependencias con configuraciones manuales."
+              ],
+              "footer": "Todo esto puede volverse repetitivo y propenso a errores humanos. eazy-git automatiza gran parte de este flujo. Incluso tareas como instalar dependencias con tokens privados o ejecutar el servidor de desarrollo de manera limpia (removemos la carpeta `.next` y ejecutamos nuevamente `npm run dev`) se simplifican con comandos sencillos y personalizados ya incluidos en la herramienta."
+            },
+            {
+              "type": "features",
+              "title": "🎯 ¿Por qué usar eazy-git?",
+              "items": [
+                "Estandariza operaciones comunes de Git (pull, push, commit, checkout…).",
+                "Minimiza errores al crear o cambiar de ramas.",
+                "Incluye comandos extra útiles para proyectos con `npm` o entornos web.",
+                "Ideal para terminales Unix (Linux, macOS, Git Bash en Windows)."
+              ]
             },
             {
               "type": "narrative",
-              "title": "Impacto",
-              "text": "Publicado en npm y disponible como herramienta CLI global. Construido con esbuild para instalación y arranque rápidos, y chalk para una experiencia de terminal hermosa.",
+              "title": "🧠 Conclusión",
+              "hideHighlightsGrid": true,
+              "text": "**eazy-git** es una excelente opción si quieres **optimizar tu flujo de trabajo con Git desde la terminal.**\n\nTe permite trabajar de forma más rápida, más limpia y con menos errores gracias a comandos preconfigurados que se adaptan a tu estrategia de ramas y entorno de desarrollo. Además automatiza tareas manuales comunes, como la autenticación e instalación de dependencias.\n\nSi trabajas en proyectos grandes o con entornos separados (como **DEV, UAT, PROD**), esta herramienta puede **ahorrarte horas de trabajo repetitivo** y ayudarte a mantener una estructura de ramas clara y ordenada.",
               "highlights": [
                 { "value": "npm", "label": "Publicado" },
                 { "value": "CLI", "label": "Interactivo" },
-                { "value": "0 deps", "label": "Ligero" }
+                { "value": "Open", "label": "Source" }
               ]
             }
           ]

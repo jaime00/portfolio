@@ -109,7 +109,7 @@ export default function Contact() {
   ]
 
   return (
-    <div className="relative mx-auto my-5 mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
+    <div className="relative mx-auto mb-5 mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
       <Titles
         className="float-left"
         title={t('contact.title')}

@@ -1,5 +1,6 @@
 import { FolderCodeIcon } from '../../assets/animatedIcons/FolderCode'
 import { LinkIcon } from '../../assets/animatedIcons/LinkIcon'
+import { EyeIcon } from '../../assets/animatedIcons/EyeIcon'
 import GoToOption from '../GoToOption'
 import { useTranslation } from '../../i18n'
 
@@ -8,12 +9,21 @@ export default function DetailOfProject({
   urlCode,
   title,
   description,
-  id
+  id,
+  readingTime
 }) {
   const { t } = useTranslation()
   return (
     <>
-      <h3 className="mt-5 text-xl font-semibold leading-tight">{title}</h3>
+      <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1">
+        <h3 className="text-xl font-semibold leading-tight">{title}</h3>
+        {readingTime && (
+          <span className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+            <EyeIcon size={15} />
+            {readingTime} {t('projectDetail.readingTime')}
+          </span>
+        )}
+      </div>
       <div className="mt-4">
         <span className="block text-sm text-gray-800 dark:text-gray-300 min-445:pb-10">
           {description}

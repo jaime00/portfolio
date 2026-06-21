@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useLocation } from 'wouter'
 import DetailOfProject from '../DetailOfProject'
 import StackOfProject from '../StackOfProject'
+import { getReadingTime } from '../CaseStudy/readingTime'
 
 export default function Project({
   urlPreview,
@@ -11,8 +12,10 @@ export default function Project({
   img,
   stack,
   id,
-  slug
+  slug,
+  caseStudy
 }) {
+  const readingTime = caseStudy ? getReadingTime(caseStudy.sections) : null
   const [loaded, setLoaded] = useState(false)
   const [, navigate] = useLocation()
 
@@ -48,7 +51,7 @@ export default function Project({
             />
           </div>
           <div className="relative -mt-16 px-4">
-            <div className="min-h-[20rem] rounded-lg bg-white p-5 shadow-lg transition-shadow duration-300 group-hover:shadow-xl dark:bg-gray-900 dark:text-white sm:pb-5">
+            <div className="min-h-[20rem] rounded-lg bg-white p-5 shadow-lg transition-shadow duration-300 group-hover:shadow-xl dark:bg-gray-900 dark:text-white dark:shadow-teal-500/10 dark:group-hover:shadow-teal-500/15 sm:pb-5">
               <StackOfProject stacks={stack} />
               <DetailOfProject
                 urlPreview={urlPreview}
@@ -56,6 +59,7 @@ export default function Project({
                 title={title}
                 description={description}
                 id={id}
+                readingTime={readingTime}
               />
             </div>
           </div>

@@ -3,6 +3,8 @@ import { Link } from 'wouter'
 import { motion } from 'motion/react'
 import { ChevronLeftIcon } from '../../assets/animatedIcons/BackIcon'
 import { ArrowSquareRightIcon } from '../../assets/animatedIcons/ArrowSquareRightIcon'
+import { EyeIcon } from '../../assets/animatedIcons/EyeIcon'
+import { getReadingTime } from './readingTime'
 import { ClapIcon } from '../../assets/animatedIcons/ClapIcon'
 import { BoxIcon } from '../../assets/animatedIcons/BoxIcon'
 import { CartIcon } from '../../assets/animatedIcons/CartIcon'
@@ -22,11 +24,13 @@ export default function HeroBanner({ project }) {
   const { t } = useTranslation()
   const arrowRef = useRef(null)
   const backRef = useRef(null)
+  const eyeRef = useRef(null)
   const SlugIcon = SLUG_ICONS[project.slug]
   const { title, description, img, stack, caseStudy, urlPreview, urlCode } =
     project
   const lastHighlights =
     caseStudy.sections[caseStudy.sections.length - 1]?.highlights
+  const readingTime = getReadingTime(caseStudy.sections)
 
   return (
     <section className="mb-16">
@@ -47,7 +51,7 @@ export default function HeroBanner({ project }) {
       </motion.div>
 
       <motion.div
-        className="mb-10 flex items-end justify-between gap-4"
+        className="mb-10 flex flex-wrap items-end gap-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1, ease }}
@@ -56,6 +60,17 @@ export default function HeroBanner({ project }) {
           <h1 className="font-sans text-4xl font-bold text-gray-900 dark:text-white md:text-5xl min-1045:text-6xl">
             {title}
           </h1>
+        </div>
+
+        <div
+          className="flex shrink-0 items-center gap-2 pb-1 text-sm text-gray-500 dark:text-gray-400"
+          onMouseEnter={() => eyeRef.current?.startAnimation()}
+          onMouseLeave={() => eyeRef.current?.stopAnimation()}
+        >
+          <EyeIcon ref={eyeRef} size={18} />
+          <span className="whitespace-nowrap">
+            {readingTime} {t('projectDetail.readingTime')}
+          </span>
         </div>
       </motion.div>
 
@@ -67,14 +82,15 @@ export default function HeroBanner({ project }) {
           transition={{ duration: 0.6, delay: 0.2, ease }}
         >
           <motion.div
-            className="relative h-full overflow-hidden rounded-2xl shadow-lg"
+            className="relative h-full overflow-hidden rounded-2xl shadow-lg dark:shadow-teal-500/10"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.7, ease }}
           >
             <motion.img
+              class="pointe"
               src={img}
               alt={title}
-              className={`${project.slug === 'smooth-components' ? 'object-cover' : ''} ${project.slug === 'eazy-git' ? 'object-cover object-left' : ''} min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px]`}
+              className={`${project.slug === 'smooth-components' ? 'object-cover' : ''} ${project.slug === 'eazy-git' ? 'object-cover object-left' : ''} pointer min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px]`}
               loading="eager"
             />
             {urlPreview && (
@@ -106,7 +122,7 @@ export default function HeroBanner({ project }) {
             {SlugIcon && (
               <SlugIcon
                 size={80}
-                className="absolute -right-5 -top-10 z-10 cursor-pointer text-gray-400 dark:text-gray-500"
+                className="absolute -right-5 -top-10 z-10 text-gray-400 dark:text-gray-500"
               />
             )}
             <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 md:text-base">
