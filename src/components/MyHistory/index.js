@@ -27,7 +27,7 @@ export default function MyHistory() {
         </p>
         <br />
 
-        <p>{t('about.technologies')}</p>
+        <p dangerouslySetInnerHTML={{ __html: t('about.technologies') }} />
         <div className="mt-5 grid grid-cols-1 gap-0 md:grid-cols-4 md:gap-x-10">
           <div className="col-span-1 self-center">
             <span className="flex justify-center">
