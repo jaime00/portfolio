@@ -8,7 +8,7 @@ const LanguageContext = createContext()
 
 const getBrowserLanguage = () => {
   const browserLang = navigator.language || navigator.userLanguage
-  return browserLang.startsWith('es') ? 'es' : 'en'
+  return browserLang.startsWith('ES') ? 'es' : 'en'
 }
 
 const getInitialLanguage = () => {
