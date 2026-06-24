@@ -1,2 +1,13 @@
+# Enforce @/ alias imports — no relative imports beyond same-directory ./file
+STAGED_JS=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^src/.*\.(js|jsx)$')
+if [ -n "$STAGED_JS" ]; then
+  VIOLATIONS=$(echo "$STAGED_JS" | xargs grep -n "from '\.\./\|from '\./[^']*/" 2>/dev/null || true)
+  if [ -n "$VIOLATIONS" ]; then
+    echo "Import alias violation — use @/ instead of relative paths:"
+    echo "$VIOLATIONS"
+    exit 1
+  fi
+fi
+
 npx prettier $(git diff --cached --name-only --diff-filter=ACMR | grep -v '^\.claude/skills/' | sed 's| |\\ |g') --write --ignore-unknown
 git update-index --again

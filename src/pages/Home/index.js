@@ -1,7 +1,7 @@
-import Bottom from '../../components/Bottom'
-import Main from '../../components/Main'
-import SectionProjects from '../../components/SectionProjects'
-import WorkExperience from '../../components/WorkExperience'
+import Bottom from '@/components/Bottom'
+import Main from '@/components/Main'
+import SectionProjects from '@/components/SectionProjects'
+import WorkExperience from '@/components/WorkExperience'
 
 export default function Home({ isDark }) {
   return (

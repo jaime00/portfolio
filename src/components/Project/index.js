@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useLocation } from 'wouter'
-import DetailOfProject from '../DetailOfProject'
-import StackOfProject from '../StackOfProject'
-import { getReadingTime } from '../CaseStudy/readingTime'
+import DetailOfProject from '@/components/DetailOfProject'
+import StackOfProject from '@/components/StackOfProject'
+import { getReadingTime } from '@/components/CaseStudy/readingTime'
 
 export default function Project({
   urlPreview,

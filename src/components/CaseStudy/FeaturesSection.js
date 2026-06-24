@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import ArrowRightIcon from '../../assets/animatedIcons/ArrowRightIcon'
+import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
 import { renderRichText } from './richText'
 
 const ease = [0.16, 1, 0.3, 1]

@@ -1,6 +1,6 @@
 import { Link } from 'wouter'
 
-import { getStyleButton } from '../../services'
+import { getStyleButton } from '@/services'
 
 export default function Button({
   children,

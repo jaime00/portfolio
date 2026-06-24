@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'wouter'
 
-import image_profile from '../../assets/images/person-head.png'
-import ButtonDarkMode from '../ButtonDarkMode'
-import LanguageSelector from '../LanguageSelector'
-import NavBarOptions from '../NavBarOptions/'
+import image_profile from '@/assets/images/person-head.png'
+import ButtonDarkMode from '@/components/ButtonDarkMode'
+import LanguageSelector from '@/components/LanguageSelector'
+import NavBarOptions from '@/components/NavBarOptions/'
 export default function NavBar({ changeMode, isDark }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)

@@ -1,7 +1,7 @@
 import { Redirect } from 'wouter'
-import CaseStudy from '../../components/CaseStudy'
-import { getProjectBySlug, getAdjacentProjects } from '../../services'
-import { useTranslation } from '../../i18n'
+import CaseStudy from '@/components/CaseStudy'
+import { getProjectBySlug, getAdjacentProjects } from '@/services'
+import { useTranslation } from '@/i18n'
 
 export default function ProjectDetail({ slug }) {
   const { language } = useTranslation()

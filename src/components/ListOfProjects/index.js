@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
-import { getProjects } from '../../services'
-import Project from '../Project'
-import { useTranslation } from '../../i18n'
+import { getProjects } from '@/services'
+import Project from '@/components/Project'
+import { useTranslation } from '@/i18n'
 
 const ease = [0.16, 1, 0.3, 1]
 

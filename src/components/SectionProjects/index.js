@@ -1,6 +1,6 @@
-import Button from '../Button'
-import ListOfProjects from '../ListOfProjects'
-import { useTranslation } from '../../i18n'
+import Button from '@/components/Button'
+import ListOfProjects from '@/components/ListOfProjects'
+import { useTranslation } from '@/i18n'
 
 const quantityOfProjectsInHome = 3
 

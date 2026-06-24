@@ -1,6 +1,6 @@
-import ListOfProjects from '../../components/ListOfProjects'
-import Titles from '../../components/Titles'
-import { useTranslation } from '../../i18n'
+import ListOfProjects from '@/components/ListOfProjects'
+import Titles from '@/components/Titles'
+import { useTranslation } from '@/i18n'
 
 export default function Projects() {
   const { t } = useTranslation()

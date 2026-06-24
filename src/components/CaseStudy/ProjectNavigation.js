@@ -1,6 +1,6 @@
 import { Link } from 'wouter'
 import { motion } from 'motion/react'
-import { useTranslation } from '../../i18n'
+import { useTranslation } from '@/i18n'
 
 const ease = [0.16, 1, 0.3, 1]
 

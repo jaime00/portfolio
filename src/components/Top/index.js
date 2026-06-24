@@ -1,4 +1,4 @@
-import { ReactComponent as TopIcon } from '../../assets/icons/top.svg'
+import { ReactComponent as TopIcon } from '@/assets/icons/top.svg'
 
 export default function Top() {
   const handleClick = () =>

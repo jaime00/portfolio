@@ -1,8 +1,8 @@
-import { FolderCodeIcon } from '../../assets/animatedIcons/FolderCode'
-import { LinkIcon } from '../../assets/animatedIcons/LinkIcon'
-import { EyeIcon } from '../../assets/animatedIcons/EyeIcon'
-import GoToOption from '../GoToOption'
-import { useTranslation } from '../../i18n'
+import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCode'
+import { ArrowSquareRightIcon } from '@/assets/animatedIcons/ArrowSquareRightIcon'
+import { EyeIcon } from '@/assets/animatedIcons/EyeIcon'
+import GoToOption from '@/components/GoToOption'
+import { useTranslation } from '@/i18n'
 
 export default function DetailOfProject({
   urlPreview,
@@ -32,7 +32,7 @@ export default function DetailOfProject({
           <GoToOption
             url={urlPreview}
             title={t('projects.viewProject')}
-            icon={<LinkIcon size={25} />}
+            icon={<ArrowSquareRightIcon size={25} />}
             id={id + 1}
           />
           {urlCode && (

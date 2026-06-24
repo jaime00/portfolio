@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { createPortal } from 'react-dom'
 import { Link, useLocation } from 'wouter'
-import NavLink from '../NavLink'
-import { useTranslation } from '../../i18n'
+import NavLink from '@/components/NavLink'
+import { useTranslation } from '@/i18n'
 
 export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
   const [location] = useLocation()

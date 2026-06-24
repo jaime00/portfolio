@@ -1,5 +1,5 @@
-import BackOne from '../../assets/images/background_one.avif'
-import BackTwo from '../../assets/images/background_two.avif'
+import BackOne from '@/assets/images/background_one.avif'
+import BackTwo from '@/assets/images/background_two.avif'
 
 export default function Background() {
   return (
