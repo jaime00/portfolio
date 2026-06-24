@@ -1,4 +1,4 @@
-import ArrowRightIcon from '../../assets/animatedIcons/ArrowRightIcon'
+import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
 
 export default function ExperienceDescription({
   year_initial,

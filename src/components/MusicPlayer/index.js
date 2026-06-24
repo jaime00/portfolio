@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { PlayIcon } from '../../assets/animatedIcons/PlayIcon'
-import { PauseIcon } from '../../assets/animatedIcons/PauseIcon'
+import { PlayIcon } from '@/assets/animatedIcons/PlayIcon'
+import { PauseIcon } from '@/assets/animatedIcons/PauseIcon'
 
 const playlist = [
   {

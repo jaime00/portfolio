@@ -1,11 +1,11 @@
 import { motion } from 'motion/react'
 
-import { FolderCodeIcon } from '../../assets/animatedIcons/FolderCode'
-import image_profile from '../../assets/images/realCharacter.png'
-import AnimatedCounter from '../AnimatedCounter'
-import { getYearsOfExperience } from '../../services'
-import { useTypewriter } from '../../hooks/useTypewriter'
-import { useTranslation } from '../../i18n'
+import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCode'
+import image_profile from '@/assets/images/realCharacter.png'
+import AnimatedCounter from '@/components/AnimatedCounter'
+import { getYearsOfExperience } from '@/services'
+import { useTypewriter } from '@/hooks/useTypewriter'
+import { useTranslation } from '@/i18n'
 
 export default function Presentation({ isDark }) {
   const { t } = useTranslation()

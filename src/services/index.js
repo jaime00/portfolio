@@ -1,4 +1,4 @@
-import DataSite from '../data/dataSite.json'
+import DataSite from '@/data/dataSite.json'
 
 const getProjects = ({ limit, lang = 'en' } = { limit: null, lang: 'en' }) => {
   const projects = DataSite.projects[lang] || DataSite.projects.en
