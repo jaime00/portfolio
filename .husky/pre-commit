@@ -1,5 +1,5 @@
 # Enforce @/ alias imports — no relative imports beyond same-directory ./file
-STAGED_JS=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^src/.*\.(js|jsx)$')
+STAGED_JS=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^src/.*\.(js|jsx)$' || true)
 if [ -n "$STAGED_JS" ]; then
   VIOLATIONS=$(echo "$STAGED_JS" | xargs grep -Hn "from '\.\./\|from '\./[^']*/" 2>/dev/null || true)
   if [ -n "$VIOLATIONS" ]; then
