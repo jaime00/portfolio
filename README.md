@@ -14,6 +14,8 @@ Personal portfolio built with React 19, showcasing my work as a Frontend Develop
 | Styling      | [Tailwind CSS 3](https://tailwindcss.com)                                                             |
 | Animations   | [Motion](https://motion.dev) (Framer Motion)                                                          |
 | Routing      | [Wouter](https://github.com/molefrog/wouter)                                                          |
+| i18n         | Custom context-based system (EN/ES, auto-detected)                                                    |
+| Toasts       | [Sonner](https://sonner.emilkoez.dev)                                                                 |
 | Lazy Loading | [Lozad.js](https://apoorv.pro/lozad.js/)                                                              |
 | Images       | [Cloudinary](https://cloudinary.com)                                                                  |
 | Deployment   | [Netlify](https://www.netlify.com)                                                                    |
@@ -42,14 +44,22 @@ The app runs at `http://localhost:3000`.
 | `npm run watch:css` | Compile Tailwind CSS                             |
 | `npm test`          | Run tests (Jest, watch mode)                     |
 
+## Features
+
+- **Dark mode** — class-based toggle with View Transition API, persisted in localStorage
+- **i18n** — English and Spanish, auto-detected from browser, switchable at runtime
+- **Responsive** — fully responsive with custom Tailwind breakpoints
+
 ## Project Structure
 
 ```
 src/
-├── assets/        # Local images and static assets
+├── assets/        # Local images, animated icon components
 ├── components/    # Reusable UI components (one folder per component)
 ├── data/          # dataSite.json — projects, experience, site content
-├── pages/         # Page components (Home, About, Projects, Experiences, Contact)
+├── hooks/         # Custom hooks (useTypewriter, etc.)
+├── i18n/          # Language provider, translation files (en.json, es.json)
+├── pages/         # Page components (Home, About, Projects, ProjectDetail, Experiences, Contact)
 ├── services/      # Data getters (getProjects, getWorkExperience, etc.)
 ├── styles/        # Tailwind source, generated output, and custom CSS
 └── utils/         # Helper functions

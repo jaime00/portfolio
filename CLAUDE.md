@@ -20,9 +20,9 @@ npx eslint "src/**/*.{js,jsx}"  # Lint (no dedicated script; eslintConfig in pac
 
 React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Motion for animations. Deployed to Netlify.
 
-**Routing:** `App.js` defines all routes using Wouter — `/`, `/about`, `/side-projects`, `/experiences`, `/contact`. To add a page, create a component in `src/pages/` and register the route in `App.js`.
+**Routing:** `App.js` defines all routes using Wouter — `/`, `/about`, `/side-projects`, `/side-projects/:slug`, `/experiences`, `/contact`. Unknown routes redirect to `/`.
 
-**Data flow:** Static data lives in `src/data/dataSite.json`. Service functions in `src/services/index.js` expose getters (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`, `getStyleButton`, `getYearsOfExperience`). Components never import `dataSite.json` directly — always go through services.
+**Data flow:** Static data lives in `src/data/dataSite.json`. Service functions in `src/services/index.js` expose getters (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`, `getStyleButton`, `getYearsOfExperience`, `getProjectBySlug`, `getAdjacentProjects`). Components never import `dataSite.json` directly — always go through services.
 
 **i18n:** Custom context-based system in `src/i18n/`. `LanguageProvider` wraps the app (in `App.js`) and exposes `useTranslation()` → `{ language, t, changeLanguage }`. UI strings live in `src/i18n/en.json` and `src/i18n/es.json`; use dot-notation keys with `t('section.key')`. Content data in `dataSite.json` is keyed by language (`projects.en`, `projects.es`); service functions accept a `lang` parameter. Language is auto-detected from browser and persisted in localStorage.
 
@@ -31,6 +31,10 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 **Animations:** Import from `motion/react` (not `framer-motion`). Example: `import { motion, AnimatePresence } from 'motion/react'`.
 
 **Toasts:** Sonner is used for toast notifications.
+
+**Path alias:** `@/` maps to `src/` (configured in `craco.config.js`). All imports use `@/components/...`, `@/pages/...`, etc. — never relative paths for cross-directory imports.
+
+**Animated icons:** `src/assets/animatedIcons/createAnimatedIcon.js` is a HOC factory — `createAnimatedIcon(displayName, renderSVG, wrapperTag)`. Most icons use it; `GithubIcon` is the exception (multi-control animation).
 
 ## Key Conventions
 
@@ -41,13 +45,13 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 - **Public static assets:** Music files in `public/songs/`, album covers in `public/covers/`, vinyl image at `public/vinyl.png`.
 - **localStorage keys in use:** `isDark`, `language`, `music-index`, `music-time`, `music-playing`.
 - **Custom Tailwind breakpoints:** `min-1045` and `min-445` (min-width).
-- **Prettier config:** No semicolons, single quotes, no trailing commas, 80 char width, Tailwind class sorting plugin.
+- **Prettier config:** No semicolons, single quotes, no trailing commas, 80 char width. Plugins: `prettier-plugin-tailwindcss` (class sorting) and `@trivago/prettier-plugin-sort-imports` (import ordering: third-party first, then `@/` groups alphabetically, then relative).
 - **Pre-commit hook (Husky):** Runs Prettier on staged files only — no lint check on commit.
 - **No tests exist yet** in the codebase.
 
 ## Adding a Page
 
 1. Create `src/pages/PageName/index.js`
-2. Register route in `src/App.js`
-3. Add NavBar link if needed
+2. Register route in `src/App.js` (inside `<Switch>`)
+3. Add NavBar link if needed (in `NavBarOptions`)
 4. Add i18n keys to `src/i18n/en.json` and `src/i18n/es.json`
