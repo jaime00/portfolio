@@ -6,12 +6,14 @@ import { CopyIcon } from '@/assets/animatedIcons/CopyIcon'
 import { MailCheckIcon } from '@/assets/animatedIcons/EmailCheckIcon'
 import { LinkedinIcon } from '@/assets/animatedIcons/LinkedinIcon'
 import { ReactComponent as WhatsappIcon } from '@/assets/icons/whatsapp.svg'
-import CharacterSit from '@/assets/images/characterSit.png'
 
 import Button from '@/components/Button'
 import Titles from '@/components/Titles'
 
 import { useTranslation } from '@/i18n'
+
+const CharacterSit =
+  'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597333/projects/portfolio/characterSit.png'
 
 export default function Contact() {
   const { t } = useTranslation()

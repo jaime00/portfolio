@@ -1,7 +1,6 @@
 import { motion } from 'motion/react'
 
 import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCode'
-import image_profile from '@/assets/images/realCharacter.png'
 
 import AnimatedCounter from '@/components/AnimatedCounter'
 
@@ -10,6 +9,9 @@ import { useTypewriter } from '@/hooks/useTypewriter'
 import { useTranslation } from '@/i18n'
 
 import { getYearsOfExperience } from '@/services'
+
+const image_profile =
+  'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597482/projects/portfolio/realCharacter.png'
 
 export default function Presentation({ isDark }) {
   const { t } = useTranslation()

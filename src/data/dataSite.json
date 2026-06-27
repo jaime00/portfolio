@@ -7,7 +7,7 @@
         "urlPreview": "https://cinepolis.com/mx",
         "title": "Cinépolis",
         "description": "WEB platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
-        "img": "/images/cinepolis/homepage.png",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png",
         "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
         "caseStudy": {
           "role": "Frontend Developer",
@@ -51,7 +51,7 @@
         "urlPreview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
         "description": "Library of beautifully designed, reusable UI components for React. Whether you're building a portfolio, dashboard, or e-commerce site.",
-        "img": "/images/smooth-components.png",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
         "urlCode": "https://www.npmjs.com/package/smooth-components",
         "caseStudy": {
@@ -90,7 +90,7 @@
         "urlCode": "https://github.com/jaime00/eazy-git",
         "title": "eazy-git",
         "description": "CLI tool that simplifies branch management in Git. It automates common workflows and maintains a consistent branch structure.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597712/projects/portfolio/projects/eazy-git/preview-en.png",
         "stack": ["Javascript", "esbuild", "clack/prompts", "chalk"],
         "caseStudy": {
           "role": "Creator & Maintainer",
@@ -186,7 +186,7 @@
         "urlPreview": "https://cinepolis.com/mx",
         "title": "Cinépolis",
         "description": "Plataforma WEB para amantes del cine para explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
-        "img": "/images/cinepolis/homepage.png",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png",
         "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
         "caseStudy": {
           "role": "Desarrollador Frontend",
@@ -230,7 +230,7 @@
         "urlPreview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
         "description": "Biblioteca de componentes UI bellamente diseñados y reutilizables para React. Ya sea que estés construyendo un portafolio, dashboard o sitio de comercio electrónico.",
-        "img": "/images/smooth-components.png",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
         "urlCode": "https://www.npmjs.com/package/smooth-components",
         "caseStudy": {
@@ -269,7 +269,7 @@
         "urlCode": "https://github.com/jaime00/eazy-git",
         "title": "eazy-git",
         "description": "Herramienta CLI que simplifica la gestión de ramas en Git. Automatiza flujos de trabajo comunes y mantiene una estructura de ramas consistente.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1751395929/projects/eazy-git/preview.png",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597713/projects/portfolio/projects/eazy-git/preview-es.png",
         "stack": ["Javascript", "esbuild", "clack/prompts", "chalk"],
         "caseStudy": {
           "role": "Creador y Mantenedor",
