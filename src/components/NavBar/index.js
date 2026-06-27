@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'wouter'
 
-import image_profile from '@/assets/images/person-head.png'
-
 import ButtonDarkMode from '@/components/ButtonDarkMode'
 import LanguageSelector from '@/components/LanguageSelector'
 import NavBarOptions from '@/components/NavBarOptions/'
+
+const image_profile =
+  'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597423/projects/portfolio/person-head.png'
 
 export default function NavBar({ changeMode, isDark }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false)

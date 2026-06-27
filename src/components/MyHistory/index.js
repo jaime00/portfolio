@@ -1,11 +1,12 @@
-import image_profile from '@/assets/images/profile_image.jpg'
-
 import AnimatedCounter from '@/components/AnimatedCounter'
 import Titles from '@/components/Titles'
 
 import { useTranslation } from '@/i18n'
 
 import { getYearsOfExperience } from '@/services'
+
+const image_profile =
+  'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597546/projects/portfolio/profile_image.jpg'
 
 export default function MyHistory() {
   const { t } = useTranslation()
