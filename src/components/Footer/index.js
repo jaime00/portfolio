@@ -1,9 +1,13 @@
+import { Link } from 'wouter'
+
 import { GithubIcon } from '@/assets/animatedIcons/GithubIcon'
 import { LinkedinIcon } from '@/assets/animatedIcons/LinkedinIcon'
-import { getCurriculumUrl } from '@/services'
+
 import Top from '@/components/Top'
-import { Link } from 'wouter'
+
 import { useTranslation } from '@/i18n'
+
+import { getCurriculumUrl } from '@/services'
 
 export default function Footer() {
   const { t, language } = useTranslation()

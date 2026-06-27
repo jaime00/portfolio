@@ -1,9 +1,12 @@
 import { motion } from 'motion/react'
+
 import ExperienceDescription from '@/components/ExperienceDescription'
 import ExperienceLogo from '@/components/ExperienceLogo'
 import Titles from '@/components/Titles'
-import { getExperiences, getWorkExperience } from '@/services'
+
 import { useTranslation } from '@/i18n'
+
+import { getExperiences, getWorkExperience } from '@/services'
 
 const ease = [0.16, 1, 0.3, 1]
 

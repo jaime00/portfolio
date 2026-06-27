@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+
 import { createAnimatedIcon } from './createAnimatedIcon'
 
 const DEFAULT_TRANSITION = {

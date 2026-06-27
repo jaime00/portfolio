@@ -1,7 +1,10 @@
 import image_profile from '@/assets/images/profile_image.jpg'
+
 import AnimatedCounter from '@/components/AnimatedCounter'
 import Titles from '@/components/Titles'
+
 import { useTranslation } from '@/i18n'
+
 import { getYearsOfExperience } from '@/services'
 
 export default function MyHistory() {

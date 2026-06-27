@@ -1,13 +1,15 @@
+import { AnimatePresence, motion } from 'motion/react'
+import { useState } from 'react'
+import { toast } from 'sonner'
+
 import { CopyIcon } from '@/assets/animatedIcons/CopyIcon'
 import { MailCheckIcon } from '@/assets/animatedIcons/EmailCheckIcon'
 import { LinkedinIcon } from '@/assets/animatedIcons/LinkedinIcon'
 import { ReactComponent as WhatsappIcon } from '@/assets/icons/whatsapp.svg'
 import CharacterSit from '@/assets/images/characterSit.png'
+
 import Button from '@/components/Button'
 import Titles from '@/components/Titles'
-import { AnimatePresence, motion } from 'motion/react'
-import { useState } from 'react'
-import { toast } from 'sonner'
 
 import { useTranslation } from '@/i18n'
 

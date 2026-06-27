@@ -1,5 +1,6 @@
-import { useTranslation } from '@/i18n'
 import IconButton from '@/components/IconButton'
+
+import { useTranslation } from '@/i18n'
 
 const flags = {
   en: (

@@ -1,10 +1,11 @@
+import React from 'react'
+
 import angularIcon from '@/assets/icons/angular.png'
 import javascriptIcon from '@/assets/icons/js.png'
 import nextIcon from '@/assets/icons/next.png'
 import reactIcon from '@/assets/icons/react.png'
 import svelteIcon from '@/assets/icons/svelte.png'
 import typescriptIcon from '@/assets/icons/ts.png'
-import React from 'react'
 
 export default function CarouselOfTechnologies({ isDark }) {
   const technologies = [

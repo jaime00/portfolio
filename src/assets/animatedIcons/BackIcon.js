@@ -1,5 +1,4 @@
 import { motion, useAnimation } from 'motion/react'
-
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
 
 const DEFAULT_TRANSITION = {

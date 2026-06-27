@@ -1,5 +1,5 @@
+import { AnimatePresence, motion } from 'motion/react'
 import { useCallback, useEffect } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
 
 export default function Lightbox({ images, index, onClose, onNavigate }) {
   const goNext = useCallback(() => {

@@ -1,6 +1,8 @@
 import Button from '@/components/Button'
-import { getCurriculumUrl, getWorkExperience } from '@/services'
+
 import { useTranslation } from '@/i18n'
+
+import { getCurriculumUrl, getWorkExperience } from '@/services'
 
 export default function WorkExperience() {
   const { t, language } = useTranslation()

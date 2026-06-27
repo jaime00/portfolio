@@ -1,7 +1,8 @@
+import React from 'react'
+
 import MyHistory from '@/components/MyHistory'
 import Separator from '@/components/Separator'
 import WorkExperience from '@/components/WorkExperience'
-import React from 'react'
 
 export default function About() {
   return (

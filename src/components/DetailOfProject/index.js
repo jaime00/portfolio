@@ -1,7 +1,9 @@
-import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCode'
 import { ArrowSquareRightIcon } from '@/assets/animatedIcons/ArrowSquareRightIcon'
 import { EyeIcon } from '@/assets/animatedIcons/EyeIcon'
+import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCode'
+
 import GoToOption from '@/components/GoToOption'
+
 import { useTranslation } from '@/i18n'
 
 export default function DetailOfProject({

@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+
 import { renderRichText } from './richText'
 
 const ease = [0.16, 1, 0.3, 1]

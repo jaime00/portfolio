@@ -1,6 +1,7 @@
 import Button from '@/components/Button'
 import CarouselOfTechnologies from '@/components/CarouselOfTechnologies'
 import Presentation from '@/components/Presentation'
+
 import { useTranslation } from '@/i18n'
 
 export default function Main({ isDark }) {

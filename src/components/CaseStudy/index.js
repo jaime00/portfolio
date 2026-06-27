@@ -1,10 +1,10 @@
+import CommandsSection from './CommandsSection'
+import FeaturesSection from './FeaturesSection'
+import GallerySection from './GallerySection'
 import HeroBanner from './HeroBanner'
 import NarrativeSection from './NarrativeSection'
-import GallerySection from './GallerySection'
-import VideoSection from './VideoSection'
-import FeaturesSection from './FeaturesSection'
-import CommandsSection from './CommandsSection'
 import ProjectNavigation from './ProjectNavigation'
+import VideoSection from './VideoSection'
 
 const sectionRenderers = {
   narrative: (section, i) => (

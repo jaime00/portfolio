@@ -1,15 +1,18 @@
+import { motion } from 'motion/react'
 import { useRef } from 'react'
 import { Link } from 'wouter'
-import { motion } from 'motion/react'
-import { ChevronLeftIcon } from '@/assets/animatedIcons/BackIcon'
+
 import { ArrowSquareRightIcon } from '@/assets/animatedIcons/ArrowSquareRightIcon'
-import { EyeIcon } from '@/assets/animatedIcons/EyeIcon'
-import { getReadingTime } from './readingTime'
-import { ClapIcon } from '@/assets/animatedIcons/ClapIcon'
+import { ChevronLeftIcon } from '@/assets/animatedIcons/BackIcon'
 import { BoxIcon } from '@/assets/animatedIcons/BoxIcon'
 import { CartIcon } from '@/assets/animatedIcons/CartIcon'
+import { ClapIcon } from '@/assets/animatedIcons/ClapIcon'
+import { EyeIcon } from '@/assets/animatedIcons/EyeIcon'
 import { GitBranchIcon } from '@/assets/animatedIcons/GitBranchIcon'
+
 import { useTranslation } from '@/i18n'
+
+import { getReadingTime } from './readingTime'
 
 const ease = [0.16, 1, 0.3, 1]
 
