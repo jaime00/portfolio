@@ -1,5 +1,6 @@
-import { useState } from 'react'
 import { motion } from 'motion/react'
+import { useState } from 'react'
+
 import Lightbox from './Lightbox'
 
 const ease = [0.16, 1, 0.3, 1]

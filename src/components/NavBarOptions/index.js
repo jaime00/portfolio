@@ -1,8 +1,10 @@
-import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
+import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { Link, useLocation } from 'wouter'
+
 import NavLink from '@/components/NavLink'
+
 import { useTranslation } from '@/i18n'
 
 export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {

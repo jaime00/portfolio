@@ -1,5 +1,6 @@
 import { MoonIcon } from '@/assets/animatedIcons/Moon'
 import { SunIcon } from '@/assets/animatedIcons/SunIcon'
+
 import IconButton from '@/components/IconButton'
 
 export default function ButtonDarkMode({ changeMode, isDark }) {

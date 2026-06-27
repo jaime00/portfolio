@@ -1,21 +1,22 @@
-import { useEffect, useState } from 'react'
-import { Route, Redirect, Switch } from 'wouter'
-import { Toaster } from 'sonner'
-
 import { MotionConfig } from 'motion/react'
+import { useEffect, useState } from 'react'
+import { Toaster } from 'sonner'
+import { Redirect, Route, Switch } from 'wouter'
 
 import Background from '@/components/Background'
-import MusicPlayer from '@/components/MusicPlayer'
 import Footer from '@/components/Footer'
+import MusicPlayer from '@/components/MusicPlayer'
 import NavBar from '@/components/NavBar'
 import ScrollToTop from '@/components/ScrollToTop'
+
+import { LanguageProvider } from '@/i18n'
+
 import About from '@/pages/About'
 import Contact from '@/pages/Contact'
 import Experiences from '@/pages/Experiences'
 import Home from '@/pages/Home'
-import Projects from '@/pages/Projects'
 import ProjectDetail from '@/pages/ProjectDetail'
-import { LanguageProvider } from '@/i18n'
+import Projects from '@/pages/Projects'
 
 import './styles/general.css'
 import './styles/output.css'
