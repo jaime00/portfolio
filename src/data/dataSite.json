@@ -85,43 +85,6 @@
       },
       {
         "id": 3,
-        "slug": "negos",
-        "urlPreview": "https://www.negos.co",
-        "title": "Negos",
-        "description": "WEB platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
-        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"],
-        "caseStudy": {
-          "role": "Full Stack Developer",
-          "duration": "2024",
-          "sections": [
-            {
-              "type": "narrative",
-              "title": "The Problem",
-              "text": "Small business owners in Colombia often struggle with inventory management, relying on spreadsheets or paper records. They needed a simple, affordable digital solution that doesn't require technical knowledge to operate.",
-              "imagePosition": "right"
-            },
-            {
-              "type": "narrative",
-              "title": "The Solution",
-              "text": "Negos provides an intuitive platform where business owners can upload their product catalog, manage stock levels, and share their inventory with customers through a public storefront. Built with Svelte and SvelteKit for optimal performance.",
-              "imagePosition": "left"
-            },
-            {
-              "type": "narrative",
-              "title": "Tech Stack",
-              "text": "SvelteKit handles server-side rendering and routing, while Supabase provides the backend with real-time database, authentication, and file storage. Tailwind CSS ensures a consistent and responsive design across all devices.",
-              "highlights": [
-                { "value": "Real-time", "label": "Database sync" },
-                { "value": "SSR", "label": "Server rendered" },
-                { "value": "PWA", "label": "Installable" }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "id": 4,
         "slug": "eazy-git",
         "urlPreview": "https://www.npmjs.com/package/eazy-git",
         "urlCode": "https://github.com/jaime00/eazy-git",
@@ -173,6 +136,43 @@
                 { "value": "npm", "label": "Published" },
                 { "value": "CLI", "label": "Interactive" },
                 { "value": "Open", "label": "Source" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "slug": "negos",
+        "urlPreview": "https://www.negos.co",
+        "title": "Negos",
+        "description": "WEB platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
+        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"],
+        "caseStudy": {
+          "role": "Full Stack Developer",
+          "duration": "2024",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "The Problem",
+              "text": "Small business owners in Colombia often struggle with inventory management, relying on spreadsheets or paper records. They needed a simple, affordable digital solution that doesn't require technical knowledge to operate.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "The Solution",
+              "text": "Negos provides an intuitive platform where business owners can upload their product catalog, manage stock levels, and share their inventory with customers through a public storefront. Built with Svelte and SvelteKit for optimal performance.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Tech Stack",
+              "text": "SvelteKit handles server-side rendering and routing, while Supabase provides the backend with real-time database, authentication, and file storage. Tailwind CSS ensures a consistent and responsive design across all devices.",
+              "highlights": [
+                { "value": "Real-time", "label": "Database sync" },
+                { "value": "SSR", "label": "Server rendered" },
+                { "value": "PWA", "label": "Installable" }
               ]
             }
           ]
@@ -264,43 +264,6 @@
       },
       {
         "id": 3,
-        "slug": "negos",
-        "urlPreview": "https://www.negos.co",
-        "title": "Negos",
-        "description": "Plataforma WEB que simplifica la gestión de inventario. Permite a los propietarios de negocios subir, organizar y actualizar productos rápidamente y sin intermediarios.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
-        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"],
-        "caseStudy": {
-          "role": "Desarrollador Full Stack",
-          "duration": "2024",
-          "sections": [
-            {
-              "type": "narrative",
-              "title": "El Problema",
-              "text": "Los pequeños empresarios en Colombia frecuentemente luchan con la gestión de inventario, dependiendo de hojas de cálculo o registros en papel. Necesitaban una solución digital simple y económica que no requiera conocimientos técnicos para operar.",
-              "imagePosition": "right"
-            },
-            {
-              "type": "narrative",
-              "title": "La Solución",
-              "text": "Negos proporciona una plataforma intuitiva donde los empresarios pueden subir su catálogo de productos, gestionar niveles de stock y compartir su inventario con clientes a través de una tienda pública. Construido con Svelte y SvelteKit para un rendimiento óptimo.",
-              "imagePosition": "left"
-            },
-            {
-              "type": "narrative",
-              "title": "Stack Tecnológico",
-              "text": "SvelteKit maneja el renderizado del lado del servidor y el enrutamiento, mientras que Supabase proporciona el backend con base de datos en tiempo real, autenticación y almacenamiento de archivos. Tailwind CSS asegura un diseño consistente y responsive en todos los dispositivos.",
-              "highlights": [
-                { "value": "Real-time", "label": "Sincronización BD" },
-                { "value": "SSR", "label": "Server rendered" },
-                { "value": "PWA", "label": "Instalable" }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "id": 4,
         "slug": "eazy-git",
         "urlPreview": "https://www.npmjs.com/package/eazy-git",
         "urlCode": "https://github.com/jaime00/eazy-git",
@@ -352,6 +315,43 @@
                 { "value": "npm", "label": "Publicado" },
                 { "value": "CLI", "label": "Interactivo" },
                 { "value": "Open", "label": "Source" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "slug": "negos",
+        "urlPreview": "https://www.negos.co",
+        "title": "Negos",
+        "description": "Plataforma WEB que simplifica la gestión de inventario. Permite a los propietarios de negocios subir, organizar y actualizar productos rápidamente y sin intermediarios.",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
+        "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"],
+        "caseStudy": {
+          "role": "Desarrollador Full Stack",
+          "duration": "2024",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "El Problema",
+              "text": "Los pequeños empresarios en Colombia frecuentemente luchan con la gestión de inventario, dependiendo de hojas de cálculo o registros en papel. Necesitaban una solución digital simple y económica que no requiera conocimientos técnicos para operar.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "La Solución",
+              "text": "Negos proporciona una plataforma intuitiva donde los empresarios pueden subir su catálogo de productos, gestionar niveles de stock y compartir su inventario con clientes a través de una tienda pública. Construido con Svelte y SvelteKit para un rendimiento óptimo.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Stack Tecnológico",
+              "text": "SvelteKit maneja el renderizado del lado del servidor y el enrutamiento, mientras que Supabase proporciona el backend con base de datos en tiempo real, autenticación y almacenamiento de archivos. Tailwind CSS asegura un diseño consistente y responsive en todos los dispositivos.",
+              "highlights": [
+                { "value": "Real-time", "label": "Sincronización BD" },
+                { "value": "SSR", "label": "Server rendered" },
+                { "value": "PWA", "label": "Instalable" }
               ]
             }
           ]

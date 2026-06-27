@@ -894,6 +894,9 @@ video {
 .min-h-\[54px\] {
   min-height: 54px;
 }
+.min-h-screen {
+  min-height: 100vh;
+}
 .w-12 {
   width: 3rem;
 }
