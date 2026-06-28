@@ -118,7 +118,7 @@ export default function HeroBanner({ project }) {
           transition={{ duration: 0.7, ease }}
         >
           <motion.div
-            className="relative rounded-3xl bg-gray-100 p-6 dark:bg-gray-900 min-445:p-8"
+            className="relative rounded-3xl bg-gray-100 p-6 shadow-lg dark:bg-gray-900 dark:shadow-teal-500/10 min-445:p-8"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.7, ease }}
           >
@@ -192,7 +192,7 @@ export default function HeroBanner({ project }) {
 
           {lastHighlights && (
             <motion.div
-              className="flex flex-1 flex-col justify-center rounded-3xl bg-gradient-to-br from-teal-500/10 to-emerald-500/10 p-6 dark:from-teal-400/10 dark:to-emerald-400/10"
+              className="flex flex-1 flex-col justify-center rounded-3xl bg-gradient-to-br from-teal-500/10 to-emerald-500/10 p-6 shadow-lg dark:from-teal-400/10 dark:to-emerald-400/10 dark:shadow-teal-500/10"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.7, ease }}
             >
