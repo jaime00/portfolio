@@ -8,9 +8,7 @@ import ProjectNavigation from './ProjectNavigation'
 import VideoSection from './VideoSection'
 
 const sectionRenderers = {
-  narrative: (section, i) => (
-    <NarrativeSection key={i} section={section} index={i} />
-  ),
+  narrative: (section, i) => <NarrativeSection key={i} section={section} />,
   gallery: (section, i) => <GallerySection key={i} section={section} />,
   video: (section, i) => <VideoSection key={i} section={section} />,
   features: (section, i) => <FeaturesSection key={i} section={section} />,

@@ -24,14 +24,13 @@
     "eject": "react-scripts eject",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/output.css",
     "watch": "chokidar \"./src/**/*.js\" -c \"npm run watch:css\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
     "dev": "concurrently \"npm run watch\" \"npm run start\"",
     "prepare": "husky"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "./.eslintrc.json"
   },
   "browserslist": {
     "production": [

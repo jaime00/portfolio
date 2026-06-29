@@ -23,7 +23,7 @@ export default function WorkExperience() {
             <span className="gover-hover:underline flex-none text-lg font-normal text-gray-800 dark:text-white">
               {company}
             </span>
-            <span className="w-full shrink border-t border-dashed border-gray-300 dark:border-gray-700"></span>
+            <span className="w-full shrink border-t border-dashed border-gray-300 dark:border-gray-700" />
             <span className="flex-none">{position}</span>
             <span className="flex-none truncate">
               ({year_initial} - {year_end})

@@ -13,7 +13,7 @@ import { getYearsOfExperience } from '@/services'
 const image_profile =
   'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597482/projects/portfolio/realCharacter.png'
 
-export default function Presentation({ isDark }) {
+export default function Presentation() {
   const { t } = useTranslation()
   const targetYears = getYearsOfExperience()
 
