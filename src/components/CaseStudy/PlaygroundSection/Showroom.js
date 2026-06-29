@@ -74,7 +74,7 @@ function parseProps(code, prev) {
 }
 
 function highlightJsx(code) {
-  const COMMENT_PH = '\x00COMMENT'
+  const COMMENT_PH = '__COMMENT__'
   const comments = []
 
   let safe = code
@@ -86,7 +86,7 @@ function highlightJsx(code) {
     comments.push(
       `<span style="color:#565f89;font-style:italic">${match}</span>`
     )
-    return COMMENT_PH + (comments.length - 1) + '\x00'
+    return COMMENT_PH + (comments.length - 1) + '__'
   })
 
   safe = safe
@@ -104,7 +104,7 @@ function highlightJsx(code) {
     )
     .replace(/(\{|\})/g, '<span style="color:#ffd54f">$1</span>')
 
-  safe = safe.replace(/\x00COMMENT(\d+)\x00/g, (_, i) => comments[parseInt(i)])
+  safe = safe.replace(/__COMMENT__(\d+)__/g, (_, i) => comments[parseInt(i)])
 
   return safe
 }
