@@ -20,7 +20,7 @@ export default function Presentation({ isDark }) {
   const displayText = useTypewriter([
     'React JS.',
     'Next JS.',
-    'Svelte. ',
+    'Svelte.',
     'Stencil JS.',
     'Typescript.',
     'Web Components.'
