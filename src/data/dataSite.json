@@ -64,12 +64,12 @@
             },
             {
               "type": "narrative",
-              "title": "💡 The Problem",
+              "title": "The Problem",
               "text": "That feeling **—the shine, the scale, the visual impact—** is something I searched for across dozens of component libraries and never found. I tried several, but they all felt flat, soulless. So I did what any stubborn developer would do: I built my own. `smooth-components` exists because I wanted to have this kind of animated components like this cinema poster but brought to the web browser."
             },
             {
               "type": "features",
-              "title": "⚡ Why Use smooth-components?",
+              "title": "Why Use smooth-components?",
               "text": "Beyond the aesthetic, these are the technical advantages that make the library worth it:",
               "items": [
                 "**Zero CSS imports** — styles are automatically injected at runtime, no extra setup needed.",
@@ -83,13 +83,13 @@
             },
             {
               "type": "playground",
-              "title": "🎮 Playground",
+              "title": "Playground",
               "subtitle": "If you want to play around with the component using real images, I recommend [**Posteritati**](https://posteritati.com/new?size%5B%5D=2): a website where you'll find real movie posters with the perfect fit",
               "text": "Convinced? Try it yourself. Import, use, done. No CSS files, no configuration needed. Edit the code below and see the result in real time."
             },
             {
               "type": "narrative",
-              "title": "🎨 My Inspiration",
+              "title": "My Inspiration",
               "text": "Every detail of the Poster component has a physical reference. The **shine that sweeps across the surface** was born from watching how cinema display lights create a reflection that shifts as you change your angle. The **hover with a slight tilt** replicates that feeling of leaning in to see the details up close. And the **entrance animation with scale** mimics that moment when a poster catches your eye from afar and draws you in.\n\nI didn't want a component that simply displayed an image. I wanted one that provoked the same reaction as a well-mounted physical poster: making you stop and stare.",
               "images": [
                 "https://res.cloudinary.com/personal-jaime00/image/upload/v1782754785/projects/portfolio/projects/smooth-components/inspiration-poster.png",
@@ -98,7 +98,7 @@
             },
             {
               "type": "narrative",
-              "title": "🧠 Conclusion",
+              "title": "Conclusion",
               "text": "`smooth-components` was born from a personal obsession and today it's an open-source library published on [**npm**](https://www.npmjs.com/package/smooth-components) that any developer can use. I'm currently working on new components with the same philosophy: bringing real-world aesthetics to the browser. If you're interested in exploring the library or have ideas for new components, the repository is open.",
               "highlights": [
                 { "value": "~98 kB", "label": "Package Size" },
@@ -128,12 +128,12 @@
             },
             {
               "type": "narrative",
-              "title": "🤔 But… What Is eazy-git?",
+              "title": "But… What Is eazy-git?",
               "text": "eazy-git is an open-source tool that works as a command-line interface **(CLI)**. It automates common Git tasks like creating branches, committing, pushing changes, merging, and more, all with simplified commands. Its main goal is to help you keep a standardized branch structure while you save time and focus on what really matters: **the business logic.**"
             },
             {
               "type": "features",
-              "title": "⚡ What Problem Does It Solve?",
+              "title": "What Problem Does It Solve?",
               "text": "On many teams we follow a strategy where we must:",
               "items": [
                 "Create **\"original\"** branches based on `master`.",
@@ -145,7 +145,7 @@
             },
             {
               "type": "features",
-              "title": "🎯 Why Use eazy-git?",
+              "title": "Why Use eazy-git?",
               "items": [
                 "Standardizes common Git operations (pull, push, commit, checkout…).",
                 "Minimizes errors when creating or switching branches.",
@@ -155,7 +155,7 @@
             },
             {
               "type": "narrative",
-              "title": "🧠 Conclusion",
+              "title": "Conclusion",
               "text": "**eazy-git** is an excellent option if you want to **optimize your terminal-based Git workflow.**\n\nIt lets you work faster, cleaner, and with fewer errors thanks to preconfigured commands that adapt to your branching strategy and development environment. It also automates common manual tasks, like authentication and dependency installation.\n\nIf you work on large projects or with separate environments (like **DEV, UAT, PROD**), this tool can **save you hours of repetitive work** and help you keep a clear, tidy branch structure.",
               "highlights": [
                 { "value": "npm", "label": "Published" },
@@ -272,7 +272,7 @@
             },
             {
               "type": "features",
-              "title": "⚡¿Por qué usar smooth-components?",
+              "title": "¿Por qué usar smooth-components?",
               "text": "Más allá de la estética, estas son las ventajas técnicas que hacen que la librería valga la pena:",
               "items": [
                 "**Zero CSS imports** — los estilos se inyectan automáticamente en tiempo de ejecución, sin configuración extra.",
@@ -286,13 +286,13 @@
             },
             {
               "type": "playground",
-              "title": "🎮 Playground",
+              "title": "Playground",
               "subtitle": "Si quieres jugar con el componente con imágenes reales, te recomiendo [**Posteritati**](https://posteritati.com/new?size%5B%5D=2): una web donde encontrarás pósters de cine reales con el fit perfecto",
               "text": "¿Te convencí? Pruébalo tú mismo. Importa, usa, listo. Sin archivos CSS, sin configuración. Edita el código a continuación y mira el resultado en tiempo real."
             },
             {
               "type": "narrative",
-              "title": "🎨 Mi inspiración",
+              "title": "Mi inspiración",
               "text": "Cada detalle del componente Poster tiene un referente físico. El **brillo que recorre la superficie** nació de observar cómo la luz de los displays del cine crea un reflejo que se mueve cuando cambias de ángulo. El **hover con ligera inclinación** replica esa sensación de acercarte al póster para ver los detalles de cerca. Y la **animación de entrada con escala** imita ese momento en que un póster llama tu atención desde lejos y te acercas.\n\nNo quería un componente que simplemente mostrara una imagen. Quería uno que provocara la misma reacción que un póster físico bien montado: que te detuvieras a mirarlo.",
               "images": [
                 "https://res.cloudinary.com/personal-jaime00/image/upload/v1782754785/projects/portfolio/projects/smooth-components/inspiration-poster.png",
@@ -301,7 +301,7 @@
             },
             {
               "type": "narrative",
-              "title": "🧠 Conclusión",
+              "title": "Conclusión",
               "text": "`smooth-components` nació de una obsesión personal y hoy es una librería open source publicada en [**npm**](https://www.npmjs.com/package/smooth-components) que cualquier desarrollador puede usar. Actualmente estoy trabajando en nuevos componentes con la misma filosofía: llevar la estética del mundo físico al navegador. Si te interesa explorar la librería o tienes ideas para nuevos componentes, el repositorio está abierto.",
               "highlights": [
                 { "value": "~98 kB", "label": "Peso del paquete" },
@@ -331,12 +331,12 @@
             },
             {
               "type": "narrative",
-              "title": "🤔 Pero… ¿Qué es eazy-git?",
+              "title": "Pero… ¿Qué es eazy-git?",
               "text": "Es una herramienta open source que funciona como interfaz de línea de comandos **(CLI)**. Automatiza tareas comunes de Git como crear ramas, hacer commits, pushear cambios, hacer merge y más, todo con comandos simplificados. Su objetivo principal es ayudarte a mantener una estructura de ramas estandarizada mientras ahorras tiempo y te enfocas en lo realmente importante: **la lógica de negocio.**"
             },
             {
               "type": "features",
-              "title": "⚡ ¿Qué problema resuelve?",
+              "title": "¿Qué problema resuelve?",
               "text": "En muchos equipos seguimos una estrategia donde debemos:",
               "items": [
                 "Crear ramas **«originales»** con base en `master`.",
@@ -348,7 +348,7 @@
             },
             {
               "type": "features",
-              "title": "🎯 ¿Por qué usar eazy-git?",
+              "title": "¿Por qué usar eazy-git?",
               "items": [
                 "Estandariza operaciones comunes de Git (pull, push, commit, checkout…).",
                 "Minimiza errores al crear o cambiar de ramas.",
@@ -358,7 +358,7 @@
             },
             {
               "type": "narrative",
-              "title": "🧠 Conclusión",
+              "title": "Conclusión",
               "text": "**eazy-git** es una excelente opción si quieres **optimizar tu flujo de trabajo con Git desde la terminal.**\n\nTe permite trabajar de forma más rápida, más limpia y con menos errores gracias a comandos preconfigurados que se adaptan a tu estrategia de ramas y entorno de desarrollo. Además automatiza tareas manuales comunes, como la autenticación e instalación de dependencias.\n\nSi trabajas en proyectos grandes o con entornos separados (como **DEV, UAT, PROD**), esta herramienta puede **ahorrarte horas de trabajo repetitivo** y ayudarte a mantener una estructura de ramas clara y ordenada.",
               "highlights": [
                 { "value": "npm", "label": "Publicado" },
