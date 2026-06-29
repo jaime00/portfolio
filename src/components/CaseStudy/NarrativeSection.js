@@ -4,7 +4,7 @@ import { renderRichText } from './richText'
 
 const ease = [0.16, 1, 0.3, 1]
 
-export default function NarrativeSection({ section, index }) {
+export default function NarrativeSection({ section }) {
   const isImageRight = section.imagePosition === 'right'
 
   const isCompact =
