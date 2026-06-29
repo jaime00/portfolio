@@ -16,7 +16,7 @@ export default function PlaygroundSection({ section }) {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5, ease }}
       >
-        {section.title}
+        {section.title} <span className="inline-block scale-x-150 ml-2">—</span>
       </motion.h2>
       {section.subtitle && (
         <motion.p
