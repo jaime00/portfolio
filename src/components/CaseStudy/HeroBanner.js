@@ -197,7 +197,7 @@ export default function HeroBanner({ project }) {
               transition={{ duration: 0.7, ease }}
             >
               <div className="grid grid-cols-2 gap-4 min-1045:grid-cols-1">
-                {lastHighlights.slice(0, 2).map((h, i) => (
+                {lastHighlights.map((h, i) => (
                   <div key={i} className="min-1045:text-center">
                     <span className="text-gradient-teal text-3xl font-bold">
                       {h.value}

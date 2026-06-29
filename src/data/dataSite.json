@@ -6,7 +6,7 @@
         "slug": "cinepolis-web",
         "urlPreview": "https://cinepolis.com/mx",
         "title": "Cinépolis",
-        "description": "WEB platform for movie lovers to browse the program, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
+        "description": "WEB platform for movie lovers to explore showtimes, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png",
         "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
         "caseStudy": {
@@ -17,8 +17,8 @@
             {
               "type": "narrative",
               "title": "The Challenge",
-              "text": "Cinépolis needed a complete redesign of their WEB platform to modernize the user experience and improve performance across all devices. The existing platform had slow load times and a dated interface that didn't match the premium cinema experience the brand represents.",
-              "imagePosition": "right"
+              "text": "Cinépolis needed a complete redesign of their WEB platform to modernize the user experience and improve performance across all devices. The existing platform had slow load times and a dated interface that didn't represent the premium cinema experience the brand offers.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1782700130/projects/portfolio/projects/smooth-components/poster-demo.mov"
             },
             {
               "type": "narrative",
@@ -29,7 +29,7 @@
             {
               "type": "narrative",
               "title": "Technical Approach",
-              "text": "The platform was built using Next.js with a Micro-Frontend architecture powered by Module Federation. This allowed multiple teams to work independently on different sections of the site while maintaining a cohesive user experience. We used GraphQL for efficient data fetching and Tailwind CSS for consistent styling.",
+              "text": "The platform was built using Next.js with a Micro-Frontend architecture powered by Module Federation. This allowed multiple teams to work independently on different sections of the site while maintaining a cohesive user experience. We used GraphQL for efficient queries and Tailwind CSS for consistent styling.",
               "imagePosition": "right"
             },
             {
@@ -50,7 +50,7 @@
         "slug": "smooth-components",
         "urlPreview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
-        "description": "Library of beautifully designed, reusable UI components for React. Whether you're building a portfolio, dashboard, or e-commerce site.",
+        "description": "Library of beautifully designed, reusable UI components for React. Perfect for portfolios, dashboards, or e-commerce sites.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
         "urlCode": "https://www.npmjs.com/package/smooth-components",
@@ -60,24 +60,50 @@
           "sections": [
             {
               "type": "narrative",
-              "title": "The Idea",
-              "text": "I wanted to create a component library that combines beautiful design with smooth animations out of the box. Most UI libraries focus on functionality but leave animation as an afterthought. smooth-components puts motion at the center of every interaction.",
-              "imagePosition": "right"
+              "text": "One of my favorite and can't-miss plans is going to the movies. Not just for the film itself, but for the whole experience: being able to arrive and see those **bright, perfectly lit posters** behind glass, each one competing for your attention. There's something about a well-presented poster that makes you stop and say: **\"This is the next movie I have to see.\"**"
             },
             {
               "type": "narrative",
-              "title": "Architecture",
-              "text": "Built with TypeScript for type safety, Vite for fast development and builds, and Motion for fluid animations. Each component is designed to be tree-shakeable and fully customizable through props while maintaining sensible defaults.",
-              "imagePosition": "left"
+              "title": "💡 The Problem",
+              "text": "That feeling **—the shine, the scale, the visual impact—** is something I searched for across dozens of component libraries and never found. I tried several, but they all felt flat, soulless. So I did what any stubborn developer would do: I built my own. `smooth-components` exists because I wanted to have this kind of animated components like this cinema poster but brought to the web browser."
+            },
+            {
+              "type": "features",
+              "title": "⚡ Why Use smooth-components?",
+              "text": "Beyond the aesthetic, these are the technical advantages that make the library worth it:",
+              "items": [
+                "**Zero CSS imports** — styles are automatically injected at runtime, no extra setup needed.",
+                "**Fully typed** — built with TypeScript, includes type declarations out of the box.",
+                "**Accessible** — components enforce accessibility props (e.g. required alt text).",
+                "**Smooth animations** — hover effects, glint overlays, 3D borders, and glass reflections.",
+                "**Lightweight** — React and react-dom are externalized, keeping the bundle small.",
+                "**ESM & UMD** — works with any bundler or via CDN."
+              ],
+              "footer": "You can find all the detailed documentation [**here**](https://smooth-components.netlify.app/)."
+            },
+            {
+              "type": "playground",
+              "title": "🎮 Playground",
+              "subtitle": "If you want to play around with the component using real images, I recommend [**Posteritati**](https://posteritati.com/new?size%5B%5D=2): a website where you'll find real movie posters with the perfect fit",
+              "text": "Convinced? Try it yourself. Import, use, done. No CSS files, no configuration needed. Edit the code below and see the result in real time."
             },
             {
               "type": "narrative",
-              "title": "Key Features",
-              "text": "The library includes components with built-in animation presets, responsive design, dark mode support, and accessibility compliance. Published on npm for easy installation and integration into any React project.",
+              "title": "🎨 My Inspiration",
+              "text": "Every detail of the Poster component has a physical reference. The **shine that sweeps across the surface** was born from watching how cinema display lights create a reflection that shifts as you change your angle. The **hover with a slight tilt** replicates that feeling of leaning in to see the details up close. And the **entrance animation with scale** mimics that moment when a poster catches your eye from afar and draws you in.\n\nI didn't want a component that simply displayed an image. I wanted one that provoked the same reaction as a well-mounted physical poster: making you stop and stare.",
+              "images": [
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1782754785/projects/portfolio/projects/smooth-components/inspiration-poster.png",
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1782754827/projects/portfolio/projects/smooth-components/poster-inspiration-2.png"
+              ]
+            },
+            {
+              "type": "narrative",
+              "title": "🧠 Conclusion",
+              "text": "`smooth-components` was born from a personal obsession and today it's an open-source library published on [**npm**](https://www.npmjs.com/package/smooth-components) that any developer can use. I'm currently working on new components with the same philosophy: bringing real-world aesthetics to the browser. If you're interested in exploring the library or have ideas for new components, the repository is open.",
               "highlights": [
-                { "value": "15+", "label": "Components" },
+                { "value": "~98 kB", "label": "Package Size" },
                 { "value": "100%", "label": "TypeScript" },
-                { "value": "A11y", "label": "Accessible" }
+                { "value": "npm", "label": "Published" }
               ]
             }
           ]
@@ -98,7 +124,7 @@
           "sections": [
             {
               "type": "narrative",
-              "text": "If you work with Git constantly **—especially from the terminal—** and manage a somewhat complex branching strategy, **this one is for you**.\n\nPersonally, I'd rather work straight from the terminal than use visual clients like **GitHub Desktop or SourceTree**. I like having full control over every step of the flow. If you're that kind of developer too, `eazy-git` will probably interest you."
+              "text": "If you work with Git constantly **—especially from the terminal—** and manage a somewhat complex branching strategy, **this is for you**.\n\nPersonally, I'd rather work straight from the terminal than use visual clients like **GitHub Desktop or SourceTree**. I like having full control over every step of the flow. If you're that kind of developer too, `eazy-git` will probably interest you."
             },
             {
               "type": "narrative",
@@ -107,7 +133,7 @@
             },
             {
               "type": "features",
-              "title": "What Problem Does It Solve?",
+              "title": "⚡ What Problem Does It Solve?",
               "text": "On many teams we follow a strategy where we must:",
               "items": [
                 "Create **\"original\"** branches based on `master`.",
@@ -123,14 +149,13 @@
               "items": [
                 "Standardizes common Git operations (pull, push, commit, checkout…).",
                 "Minimizes errors when creating or switching branches.",
-                "Bundles handy extra commands for `npm` projects and web environments.",
+                "Includes handy extra commands for `npm` projects and web environments.",
                 "Ideal for Unix terminals (Linux, macOS, Git Bash on Windows)."
               ]
             },
             {
               "type": "narrative",
               "title": "🧠 Conclusion",
-              "hideHighlightsGrid": true,
               "text": "**eazy-git** is an excellent option if you want to **optimize your terminal-based Git workflow.**\n\nIt lets you work faster, cleaner, and with fewer errors thanks to preconfigured commands that adapt to your branching strategy and development environment. It also automates common manual tasks, like authentication and dependency installation.\n\nIf you work on large projects or with separate environments (like **DEV, UAT, PROD**), this tool can **save you hours of repetitive work** and help you keep a clear, tidy branch structure.",
               "highlights": [
                 { "value": "npm", "label": "Published" },
@@ -146,7 +171,7 @@
         "slug": "negos",
         "urlPreview": "https://www.negos.co",
         "title": "Negos",
-        "description": "WEB platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries",
+        "description": "WEB platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
         "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"],
         "caseStudy": {
@@ -197,7 +222,7 @@
               "type": "narrative",
               "title": "El Desafío",
               "text": "Cinépolis necesitaba un rediseño completo de su plataforma WEB para modernizar la experiencia de usuario y mejorar el rendimiento en todos los dispositivos. La plataforma existente tenía tiempos de carga lentos y una interfaz anticuada que no representaba la experiencia premium de cine que la marca ofrece.",
-              "imagePosition": "right"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1782700130/projects/portfolio/projects/smooth-components/poster-demo.mov"
             },
             {
               "type": "narrative",
@@ -229,7 +254,7 @@
         "slug": "smooth-components",
         "urlPreview": "https://smooth-components.netlify.app",
         "title": "smooth-components",
-        "description": "Biblioteca de componentes UI bellamente diseñados y reutilizables para React. Ya sea que estés construyendo un portafolio, dashboard o sitio de comercio electrónico.",
+        "description": "Biblioteca de componentes UI bellamente diseñados y reutilizables para React. Ideal para portafolios, dashboards o sitios de comercio electrónico.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png",
         "stack": ["Typescript", "vite", "Wouter", "Motion"],
         "urlCode": "https://www.npmjs.com/package/smooth-components",
@@ -239,24 +264,49 @@
           "sections": [
             {
               "type": "narrative",
-              "title": "La Idea",
-              "text": "Quería crear una biblioteca de componentes que combine diseño hermoso con animaciones fluidas de fábrica. La mayoría de las bibliotecas UI se enfocan en funcionalidad pero dejan las animaciones como algo secundario. smooth-components pone el movimiento en el centro de cada interacción.",
-              "imagePosition": "right"
+              "text": "Uno de mis planes favoritos e infaltables es ir al cine. No solo por la película, sino por toda la experiencia: poder llegar y ver esos **pósters brillantes, perfectamente iluminados** detrás del vidrio, cada uno compitiendo por tu atención. Hay algo en un póster bien presentado que te hace detenerte y decir: **\"Esta es la próxima película que tengo que ver.\"**"
             },
             {
               "type": "narrative",
-              "title": "Arquitectura",
-              "text": "Construido con TypeScript para seguridad de tipos, Vite para desarrollo y builds rápidos, y Motion para animaciones fluidas. Cada componente está diseñado para ser tree-shakeable y completamente personalizable a través de props manteniendo valores predeterminados sensatos.",
-              "imagePosition": "left"
+              "text": "Esa sensación **—el brillo, la escala, el impacto visual—** es algo que busqué en decenas de librerías de componentes y nunca encontré. Probé varias, pero todas se sentían planas, sin alma. Así que hice lo que cualquier desarrollador terco haría: construí la mía. `smooth-components` existe porque quería tener este tipo de componentes animados como este póster de cine pero llevado al navegador web."
+            },
+            {
+              "type": "features",
+              "title": "⚡¿Por qué usar smooth-components?",
+              "text": "Más allá de la estética, estas son las ventajas técnicas que hacen que la librería valga la pena:",
+              "items": [
+                "**Zero CSS imports** — los estilos se inyectan automáticamente en tiempo de ejecución, sin configuración extra.",
+                "**Fully typed** — construido con TypeScript, incluye declaraciones de tipos de fábrica.",
+                "**Accesible** — los componentes exigen props de accesibilidad (ej. texto alt obligatorio).",
+                "**Animaciones suaves** — efectos hover, brillos superpuestos, bordes 3D y reflejos de cristal.",
+                "**Ligero** — React y react-dom se externalizan, manteniendo el bundle pequeño.",
+                "**ESM & UMD** — funciona con cualquier bundler o vía CDN."
+              ],
+              "footer": "Toda la documentación detallada la encontrarás [**aquí**](https://smooth-components.netlify.app/#docs)."
+            },
+            {
+              "type": "playground",
+              "title": "🎮 Playground",
+              "subtitle": "Si quieres jugar con el componente con imágenes reales, te recomiendo [**Posteritati**](https://posteritati.com/new?size%5B%5D=2): una web donde encontrarás pósters de cine reales con el fit perfecto",
+              "text": "¿Te convencí? Pruébalo tú mismo. Importa, usa, listo. Sin archivos CSS, sin configuración. Edita el código a continuación y mira el resultado en tiempo real."
             },
             {
               "type": "narrative",
-              "title": "Características Clave",
-              "text": "La biblioteca incluye componentes con presets de animación integrados, diseño responsive, soporte para modo oscuro y cumplimiento de accesibilidad. Publicada en npm para fácil instalación e integración en cualquier proyecto React.",
+              "title": "🎨 Mi inspiración",
+              "text": "Cada detalle del componente Poster tiene un referente físico. El **brillo que recorre la superficie** nació de observar cómo la luz de los displays del cine crea un reflejo que se mueve cuando cambias de ángulo. El **hover con ligera inclinación** replica esa sensación de acercarte al póster para ver los detalles de cerca. Y la **animación de entrada con escala** imita ese momento en que un póster llama tu atención desde lejos y te acercas.\n\nNo quería un componente que simplemente mostrara una imagen. Quería uno que provocara la misma reacción que un póster físico bien montado: que te detuvieras a mirarlo.",
+              "images": [
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1782754785/projects/portfolio/projects/smooth-components/inspiration-poster.png",
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1782754827/projects/portfolio/projects/smooth-components/poster-inspiration-2.png"
+              ]
+            },
+            {
+              "type": "narrative",
+              "title": "🧠 Conclusión",
+              "text": "`smooth-components` nació de una obsesión personal y hoy es una librería open source publicada en [**npm**](https://www.npmjs.com/package/smooth-components) que cualquier desarrollador puede usar. Actualmente estoy trabajando en nuevos componentes con la misma filosofía: llevar la estética del mundo físico al navegador. Si te interesa explorar la librería o tienes ideas para nuevos componentes, el repositorio está abierto.",
               "highlights": [
-                { "value": "15+", "label": "Componentes" },
+                { "value": "~98 kB", "label": "Peso del paquete" },
                 { "value": "100%", "label": "TypeScript" },
-                { "value": "A11y", "label": "Accesible" }
+                { "value": "npm", "label": "Publicado" }
               ]
             }
           ]
@@ -277,7 +327,7 @@
           "sections": [
             {
               "type": "narrative",
-              "text": "Si trabajas con Git de forma constante **—especialmente desde la terminal—** y manejas una estrategia de ramas algo compleja, **este blog es para ti**.\n\nPersonalmente, prefiero trabajar directamente desde la terminal en lugar de usar clientes visuales como **GitHub Desktop o SourceTree**. Me gusta tener control total sobre cada paso del flujo. Si tú también eres de ese tipo de desarrolladores, probablemente `eazy-git` te va a interesar."
+              "text": "Si trabajas con Git de forma constante **—especialmente desde la terminal—** y manejas una estrategia de ramas algo compleja, **esto es para ti**.\n\nPersonalmente, prefiero trabajar directamente desde la terminal en lugar de usar clientes visuales como **GitHub Desktop o SourceTree**. Me gusta tener control total sobre cada paso del flujo. Si tú también eres de ese tipo de desarrolladores, probablemente `eazy-git` te va a interesar."
             },
             {
               "type": "narrative",
@@ -286,7 +336,7 @@
             },
             {
               "type": "features",
-              "title": "¿Qué problema resuelve?",
+              "title": "⚡ ¿Qué problema resuelve?",
               "text": "En muchos equipos seguimos una estrategia donde debemos:",
               "items": [
                 "Crear ramas **«originales»** con base en `master`.",
@@ -309,7 +359,6 @@
             {
               "type": "narrative",
               "title": "🧠 Conclusión",
-              "hideHighlightsGrid": true,
               "text": "**eazy-git** es una excelente opción si quieres **optimizar tu flujo de trabajo con Git desde la terminal.**\n\nTe permite trabajar de forma más rápida, más limpia y con menos errores gracias a comandos preconfigurados que se adaptan a tu estrategia de ramas y entorno de desarrollo. Además automatiza tareas manuales comunes, como la autenticación e instalación de dependencias.\n\nSi trabajas en proyectos grandes o con entornos separados (como **DEV, UAT, PROD**), esta herramienta puede **ahorrarte horas de trabajo repetitivo** y ayudarte a mantener una estructura de ramas clara y ordenada.",
               "highlights": [
                 { "value": "npm", "label": "Publicado" },
@@ -432,7 +481,7 @@
         "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738382362/projects/portfolio/experiences/IA.jpg",
         "items": [
           "Developed and maintained the redesign of the WEB platform of a major Latin American movie theater chain.",
-          "I led the implementation and optimization of interactive animations using Framer Motion in the food screen and search section, improving user experience and interface fluidity.",
+          "Led the implementation and optimization of interactive animations using Framer Motion in the food screen and search section, improving user experience and interface fluidity.",
           "Managed cinema selection, ticket booking, food ordering and loyalty with 'Cine Puntos', as well as maintaining payment integrations with DeUna and Aplazo in Mexico.",
           "Use of technologies such as React, Next, GraphQL, Framer Motion, Hooks, Sass, Tailwind CSS."
         ],
@@ -465,12 +514,12 @@
         "link": "https://www.extreme.com.co/extreme",
         "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738385846/projects/portfolio/experiences/EXTREME.jpg",
         "items": [
-          "Coordinate development team of 6+ people in their daily activities, sprints and technical growth.",
+          "Coordinated development team of 6+ people in their daily activities, sprints and technical growth.",
           "Technical and conceptual support to team members during sprints.",
           "Ensure quality and code best practices in delivered modules.",
           "Identify and provide solutions to improve development processes and quality.",
-          "Standard code statement and best practices based on CLEAN CODE.",
-          "Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Boostrap."
+          "Defined coding standards and best practices based on CLEAN CODE.",
+          "Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Bootstrap."
         ],
         "rotate": false
       },
@@ -481,7 +530,7 @@
           "Development of dynamic and maintainable web modules.",
           "Ensuring the quality of delivered applications and their code.",
           "Implemented the use of unit testing in multiple projects using Jest JS. Design and implementation of solutions for requests and issues focused on business logic.",
-          "Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Boostrap."
+          "Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Bootstrap."
         ],
         "rotate": true
       }
@@ -529,7 +578,7 @@
           "Soporte técnico y conceptual a los miembros del equipo durante los sprints.",
           "Asegurar calidad y mejores prácticas de código en los módulos entregados.",
           "Identificar y proporcionar soluciones para mejorar los procesos de desarrollo y calidad.",
-          "Declaración de código estándar y mejores prácticas basadas en CLEAN CODE.",
+          "Definición de estándares de código y mejores prácticas basadas en CLEAN CODE.",
           "Uso de tecnologías como Javascript, Typescript, React, Jest, PHP, PgSQL, Bootstrap."
         ],
         "rotate": false

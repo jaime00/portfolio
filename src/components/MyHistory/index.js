@@ -1,4 +1,5 @@
 import AnimatedCounter from '@/components/AnimatedCounter'
+import { renderRichText } from '@/components/CaseStudy/richText'
 import Titles from '@/components/Titles'
 
 import { useTranslation } from '@/i18n'
@@ -42,7 +43,7 @@ export default function MyHistory() {
                 height={300}
                 alt="Jaime Torres"
                 src={image_profile}
-                className="col-span-1 rounded-xl transition duration-500 ease-in-out hover:scale-[102%] group-hover:opacity-75"
+                className="col-span-1 rounded-xl shadow-lg transition duration-500 ease-in-out hover:scale-[102%] group-hover:opacity-75 dark:shadow-teal-500/10"
                 decoding="async"
               />
             </span>
@@ -50,30 +51,7 @@ export default function MyHistory() {
           <div className="col-span-3">
             <p className="mt-7">{t('about.skills')}</p>
             <br />
-            <p>
-              {t('about.findMe')}{' '}
-              <b>
-                <a
-                  href="https://linkedin.com/in/jaimetorresv"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-current underline-offset-2 transition-opacity hover:opacity-70"
-                >
-                  {t('about.linkedin')}
-                </a>
-              </b>{' '}
-              {t('about.openSource')}{' '}
-              <b>
-                <a
-                  href="https://github.com/jaime00"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-current underline-offset-2 transition-opacity hover:opacity-70"
-                >
-                  {t('about.github')}
-                </a>
-              </b>{' '}
-            </p>
+            <p>{renderRichText(t('about.findMe'))}</p>
           </div>
         </div>
       </section>

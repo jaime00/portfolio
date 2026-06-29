@@ -7,8 +7,11 @@ const ease = [0.16, 1, 0.3, 1]
 export default function NarrativeSection({ section, index }) {
   const isImageRight = section.imagePosition === 'right'
 
+  const isCompact =
+    !section.title && !section.image && !section.images && !section.highlights
+
   return (
-    <section className="mb-20">
+    <section className={isCompact ? 'mb-8' : 'mb-20'}>
       {section.title && (
         <motion.h2
           className="mb-6 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl"
@@ -35,26 +38,23 @@ export default function NarrativeSection({ section, index }) {
             {renderRichText(section.text)}
           </motion.p>
 
-          {section.highlights && !section.hideHighlightsGrid && (
-            <div className="mt-8 grid grid-cols-2 gap-4 min-445:grid-cols-3">
-              {section.highlights.map((h, i) => (
-                <motion.div
-                  key={i}
-                  className="rounded-xl border border-gray-200/80 bg-white/70 p-4 text-center backdrop-blur-sm dark:border-gray-700 dark:bg-gray-800/70"
-                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.2 + i * 0.1, ease }}
-                >
-                  <span className="text-gradient-teal text-2xl font-bold md:text-3xl">
-                    {h.value}
-                  </span>
-                  <span className="mt-1 block text-sm text-gray-600 dark:text-gray-400">
-                    {h.label}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
+          {section.video && (
+            <motion.div
+              className="mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
+              initial={{ opacity: 0, y: 30, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: 0.2, ease }}
+            >
+              <video
+                src={section.video}
+                className="w-full"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            </motion.div>
           )}
         </div>
 
@@ -75,6 +75,28 @@ export default function NarrativeSection({ section, index }) {
           </motion.div>
         )}
       </div>
+
+      {section.images && (
+        <div className="mt-8 grid grid-cols-1 gap-6 min-445:grid-cols-5">
+          {section.images.map((src, i) => (
+            <motion.div
+              key={i}
+              className={i === 0 ? 'min-445:col-span-3' : 'min-445:col-span-2'}
+              initial={{ opacity: 0, y: 30, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: 0.2 + i * 0.15, ease }}
+            >
+              <img
+                src={src}
+                alt={`${section.title || ''} ${i + 1}`}
+                className="h-full w-full rounded-xl object-cover shadow-lg dark:shadow-teal-500/10"
+                loading="lazy"
+              />
+            </motion.div>
+          ))}
+        </div>
+      )}
     </section>
   )
 }

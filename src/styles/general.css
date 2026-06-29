@@ -86,6 +86,57 @@ html.dark::view-transition-old(root) {
   }
 }
 
+/* Showroom editor */
+.editor-line {
+  position: relative;
+  margin-left: -2.125rem;
+  padding-left: 2.125rem;
+}
+
+.editor-line::before {
+  content: attr(data-line);
+  position: absolute;
+  left: 0;
+  width: 1.5rem;
+  text-align: right;
+  color: #3b3e50;
+  font-size: 0.75rem;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .editor-line {
+    margin-left: -2.75rem;
+    padding-left: 2.75rem;
+  }
+
+  .editor-line::before {
+    width: 2rem;
+    font-size: inherit;
+  }
+}
+
+@keyframes ambient-glow {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  33% {
+    opacity: 0.25;
+    transform: translate(-48%, -52%) scale(1.1);
+  }
+  66% {
+    opacity: 0.12;
+    transform: translate(-52%, -48%) scale(0.95);
+  }
+}
+
+.animate-ambient-glow {
+  animation: ambient-glow 8s ease-in-out infinite;
+}
+
 :root {
   --expo-out: linear(
     0 0%,

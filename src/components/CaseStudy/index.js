@@ -3,6 +3,7 @@ import FeaturesSection from './FeaturesSection'
 import GallerySection from './GallerySection'
 import HeroBanner from './HeroBanner'
 import NarrativeSection from './NarrativeSection'
+import PlaygroundSection from './PlaygroundSection'
 import ProjectNavigation from './ProjectNavigation'
 import VideoSection from './VideoSection'
 
@@ -13,7 +14,8 @@ const sectionRenderers = {
   gallery: (section, i) => <GallerySection key={i} section={section} />,
   video: (section, i) => <VideoSection key={i} section={section} />,
   features: (section, i) => <FeaturesSection key={i} section={section} />,
-  commands: (section, i) => <CommandsSection key={i} section={section} />
+  commands: (section, i) => <CommandsSection key={i} section={section} />,
+  playground: (section, i) => <PlaygroundSection key={i} section={section} />
 }
 
 export default function CaseStudy({ project, adjacentProjects }) {
