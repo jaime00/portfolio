@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'motion/react'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { toast } from 'sonner'
 
 import { CopyIcon } from '@/assets/animatedIcons/CopyIcon'
@@ -18,8 +18,13 @@ const CharacterSit =
 export default function Contact() {
   const { t } = useTranslation()
   const [copied, setCopied] = useState(false)
+  const resetTimerRef = useRef(null)
 
   const email = 'imjaimetorresv@gmail.com'
+
+  useEffect(() => {
+    return () => clearTimeout(resetTimerRef.current)
+  }, [])
 
   const CopiedIcon = () => (
     <motion.svg
@@ -45,9 +50,15 @@ export default function Contact() {
   )
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(email)
-    setCopied(true)
-    toast(t('contact.emailCopied'), { icon: <CopiedIcon /> })
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        setCopied(true)
+        toast(t('contact.emailCopied'), { icon: <CopiedIcon /> })
+        clearTimeout(resetTimerRef.current)
+        resetTimerRef.current = setTimeout(() => setCopied(false), 2000)
+      })
+      .catch(() => {})
   }
 
   const characterVariants = {
@@ -72,7 +83,6 @@ export default function Contact() {
   const contactMethods = [
     {
       onClick: handleCopyEmail,
-      onMouseLeave: () => setCopied(false),
       icon: (
         <AnimatePresence mode="wait">
           {copied ? (
@@ -113,7 +123,7 @@ export default function Contact() {
   ]
 
   return (
-    <div className="relative mx-auto mb-5 mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
+    <div className="relative mx-auto mb-5 mt-8 flex min-h-[calc(100vh-20rem)] max-w-6xl animate-fade flex-col justify-center px-4 font-sans dark:text-white">
       <Titles
         className="float-left"
         title={t('contact.title')}
@@ -130,12 +140,20 @@ export default function Contact() {
                 ariaLabel={method.label}
                 onClick={method.onClick}
                 openUrl={method.openUrl}
-                onMouseLeave={method.onMouseLeave}
               >
                 {method.icon}
               </Button>
             ))}
           </div>
+          <p className="mt-8 text-center text-gray-500 dark:text-gray-400">
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              className="cursor-pointer transition-colors hover:text-teal-600 dark:hover:text-teal-400"
+            >
+              {email}
+            </button>
+          </p>
         </div>
         <div className="col-span-2 mt-10 hidden pb-8 md:flex md:justify-center">
           <motion.img
