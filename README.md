@@ -1,8 +1,8 @@
-[![GitHub Banner](https://github.com/user-attachments/assets/596e23cc-eed0-4119-abc4-d9068cb3ffb5)](https://jaime00portfolio.netlify.app)
+[![Portfolio Preview](public/home.jpeg)](https://jaime00portfolio.netlify.app)
 
 # Portfolio
 
-Personal portfolio built with React 19, showcasing my work as a Frontend Developer — professional experience at companies like Cinépolis, Qrvey, and IA Interactive, along with side projects and open-source tools.
+Personal portfolio built with React 19, showcasing my work as a Frontend Developer — professional experience at companies like Cinepolis, Qrvey, and IA Interactive, along with side projects and open-source tools.
 
 **[Live site](https://jaime00portfolio.netlify.app)**
 
@@ -42,13 +42,17 @@ The app runs at `http://localhost:3000`.
 | `npm start`         | Dev server only (Craco)                          |
 | `npm run build`     | Production build                                 |
 | `npm run watch:css` | Compile Tailwind CSS                             |
+| `npm run lint`      | Lint source files                                |
+| `npm run lint:fix`  | Lint and auto-fix                                |
 | `npm test`          | Run tests (Jest, watch mode)                     |
 
 ## Features
 
 - **Dark mode** — class-based toggle with View Transition API, persisted in localStorage
 - **i18n** — English and Spanish, auto-detected from browser, switchable at runtime
-- **Responsive** — fully responsive with custom Tailwind breakpoints
+- **Responsive** — fully responsive with custom Tailwind breakpoints (`min-1045`, `min-445`)
+- **Animated icons** — custom SVG icons built with a HOC factory pattern
+- **Music player** — integrated vinyl-style music player with playback state persistence
 
 ## Project Structure
 
@@ -67,7 +71,7 @@ src/
 
 ## Contact
 
-Reach out through the [contact form](https://jaime00portfolio.netlify.app/contact) or connect on [GitHub](https://github.com/jaime00).
+Reach out through the [contact page](https://jaime00portfolio.netlify.app/contact) or connect on [GitHub](https://github.com/jaime00).
 
 ## License
 
