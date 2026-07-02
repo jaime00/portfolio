@@ -679,9 +679,6 @@ video {
 .z-\[9999\] {
   z-index: 9999;
 }
-.order-2 {
-  order: 2;
-}
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -908,6 +905,9 @@ video {
 }
 .min-h-\[54px\] {
   min-height: 54px;
+}
+.min-h-\[calc\(100vh-20rem\)\] {
+  min-height: calc(100vh - 20rem);
 }
 .min-h-screen {
   min-height: 100vh;
@@ -1364,11 +1364,19 @@ video {
   --tw-gradient-to: rgb(20 184 166 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-teal-600 {
+  --tw-gradient-from: #0d9488 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(13 148 136 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .to-emerald-500\/10 {
   --tw-gradient-to: rgb(16 185 129 / 0.1) var(--tw-gradient-to-position);
 }
 .to-teal-400 {
   --tw-gradient-to: #2dd4bf var(--tw-gradient-to-position);
+}
+.to-teal-500 {
+  --tw-gradient-to: #14b8a6 var(--tw-gradient-to-position);
 }
 .to-transparent {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
@@ -2046,6 +2054,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(20 184 166 / var(--tw-text-opacity, 1));
 }
+.hover\:text-teal-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity, 1));
+}
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -2294,11 +2306,19 @@ video {
   --tw-gradient-to: rgb(45 212 191 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.dark\:from-teal-500:is(.dark *) {
+  --tw-gradient-from: #14b8a6 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(20 184 166 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .dark\:to-emerald-400:is(.dark *) {
   --tw-gradient-to: #34d399 var(--tw-gradient-to-position);
 }
 .dark\:to-emerald-400\/10:is(.dark *) {
   --tw-gradient-to: rgb(52 211 153 / 0.1) var(--tw-gradient-to-position);
+}
+.dark\:to-teal-400:is(.dark *) {
+  --tw-gradient-to: #2dd4bf var(--tw-gradient-to-position);
 }
 .dark\:\!text-white:is(.dark *) {
   --tw-text-opacity: 1 !important;
@@ -2482,10 +2502,6 @@ video {
   }
 }
 @media (min-width: 768px) {
-  .md\:order-1 {
-    order: 1;
-  }
-
   .md\:mt-24 {
     margin-top: 6rem;
   }
