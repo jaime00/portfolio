@@ -13,7 +13,7 @@ export default function Footer() {
   const { t, language } = useTranslation()
   const curriculumUrl = getCurriculumUrl(language)
   return (
-    <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto flex max-w-6xl animate-fade flex-col justify-center bg-white p-4 px-4 font-sans dark:bg-gray-800 sm:p-6">
+    <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto flex max-w-6xl animate-fade flex-col justify-center p-4 px-4 font-sans sm:p-6">
       <hr className="my-12 dark:border-gray-700" />
       <footer className="">
         <div className="mb-12 flex flex-col gap-8 sm:flex-row sm:justify-between">
