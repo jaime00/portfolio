@@ -29,8 +29,8 @@ export default function Presentation() {
   return (
     <div className="relative mb-5 mt-12 grid grid-cols-1 items-center text-center md:mt-24 md:grid-cols-6 md:text-left">
       <div className="col-span-5 mx-2">
-        <p className="mb-5 flex items-center gap-3 text-left text-lg font-medium text-gray-400">
-          <span className="inline-flex text-gray-400 transition-all duration-300 hover:rotate-12 hover:scale-125 hover:text-teal-500 hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.5)]">
+        <p className="mb-5 flex items-center gap-3 text-left text-lg font-medium text-gray-500 dark:text-gray-400">
+          <span className="inline-flex text-gray-500 transition-all duration-300 hover:rotate-12 hover:scale-125 hover:text-teal-500 hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.5)] dark:text-gray-400">
             <FolderCodeIcon size={22} />
           </span>
           <span>
@@ -39,28 +39,28 @@ export default function Presentation() {
             {t('home.yearsExperienceAfter')}
           </span>
         </p>
-        <div className="flex flex-col gap-2">
-          <h1 className="order-2 text-left text-3xl font-extrabold text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl md:order-1">
+        <h1 className="flex flex-col gap-2 text-left text-3xl font-extrabold text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl">
+          <span>
             {t('home.iam')} <span className="text-gradient-teal">Jaime</span>
-          </h1>
-          <h1 className="order-2 text-left text-3xl font-extrabold leading-tight text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl md:order-1">
+          </span>
+          <span className="leading-tight">
             {t('home.iam')} {t('home.a')}{' '}
             <span className="text-gradient-teal whitespace-nowrap">
               {t('home.frontendDeveloper')}
             </span>
-          </h1>
-          <h1 className="order-2 text-left text-3xl font-extrabold leading-tight text-gray-900 dark:text-white min-445:text-4xl sm:text-5xl md:order-1">
+          </span>
+          <span className="leading-tight">
             {t('home.specializedIn')}{' '}
-            <div className="console-container text-gradient-teal inline-block">
+            <span className="text-gradient-teal inline-block">
               <span>
                 {displayText.visible}
                 <span style={{ visibility: 'hidden' }}>
                   {displayText.hidden}
                 </span>
               </span>
-            </div>
-          </h1>
-        </div>
+            </span>
+          </span>
+        </h1>
       </div>
 
       <motion.div
