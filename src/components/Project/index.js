@@ -40,7 +40,7 @@ export default function Project({
           }}
           className="cursor-pointer transition-transform duration-300 hover:-translate-y-1"
         >
-          <div className="rounded-lg">
+          <div className="rounded-lg bg-gray-100 dark:bg-gray-900">
             <img
               loading="lazy"
               width={405}

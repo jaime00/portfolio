@@ -6,7 +6,7 @@ export default function ExperienceLogo({ link, src, isRotate, name }) {
     <a href={link} target="_blank" rel="noreferrer" aria-label={name}>
       <img
         loading="lazy"
-        className={`col-span-1 rounded-xl shadow-lg dark:shadow-teal-500/10 ${hoverClasses} cursor-pointer transition duration-500 ease-in-out`}
+        className={`col-span-1 rounded-xl bg-gray-100 shadow-lg dark:bg-gray-900 dark:shadow-teal-500/10 ${hoverClasses} cursor-pointer transition duration-500 ease-in-out`}
         src={src}
         alt={name || 'Company logo'}
         width={300}

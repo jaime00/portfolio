@@ -70,7 +70,7 @@ export default function NarrativeSection({ section }) {
             <img
               src={section.image}
               alt={section.title}
-              className="w-full rounded-xl object-cover shadow-lg dark:shadow-teal-500/10"
+              className="w-full rounded-xl bg-gray-100 object-cover shadow-lg dark:bg-gray-900 dark:shadow-teal-500/10"
               loading="lazy"
             />
           </motion.div>
@@ -91,7 +91,7 @@ export default function NarrativeSection({ section }) {
               <img
                 src={src}
                 alt={`${section.title || ''} ${i + 1}`}
-                className="h-full w-full rounded-xl object-cover shadow-lg dark:shadow-teal-500/10"
+                className="h-full w-full rounded-xl bg-gray-100 object-cover shadow-lg dark:bg-gray-900 dark:shadow-teal-500/10"
                 loading="lazy"
               />
             </motion.div>
