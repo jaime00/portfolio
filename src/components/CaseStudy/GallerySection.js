@@ -46,7 +46,7 @@ export default function GallerySection({ section }) {
             <img
               src={src}
               alt={`${section.title} ${i + 1}`}
-              className="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105"
+              className="aspect-video w-full bg-gray-100 object-cover transition-transform duration-300 hover:scale-105 dark:bg-gray-900"
               loading="lazy"
             />
           </motion.button>
