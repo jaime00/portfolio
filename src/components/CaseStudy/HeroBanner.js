@@ -90,10 +90,9 @@ export default function HeroBanner({ project }) {
             transition={{ duration: 0.7, ease }}
           >
             <motion.img
-              class="pointe"
               src={img}
               alt={title}
-              className={`${project.slug === 'smooth-components' ? 'object-cover' : ''} ${project.slug === 'eazy-git' ? 'object-cover object-left' : ''} pointer min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px]`}
+              className={`${project.slug === 'smooth-components' ? 'object-cover' : ''} ${project.slug === 'eazy-git' ? 'object-cover object-left' : ''} min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px]`}
               loading="eager"
             />
             {urlPreview && (
@@ -112,11 +111,7 @@ export default function HeroBanner({ project }) {
           </motion.div>
         </motion.div>
 
-        <div
-          className="flex flex-col gap-4"
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.7, ease }}
-        >
+        <div className="flex flex-col gap-4">
           <motion.div
             className="relative rounded-3xl bg-gray-100 p-6 shadow-lg dark:bg-gray-900 dark:shadow-teal-500/10 min-445:p-8"
             whileHover={{ scale: 1.02 }}
