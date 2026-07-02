@@ -1,10 +1,10 @@
-[![Portfolio Preview](public/home.jpeg)](https://jaime00portfolio.netlify.app)
+[![Portfolio Preview](public/home.jpeg)](https://jaimetorresv.com)
 
 # Portfolio
 
 Personal portfolio built with React 19, showcasing my work as a Frontend Developer — professional experience at companies like Cinepolis, Qrvey, and IA Interactive, along with side projects and open-source tools.
 
-**[Live site](https://jaime00portfolio.netlify.app)**
+**[Live site](https://jaimetorresv.com)**
 
 ## Tech Stack
 
@@ -71,7 +71,7 @@ src/
 
 ## Contact
 
-Reach out through the [contact page](https://jaime00portfolio.netlify.app/contact) or connect on [GitHub](https://github.com/jaime00).
+Reach out through the [contact page](https://jaimetorresv.com/contact) or connect on [GitHub](https://github.com/jaime00).
 
 ## License
 
