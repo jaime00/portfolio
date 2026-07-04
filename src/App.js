@@ -18,8 +18,8 @@ import Home from '@/pages/Home'
 import ProjectDetail from '@/pages/ProjectDetail'
 import Projects from '@/pages/Projects'
 
-import './styles/general.css'
-import './styles/output.css'
+import '@/styles/general.css'
+import '@/styles/output.css'
 
 function App() {
   const [isDarkState, setIsDarkState] = useState(localStorage.isDark === 'true')
