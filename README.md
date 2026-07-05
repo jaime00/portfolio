@@ -69,10 +69,15 @@ src/
 └── utils/         # Helper functions
 ```
 
-## Contact
-
-Reach out through the [contact page](https://jaimetorresv.com/contact) or connect on [GitHub](https://github.com/jaime00).
-
 ## License
 
-MIT
+MIT © [Jaime Torres](https://jaimetorresv.com)
+
+---
+
+## Connect
+
+- [Portfolio](https://jaimetorresv.com)
+- [LinkedIn](https://www.linkedin.com/in/jaimetorresv)
+- [GitHub](https://github.com/jaime00)
+- [Email](mailto:imjaimetorresv@gmail.com)
