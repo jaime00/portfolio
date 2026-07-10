@@ -129,7 +129,8 @@
             {
               "type": "narrative",
               "title": "But… What Is eazy-git?",
-              "text": "eazy-git is an open-source tool that works as a command-line interface **(CLI)**. It automates common Git tasks like creating branches, committing, pushing changes, merging, and more, all with simplified commands. Its main goal is to help you keep a standardized branch structure while you save time and focus on what really matters: **the business logic.**"
+              "text": "eazy-git is an open-source tool that works as a command-line interface **(CLI)**. It automates common Git tasks like creating branches, committing, pushing changes, merging, and more, all with simplified commands. Its main goal is to help you keep a standardized branch structure while you save time and focus on what really matters: **the business logic.**",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1783650393/projects/portfolio/projects/eazy-git/eazy-git-demo.mov"
             },
             {
               "type": "features",
@@ -332,7 +333,8 @@
             {
               "type": "narrative",
               "title": "Pero… ¿Qué es eazy-git?",
-              "text": "Es una herramienta open source que funciona como interfaz de línea de comandos **(CLI)**. Automatiza tareas comunes de Git como crear ramas, hacer commits, pushear cambios, hacer merge y más, todo con comandos simplificados. Su objetivo principal es ayudarte a mantener una estructura de ramas estandarizada mientras ahorras tiempo y te enfocas en lo realmente importante: **la lógica de negocio.**"
+              "text": "Es una herramienta open source que funciona como interfaz de línea de comandos **(CLI)**. Automatiza tareas comunes de Git como crear ramas, hacer commits, pushear cambios, hacer merge y más, todo con comandos simplificados. Su objetivo principal es ayudarte a mantener una estructura de ramas estandarizada mientras ahorras tiempo y te enfocas en lo realmente importante: **la lógica de negocio.**",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1783650393/projects/portfolio/projects/eazy-git/eazy-git-demo.mov"
             },
             {
               "type": "features",
