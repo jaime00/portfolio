@@ -1,10 +1,19 @@
 import { motion } from 'motion/react'
+import { useEffect, useRef } from 'react'
 
 import { renderRichText } from './richText'
 
 const ease = [0.16, 1, 0.3, 1]
 
 export default function NarrativeSection({ section }) {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.2
+    }
+  }, [])
+
   const isImageRight = section.imagePosition === 'right'
 
   const isCompact =
@@ -48,6 +57,7 @@ export default function NarrativeSection({ section }) {
               transition={{ duration: 0.6, delay: 0.2, ease }}
             >
               <video
+                ref={videoRef}
                 src={section.video}
                 className="w-full"
                 autoPlay
