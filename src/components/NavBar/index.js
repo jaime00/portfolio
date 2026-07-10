@@ -36,7 +36,7 @@ export default function NavBar({ changeMode, isDark }) {
     <nav
       className={`fixed left-0 right-0 top-0 z-[999999] mx-auto w-[100vw] max-w-6xl animate-fade border-gray-200 px-4 pb-3 pt-3 transition-all duration-300 ${
         scrolled
-          ? `bg-white/70 shadow-md backdrop-blur-md dark:bg-gray-800/70 dark:shadow-gray-900/30 ${showBack ? 'rounded-t-2xl rounded-br-2xl' : 'rounded-2xl'}`
+          ? `bg-white/70 drop-shadow-md backdrop-blur-md dark:bg-gray-800/70 ${showBack ? 'rounded-t-2xl rounded-br-2xl' : 'rounded-2xl'}`
           : 'bg-transparent'
       }`}
     >
@@ -91,7 +91,7 @@ export default function NavBar({ changeMode, isDark }) {
       <AnimatePresence>
         {showBack && (
           <motion.div
-            className="absolute left-0 top-full -mt-px"
+            className="absolute left-0 top-full rounded-b-xl bg-white/70 backdrop-blur-md dark:bg-gray-800/70"
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
@@ -99,7 +99,7 @@ export default function NavBar({ changeMode, isDark }) {
           >
             <Link
               to="/side-projects"
-              className="inline-flex items-center gap-1.5 rounded-b-xl bg-white/70 px-4 py-2 text-sm text-gray-500 shadow-md backdrop-blur-md transition-colors hover:text-teal-500 dark:bg-gray-800/70 dark:text-gray-400 dark:shadow-gray-900/30 dark:hover:text-teal-400"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm text-gray-500 transition-colors hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-400"
               onMouseEnter={() => backRef.current?.startAnimation()}
               onMouseLeave={() => backRef.current?.stopAnimation()}
             >
