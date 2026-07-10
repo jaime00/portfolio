@@ -658,6 +658,9 @@ video {
 .top-6 {
   top: 1.5rem;
 }
+.top-full {
+  top: 100%;
+}
 .z-10 {
   z-index: 10;
 }
@@ -731,6 +734,9 @@ video {
 }
 .-mt-16 {
   margin-top: -4rem;
+}
+.-mt-px {
+  margin-top: -1px;
 }
 .mb-10 {
   margin-bottom: 2.5rem;
@@ -1244,6 +1250,17 @@ video {
 .rounded-xl {
   border-radius: 0.75rem;
 }
+.rounded-b-xl {
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+.rounded-t-2xl {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.rounded-br-2xl {
+  border-bottom-right-radius: 1rem;
+}
 .border {
   border-width: 1px;
 }
@@ -1498,6 +1515,9 @@ video {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
 .pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -1515,6 +1535,9 @@ video {
 }
 .pt-2 {
   padding-top: 0.5rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
 }
 .pt-5 {
   padding-top: 1.25rem;
@@ -2226,9 +2249,6 @@ video {
 .group:hover .group-hover\:text-\[\#a9b1d6\] {
   --tw-text-opacity: 1;
   color: rgb(169 177 214 / var(--tw-text-opacity, 1));
-}
-.group:hover .group-hover\:opacity-75 {
-  opacity: 0.75;
 }
 .group:hover .group-hover\:shadow-xl {
   --tw-shadow:

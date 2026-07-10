@@ -1,9 +1,14 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'wouter'
+import { AnimatePresence, motion } from 'motion/react'
+import { useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'wouter'
+
+import { ChevronLeftIcon } from '@/assets/animatedIcons/BackIcon'
 
 import ButtonDarkMode from '@/components/ButtonDarkMode'
 import LanguageSelector from '@/components/LanguageSelector'
 import NavBarOptions from '@/components/NavBarOptions/'
+
+import { useTranslation } from '@/i18n'
 
 const image_profile =
   'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597423/projects/portfolio/person-head.png'
@@ -11,6 +16,11 @@ const image_profile =
 export default function NavBar({ changeMode, isDark }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [location] = useLocation()
+  const backRef = useRef(null)
+  const { t } = useTranslation()
+
+  const isProjectDetail = /^\/side-projects\/.+/.test(location)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +30,13 @@ export default function NavBar({ changeMode, isDark }) {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+  const showBack = scrolled && isProjectDetail
+
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-[999999] mx-auto w-[100vw] max-w-6xl animate-fade border-gray-200 px-4 py-3 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-[999999] mx-auto w-[100vw] max-w-6xl animate-fade border-gray-200 px-4 pb-3 pt-3 transition-all duration-300 ${
         scrolled
-          ? 'rounded-2xl bg-white/70 shadow-md backdrop-blur-md dark:bg-gray-800/70 dark:shadow-gray-900/30'
+          ? `bg-white/70 shadow-md backdrop-blur-md dark:bg-gray-800/70 dark:shadow-gray-900/30 ${showBack ? 'rounded-t-2xl rounded-br-2xl' : 'rounded-2xl'}`
           : 'bg-transparent'
       }`}
     >
@@ -74,6 +86,29 @@ export default function NavBar({ changeMode, isDark }) {
           </button>
         </div>
       </div>
+
+      {/* Tab inferior izquierdo — extiende el navbar hacia abajo formando la forma irregular */}
+      <AnimatePresence>
+        {showBack && (
+          <motion.div
+            className="absolute left-0 top-full -mt-px"
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Link
+              to="/side-projects"
+              className="inline-flex items-center gap-1.5 rounded-b-xl bg-white/70 px-4 py-2 text-sm text-gray-500 shadow-md backdrop-blur-md transition-colors hover:text-teal-500 dark:bg-gray-800/70 dark:text-gray-400 dark:shadow-gray-900/30 dark:hover:text-teal-400"
+              onMouseEnter={() => backRef.current?.startAnimation()}
+              onMouseLeave={() => backRef.current?.stopAnimation()}
+            >
+              <ChevronLeftIcon ref={backRef} size={16} />
+              {t('projectDetail.backToProjects')}
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }
