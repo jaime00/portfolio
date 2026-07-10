@@ -1,3 +1,5 @@
+import { Poster } from 'smooth-components'
+
 import AnimatedCounter from '@/components/AnimatedCounter'
 import { renderRichText } from '@/components/CaseStudy/richText'
 import Titles from '@/components/Titles'
@@ -7,7 +9,7 @@ import { useTranslation } from '@/i18n'
 import { getYearsOfExperience } from '@/services'
 
 const image_profile =
-  'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597546/projects/portfolio/profile_image.jpg'
+  'https://res.cloudinary.com/personal-jaime00/image/upload/v1783718922/projects/portfolio/profile.png'
 
 export default function MyHistory() {
   const { t } = useTranslation()
@@ -35,18 +37,13 @@ export default function MyHistory() {
         <p dangerouslySetInnerHTML={{ __html: t('about.technologies') }} />
         <div className="mt-5 grid grid-cols-1 gap-0 md:grid-cols-4 md:gap-x-10">
           <div className="col-span-1 self-center">
-            <span className="flex justify-center">
-              <span />
-              <img
-                loading="lazy"
-                width={300}
-                height={300}
-                alt="Jaime Torres"
-                src={image_profile}
-                className="col-span-1 rounded-xl shadow-lg transition duration-500 ease-in-out hover:scale-[102%] group-hover:opacity-75 dark:shadow-teal-500/10"
-                decoding="async"
-              />
-            </span>
+            <Poster
+              alt="Jaime Torres"
+              src={image_profile}
+              hasGlintEffect={true}
+              frameSize="sm"
+              styles={{ minWidth: '250px', minHeight: '250px' }}
+            />
           </div>
           <div className="col-span-3">
             <p className="mt-7">{t('about.skills')}</p>
