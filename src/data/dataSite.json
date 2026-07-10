@@ -156,6 +156,21 @@
             },
             {
               "type": "narrative",
+              "title": "AI Commit Suggestions",
+              "text": "When running `commit` interactively or using **\"Add Changes to Branch\"**, eazy-git can generate commit message suggestions using AI. No API key configuration needed inside the tool — it invokes the local CLI binaries directly.\n\nSupported providers: **Claude** and **Opencode**. Configure your preferred provider via `eg config`."
+            },
+            {
+              "type": "features",
+              "title": "Smart Features",
+              "items": [
+                "**Multi-language support** — available in English and Spanish. Switch instantly via `eg config`.",
+                "**Last Commit Reuse** — when enabled, detects your previous commit message and offers three options: Reuse, Modify, or start a New commit flow.",
+                "**Auto-detected package manager** — works with both npm and pnpm without extra configuration.",
+                "**AWS CodeArtifact support** — the `i` command configures npm registry authentication and generates `.npmrc` automatically."
+              ]
+            },
+            {
+              "type": "narrative",
               "title": "Conclusion",
               "text": "**eazy-git** is an excellent option if you want to **optimize your terminal-based Git workflow.**\n\nIt lets you work faster, cleaner, and with fewer errors thanks to preconfigured commands that adapt to your branching strategy and development environment. It also automates common manual tasks, like authentication and dependency installation.\n\nIf you work on large projects or with separate environments (like **DEV, UAT, PROD**), this tool can **save you hours of repetitive work** and help you keep a clear, tidy branch structure.",
               "highlights": [
@@ -211,7 +226,7 @@
         "slug": "cinepolis-web",
         "urlPreview": "https://cinepolis.com/mx",
         "title": "Cinépolis",
-        "description": "Plataforma WEB para amantes del cine para explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
+        "description": "Plataforma WEB para amantes del cine que permite explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png",
         "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
         "caseStudy": {
@@ -360,8 +375,23 @@
             },
             {
               "type": "narrative",
+              "title": "Sugerencias de Commits con IA",
+              "text": "Al ejecutar `commit` de forma interactiva o usar **\"Agregar Cambios a la Rama\"**, eazy-git puede generar sugerencias de mensajes de commit usando IA. No se necesita configurar API keys dentro de la herramienta — invoca directamente los binarios CLI locales.\n\nProveedores soportados: **Claude** y **Opencode**. Configura tu proveedor preferido con `eg config`."
+            },
+            {
+              "type": "features",
+              "title": "Características Inteligentes",
+              "items": [
+                "**Soporte multiidioma** — disponible en inglés y español. Cambia al instante con `eg config`.",
+                "**Reutilización del último commit** — cuando está habilitado, detecta tu mensaje de commit anterior y ofrece tres opciones: Reutilizar, Modificar o iniciar un flujo Nuevo.",
+                "**Gestor de paquetes auto-detectado** — funciona con npm y pnpm sin configuración adicional.",
+                "**Soporte para AWS CodeArtifact** — el comando `i` configura la autenticación del registro npm y genera `.npmrc` automáticamente."
+              ]
+            },
+            {
+              "type": "narrative",
               "title": "Conclusión",
-              "text": "**eazy-git** es una excelente opción si quieres **optimizar tu flujo de trabajo con Git desde la terminal.**\n\nTe permite trabajar de forma más rápida, más limpia y con menos errores gracias a comandos preconfigurados que se adaptan a tu estrategia de ramas y entorno de desarrollo. Además automatiza tareas manuales comunes, como la autenticación e instalación de dependencias.\n\nSi trabajas en proyectos grandes o con entornos separados (como **DEV, UAT, PROD**), esta herramienta puede **ahorrarte horas de trabajo repetitivo** y ayudarte a mantener una estructura de ramas clara y ordenada.",
+              "text": "**eazy-git** es una excelente opción si quieres **optimizar tu flujo de trabajo con Git desde la terminal.**\n\nTe permite trabajar de forma más rápida, más limpia y con menos errores gracias a comandos preconfigurados que se adaptan a tu estrategia de ramas y entorno de desarrollo. Además, automatiza tareas manuales comunes, como la autenticación e instalación de dependencias.\n\nSi trabajas en proyectos grandes o con entornos separados (como **DEV, UAT, PROD**), esta herramienta puede **ahorrarte horas de trabajo repetitivo** y ayudarte a mantener una estructura de ramas clara y ordenada.",
               "highlights": [
                 { "value": "npm", "label": "Publicado" },
                 { "value": "CLI", "label": "Interactivo" },
@@ -386,13 +416,13 @@
             {
               "type": "narrative",
               "title": "El Problema",
-              "text": "Los pequeños empresarios en Colombia frecuentemente luchan con la gestión de inventario, dependiendo de hojas de cálculo o registros en papel. Necesitaban una solución digital simple y económica que no requiera conocimientos técnicos para operar.",
+              "text": "Los pequeños empresarios en Colombia frecuentemente luchan con la gestión de inventario, dependiendo de hojas de cálculo o registros en papel. Necesitaban una solución digital simple y económica que no requiriera conocimientos técnicos para operar.",
               "imagePosition": "right"
             },
             {
               "type": "narrative",
               "title": "La Solución",
-              "text": "Negos proporciona una plataforma intuitiva donde los empresarios pueden subir su catálogo de productos, gestionar niveles de stock y compartir su inventario con clientes a través de una tienda pública. Construido con Svelte y SvelteKit para un rendimiento óptimo.",
+              "text": "Negos proporciona una plataforma intuitiva donde los empresarios pueden subir su catálogo de productos, gestionar niveles de stock y compartir su inventario con clientes a través de una tienda pública. Construida con Svelte y SvelteKit para un rendimiento óptimo.",
               "imagePosition": "left"
             },
             {
@@ -518,8 +548,8 @@
         "items": [
           "Coordinated development team of 6+ people in their daily activities, sprints and technical growth.",
           "Technical and conceptual support to team members during sprints.",
-          "Ensure quality and code best practices in delivered modules.",
-          "Identify and provide solutions to improve development processes and quality.",
+          "Ensured quality and code best practices in delivered modules.",
+          "Identified and provided solutions to improve development processes and quality.",
           "Defined coding standards and best practices based on CLEAN CODE.",
           "Use of technologies such as Javascript, Typescript, React, Jest, PHP, PgSQL, Bootstrap."
         ],
@@ -565,7 +595,7 @@
         "link": "https://qrvey.com",
         "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738384285/projects/portfolio/experiences/QRVEY.jpg",
         "items": [
-          "Desarrollo de gráficos integrados altamente personalizables para mejorar el análisis de datos y mejorar la toma de decisiones estratégicas.",
+          "Desarrollo de gráficos integrados altamente personalizables para mejorar el análisis de datos y optimizar la toma de decisiones estratégicas.",
           "Experiencia en optimización de velocidad y escalabilidad de componentes web.",
           "Uso de tecnologías como Javascript, Typescript, Stencil JS para Web Components, React, Pruebas con Mocha, Styled Components, Sass, Tailwind CSS.",
           "Uso de librerías gráficas como EChart, Devextreme, D3."

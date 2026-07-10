@@ -36,6 +36,10 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 
 **Animated icons:** `src/assets/animatedIcons/createAnimatedIcon.js` is a HOC factory — `createAnimatedIcon(displayName, renderSVG, wrapperTag)`. Most icons use it; `GithubIcon` is the exception (multi-control animation).
 
+**Project detail (CaseStudy):** `ProjectDetail` page fetches a project by slug and renders `<CaseStudy>`. The `caseStudy.sections` array in `dataSite.json` is type-driven — supported types: `narrative`, `gallery`, `video`, `features`, `commands`, `playground`. Each maps to a sub-component in `src/components/CaseStudy/`.
+
+**Motion config:** `<MotionConfig reducedMotion="never">` in `App.js` intentionally ignores the OS reduced-motion preference so all animations always play.
+
 ## Key Conventions
 
 - **Tailwind-first styling.** Never edit `src/styles/output.css` directly — it's generated. Modify `src/styles/tailwind.css` or `tailwind.config.js` and regenerate with `npm run watch:css`.
