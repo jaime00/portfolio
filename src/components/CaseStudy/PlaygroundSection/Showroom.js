@@ -13,6 +13,7 @@ const DEFAULT_CODE = `import { Poster } from "smooth-components"
   hasFrame={true}
   frameSize="md"
   hasGlintEffect={true}
+  followCursor={true}
   onClick={() => alert("Clicked!")}
   styles={{
     height: "600px",
@@ -24,6 +25,7 @@ const DEFAULT_PROPS = {
   hasGlintEffect: true,
   hasFrame: true,
   frameSize: 'md',
+  followCursor: true,
   onClick: () => alert('Clicked!'),
   styles: { height: '600px' },
   src: '/pulp-fiction.jpg'
@@ -37,6 +39,10 @@ function parseProps(code, prev) {
 
   const glintMatch = code.match(/hasGlintEffect=\{(true|false)\}/)
   if (glintMatch) next.hasGlintEffect = glintMatch[1] === 'true'
+
+  const followCursorMatch = code.match(/followCursor=\{(true|false)\}/)
+  if (followCursorMatch) next.followCursor = followCursorMatch[1] === 'true'
+  else delete next.followCursor
 
   const frameMatch = code.match(/hasFrame=\{(true|false)\}/)
   if (frameMatch) next.hasFrame = frameMatch[1] === 'true'
@@ -73,47 +79,104 @@ function parseProps(code, prev) {
   return next
 }
 
+/* eslint-disable no-control-regex */
 function highlightJsx(code) {
-  const COMMENT_PH = '__COMMENT__'
-  const comments = []
+  const placeholders = []
+  const ph = (html) => {
+    placeholders.push(html)
+    return `\x00P${placeholders.length - 1}\x00`
+  }
 
   let safe = code
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
 
-  safe = safe.replace(/^\/\/.*$/gm, (match) => {
-    comments.push(
-      `<span style="color:#565f89;font-style:italic">${match}</span>`
-    )
-    return COMMENT_PH + (comments.length - 1) + '__'
-  })
+  safe = safe.replace(/^\/\/.*$/gm, (m) =>
+    ph(`<span style="color:#565f89;font-style:italic">${m}</span>`)
+  )
 
-  safe = safe
-    .replace(/("(?:[^"\\]|\\.)*")/g, '<span style="color:#a5d6a7">$1</span>')
-    .replace(/\b(import|from)\b/g, '<span style="color:#bb9af7">$1</span>')
-    .replace(/\b(true|false)\b/g, '<span style="color:#ce93d8">$1</span>')
-    .replace(/\b(\d+(?:\.\d+)?)\b/g, '<span style="color:#f48fb1">$1</span>')
-    .replace(
-      /(&lt;\/?)(Poster|[A-Z]\w*)/g,
-      '$1<span style="color:#82b1ff">$2</span>'
-    )
-    .replace(
-      /\b(alt|src|hasGlintEffect|hasFrame|frameSize|onClick|styles|height|width|opacity)(?==|\b(?=:))/g,
-      '<span style="color:#80cbc4">$1</span>'
-    )
-    .replace(/(\{|\})/g, '<span style="color:#ffd54f">$1</span>')
+  safe = safe.replace(/("(?:[^"\\]|\\.)*")/g, (m) =>
+    ph(`<span style="color:#a5d6a7">${m}</span>`)
+  )
 
-  safe = safe.replace(/__COMMENT__(\d+)__/g, (_, i) => comments[parseInt(i)])
+  safe = safe.replace(
+    /\b(import|from|const|let|function|return|export)\b/g,
+    (m) => ph(`<span style="color:#bb9af7">${m}</span>`)
+  )
+
+  safe = safe.replace(/\b(true|false|null|undefined)\b/g, (m) =>
+    ph(`<span style="color:#ce93d8">${m}</span>`)
+  )
+
+  safe = safe.replace(/\b(\d+(?:\.\d+)?)\b/g, (m) =>
+    ph(`<span style="color:#f48fb1">${m}</span>`)
+  )
+
+  safe = safe.replace(
+    /(&lt;\/?)\s*([A-Z]\w*)/g,
+    (_, tag, name) =>
+      `${tag}${ph(`<span style="color:#82b1ff">${name}</span>`)}`
+  )
+
+  safe = safe.replace(/\b([a-z]\w*)(?=\s*[=:])/g, (m) =>
+    ph(`<span style="color:#80cbc4">${m}</span>`)
+  )
+
+  safe = safe.replace(/(\{|\})/g, (m) =>
+    ph(`<span style="color:#ffd54f">${m}</span>`)
+  )
+
+  safe = safe.replace(/\x00P(\d+)\x00/g, (_, i) => placeholders[parseInt(i)])
 
   return safe
 }
+
+const SUGGESTIONS = [
+  { name: 'alt', snippet: 'alt=""', type: 'string' },
+  { name: 'src', snippet: 'src="./"', type: 'string' },
+  {
+    name: 'hasFrame',
+    snippet: 'hasFrame={true}',
+    type: 'boolean',
+    defaultValue: 'true'
+  },
+  {
+    name: 'frameSize',
+    snippet: 'frameSize="md"',
+    type: "'sm' | 'md' | 'lg'",
+    defaultValue: "'md'"
+  },
+  {
+    name: 'hasGlintEffect',
+    snippet: 'hasGlintEffect={true}',
+    type: 'boolean',
+    defaultValue: 'false'
+  },
+  {
+    name: 'followCursor',
+    snippet: 'followCursor={true}',
+    type: 'boolean',
+    defaultValue: 'false'
+  },
+  {
+    name: 'onClick',
+    snippet: 'onClick={() => alert("Clicked!")}',
+    type: '() => void'
+  },
+  {
+    name: 'styles',
+    snippet: 'styles={{ height: "600px" }}',
+    type: 'PosterStyles'
+  }
+]
 
 export default function Showroom() {
   const [code, setCode] = useState(DEFAULT_CODE)
   const [props, setProps] = useState(DEFAULT_PROPS)
   const [copied, setCopied] = useState(false)
   const [resetting, setResetting] = useState(false)
+  const [autocomplete, setAutocomplete] = useState(null)
   const textareaRef = useRef(null)
   const preRef = useRef(null)
   const editorRef = useRef(null)
@@ -136,6 +199,7 @@ export default function Showroom() {
       setCode(DEFAULT_CODE)
       setProps(DEFAULT_PROPS)
       setResetting(false)
+      setAutocomplete(null)
     }, 400)
   }, [code])
 
@@ -157,18 +221,114 @@ export default function Showroom() {
     return () => el.removeEventListener('keydown', onKeyDown)
   }, [handleCopy, handleReset, isMac])
 
+  function computeAutocomplete(value, cursor) {
+    const before = value.slice(0, cursor)
+    const match = before.match(/\n[ \t]+([a-zA-Z]\w*)$/)
+    if (!match) {
+      setAutocomplete(null)
+      return
+    }
+    const typed = match[1]
+    const usedProps = new Set(
+      SUGGESTIONS.filter((s) => code.includes(s.name + '=')).map((s) => s.name)
+    )
+    const filtered = SUGGESTIONS.filter(
+      (s) =>
+        s.name.toLowerCase().startsWith(typed.toLowerCase()) &&
+        s.name !== typed &&
+        !usedProps.has(s.name)
+    ).slice(0, 6)
+    if (!filtered.length) {
+      setAutocomplete(null)
+      return
+    }
+    const ta = textareaRef.current
+    const pre = preRef.current
+    if (!ta || !pre) return
+    const lines = before.split('\n')
+    const lineIndex = lines.length - 1
+    const colIndex = lines[lineIndex].length
+    const preStyle = window.getComputedStyle(pre)
+    const fontSize = parseFloat(preStyle.fontSize) || 12
+    const paddingLeft = parseFloat(preStyle.paddingLeft) || 32
+    const charWidth = fontSize * 0.601
+    const lineEl = pre.querySelector(`[data-line="${lineIndex + 1}"]`)
+    const top = lineEl
+      ? lineEl.offsetTop + lineEl.offsetHeight - ta.scrollTop
+      : parseFloat(preStyle.paddingTop || '12') +
+        (lineIndex + 1) * (parseFloat(preStyle.lineHeight) || 20) -
+        ta.scrollTop
+    const left = paddingLeft + (colIndex - typed.length) * charWidth
+    setAutocomplete({ suggestions: filtered, index: 0, top, left })
+  }
+
+  function applySuggestion(suggestion) {
+    const ta = textareaRef.current
+    if (!ta) return
+    const cursor = ta.selectionStart
+    const before = code.slice(0, cursor)
+    const after = code.slice(cursor)
+    const match = before.match(/([a-zA-Z]\w*)$/)
+    if (!match) return
+    const typedLen = match[1].length
+    const newCode = before.slice(0, -typedLen) + suggestion.snippet + after
+    const newCursor = cursor - typedLen + suggestion.snippet.length
+    setCode(newCode)
+    setProps((prev) => parseProps(newCode, prev))
+    setAutocomplete(null)
+    requestAnimationFrame(() => {
+      ta.selectionStart = ta.selectionEnd = newCursor
+      ta.focus()
+    })
+  }
+
   const handleChange = (e) => {
     const ta = e.target
     const value = ta.value
     const cursor = ta.selectionStart
     setCode(value)
     setProps((prev) => parseProps(value, prev))
+    computeAutocomplete(value, cursor)
     requestAnimationFrame(() => {
       ta.selectionStart = ta.selectionEnd = cursor
     })
   }
 
   const handleKeyDown = (e) => {
+    if (autocomplete) {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault()
+        setAutocomplete((prev) =>
+          prev
+            ? { ...prev, index: (prev.index + 1) % prev.suggestions.length }
+            : null
+        )
+        return
+      }
+      if (e.key === 'ArrowUp') {
+        e.preventDefault()
+        setAutocomplete((prev) =>
+          prev
+            ? {
+                ...prev,
+                index:
+                  (prev.index - 1 + prev.suggestions.length) %
+                  prev.suggestions.length
+              }
+            : null
+        )
+        return
+      }
+      if (e.key === 'Enter' || e.key === 'Tab') {
+        e.preventDefault()
+        applySuggestion(autocomplete.suggestions[autocomplete.index])
+        return
+      }
+      if (e.key === 'Escape') {
+        setAutocomplete(null)
+        return
+      }
+    }
     if (e.key === 'Tab') {
       e.preventDefault()
       const ta = e.target
@@ -188,6 +348,7 @@ export default function Showroom() {
       preRef.current.scrollTop = textareaRef.current.scrollTop
       preRef.current.scrollLeft = textareaRef.current.scrollLeft
     }
+    setAutocomplete(null)
   }
 
   const highlightedLines = useMemo(() => {
@@ -280,6 +441,77 @@ export default function Showroom() {
               onScroll={handleScroll}
               spellCheck={false}
             />
+
+            {/* Autocomplete dropdown */}
+            <AnimatePresence>
+              {autocomplete && (
+                <motion.div
+                  initial={{ opacity: 0, y: -4, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -4, scale: 0.97 }}
+                  transition={{ duration: 0.1, ease: 'easeOut' }}
+                  style={{ top: autocomplete.top, left: autocomplete.left }}
+                  className="absolute z-50 max-w-xs min-w-52 overflow-hidden rounded-md border border-white/10 bg-[#13141c] shadow-2xl"
+                >
+                  {autocomplete.suggestions.map((s, i) => {
+                    const active = i === autocomplete.index
+                    return (
+                      <div
+                        key={s.name}
+                        className={`flex cursor-pointer items-baseline gap-1.5 px-3 py-1.5 font-mono text-xs ${
+                          active
+                            ? 'bg-white/10'
+                            : 'text-[#a9b1d6] hover:bg-white/5'
+                        }`}
+                        onMouseDown={(e) => {
+                          e.preventDefault()
+                          applySuggestion(s)
+                        }}
+                      >
+                        <span
+                          className="shrink-0 text-[10px]"
+                          style={{ color: active ? '#80cbc480' : '#7aa2f7' }}
+                        >
+                          prop
+                        </span>
+                        <span
+                          className="font-semibold"
+                          style={{ color: active ? '#80cbc4' : '#a9b1d6' }}
+                        >
+                          {s.name}
+                          {s.defaultValue && (
+                            <span
+                              style={{
+                                color: active ? '#80cbc4b3' : '#565a6e'
+                              }}
+                            >
+                              ?
+                            </span>
+                          )}
+                        </span>
+                        <span
+                          className="text-[10px]"
+                          style={{ color: active ? '#80cbc480' : '#565a6e' }}
+                        >
+                          : {s.type}
+                        </span>
+                        {s.defaultValue && (
+                          <span
+                            className="text-[10px]"
+                            style={{ color: active ? '#80cbc466' : '#565a6e' }}
+                          >
+                            = {s.defaultValue}
+                          </span>
+                        )}
+                      </div>
+                    )
+                  })}
+                  <div className="border-t border-white/5 px-3 py-1 font-mono text-[10px] text-[#565a6e]">
+                    {'↑↓'} navigate &middot; {'↵'} insert &middot; esc close
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Footer bar */}
@@ -330,6 +562,7 @@ export default function Showroom() {
           hasGlintEffect={props.hasGlintEffect}
           hasFrame={props.hasFrame}
           frameSize={props.frameSize}
+          followCursor={props.followCursor}
           onClick={props.onClick}
           styles={props.styles}
         />
