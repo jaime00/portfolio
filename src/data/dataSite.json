@@ -391,7 +391,7 @@
             {
               "type": "narrative",
               "title": "Conclusión",
-              "text": "**eazy-git** es una excelente opción si quieres **optimizar tu flujo de trabajo con Git desde la terminal.**\n\nTe permite trabajar de forma más rápida, más limpia y con menos errores gracias a comandos preconfigurados que se adaptan a tu estrategia de ramas y entorno de desarrollo. Además, automatiza tareas manuales comunes, como la autenticación e instalación de dependencias.\n\nSi trabajas en proyectos grandes o con entornos separados (como **DEV, UAT, PROD**), esta herramienta puede **ahorrarte horas de trabajo repetitivo** y ayudarte a mantener una estructura de ramas clara y ordenada.",
+              "text": "**eazy-git** es una excelente opción si quieres **optimizar tu flujo de trabajo con Git desde la terminal.**\n\nTe permite trabajar de forma más rápida, más limpia y con menos errores gracias a comandos preconfigurados que se adaptan a tu estrategia de ramas y entorno de desarrollo. Además, automatiza tareas manuales comunes, como la autenticación e instalación de dependencias.\n\nSi trabajas en grandes proyectos o con entornos separados (como **DEV, UAT, PROD**), esta herramienta puede **ahorrarte horas de trabajo repetitivo** y ayudarte a mantener una estructura de ramas clara y ordenada.",
               "highlights": [
                 { "value": "npm", "label": "Publicado" },
                 { "value": "CLI", "label": "Interactivo" },

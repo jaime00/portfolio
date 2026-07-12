@@ -21,16 +21,18 @@ Custom context-based i18n (`LanguageProvider` + `useTranslation`).
 Lozad.js for lazy image loading.  
 Deployed to Netlify (`build/`, `npm run build`).
 
-**Entry:** `src/index.js` → `App.js`. Routes in `App.js` (`/`, `/about`, `/side-projects`, `/contact`, `/experiences`).
+**Entry:** `src/index.js` → `App.js`. Routes in `App.js` (`/`, `/about`, `/side-projects`, `/side-projects/:slug`, `/experiences`, `/contact`).
 
-**Data flow:** Static content in `src/data/dataSite.json` (keyed by language). Accessed only through service functions in `src/services/index.js` (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`, `getStyleButton`, `getYearsOfExperience`). Components never import dataSite.json directly.
+**Data flow:** Static content in `src/data/dataSite.json` (keyed by language). Accessed only through service functions in `src/services/index.js` (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`, `getStyleButton`, `getYearsOfExperience`, `getProjectBySlug`, `getAdjacentProjects`). Components never import dataSite.json directly.
 
 **i18n:** UI strings in `src/i18n/en.json` / `es.json`, dot-notation keys, accessed via `t('section.key')`. Language auto-detected from browser, persisted in localStorage.
 
 ## Style & Conventions
 
-- **Prettier:** No semicolons, single quotes, no trailing commas, 80 width, `prettier-plugin-tailwindcss` for class sorting.
-- **Components:** One folder per component, `index.js` barrel export, default export, destructure props.
+- **Path alias:** `@/` maps to `src/` (configured in `craco.config.js`). All imports use `@/components/...`, `@/pages/...`, etc. — never relative paths for cross-directory imports.
+- **Prettier:** No semicolons, single quotes, no trailing commas, 80 width, `prettier-plugin-tailwindcss` for class sorting, `@trivago/prettier-plugin-sort-imports` for import ordering (third-party → `@/` groups → relative).
+- **Components:** One folder per component, `index.js` barrel export, default export, destructure props. The only `.jsx` file is `CarouselOfTechnologies`.
+- **Motion:** Import from `motion/react` (not `framer-motion`).
 - **Never edit `src/styles/output.css`** — it's generated from `tailwind.css`. Custom CSS (fonts, gradients, view transitions) in `general.css`.
 - **Dark mode:** Class-based (`darkMode: 'class'`). Toggle via `<html>` classList. Uses View Transition API (`document.startViewTransition`). Persisted in `localStorage.isDark`.
 - **Custom breakpoints:** `min-1045` (1045px), `min-445` (445px).
