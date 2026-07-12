@@ -79,7 +79,7 @@
                 "**Lightweight** — React and react-dom are externalized, keeping the bundle small.",
                 "**ESM & UMD** — works with any bundler or via CDN."
               ],
-              "footer": "You can find all the detailed documentation [**here**](https://smooth-components.netlify.app/)."
+              "footer": "You can find all the detailed documentation [**here**](https://smooth-components.netlify.app/docs)."
             },
             {
               "type": "playground",
@@ -298,7 +298,7 @@
                 "**Ligero** — React y react-dom se externalizan, manteniendo el bundle pequeño.",
                 "**ESM & UMD** — funciona con cualquier bundler o vía CDN."
               ],
-              "footer": "Toda la documentación detallada la encontrarás [**aquí**](https://smooth-components.netlify.app/#docs)."
+              "footer": "Toda la documentación detallada la encontrarás [**aquí**](https://smooth-components.netlify.app/docs)."
             },
             {
               "type": "playground",
