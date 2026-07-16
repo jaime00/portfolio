@@ -12,7 +12,7 @@ Personal portfolio built with React 19, showcasing my work as a Frontend Develop
 | ---------- | ----------------------------------------------------------------------------------------------------- |
 | Framework  | [React 19](https://react.dev) + [CRA](https://create-react-app.dev) via [Craco](https://craco.js.org) |
 | Styling    | [Tailwind CSS 3](https://tailwindcss.com)                                                             |
-| Animations | [Motion](https://motion.dev) (Framer Motion)                                                          |
+| Animations | [Motion](https://motion.dev)                                                                          |
 | Routing    | [Wouter](https://github.com/molefrog/wouter)                                                          |
 | i18n       | Custom context-based system (EN/ES, auto-detected)                                                    |
 | Toasts     | [Sonner](https://sonner.emilkoez.dev)                                                                 |
@@ -65,8 +65,7 @@ src/
 ├── i18n/          # Language provider, translation files (en.json, es.json)
 ├── pages/         # Page components (Home, About, Projects, ProjectDetail, Experiences, Contact)
 ├── services/      # Data getters (getProjects, getWorkExperience, etc.)
-├── styles/        # Tailwind source, generated output, and custom CSS
-└── utils/         # Helper functions
+└── styles/        # Tailwind source, generated output, and custom CSS
 ```
 
 ## License

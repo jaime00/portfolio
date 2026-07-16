@@ -27,7 +27,7 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 
 **i18n:** Custom context-based system in `src/i18n/`. `LanguageProvider` wraps the app (in `App.js`) and exposes `useTranslation()` → `{ language, t, changeLanguage }`. UI strings live in `src/i18n/en.json` and `src/i18n/es.json`; use dot-notation keys with `t('section.key')`. Content data in `dataSite.json` is keyed by language (`projects.en`, `projects.es`); service functions accept a `lang` parameter. Language is auto-detected from browser and persisted in localStorage.
 
-**Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList using the View Transition API (`document.startViewTransition`). Persisted in `localStorage.isDark`. Use Tailwind's `dark:` prefix for dark variants.
+**Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList using the View Transition API (`document.startViewTransition`). Falls back gracefully on Safari (no View Transition). State lives in `App.js` (`isDarkState`) and is passed as `isDark` prop only to `<Home>` and `<NavBar>`. Persisted in `localStorage.isDark`. Use Tailwind's `dark:` prefix for dark variants.
 
 **Animations:** Import from `motion/react` (not `framer-motion`). Example: `import { motion, AnimatePresence } from 'motion/react'`.
 
@@ -40,6 +40,8 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 **Project detail (CaseStudy):** `ProjectDetail` page fetches a project by slug and renders `<CaseStudy>`. The `caseStudy.sections` array in `dataSite.json` is type-driven — supported types: `narrative`, `gallery`, `video`, `features`, `commands`, `playground`. Each maps to a sub-component in `src/components/CaseStudy/`. The `playground` type renders an interactive live code editor (`PlaygroundSection/Showroom.js`) using the `smooth-components` npm package (`Poster` component).
 
 **Rich text in strings:** `renderRichText(text)` in `src/components/CaseStudy/richText.js` parses markdown-like syntax — `` `code` ``, `**bold**`, `[label](url)` — into styled JSX. Use it (instead of `dangerouslySetInnerHTML`) when i18n strings or section text need inline formatting.
+
+**Reading time:** `getReadingTime(sections)` in `src/components/CaseStudy/readingTime.js` estimates reading time (minutes) from a case study's sections array by counting words across `title`, `text`, `footer`, `items`, and `commands` fields.
 
 **Motion config:** `<MotionConfig reducedMotion="never">` in `App.js` intentionally ignores the OS reduced-motion preference so all animations always play.
 
