@@ -8,7 +8,10 @@ import { LinkedinIcon } from '@/assets/animatedIcons/LinkedinIcon'
 import { ReactComponent as WhatsappIcon } from '@/assets/icons/whatsapp.svg'
 
 import Button from '@/components/Button'
+import ShinyText from '@/components/ShinyText'
 import Titles from '@/components/Titles'
+
+import useDarkMode from '@/hooks/useDarkMode'
 
 import { useTranslation } from '@/i18n'
 
@@ -17,6 +20,7 @@ const CharacterSit =
 
 export default function Contact() {
   const { t } = useTranslation()
+  const isDark = useDarkMode()
   const [copied, setCopied] = useState(false)
   const resetTimerRef = useRef(null)
 
@@ -127,7 +131,15 @@ export default function Contact() {
       <Titles
         className="float-left"
         title={t('contact.title')}
-        subtitle={t('contact.subtitle')}
+        subtitle={
+          <ShinyText
+            text={t('contact.subtitle')}
+            color={isDark ? '#d4d4d4' : '#262626'}
+            shineColor={isDark ? '#ffffff' : '#d4d4d4'}
+            spread={isDark ? 60 : 120}
+            speed={3}
+          />
+        }
       />
       <div className="my-auto grid grid-cols-1 items-center gap-y-8 md:grid-cols-5 md:gap-x-12">
         <div className="col-span-3">

@@ -2,7 +2,10 @@ import { motion } from 'motion/react'
 
 import ExperienceDescription from '@/components/ExperienceDescription'
 import ExperienceLogo from '@/components/ExperienceLogo'
+import ShinyText from '@/components/ShinyText'
 import Titles from '@/components/Titles'
+
+import useDarkMode from '@/hooks/useDarkMode'
 
 import { useTranslation } from '@/i18n'
 
@@ -12,6 +15,7 @@ const ease = [0.16, 1, 0.3, 1]
 
 export default function Experiences() {
   const { t, language } = useTranslation()
+  const isDark = useDarkMode()
   const experiences = getExperiences(language)
   const workExperiences = getWorkExperience({ lang: language })
   return (
@@ -19,7 +23,15 @@ export default function Experiences() {
       <Titles
         className="text-center"
         title={t('experiences.title')}
-        subtitle={t('experiences.subtitle')}
+        subtitle={
+          <ShinyText
+            text={t('experiences.subtitle')}
+            color={isDark ? '#d4d4d4' : '#262626'}
+            shineColor={isDark ? '#ffffff' : '#d4d4d4'}
+            spread={isDark ? 60 : 120}
+            speed={3}
+          />
+        }
       />
       <div className="xxs:py-20 mt-14 flex flex-col justify-center gap-16 px-10">
         {experiences.map((experience, index) => (

@@ -2,7 +2,10 @@ import { Poster } from 'smooth-components'
 
 import AnimatedCounter from '@/components/AnimatedCounter'
 import { renderRichText } from '@/components/CaseStudy/richText'
+import ShinyText from '@/components/ShinyText'
 import Titles from '@/components/Titles'
+
+import useDarkMode from '@/hooks/useDarkMode'
 
 import { useTranslation } from '@/i18n'
 
@@ -13,10 +16,22 @@ const image_profile =
 
 export default function MyHistory() {
   const { t } = useTranslation()
+  const isDark = useDarkMode()
   const targetYears = getYearsOfExperience()
   return (
     <div className="">
-      <Titles title={t('about.title')} subtitle={t('about.subtitle')} />
+      <Titles
+        title={t('about.title')}
+        subtitle={
+          <ShinyText
+            text={t('about.subtitle')}
+            color={isDark ? '#d4d4d4' : '#262626'}
+            shineColor={isDark ? '#ffffff' : '#d4d4d4'}
+            spread={isDark ? 60 : 120}
+            speed={3}
+          />
+        }
+      />
       <section className="text-xl leading-8 text-gray-600 dark:text-gray-300">
         <br />
         <p>
