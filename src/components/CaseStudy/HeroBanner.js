@@ -11,6 +11,8 @@ import { ClapIcon } from '@/assets/animatedIcons/ClapIcon'
 import { EyeIcon } from '@/assets/animatedIcons/EyeIcon'
 import { GitBranchIcon } from '@/assets/animatedIcons/GitBranchIcon'
 
+import ShinyText from '@/components/ShinyText'
+
 import { useTranslation } from '@/i18n'
 
 import { getReadingTime } from './readingTime'
@@ -73,8 +75,14 @@ export default function HeroBanner({ project }) {
         transition={{ duration: 0.5, delay: 0.1, ease }}
       >
         <div>
-          <h1 className="font-sans text-4xl font-bold text-gray-900 dark:text-white md:text-5xl min-1045:text-6xl">
-            {title}
+          <h1 className="font-sans text-4xl font-bold md:text-5xl min-1045:text-6xl">
+            <ShinyText
+              text={title}
+              color={isDark ? '#d4d4d4' : '#262626'}
+              shineColor={isDark ? '#ffffff' : '#d4d4d4'}
+              spread={isDark ? 60 : 120}
+              speed={3}
+            />
           </h1>
         </div>
 

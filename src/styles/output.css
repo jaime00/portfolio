@@ -1521,6 +1521,10 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.py-\[0\.15em\] {
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
+}
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -1628,9 +1632,6 @@ video {
 }
 .italic {
   font-style: italic;
-}
-.leading-10 {
-  line-height: 2.5rem;
 }
 .leading-6 {
   line-height: 1.5rem;
