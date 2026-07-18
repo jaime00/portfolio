@@ -80,7 +80,7 @@ const getStyleButton = ({ isDark, size } = {}) => {
   const base =
     size === 'icon'
       ? 'flex h-[65px] w-[65px] items-center justify-center rounded-full p-[15px] font-medium text-sm transition-all'
-      : 'text-sm md:text-xl md:w-auto md:inline-flex py-3 px-2 md:px-12 rounded-full w-full items-center justify-center font-medium text-center mr-2 transition-all'
+      : 'inline-flex py-3 px-8 md:px-12 rounded-full whitespace-nowrap items-center justify-center font-medium text-center transition-all'
   return `${base} ${isDark ? GRADIENT_CLASSES : NEUTRAL_CLASSES}`
 }
 

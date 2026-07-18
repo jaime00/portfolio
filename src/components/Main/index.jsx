@@ -15,7 +15,7 @@ export default function Main() {
             isDark={true}
             to="/contact"
             magnetic
-            wrapperClassName="flex-1 md:flex-none"
+            // wrapperClassName="md:flex-none"
           >
             {t('home.contactMe')}
           </Button>
@@ -23,7 +23,7 @@ export default function Main() {
             isDark={false}
             to="/about"
             magnetic
-            wrapperClassName="flex-1 md:flex-none"
+            // wrapperClassName="md:flex-none"
           >
             {t('home.moreAboutMe')}
           </Button>
