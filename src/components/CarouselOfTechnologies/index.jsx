@@ -52,7 +52,7 @@ export default function CarouselOfTechnologies({ isDark }) {
       {technologies.map((tech, index) => (
         <div key={index} className="animate-carousel-item px-1">
           <img
-            className="min-h-[40px] min-w-[40px]"
+            className="min-h-[40px] min-w-[40px] transition-transform duration-300 hover:-translate-y-1 hover:scale-125"
             src={tech.src}
             alt={tech.alt}
           />

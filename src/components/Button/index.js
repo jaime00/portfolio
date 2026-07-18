@@ -1,6 +1,13 @@
+import { motion, useMotionValue, useSpring } from 'motion/react'
 import { Link } from 'wouter'
 
 import { getStyleButton } from '@/services'
+
+const tapAndHover = {
+  whileTap: { scale: 0.97 },
+  whileHover: { scale: 1.02 },
+  transition: { type: 'spring', stiffness: 400, damping: 17 }
+}
 
 export default function Button({
   children,
@@ -11,42 +18,102 @@ export default function Button({
   className = '',
   ariaLabel = 'button',
   size = 'default',
-  onMouseLeave = null
+  onMouseLeave = null,
+  magnetic = false
 }) {
   const classes = `${getStyleButton({ isDark, size })} ${className}`
 
-  const renderButton = (content) => (
-    <button aria-label={ariaLabel} type="button" className={classes}>
-      {content}
-    </button>
-  )
+  const magX = useMotionValue(0)
+  const magY = useMotionValue(0)
+  const springX = useSpring(magX, { stiffness: 150, damping: 20 })
+  const springY = useSpring(magY, { stiffness: 150, damping: 20 })
+
+  const magneticStyle = magnetic ? { x: springX, y: springY } : {}
+
+  const onMagMouseMove = magnetic
+    ? (e) => {
+        const rect = e.currentTarget.getBoundingClientRect()
+        const cx = rect.left + rect.width / 2
+        const cy = rect.top + rect.height / 2
+        magX.set(Math.max(-6, Math.min(6, (e.clientX - cx) * 0.25)))
+        magY.set(Math.max(-6, Math.min(6, (e.clientY - cy) * 0.25)))
+      }
+    : undefined
+
+  const onMagMouseLeave = () => {
+    if (magnetic) {
+      magX.set(0)
+      magY.set(0)
+    }
+    onMouseLeave?.()
+  }
 
   if (openUrl) {
     return (
-      <button
+      <motion.button
         aria-label={ariaLabel}
         type="button"
         className={classes}
         onClick={() => window.open(openUrl)}
+        style={magneticStyle}
+        onMouseMove={onMagMouseMove}
+        onMouseLeave={onMagMouseLeave}
+        {...tapAndHover}
       >
         {children}
-      </button>
+      </motion.button>
     )
   }
 
   if (onClick) {
     return (
-      <button
+      <motion.button
         aria-label={ariaLabel}
         type="button"
         className={classes}
         onClick={onClick}
-        onMouseLeave={onMouseLeave}
+        style={magneticStyle}
+        onMouseMove={onMagMouseMove}
+        onMouseLeave={onMagMouseLeave}
+        {...tapAndHover}
       >
         {children}
-      </button>
+      </motion.button>
     )
   }
 
-  return <Link to={to}>{renderButton(children)}</Link>
+  if (magnetic) {
+    return (
+      <motion.span
+        className="inline-block"
+        style={magneticStyle}
+        onMouseMove={onMagMouseMove}
+        onMouseLeave={onMagMouseLeave}
+      >
+        <Link to={to}>
+          <motion.button
+            aria-label={ariaLabel}
+            type="button"
+            className={classes}
+            {...tapAndHover}
+          >
+            {children}
+          </motion.button>
+        </Link>
+      </motion.span>
+    )
+  }
+
+  return (
+    <Link to={to}>
+      <motion.button
+        aria-label={ariaLabel}
+        type="button"
+        className={classes}
+        {...tapAndHover}
+      >
+        {children}
+      </motion.button>
+    </Link>
+  )
 }

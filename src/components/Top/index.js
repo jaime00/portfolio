@@ -1,16 +1,21 @@
+import { motion } from 'motion/react'
+
 import { ReactComponent as TopIcon } from '@/assets/icons/top.svg'
 
 export default function Top() {
   const handleClick = () =>
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   return (
-    <button
+    <motion.button
       type="button"
       aria-label="Scroll to top"
       className="animate-bounce cursor-pointer text-gray-500 hover:text-black dark:hover:text-white"
       onClick={handleClick}
+      whileHover={{ y: -3 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
     >
       <TopIcon />
-    </button>
+    </motion.button>
   )
 }

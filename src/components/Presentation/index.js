@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
 
 import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCode'
 
@@ -16,6 +16,8 @@ const image_profile =
 export default function Presentation() {
   const { t } = useTranslation()
   const targetYears = getYearsOfExperience()
+  const { scrollY } = useScroll()
+  const parallaxY = useTransform(scrollY, [0, 500], [0, 60])
 
   const displayText = useTypewriter([
     'React JS.',
@@ -63,18 +65,35 @@ export default function Presentation() {
         </h1>
       </div>
 
+      {/* Parallax wrapper */}
       <motion.div
         className="mask-image pointer-events-none absolute bottom-[60px] right-0 top-0 z-[4] h-[415px] select-none justify-end"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        style={{ y: parallaxY }}
       >
-        <img
-          fetchPriority="high"
-          alt="Jaime Torres"
-          src={image_profile || '/placeholder.svg'}
-          className="col-span-1 h-0 w-auto min-1045:h-[415px]"
-        />
+        {/* Entrance animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {/* Float animation */}
+          <motion.div
+            animate={{ y: [0, -12, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 1.2
+            }}
+          >
+            <img
+              fetchPriority="high"
+              alt="Jaime Torres"
+              src={image_profile || '/placeholder.svg'}
+              className="col-span-1 h-0 w-auto min-1045:h-[415px]"
+            />
+          </motion.div>
+        </motion.div>
       </motion.div>
     </div>
   )

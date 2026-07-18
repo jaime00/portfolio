@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, LayoutGroup, motion } from 'motion/react'
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { Link, useLocation } from 'wouter'
@@ -111,13 +111,15 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
     <>
       {mobileModal}
       <div className="hidden select-none items-center md:flex" id="navbar">
-        <ul className="flex items-center gap-2 text-lg">
-          {menuItems.map((item) => (
-            <NavLink key={item.to} onClick={collapseNavbar} to={item.to}>
-              {item.label}
-            </NavLink>
-          ))}
-        </ul>
+        <LayoutGroup>
+          <ul className="flex items-center gap-2 text-lg">
+            {menuItems.map((item) => (
+              <NavLink key={item.to} onClick={collapseNavbar} to={item.to}>
+                {item.label}
+              </NavLink>
+            ))}
+          </ul>
+        </LayoutGroup>
       </div>
     </>
   )

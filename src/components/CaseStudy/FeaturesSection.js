@@ -1,10 +1,9 @@
+import { EASE_OUT_EXPO as ease } from '@/animations'
 import { motion } from 'motion/react'
 
 import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
 
 import { renderRichText } from './richText'
-
-const ease = [0.16, 1, 0.3, 1]
 
 export default function FeaturesSection({ section }) {
   return (

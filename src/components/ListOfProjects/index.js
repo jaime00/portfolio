@@ -1,3 +1,4 @@
+import { EASE_OUT_EXPO as ease } from '@/animations'
 import { motion } from 'motion/react'
 
 import Project from '@/components/Project'
@@ -5,8 +6,6 @@ import Project from '@/components/Project'
 import { useTranslation } from '@/i18n'
 
 import { getProjects } from '@/services'
-
-const ease = [0.16, 1, 0.3, 1]
 
 export default function ListOfProjects({ limit }) {
   const { language } = useTranslation()

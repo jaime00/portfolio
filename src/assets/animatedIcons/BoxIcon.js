@@ -1,5 +1,11 @@
 import { motion, useAnimation } from 'motion/react'
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
+import {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef
+} from 'react'
 
 const PATH_VARIANTS = {
   normal: {
@@ -21,9 +27,23 @@ const PATH_VARIANTS = {
 }
 
 const BoxIcon = forwardRef(
-  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+  (
+    {
+      onMouseEnter,
+      onMouseLeave,
+      className,
+      size = 28,
+      autoAnimate = false,
+      ...props
+    },
+    ref
+  ) => {
     const controls = useAnimation()
     const isControlledRef = useRef(false)
+
+    useEffect(() => {
+      if (autoAnimate) controls.start('animate')
+    }, [autoAnimate, controls])
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true

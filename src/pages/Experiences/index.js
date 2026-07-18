@@ -1,3 +1,4 @@
+import { EASE_OUT_EXPO as ease } from '@/animations'
 import { motion } from 'motion/react'
 
 import ExperienceDescription from '@/components/ExperienceDescription'
@@ -11,15 +12,13 @@ import { useTranslation } from '@/i18n'
 
 import { getExperiences, getWorkExperience } from '@/services'
 
-const ease = [0.16, 1, 0.3, 1]
-
 export default function Experiences() {
   const { t, language } = useTranslation()
   const isDark = useDarkMode()
   const experiences = getExperiences(language)
   const workExperiences = getWorkExperience({ lang: language })
   return (
-    <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto mb-5 mt-8 max-w-6xl animate-fade flex-col justify-center bg-white px-4 font-sans dark:bg-gray-800 dark:text-white">
+    <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto mb-5 mt-8 max-w-6xl animate-fade flex-col justify-center px-4 font-sans dark:text-white">
       <Titles
         className="text-center"
         title={t('experiences.title')}

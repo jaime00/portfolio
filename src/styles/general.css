@@ -137,6 +137,18 @@ html.dark::view-transition-old(root) {
   animation: ambient-glow 8s ease-in-out infinite;
 }
 
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 300ms var(--expo-out);
+}
+
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
 :root {
   --expo-out: linear(
     0 0%,
