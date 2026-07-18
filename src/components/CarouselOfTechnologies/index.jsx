@@ -7,40 +7,40 @@ import reactIcon from '@/assets/icons/react.png'
 import svelteIcon from '@/assets/icons/svelte.png'
 import typescriptIcon from '@/assets/icons/ts.png'
 
-export default function CarouselOfTechnologies({ isDark }) {
-  const technologies = [
-    { src: reactIcon, alt: 'React Logo' },
-    { src: nextIcon, alt: 'Next.js Logo' },
-    { src: svelteIcon, alt: 'Svelte Logo' },
-    { src: typescriptIcon, alt: 'TypeScript Logo' },
-    { src: angularIcon, alt: 'Angular Logo' },
-    { src: javascriptIcon, alt: 'JavaScript Logo' },
-    { src: reactIcon, alt: 'React Logo' },
-    { src: nextIcon, alt: 'Next.js Logo' },
-    { src: svelteIcon, alt: 'Svelte Logo' },
-    { src: typescriptIcon, alt: 'TypeScript Logo' },
-    { src: angularIcon, alt: 'Angular Logo' },
-    { src: javascriptIcon, alt: 'JavaScript Logo' },
-    { src: reactIcon, alt: 'React Logo' },
-    { src: nextIcon, alt: 'Next.js Logo' },
-    { src: svelteIcon, alt: 'Svelte Logo' },
-    { src: typescriptIcon, alt: 'TypeScript Logo' },
-    { src: angularIcon, alt: 'Angular Logo' },
-    { src: javascriptIcon, alt: 'JavaScript Logo' },
-    { src: reactIcon, alt: 'React Logo' },
-    { src: nextIcon, alt: 'Next.js Logo' },
-    { src: svelteIcon, alt: 'Svelte Logo' },
-    { src: typescriptIcon, alt: 'TypeScript Logo' },
-    { src: angularIcon, alt: 'Angular Logo' },
-    { src: javascriptIcon, alt: 'JavaScript Logo' },
-    { src: reactIcon, alt: 'React Logo' },
-    { src: nextIcon, alt: 'Next.js Logo' },
-    { src: svelteIcon, alt: 'Svelte Logo' },
-    { src: typescriptIcon, alt: 'TypeScript Logo' },
-    { src: angularIcon, alt: 'Angular Logo' },
-    { src: javascriptIcon, alt: 'JavaScript Logo' }
-  ]
+const technologies = [
+  { src: reactIcon, alt: 'React Logo' },
+  { src: nextIcon, alt: 'Next.js Logo' },
+  { src: svelteIcon, alt: 'Svelte Logo' },
+  { src: typescriptIcon, alt: 'TypeScript Logo' },
+  { src: angularIcon, alt: 'Angular Logo' },
+  { src: javascriptIcon, alt: 'JavaScript Logo' },
+  { src: reactIcon, alt: 'React Logo' },
+  { src: nextIcon, alt: 'Next.js Logo' },
+  { src: svelteIcon, alt: 'Svelte Logo' },
+  { src: typescriptIcon, alt: 'TypeScript Logo' },
+  { src: angularIcon, alt: 'Angular Logo' },
+  { src: javascriptIcon, alt: 'JavaScript Logo' },
+  { src: reactIcon, alt: 'React Logo' },
+  { src: nextIcon, alt: 'Next.js Logo' },
+  { src: svelteIcon, alt: 'Svelte Logo' },
+  { src: typescriptIcon, alt: 'TypeScript Logo' },
+  { src: angularIcon, alt: 'Angular Logo' },
+  { src: javascriptIcon, alt: 'JavaScript Logo' },
+  { src: reactIcon, alt: 'React Logo' },
+  { src: nextIcon, alt: 'Next.js Logo' },
+  { src: svelteIcon, alt: 'Svelte Logo' },
+  { src: typescriptIcon, alt: 'TypeScript Logo' },
+  { src: angularIcon, alt: 'Angular Logo' },
+  { src: javascriptIcon, alt: 'JavaScript Logo' },
+  { src: reactIcon, alt: 'React Logo' },
+  { src: nextIcon, alt: 'Next.js Logo' },
+  { src: svelteIcon, alt: 'Svelte Logo' },
+  { src: typescriptIcon, alt: 'TypeScript Logo' },
+  { src: angularIcon, alt: 'Angular Logo' },
+  { src: javascriptIcon, alt: 'JavaScript Logo' }
+]
 
+export default function CarouselOfTechnologies({ isDark }) {
   return (
     <div
       className={`font-lato carousel-pause relative mx-auto my-6 flex w-2/4 select-none items-center justify-center overflow-hidden rounded-md text-lg leading-6 before:left-0 before:bg-gradient-to-r ${

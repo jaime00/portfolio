@@ -61,7 +61,7 @@ src/
 ├── assets/        # Local images, animated icon components
 ├── components/    # Reusable UI components (one folder per component)
 ├── data/          # dataSite.json — projects, experience, site content
-├── hooks/         # Custom hooks (useTypewriter, etc.)
+├── hooks/         # Custom hooks (useTypewriter, useDarkMode, useTilt)
 ├── i18n/          # Language provider, translation files (en.json, es.json)
 ├── pages/         # Page components (Home, About, Projects, ProjectDetail, Experiences, Contact)
 ├── services/      # Data getters (getProjects, getWorkExperience, etc.)

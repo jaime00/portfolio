@@ -171,6 +171,138 @@ const SUGGESTIONS = [
   }
 ]
 
+function EditorTitleBar({ isMac, copied, handleCopy }) {
+  return (
+    <div className="flex items-center gap-2 bg-[#13141c] px-4 py-2.5">
+      <div className="flex gap-1.5">
+        <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+        <div className="h-3 w-3 rounded-full bg-[#febc2e]" />
+        <div className="h-3 w-3 rounded-full bg-[#28c840]" />
+      </div>
+      <span className="ml-2 font-mono text-xs text-[#a9b1d6]">example.tsx</span>
+      <button
+        type="button"
+        className="group ml-auto flex cursor-pointer items-center gap-2 bg-transparent border-0 p-0"
+        onClick={handleCopy}
+        aria-label="Copy code"
+      >
+        <span className="hidden font-mono text-xs text-[#565a6e] transition-colors group-hover:text-[#a9b1d6] md:inline">
+          {isMac ? '⌘' : 'Ctrl'}+C to copy
+        </span>
+        <motion.div whileHover={{ x: 2 }} whileTap={{ scale: 0.92 }}>
+          {copied ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              className="stroke-[#28c840]"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          ) : (
+            <svg
+              className="stroke-[#565a6e] transition-colors group-hover:stroke-[#a9b1d6]"
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+          )}
+        </motion.div>
+      </button>
+    </div>
+  )
+}
+
+function AutocompleteDropdown({ autocomplete, applySuggestion }) {
+  return (
+    <AnimatePresence>
+      {autocomplete && (
+        <motion.div
+          role="listbox"
+          aria-label="Autocomplete suggestions"
+          initial={{ opacity: 0, y: -4, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -4, scale: 0.97 }}
+          transition={{ duration: 0.1, ease: 'easeOut' }}
+          style={{ top: autocomplete.top, left: autocomplete.left }}
+          className="absolute z-50 max-w-xs min-w-52 overflow-hidden rounded-md border border-white/10 bg-[#13141c] shadow-2xl"
+        >
+          {autocomplete.suggestions.map((s, i) => {
+            const active = i === autocomplete.index
+            return (
+              <div
+                key={s.name}
+                role="option"
+                aria-selected={active}
+                tabIndex={-1}
+                className={`flex cursor-pointer items-baseline gap-1.5 px-3 py-1.5 font-mono text-xs ${
+                  active ? 'bg-white/10' : 'text-[#a9b1d6] hover:bg-white/5'
+                }`}
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  applySuggestion(s)
+                }}
+              >
+                <span
+                  className="shrink-0 text-[10px]"
+                  style={{ color: active ? '#80cbc480' : '#7aa2f7' }}
+                >
+                  prop
+                </span>
+                <span
+                  className="font-semibold"
+                  style={{ color: active ? '#80cbc4' : '#a9b1d6' }}
+                >
+                  {s.name}
+                  {s.defaultValue && (
+                    <span
+                      style={{
+                        color: active ? '#80cbc4b3' : '#565a6e'
+                      }}
+                    >
+                      ?
+                    </span>
+                  )}
+                </span>
+                <span
+                  className="text-[10px]"
+                  style={{ color: active ? '#80cbc480' : '#565a6e' }}
+                >
+                  : {s.type}
+                </span>
+                {s.defaultValue && (
+                  <span
+                    className="text-[10px]"
+                    style={{ color: active ? '#80cbc466' : '#565a6e' }}
+                  >
+                    = {s.defaultValue}
+                  </span>
+                )}
+              </div>
+            )
+          })}
+          <div className="border-t border-white/5 px-3 py-1 font-mono text-[10px] text-[#565a6e]">
+            {'↑↓'} navigate &middot; {'↵'} insert &middot; esc close
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
+
 export default function Showroom() {
   const [code, setCode] = useState(DEFAULT_CODE)
   const [props, setProps] = useState(DEFAULT_PROPS)
@@ -371,58 +503,11 @@ export default function Showroom() {
           ref={editorRef}
           className="flex h-[24rem] flex-col overflow-hidden rounded-lg border border-white/10 bg-[#1a1b26] lg:h-auto lg:min-h-0 lg:flex-1"
         >
-          {/* Title bar */}
-          <div className="flex items-center gap-2 bg-[#13141c] px-4 py-2.5">
-            <div className="flex gap-1.5">
-              <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-              <div className="h-3 w-3 rounded-full bg-[#febc2e]" />
-              <div className="h-3 w-3 rounded-full bg-[#28c840]" />
-            </div>
-            <span className="ml-2 font-mono text-xs text-[#a9b1d6]">
-              example.tsx
-            </span>
-            <div
-              className="group ml-auto flex cursor-pointer items-center gap-2"
-              onClick={handleCopy}
-              title="Copy code"
-            >
-              <span className="hidden font-mono text-xs text-[#565a6e] transition-colors group-hover:text-[#a9b1d6] md:inline">
-                {isMac ? '⌘' : 'Ctrl'}+C to copy
-              </span>
-              <motion.div whileHover={{ x: 2 }} whileTap={{ scale: 0.92 }}>
-                {copied ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="stroke-[#28c840]"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                ) : (
-                  <svg
-                    className="stroke-[#565a6e] transition-colors group-hover:stroke-[#a9b1d6]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                  </svg>
-                )}
-              </motion.div>
-            </div>
-          </div>
+          <EditorTitleBar
+            isMac={isMac}
+            copied={copied}
+            handleCopy={handleCopy}
+          />
 
           {/* Editor body */}
           <div className="relative min-h-0 flex-1">
@@ -434,6 +519,7 @@ export default function Showroom() {
             />
             <textarea
               ref={textareaRef}
+              aria-label="Code editor"
               className="absolute inset-0 w-full resize-none bg-transparent py-3 pr-3 pl-8 font-mono text-xs leading-relaxed whitespace-pre-wrap break-words text-transparent caret-white focus:outline-none md:py-4 md:pr-4 md:pl-10 md:text-sm"
               value={code}
               onInput={handleChange}
@@ -442,76 +528,10 @@ export default function Showroom() {
               spellCheck={false}
             />
 
-            {/* Autocomplete dropdown */}
-            <AnimatePresence>
-              {autocomplete && (
-                <motion.div
-                  initial={{ opacity: 0, y: -4, scale: 0.97 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -4, scale: 0.97 }}
-                  transition={{ duration: 0.1, ease: 'easeOut' }}
-                  style={{ top: autocomplete.top, left: autocomplete.left }}
-                  className="absolute z-50 max-w-xs min-w-52 overflow-hidden rounded-md border border-white/10 bg-[#13141c] shadow-2xl"
-                >
-                  {autocomplete.suggestions.map((s, i) => {
-                    const active = i === autocomplete.index
-                    return (
-                      <div
-                        key={s.name}
-                        className={`flex cursor-pointer items-baseline gap-1.5 px-3 py-1.5 font-mono text-xs ${
-                          active
-                            ? 'bg-white/10'
-                            : 'text-[#a9b1d6] hover:bg-white/5'
-                        }`}
-                        onMouseDown={(e) => {
-                          e.preventDefault()
-                          applySuggestion(s)
-                        }}
-                      >
-                        <span
-                          className="shrink-0 text-[10px]"
-                          style={{ color: active ? '#80cbc480' : '#7aa2f7' }}
-                        >
-                          prop
-                        </span>
-                        <span
-                          className="font-semibold"
-                          style={{ color: active ? '#80cbc4' : '#a9b1d6' }}
-                        >
-                          {s.name}
-                          {s.defaultValue && (
-                            <span
-                              style={{
-                                color: active ? '#80cbc4b3' : '#565a6e'
-                              }}
-                            >
-                              ?
-                            </span>
-                          )}
-                        </span>
-                        <span
-                          className="text-[10px]"
-                          style={{ color: active ? '#80cbc480' : '#565a6e' }}
-                        >
-                          : {s.type}
-                        </span>
-                        {s.defaultValue && (
-                          <span
-                            className="text-[10px]"
-                            style={{ color: active ? '#80cbc466' : '#565a6e' }}
-                          >
-                            = {s.defaultValue}
-                          </span>
-                        )}
-                      </div>
-                    )
-                  })}
-                  <div className="border-t border-white/5 px-3 py-1 font-mono text-[10px] text-[#565a6e]">
-                    {'↑↓'} navigate &middot; {'↵'} insert &middot; esc close
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <AutocompleteDropdown
+              autocomplete={autocomplete}
+              applySuggestion={applySuggestion}
+            />
           </div>
 
           {/* Footer bar */}

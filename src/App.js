@@ -45,7 +45,7 @@ function App() {
     }
   }
   return (
-    <MotionConfig reducedMotion="never">
+    <MotionConfig reducedMotion="user">
       <LanguageProvider>
         <Toaster
           position="bottom-center"

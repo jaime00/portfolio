@@ -1,11 +1,12 @@
 import { motion } from 'motion/react'
 
+const handleClick = () =>
+  window.scrollTo({
+    behavior: 'smooth',
+    top: document.getElementById('work-experience-container').offsetTop
+  })
+
 export default function Bottom() {
-  const handleClick = () =>
-    window.scrollTo({
-      behavior: 'smooth',
-      top: document.getElementById('work-experience-container').offsetTop
-    })
   return (
     <motion.button
       type="button"

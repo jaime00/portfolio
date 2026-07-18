@@ -19,6 +19,18 @@ import { useTranslation } from '@/i18n'
 const CharacterSit =
   'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597333/projects/portfolio/characterSit.png'
 
+const characterVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      delay: 0.2
+    }
+  },
+  float: floatVariants.animate
+}
+
 export default function Contact() {
   const { t } = useTranslation()
   const isDark = useDarkMode()
@@ -64,18 +76,6 @@ export default function Contact() {
         resetTimerRef.current = setTimeout(() => setCopied(false), 2000)
       })
       .catch(() => {})
-  }
-
-  const characterVariants = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        delay: 0.2
-      }
-    },
-    float: floatVariants.animate
   }
 
   const contactMethods = [

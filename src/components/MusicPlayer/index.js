@@ -61,6 +61,226 @@ const playlist = [
   }
 ]
 
+function FloatingNotes({ isPlaying }) {
+  return (
+    <AnimatePresence>
+      {isPlaying && (
+        <>
+          {['♪', '♫', '♩', '♬', '♪'].map((note, i) => (
+            <motion.span
+              key={`note-${i}`}
+              initial={{ opacity: 0, y: 0, x: 0, scale: 0.5 }}
+              animate={{
+                opacity: [0, 1, 1, 0],
+                y: [0, -20, -50, -80],
+                x: [
+                  0,
+                  (i % 2 === 0 ? 1 : -1) * (8 + i * 4),
+                  (i % 2 === 0 ? -1 : 1) * 6,
+                  (i % 2 === 0 ? 1 : -1) * 12
+                ],
+                scale: [0.5, 1, 0.9, 0.6],
+                rotate: [0, i % 2 === 0 ? 15 : -15, i % 2 === 0 ? -10 : 10, 0]
+              }}
+              transition={{
+                duration: 2.5 + i * 0.3,
+                repeat: Infinity,
+                delay: i * 0.5,
+                ease: 'easeOut'
+              }}
+              className="pointer-events-none absolute -top-2 left-1/2 select-none text-sm text-teal-500 dark:text-teal-400"
+            >
+              {note}
+            </motion.span>
+          ))}
+        </>
+      )}
+    </AnimatePresence>
+  )
+}
+
+function PlayerPanel({
+  isOpen,
+  direction,
+  currentIndex,
+  currentSong,
+  progress,
+  isDragging,
+  isPlaying,
+  togglePlay,
+  prevTrack,
+  nextTrack,
+  handleProgressDown,
+  handleProgressTouchStart,
+  progressRef,
+  audioRef
+}) {
+  return (
+    <motion.div
+      initial={false}
+      animate={
+        isOpen
+          ? { opacity: 1, scale: 1, x: 0, filter: 'blur(0px)' }
+          : { opacity: 0, scale: 0.5, x: -40, filter: 'blur(8px)' }
+      }
+      transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+      className={`origin-bottom-left ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+    >
+      <div className="flex w-[280px] gap-3 rounded-2xl border border-teal-500/10 bg-white/80 p-3 shadow-xl shadow-teal-500/5 backdrop-blur-md dark:border-teal-400/10 dark:bg-gray-800/80">
+        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg">
+          <AnimatePresence mode="popLayout">
+            <motion.img
+              key={currentIndex}
+              src={currentSong.cover}
+              alt={currentSong.title}
+              initial={{ x: 30 * direction, opacity: 0, filter: 'blur(6px)' }}
+              animate={{ x: 0, opacity: 1, filter: 'blur(0px)' }}
+              exit={{ x: -30 * direction, opacity: 0, filter: 'blur(6px)' }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+              draggable={false}
+              className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover"
+            />
+          </AnimatePresence>
+        </div>
+
+        <div className="flex min-w-0 flex-1 flex-col gap-1 overflow-hidden">
+          <AnimatePresence mode="popLayout">
+            <motion.p
+              key={`title-${currentIndex}`}
+              initial={{ x: 20 * direction, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -20 * direction, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+              className="truncate text-xs font-semibold text-gray-800 dark:text-white"
+            >
+              {currentSong.title}
+            </motion.p>
+          </AnimatePresence>
+          <AnimatePresence mode="popLayout">
+            <motion.p
+              key={`artist-${currentIndex}`}
+              initial={{ x: 20 * direction, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -20 * direction, opacity: 0 }}
+              transition={{
+                duration: 0.3,
+                delay: 0.06,
+                ease: [0.4, 0, 0.2, 1]
+              }}
+              className="truncate text-[10px] text-gray-400 dark:text-gray-500"
+            >
+              {currentSong.artist}
+            </motion.p>
+          </AnimatePresence>
+
+          <div
+            ref={progressRef}
+            role="slider"
+            tabIndex={0}
+            aria-label="Song progress"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(progress)}
+            className="group relative h-1.5 w-full cursor-pointer rounded-full bg-gray-200 focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:bg-gray-700"
+            onMouseDown={handleProgressDown}
+            onTouchStart={handleProgressTouchStart}
+            onKeyDown={(e) => {
+              const audio = audioRef.current
+              if (!audio || !audio.duration) return
+              const step = audio.duration * 0.05
+              if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+                e.preventDefault()
+                audio.currentTime = Math.min(
+                  audio.currentTime + step,
+                  audio.duration
+                )
+              } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+                e.preventDefault()
+                audio.currentTime = Math.max(audio.currentTime - step, 0)
+              }
+            }}
+          >
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-teal-500 to-teal-400"
+              style={{
+                width: `${progress}%`,
+                transition: isDragging ? 'none' : 'width 0.15s'
+              }}
+            />
+            <div
+              className={`absolute top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-teal-500 shadow-md transition-transform ${isDragging ? 'scale-125' : 'scale-0 group-hover:scale-100'}`}
+              style={{ left: `calc(${progress}% - 6px)` }}
+            />
+          </div>
+
+          <div className="flex items-center justify-center gap-4">
+            <button
+              onClick={prevTrack}
+              aria-label="Previous track"
+              className="rounded p-1 text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                className="h-4 w-4"
+              >
+                <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
+              </svg>
+            </button>
+            <motion.button
+              onClick={togglePlay}
+              whileTap={{ scale: 0.8, rotate: 15 }}
+              aria-label={isPlaying ? 'Pause' : 'Play'}
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-teal-400 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
+            >
+              <AnimatePresence mode="wait">
+                {isPlaying ? (
+                  <motion.div
+                    key="pause"
+                    initial={{ scale: 0, rotate: -90 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    exit={{ scale: 0, rotate: 90 }}
+                    transition={{ duration: 0.2, ease: 'easeOut' }}
+                  >
+                    <PauseIcon size={14} />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="play"
+                    initial={{ scale: 0, rotate: 90 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    exit={{ scale: 0, rotate: -90 }}
+                    transition={{ duration: 0.2, ease: 'easeOut' }}
+                  >
+                    <PlayIcon size={14} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
+            <button
+              onClick={nextTrack}
+              aria-label="Next track"
+              className="rounded p-1 text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                className="h-4 w-4"
+              >
+                <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function MusicPlayer() {
   const audioRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
@@ -76,10 +296,9 @@ export default function MusicPlayer() {
   const [direction, setDirection] = useState(1)
   const progressRef = useRef(null)
   const savedTimeRef = useRef(Number(localStorage.getItem('music-time')) || 0)
+  const wasPlayingRef = useRef(localStorage.getItem('music-playing') === 'true')
 
   const currentSong = playlist[currentIndex]
-
-  const wasPlayingRef = useRef(localStorage.getItem('music-playing') === 'true')
 
   const togglePlay = useCallback(() => {
     const audio = audioRef.current
@@ -175,20 +394,27 @@ export default function MusicPlayer() {
     [seekToPosition]
   )
 
+  const handleProgressTouchStart = useCallback(
+    (e) => {
+      setIsDragging(true)
+      seekToPosition(e.touches[0].clientX)
+    },
+    [seekToPosition]
+  )
+
   useEffect(() => {
     if (!isDragging) return
     const handleMove = (e) => seekToPosition(e.clientX)
+    const handleTouchMove = (e) => seekToPosition(e.touches[0].clientX)
     const handleUp = () => setIsDragging(false)
     window.addEventListener('mousemove', handleMove)
     window.addEventListener('mouseup', handleUp)
-    window.addEventListener('touchmove', (e) =>
-      seekToPosition(e.touches[0].clientX)
-    )
+    window.addEventListener('touchmove', handleTouchMove)
     window.addEventListener('touchend', handleUp)
     return () => {
       window.removeEventListener('mousemove', handleMove)
       window.removeEventListener('mouseup', handleUp)
-      window.removeEventListener('touchmove', handleMove)
+      window.removeEventListener('touchmove', handleTouchMove)
       window.removeEventListener('touchend', handleUp)
     }
   }, [isDragging, seekToPosition])
@@ -198,47 +424,12 @@ export default function MusicPlayer() {
       aria-label="Music player"
       className="pointer-events-none fixed bottom-6 left-6 z-[999998] flex items-end gap-3 [&_*]:[-webkit-tap-highlight-color:transparent]"
     >
-      <audio ref={audioRef} preload="auto" />
+      <audio ref={audioRef} preload="auto">
+        <track kind="captions" src="" />
+      </audio>
 
       <div className="pointer-events-auto relative">
-        <AnimatePresence>
-          {isPlaying && (
-            <>
-              {['♪', '♫', '♩', '♬', '♪'].map((note, i) => (
-                <motion.span
-                  key={`note-${i}`}
-                  initial={{ opacity: 0, y: 0, x: 0, scale: 0.5 }}
-                  animate={{
-                    opacity: [0, 1, 1, 0],
-                    y: [0, -20, -50, -80],
-                    x: [
-                      0,
-                      (i % 2 === 0 ? 1 : -1) * (8 + i * 4),
-                      (i % 2 === 0 ? -1 : 1) * 6,
-                      (i % 2 === 0 ? 1 : -1) * 12
-                    ],
-                    scale: [0.5, 1, 0.9, 0.6],
-                    rotate: [
-                      0,
-                      i % 2 === 0 ? 15 : -15,
-                      i % 2 === 0 ? -10 : 10,
-                      0
-                    ]
-                  }}
-                  transition={{
-                    duration: 2.5 + i * 0.3,
-                    repeat: Infinity,
-                    delay: i * 0.5,
-                    ease: 'easeOut'
-                  }}
-                  className="pointer-events-none absolute -top-2 left-1/2 select-none text-sm text-teal-500 dark:text-teal-400"
-                >
-                  {note}
-                </motion.span>
-              ))}
-            </>
-          )}
-        </AnimatePresence>
+        <FloatingNotes isPlaying={isPlaying} />
 
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
@@ -262,171 +453,22 @@ export default function MusicPlayer() {
         </motion.button>
       </div>
 
-      <motion.div
-        initial={false}
-        animate={
-          isOpen
-            ? { opacity: 1, scale: 1, x: 0, filter: 'blur(0px)' }
-            : { opacity: 0, scale: 0.5, x: -40, filter: 'blur(8px)' }
-        }
-        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-        className={`origin-bottom-left ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
-      >
-        <div className="flex w-[280px] gap-3 rounded-2xl border border-teal-500/10 bg-white/80 p-3 shadow-xl shadow-teal-500/5 backdrop-blur-md dark:border-teal-400/10 dark:bg-gray-800/80">
-          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg">
-            <AnimatePresence mode="popLayout">
-              <motion.img
-                key={currentIndex}
-                src={currentSong.cover}
-                alt={currentSong.title}
-                initial={{ x: 30 * direction, opacity: 0, filter: 'blur(6px)' }}
-                animate={{ x: 0, opacity: 1, filter: 'blur(0px)' }}
-                exit={{ x: -30 * direction, opacity: 0, filter: 'blur(6px)' }}
-                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                draggable={false}
-                className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover"
-              />
-            </AnimatePresence>
-          </div>
-
-          <div className="flex min-w-0 flex-1 flex-col gap-1 overflow-hidden">
-            <AnimatePresence mode="popLayout">
-              <motion.p
-                key={`title-${currentIndex}`}
-                initial={{ x: 20 * direction, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20 * direction, opacity: 0 }}
-                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                className="truncate text-xs font-semibold text-gray-800 dark:text-white"
-              >
-                {currentSong.title}
-              </motion.p>
-            </AnimatePresence>
-            <AnimatePresence mode="popLayout">
-              <motion.p
-                key={`artist-${currentIndex}`}
-                initial={{ x: 20 * direction, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20 * direction, opacity: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: 0.06,
-                  ease: [0.4, 0, 0.2, 1]
-                }}
-                className="truncate text-[10px] text-gray-400 dark:text-gray-500"
-              >
-                {currentSong.artist}
-              </motion.p>
-            </AnimatePresence>
-
-            <div
-              ref={progressRef}
-              role="slider"
-              tabIndex={0}
-              aria-label="Song progress"
-              aria-valuemin={0}
-              aria-valuemax={100}
-              aria-valuenow={Math.round(progress)}
-              className="group relative h-1.5 w-full cursor-pointer rounded-full bg-gray-200 focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:bg-gray-700"
-              onMouseDown={handleProgressDown}
-              onTouchStart={(e) => {
-                setIsDragging(true)
-                seekToPosition(e.touches[0].clientX)
-              }}
-              onKeyDown={(e) => {
-                const audio = audioRef.current
-                if (!audio || !audio.duration) return
-                const step = audio.duration * 0.05
-                if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
-                  e.preventDefault()
-                  audio.currentTime = Math.min(
-                    audio.currentTime + step,
-                    audio.duration
-                  )
-                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
-                  e.preventDefault()
-                  audio.currentTime = Math.max(audio.currentTime - step, 0)
-                }
-              }}
-            >
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-teal-500 to-teal-400"
-                style={{
-                  width: `${progress}%`,
-                  transition: isDragging ? 'none' : 'width 0.15s'
-                }}
-              />
-              <div
-                className={`absolute top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-teal-500 shadow-md transition-transform ${isDragging ? 'scale-125' : 'scale-0 group-hover:scale-100'}`}
-                style={{ left: `calc(${progress}% - 6px)` }}
-              />
-            </div>
-
-            <div className="flex items-center justify-center gap-4">
-              <button
-                onClick={prevTrack}
-                aria-label="Previous track"
-                className="rounded p-1 text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className="h-4 w-4"
-                >
-                  <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
-                </svg>
-              </button>
-              <motion.button
-                onClick={togglePlay}
-                whileTap={{ scale: 0.8, rotate: 15 }}
-                aria-label={isPlaying ? 'Pause' : 'Play'}
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-teal-400 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
-              >
-                <AnimatePresence mode="wait">
-                  {isPlaying ? (
-                    <motion.div
-                      key="pause"
-                      initial={{ scale: 0, rotate: -90 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      exit={{ scale: 0, rotate: 90 }}
-                      transition={{ duration: 0.2, ease: 'easeOut' }}
-                    >
-                      <PauseIcon size={14} />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="play"
-                      initial={{ scale: 0, rotate: 90 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      exit={{ scale: 0, rotate: -90 }}
-                      transition={{ duration: 0.2, ease: 'easeOut' }}
-                    >
-                      <PlayIcon size={14} />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.button>
-              <button
-                onClick={nextTrack}
-                aria-label="Next track"
-                className="rounded p-1 text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className="h-4 w-4"
-                >
-                  <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </motion.div>
+      <PlayerPanel
+        isOpen={isOpen}
+        direction={direction}
+        currentIndex={currentIndex}
+        currentSong={currentSong}
+        progress={progress}
+        isDragging={isDragging}
+        isPlaying={isPlaying}
+        togglePlay={togglePlay}
+        prevTrack={prevTrack}
+        nextTrack={nextTrack}
+        handleProgressDown={handleProgressDown}
+        handleProgressTouchStart={handleProgressTouchStart}
+        progressRef={progressRef}
+        audioRef={audioRef}
+      />
     </aside>
   )
 }
