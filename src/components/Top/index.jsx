@@ -1,6 +1,6 @@
 import { m } from 'motion/react'
 
-import { ReactComponent as TopIcon } from '@/assets/icons/top.svg'
+import TopIcon from '@/assets/icons/top.svg?react'
 
 const handleClick = () =>
   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })

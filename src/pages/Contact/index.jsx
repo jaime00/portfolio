@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import { CopyIcon } from '@/assets/animatedIcons/CopyIcon'
 import { MailCheckIcon } from '@/assets/animatedIcons/EmailCheckIcon'
 import { LinkedinIcon } from '@/assets/animatedIcons/LinkedinIcon'
-import { ReactComponent as WhatsappIcon } from '@/assets/icons/whatsapp.svg'
+import WhatsappIcon from '@/assets/icons/whatsapp.svg?react'
 
 import Button from '@/components/Button'
 import PageMeta from '@/components/PageMeta'

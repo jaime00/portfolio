@@ -21,7 +21,7 @@ import ProjectDetail from '@/pages/ProjectDetail'
 import Projects from '@/pages/Projects'
 
 import '@/styles/general.css'
-import '@/styles/output.css'
+import '@/styles/tailwind.css'
 
 function SkipLink() {
   const { t } = useTranslation()
