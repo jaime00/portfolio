@@ -1,4 +1,4 @@
-import { MotionConfig } from 'motion/react'
+import { LazyMotion, MotionConfig, domAnimation } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { Toaster } from 'sonner'
 import { Redirect, Route, Switch } from 'wouter'
@@ -46,62 +46,64 @@ function App() {
   }
   return (
     <MotionConfig reducedMotion="user">
-      <LanguageProvider>
-        <Toaster
-          position="bottom-center"
-          toastOptions={{
-            style: {
-              background: 'rgba(255, 255, 255, 0.8)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(20, 184, 166, 0.1)',
-              boxShadow: '0 20px 25px -5px rgba(20, 184, 166, 0.05)',
-              borderRadius: '16px',
-              color: '#1f2937'
-            },
-            className:
-              'dark:!bg-gray-800/80 dark:!text-white dark:!border-teal-400/10'
-          }}
-        />
-        <div className="min-h-screen bg-white pt-2 dark:bg-gray-800">
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999999] focus:rounded-lg focus:bg-teal-500 focus:px-4 focus:py-2 focus:text-white focus:outline-none"
-          >
-            Skip to content
-          </a>
-          <Background />
-          <NavBar changeMode={changeMode} isDark={isDarkState} />
-          <main id="main-content" className="mt-28">
-            <ScrollToTop>
-              <Switch>
-                <Route path="/">
-                  <Home isDark={isDarkState} />
-                </Route>
-                <Route path="/about">
-                  <About />
-                </Route>
-                <Route path="/side-projects">
-                  <Projects />
-                </Route>
-                <Route path="/side-projects/:slug">
-                  {(params) => <ProjectDetail slug={params.slug} />}
-                </Route>
-                <Route path="/contact">
-                  <Contact />
-                </Route>
-                <Route path="/experiences">
-                  <Experiences />
-                </Route>
-                <Route>
-                  <Redirect to="/" />
-                </Route>
-              </Switch>
-            </ScrollToTop>
-          </main>
-          <Footer />
-          <MusicPlayer />
-        </div>
-      </LanguageProvider>
+      <LazyMotion features={domAnimation}>
+        <LanguageProvider>
+          <Toaster
+            position="bottom-center"
+            toastOptions={{
+              style: {
+                background: 'rgba(255, 255, 255, 0.8)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(20, 184, 166, 0.1)',
+                boxShadow: '0 20px 25px -5px rgba(20, 184, 166, 0.05)',
+                borderRadius: '16px',
+                color: '#1f2937'
+              },
+              className:
+                'dark:!bg-gray-800/80 dark:!text-white dark:!border-teal-400/10'
+            }}
+          />
+          <div className="min-h-screen bg-white pt-2 dark:bg-gray-800">
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999999] focus:rounded-lg focus:bg-teal-500 focus:px-4 focus:py-2 focus:text-white focus:outline-none"
+            >
+              Skip to content
+            </a>
+            <Background />
+            <NavBar changeMode={changeMode} isDark={isDarkState} />
+            <main id="main-content" className="mt-28">
+              <ScrollToTop>
+                <Switch>
+                  <Route path="/">
+                    <Home isDark={isDarkState} />
+                  </Route>
+                  <Route path="/about">
+                    <About />
+                  </Route>
+                  <Route path="/side-projects">
+                    <Projects />
+                  </Route>
+                  <Route path="/side-projects/:slug">
+                    {(params) => <ProjectDetail slug={params.slug} />}
+                  </Route>
+                  <Route path="/contact">
+                    <Contact />
+                  </Route>
+                  <Route path="/experiences">
+                    <Experiences />
+                  </Route>
+                  <Route>
+                    <Redirect to="/" />
+                  </Route>
+                </Switch>
+              </ScrollToTop>
+            </main>
+            <Footer />
+            <MusicPlayer />
+          </div>
+        </LanguageProvider>
+      </LazyMotion>
     </MotionConfig>
   )
 }

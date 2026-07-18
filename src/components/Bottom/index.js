@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 const handleClick = () =>
   window.scrollTo({
@@ -8,10 +8,10 @@ const handleClick = () =>
 
 export default function Bottom() {
   return (
-    <motion.button
+    <m.button
       type="button"
       aria-label="Scroll to work experience"
-      className="flex w-full animate-bounce cursor-pointer justify-center text-gray-500"
+      className="flex w-full animate-scroll-hint cursor-pointer justify-center text-gray-500"
       onClick={handleClick}
       whileTap={{ scale: 0.9 }}
       transition={{ type: 'spring', stiffness: 400, damping: 17 }}
@@ -31,6 +31,6 @@ export default function Bottom() {
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M9 20v-8h-3.586a1 1 0 0 1 -.707 -1.707l6.586 -6.586a1 1 0 0 1 1.414 0l6.586 6.586a1 1 0 0 1 -.707 1.707h-3.586v8a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
       </svg>
-    </motion.button>
+    </m.button>
   )
 }
