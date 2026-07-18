@@ -18,7 +18,7 @@ export default function AnimatedCounter({ target, duration = 1200 }) {
 
   return (
     <span
-      className="inline-block text-center font-bold"
+      className="inline-block text-center"
       style={{ width: `${String(target).length}ch` }}
     >
       <motion.span

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#14b8a6" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- SEO -->
+    <title>Jaime Torres — Frontend Developer</title>
+    <meta
+      name="description"
+      content="Frontend Developer and Tech Lead specializing in React, TypeScript, and scalable web applications. Explore my portfolio, projects, and work experience."
+    />
+    <link rel="canonical" href="https://jaimetorresv.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jaimetorresv.com/" />
+    <meta property="og:title" content="Jaime Torres — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Frontend Developer and Tech Lead specializing in React, TypeScript, and scalable web applications."
+    />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/personal-jaime00/image/upload/c_fill,w_1200,h_630,f_auto,q_auto/v1782597546/projects/portfolio/profile_image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jaime Torres — Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend Developer and Tech Lead specializing in React, TypeScript, and scalable web applications."
+    />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/personal-jaime00/image/upload/c_fill,w_1200,h_630,f_auto,q_auto/v1782597546/projects/portfolio/profile_image.jpg"
+    />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jaime Torres",
+        "url": "https://jaimetorresv.com",
+        "jobTitle": "Frontend Developer",
+        "sameAs": [
+          "https://github.com/jaime00",
+          "https://linkedin.com/in/jaimetorresv"
+        ]
+      }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ruslan+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preload: above-the-fold images (hero + navbar) -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597482/projects/portfolio/realCharacter.png"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597423/projects/portfolio/person-head.png"
+    />
+    <!-- Prefetch: other pages (low priority, loaded during idle) -->
+    <link
+      rel="prefetch"
+      as="image"
+      href="https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597333/projects/portfolio/characterSit.png"
+    />
+    <link
+      rel="prefetch"
+      as="image"
+      href="https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597546/projects/portfolio/profile_image.jpg"
+    />
+    <link
+      rel="prefetch"
+      as="image"
+      href="https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png"
+    />
+    <link
+      rel="prefetch"
+      as="image"
+      href="https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597712/projects/portfolio/projects/eazy-git/preview-en.png"
+    />
+    <link
+      rel="prefetch"
+      as="image"
+      href="https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597713/projects/portfolio/projects/eazy-git/preview-es.png"
+    />
+    <link
+      rel="prefetch"
+      as="image"
+      href="https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png"
+    />
+    <style>
+      html,
+      body,
+      #root {
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      function toggleThemeAtHTMLClasses(isDark) {
+        if (isDark) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      }
+      function handleSetTheme() {
+        // Check if the user has set a theme preference
+        const isDarkTheme = localStorage?.isDark
+          ? JSON.parse(localStorage?.isDark)
+          : undefined
+        if (typeof isDarkTheme === 'boolean') {
+          toggleThemeAtHTMLClasses(isDarkTheme)
+          return
+        }
+
+        // Check if the user has a system preference
+        const mql = window.matchMedia('(prefers-color-scheme: dark)')
+        const hasMediaQueryPreference =
+          window.matchMedia && typeof mql.matches === 'boolean'
+
+        if (hasMediaQueryPreference) {
+          localStorage.isDark = mql.matches
+          toggleThemeAtHTMLClasses(mql.matches)
+          return
+        }
+        localStorage.isDark = false
+        toggleThemeAtHTMLClasses(false)
+      }
+      handleSetTheme()
+    </script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>

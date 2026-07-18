@@ -10,8 +10,9 @@
 
 # production
 /build
+/dist
 
-# generated CSS (rebuilt by watch:css / prestart / build)
+# generated CSS (rebuilt at dev/build time by Vite+PostCSS)
 /src/styles/output.css
 
 # misc
