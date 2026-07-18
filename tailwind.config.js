@@ -59,6 +59,10 @@ module.exports = {
           '20%': { opacity: '0.5' },
           '80%': { opacity: '0.5' },
           '100%': { transform: 'translateY(-30px)', opacity: '0' }
+        },
+        'scroll-hint': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-6px)' }
         }
       },
       animation: {
@@ -66,7 +70,8 @@ module.exports = {
         fade: 'fade-in-keyframe 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'aurora-slow': 'aurora-drift-1 18s ease-in-out infinite',
         'aurora-slower': 'aurora-drift-2 26s ease-in-out infinite',
-        particle: 'particle-float 12s ease-in-out infinite'
+        particle: 'particle-float 12s ease-in-out infinite',
+        'scroll-hint': 'scroll-hint 2s ease-in-out infinite'
       },
       scale: {
         103: '1.03'
