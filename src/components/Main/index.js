@@ -10,11 +10,21 @@ export default function Main({ isDark }) {
     <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto flex h-[83vh] max-w-6xl flex-col justify-center px-4 font-sans">
       <div className="container mx-auto flex flex-col flex-wrap gap-6">
         <Presentation />
-        <div className="my-5 space-y-6 md:space-x-4 md:space-y-0">
-          <Button isDark={true} to="/contact" magnetic>
+        <div className="my-5 flex gap-3">
+          <Button
+            isDark={true}
+            to="/contact"
+            magnetic
+            wrapperClassName="flex-1 md:flex-none"
+          >
             {t('home.contactMe')}
           </Button>
-          <Button isDark={false} to="/about" magnetic>
+          <Button
+            isDark={false}
+            to="/about"
+            magnetic
+            wrapperClassName="flex-1 md:flex-none"
+          >
             {t('home.moreAboutMe')}
           </Button>
         </div>

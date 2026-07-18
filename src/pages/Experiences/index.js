@@ -32,7 +32,7 @@ export default function Experiences() {
           />
         }
       />
-      <div className="xxs:py-20 mt-14 flex flex-col justify-center gap-16 px-10">
+      <div className="xxs:py-20 mt-14 flex flex-col justify-center gap-16 px-5 min-445:px-10">
         {experiences.map((experience, index) => (
           <motion.div
             key={index}
