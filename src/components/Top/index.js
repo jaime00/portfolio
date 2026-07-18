@@ -2,9 +2,10 @@ import { motion } from 'motion/react'
 
 import { ReactComponent as TopIcon } from '@/assets/icons/top.svg'
 
+const handleClick = () =>
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+
 export default function Top() {
-  const handleClick = () =>
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   return (
     <motion.button
       type="button"

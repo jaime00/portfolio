@@ -27,9 +27,9 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 
 **i18n:** Custom context-based system in `src/i18n/`. `LanguageProvider` wraps the app (in `App.js`) and exposes `useTranslation()` → `{ language, t, changeLanguage }`. UI strings live in `src/i18n/en.json` and `src/i18n/es.json`; use dot-notation keys with `t('section.key')`. Content data in `dataSite.json` is keyed by language (`projects.en`, `projects.es`); service functions accept a `lang` parameter. Language is auto-detected from browser and persisted in localStorage.
 
-**Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList using the View Transition API (`document.startViewTransition`). Falls back gracefully on Safari (no View Transition). State lives in `App.js` (`isDarkState`) and is passed as `isDark` prop only to `<Home>` and `<NavBar>`. Persisted in `localStorage.isDark`. Use Tailwind's `dark:` prefix for dark variants.
+**Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList using the View Transition API (`document.startViewTransition`). Falls back gracefully on Safari (no View Transition). State lives in `App.js` (`isDarkState`) and is passed as `isDark` prop only to `<Home>` and `<NavBar>`. Any other component that needs the current dark mode value should use the `useDarkMode()` hook (`src/hooks/useDarkMode.js`), which observes `<html>` class changes via MutationObserver. Persisted in `localStorage.isDark`. Use Tailwind's `dark:` prefix for dark variants.
 
-**Animations:** Import from `motion/react` (not `framer-motion`). Example: `import { motion, AnimatePresence } from 'motion/react'`.
+**Animations:** Import from `motion/react` (not `framer-motion`). Example: `import { motion, AnimatePresence } from 'motion/react'`. Shared animation primitives live in `src/animations/index.js` — exports `EASE_OUT_EXPO`, `VIEWPORT_ONCE`, `staggerContainerVariants`, `staggerItemVariants`, and `floatVariants`. Always import from there instead of redefining these values inline.
 
 **Toasts:** Sonner is used for toast notifications.
 
@@ -43,13 +43,13 @@ React 19 portfolio site using CRA + Craco, Wouter routing, Tailwind CSS, and Mot
 
 **Reading time:** `getReadingTime(sections)` in `src/components/CaseStudy/readingTime.js` estimates reading time (minutes) from a case study's sections array by counting words across `title`, `text`, `footer`, `items`, and `commands` fields.
 
-**Motion config:** `<MotionConfig reducedMotion="never">` in `App.js` intentionally ignores the OS reduced-motion preference so all animations always play.
+**Motion config:** `<MotionConfig reducedMotion="user">` in `App.js` respects the OS reduced-motion preference (WCAG 2.3.3). Animations play normally unless the user has enabled "Reduce Motion" in their OS settings.
 
 ## Key Conventions
 
 - **Tailwind-first styling.** Never edit `src/styles/output.css` directly — it's generated. Modify `src/styles/tailwind.css` or `tailwind.config.js` and regenerate with `npm run watch:css`.
 - **Custom CSS** (fonts, scrollbars, gradients) lives in `src/styles/general.css`.
-- **Component structure:** One folder per component with `index.js` barrel export. The only `.jsx` file is `CarouselOfTechnologies`.
+- **Component structure:** One folder per component with `index.js` barrel export. Exceptions: `CarouselOfTechnologies/index.jsx` and `ShinyText.jsx` (flat file, no folder).
 - **Images:** Project previews hosted on Cloudinary. Local assets in `src/assets/`. Lazy-loaded with Lozad (`.lozad` class).
 - **Public static assets:** Music files in `public/songs/`, album covers in `public/covers/`, vinyl image at `public/vinyl.png`.
 - **localStorage keys in use:** `isDark`, `language`, `music-index`, `music-time`, `music-playing`.
