@@ -32,8 +32,11 @@ export default function Presentation() {
     <div className="relative mb-5 mt-12 grid grid-cols-1 items-center text-center md:mt-24 md:grid-cols-6 md:text-left">
       <div className="col-span-5 mx-2">
         <p className="mb-5 flex items-center gap-3 text-left text-lg font-medium text-gray-500 dark:text-gray-400">
-          <span className="inline-flex text-gray-500 transition-all duration-300 hover:rotate-12 hover:scale-125 hover:text-teal-500 hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.5)] dark:text-gray-400">
-            <FolderCodeIcon size={22} />
+          <span className="group inline-flex text-gray-500 transition-all duration-300 hover:rotate-12 hover:scale-125 hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.5)] dark:text-gray-400">
+            <FolderCodeIcon
+              className="transition-colors duration-300 group-hover:text-teal-500"
+              size={22}
+            />
           </span>
           <span>
             {t('home.yearsExperienceBefore')}{' '}

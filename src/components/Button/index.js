@@ -16,6 +16,7 @@ export default function Button({
   openUrl = null,
   onClick = null,
   className = '',
+  wrapperClassName = '',
   ariaLabel = 'button',
   size = 'default',
   onMouseLeave = null,
@@ -85,7 +86,7 @@ export default function Button({
   if (magnetic) {
     return (
       <motion.span
-        className="inline-block"
+        className={`inline-block ${wrapperClassName}`}
         style={magneticStyle}
         onMouseMove={onMagMouseMove}
         onMouseLeave={onMagMouseLeave}
