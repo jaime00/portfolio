@@ -4,7 +4,7 @@ import Presentation from '@/components/Presentation'
 
 import { useTranslation } from '@/i18n'
 
-export default function Main({ isDark }) {
+export default function Main() {
   const { t } = useTranslation()
   return (
     <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto flex h-[83vh] max-w-6xl flex-col justify-center px-4 font-sans">
@@ -28,7 +28,7 @@ export default function Main({ isDark }) {
             {t('home.moreAboutMe')}
           </Button>
         </div>
-        <CarouselOfTechnologies isDark={isDark} />
+        <CarouselOfTechnologies />
       </div>
     </div>
   )

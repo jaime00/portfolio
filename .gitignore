@@ -11,6 +11,9 @@
 # production
 /build
 
+# generated CSS (rebuilt by watch:css / prestart / build)
+/src/styles/output.css
+
 # misc
 .DS_Store
 .env.local

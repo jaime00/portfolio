@@ -1,4 +1,5 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
+import useDarkMode from '@/contexts/DarkMode'
 import { motion } from 'motion/react'
 import { useRef } from 'react'
 import { BundlephobiaWidget } from 'smooth-components'
@@ -14,8 +15,6 @@ import { GitMergeIcon } from '@/assets/animatedIcons/GitMergeIcon'
 
 import ShinyText from '@/components/ShinyText'
 
-import useDarkMode from '@/hooks/useDarkMode'
-
 import { useTranslation } from '@/i18n'
 
 import { getReadingTime } from './readingTime'
@@ -29,7 +28,7 @@ const SLUG_ICONS = {
 
 export default function HeroBanner({ project }) {
   const { t } = useTranslation()
-  const isDark = useDarkMode()
+  const { isDark } = useDarkMode()
   const arrowRef = useRef(null)
   const backRef = useRef(null)
   const eyeRef = useRef(null)

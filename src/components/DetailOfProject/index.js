@@ -40,7 +40,7 @@ export default function DetailOfProject({
           {urlCode && (
             <GoToOption
               url={urlCode}
-              title="Code"
+              title={t('common.code')}
               icon={<FolderCodeIcon size={25} />}
               id={id + 2}
             />

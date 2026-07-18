@@ -13,7 +13,7 @@ import { useTranslation } from '@/i18n'
 const image_profile =
   'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597423/projects/portfolio/person-head.png'
 
-export default function NavBar({ changeMode, isDark }) {
+export default function NavBar() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [location] = useLocation()
@@ -61,14 +61,14 @@ export default function NavBar({ changeMode, isDark }) {
         {/* Actions */}
         <div className="flex shrink-0 items-center gap-2">
           <LanguageSelector />
-          <ButtonDarkMode changeMode={changeMode} isDark={isDark} />
+          <ButtonDarkMode />
           <button
             onClick={() => setMenuIsOpen(!menuIsOpen)}
             data-collapse-toggle="navbar"
             type="button"
-            className={`general-ring-state ml-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 md:hidden ${menuIsOpen ? 'pointer-events-none opacity-0' : ''}`}
+            className={`general-ring-state ml-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 md:hidden ${menuIsOpen ? 'invisible pointer-events-none' : ''}`}
             aria-expanded={menuIsOpen}
-            aria-label="Open menu"
+            aria-label={t('nav.menu')}
           >
             <span className="sr-only">Menu</span>
             <svg

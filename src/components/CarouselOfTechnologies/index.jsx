@@ -1,4 +1,4 @@
-import React from 'react'
+import useDarkMode from '@/contexts/DarkMode'
 
 import angularIcon from '@/assets/icons/angular.png'
 import javascriptIcon from '@/assets/icons/js.png'
@@ -7,31 +7,7 @@ import reactIcon from '@/assets/icons/react.png'
 import svelteIcon from '@/assets/icons/svelte.png'
 import typescriptIcon from '@/assets/icons/ts.png'
 
-const technologies = [
-  { src: reactIcon, alt: 'React Logo' },
-  { src: nextIcon, alt: 'Next.js Logo' },
-  { src: svelteIcon, alt: 'Svelte Logo' },
-  { src: typescriptIcon, alt: 'TypeScript Logo' },
-  { src: angularIcon, alt: 'Angular Logo' },
-  { src: javascriptIcon, alt: 'JavaScript Logo' },
-  { src: reactIcon, alt: 'React Logo' },
-  { src: nextIcon, alt: 'Next.js Logo' },
-  { src: svelteIcon, alt: 'Svelte Logo' },
-  { src: typescriptIcon, alt: 'TypeScript Logo' },
-  { src: angularIcon, alt: 'Angular Logo' },
-  { src: javascriptIcon, alt: 'JavaScript Logo' },
-  { src: reactIcon, alt: 'React Logo' },
-  { src: nextIcon, alt: 'Next.js Logo' },
-  { src: svelteIcon, alt: 'Svelte Logo' },
-  { src: typescriptIcon, alt: 'TypeScript Logo' },
-  { src: angularIcon, alt: 'Angular Logo' },
-  { src: javascriptIcon, alt: 'JavaScript Logo' },
-  { src: reactIcon, alt: 'React Logo' },
-  { src: nextIcon, alt: 'Next.js Logo' },
-  { src: svelteIcon, alt: 'Svelte Logo' },
-  { src: typescriptIcon, alt: 'TypeScript Logo' },
-  { src: angularIcon, alt: 'Angular Logo' },
-  { src: javascriptIcon, alt: 'JavaScript Logo' },
+const BASE_TECHNOLOGIES = [
   { src: reactIcon, alt: 'React Logo' },
   { src: nextIcon, alt: 'Next.js Logo' },
   { src: svelteIcon, alt: 'Svelte Logo' },
@@ -40,7 +16,11 @@ const technologies = [
   { src: javascriptIcon, alt: 'JavaScript Logo' }
 ]
 
-export default function CarouselOfTechnologies({ isDark }) {
+// Repeated ×5 to create an infinite-loop carousel
+const technologies = Array.from({ length: 5 }).flatMap(() => BASE_TECHNOLOGIES)
+
+export default function CarouselOfTechnologies() {
+  const { isDark } = useDarkMode()
   return (
     <div
       className={`font-lato carousel-pause relative mx-auto my-6 flex w-2/4 select-none items-center justify-center overflow-hidden rounded-md text-lg leading-6 before:left-0 before:bg-gradient-to-r ${

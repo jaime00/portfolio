@@ -631,5 +631,61 @@
   "curriculum_url": {
     "en": "https://drive.google.com/file/d/1YgUDvF8YuMmno4bnjNty4UVkXvQ4wO_X/view",
     "es": "https://drive.google.com/file/d/1GI3gn-VGuD7ON30FA5qwRAV80LOOhrhK/view?usp=sharing"
-  }
+  },
+  "playlist": [
+    {
+      "title": "I'm in Love",
+      "artist": "Tomoko Aran",
+      "url": "https://res.cloudinary.com/personal-jaime00/video/upload/v1784408683/projects/portfolio/music/I_m_in_Love.mp3",
+      "cover": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784408957/projects/portfolio/music_covers/cover-im-in-love.jpg"
+    },
+    {
+      "title": "Last Summer Whisper",
+      "artist": "Anri",
+      "url": "https://res.cloudinary.com/personal-jaime00/video/upload/v1784408681/projects/portfolio/music/Last_Summer_Whisper.mp3",
+      "cover": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784408956/projects/portfolio/music_covers/cover-last-summer-whisper.jpg"
+    },
+    {
+      "title": "Mayonaka no Door / Stay With Me",
+      "artist": "Miki Matsubara",
+      "url": "https://res.cloudinary.com/personal-jaime00/video/upload/v1784408682/projects/portfolio/music/Mayonaka_no_Door___Stay_With_Me.mp3",
+      "cover": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784408958/projects/portfolio/music_covers/cover-mayonaka-no-door.jpg"
+    },
+    {
+      "title": "Midnight Pretenders",
+      "artist": "Tomoko Aran",
+      "url": "https://res.cloudinary.com/personal-jaime00/video/upload/v1784408683/projects/portfolio/music/Midnight_Pretenders.mp3",
+      "cover": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784408961/projects/portfolio/music_covers/cover-midnight-pretenders.jpg"
+    },
+    {
+      "title": "Resort For Blue",
+      "artist": "Makoto Matsushita",
+      "url": "https://res.cloudinary.com/personal-jaime00/video/upload/v1784408679/projects/portfolio/music/Resort_For_Blue_-_2018_Remaster.mp3",
+      "cover": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784408960/projects/portfolio/music_covers/cover-resort-for-blue.jpg"
+    },
+    {
+      "title": "メカファイター '87",
+      "artist": "EVADE FROM 宇宙",
+      "url": "https://res.cloudinary.com/personal-jaime00/video/upload/v1784408680/projects/portfolio/music/%E3%83%A1%E3%82%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%82%BF%E3%83%BC_87.mp3",
+      "cover": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784408959/projects/portfolio/music_covers/cover-mecha-fighter.jpg"
+    },
+    {
+      "title": "High Heel (Non Stop Mix)",
+      "artist": "Kaoru Akimoto",
+      "url": "https://res.cloudinary.com/personal-jaime00/video/upload/v1784408680/projects/portfolio/music/%E6%88%91%E3%81%8B%E3%82%99%E3%81%BE%E3%81%BE%E3%81%AA%E3%83%8F%E3%82%A4%E3%83%92%E3%83%BC%E3%83%AB_-_Non_Stop_Mix_ver.mp3",
+      "cover": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784408955/projects/portfolio/music_covers/cover-high-heel.jpg"
+    },
+    {
+      "title": "Midnight Joke",
+      "artist": "Takako Mamiya",
+      "url": "https://res.cloudinary.com/personal-jaime00/video/upload/v1784408684/projects/portfolio/music/%E7%9C%9F%E5%A4%9C%E4%B8%AD%E3%81%AE%E3%82%B7%E3%82%99%E3%83%A7%E3%83%BC%E3%82%AF.mp3",
+      "cover": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784408962/projects/portfolio/music_covers/cover-midnight-joke.jpg"
+    },
+    {
+      "title": "Twilight BAY CITY",
+      "artist": "Junko Yagami",
+      "url": "https://res.cloudinary.com/personal-jaime00/video/upload/v1784408680/projects/portfolio/music/%E9%BB%84%E6%98%8F%E3%81%AEBAY_CITY.mp3",
+      "cover": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784408963/projects/portfolio/music_covers/cover-twilight-bay-city.jpg"
+    }
+  ]
 }

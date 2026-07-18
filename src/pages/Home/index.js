@@ -1,14 +1,18 @@
 import Bottom from '@/components/Bottom'
 import Main from '@/components/Main'
+import PageMeta from '@/components/PageMeta'
 import SectionProjects from '@/components/SectionProjects'
 import WorkExperience from '@/components/WorkExperience'
 
-export default function Home({ isDark }) {
+export default function Home() {
   return (
     <div className="animate-fade">
+      <PageMeta
+        titleKey="meta.home.title"
+        descriptionKey="meta.home.description"
+      />
       <div>
-        <Main isDark={isDark} />
-        {/* <Separator /> */}
+        <Main />
         <Bottom />
         <div
           id="work-experience-container"

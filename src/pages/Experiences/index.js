@@ -1,12 +1,12 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
+import useDarkMode from '@/contexts/DarkMode'
 import { motion } from 'motion/react'
 
 import ExperienceDescription from '@/components/ExperienceDescription'
 import ExperienceLogo from '@/components/ExperienceLogo'
+import PageMeta from '@/components/PageMeta'
 import ShinyText from '@/components/ShinyText'
 import Titles from '@/components/Titles'
-
-import useDarkMode from '@/hooks/useDarkMode'
 
 import { useTranslation } from '@/i18n'
 
@@ -14,11 +14,15 @@ import { getExperiences, getWorkExperience } from '@/services'
 
 export default function Experiences() {
   const { t, language } = useTranslation()
-  const isDark = useDarkMode()
+  const { isDark } = useDarkMode()
   const experiences = getExperiences(language)
   const workExperiences = getWorkExperience({ lang: language })
   return (
-    <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto mb-5 mt-8 max-w-6xl animate-fade flex-col justify-center px-4 font-sans dark:text-white">
+    <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto mb-5 mt-8 max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
+      <PageMeta
+        titleKey="meta.experiences.title"
+        descriptionKey="meta.experiences.description"
+      />
       <Titles
         className="text-center"
         title={t('experiences.title')}
