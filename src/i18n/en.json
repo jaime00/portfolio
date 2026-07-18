@@ -4,7 +4,9 @@
     "about": "About",
     "projects": "Projects",
     "experiences": "Experiences",
-    "contact": "Contact"
+    "contact": "Contact",
+    "skipToContent": "Skip to content",
+    "code": "Code"
   },
   "nav": {
     "menu": "Menu",
@@ -36,7 +38,7 @@
     "yearsExperienceAfter": "years of experience adding value to business processes in the commercial and public service sectors.",
     "technicalLead": "Tech Lead",
     "careerDescription": "Implementing functional, scalable and reusable code solutions throughout my career, aligned with user needs and business goals. In addition to technically coordinating and mentoring a development team in their day-to-day activities, careers and technical growth.",
-    "technologies": "Experience and advanced knowledge in technologies such as <b><em>React JS</em></b>, <b><em>Next JS</em></b>, <b><em>Stencil JS</em></b>, <b><em>Typescript</em></b>, <b><em>Web Components</em></b>, <b><em>Framer Motion</em></b>, <b><em>Micro Frontends</em></b>, <b><em>GraphQL</em></b>, version control with <b><em>Git</em></b>, design patterns, <b><em>SOLID</em></b> and <b><em>Clean Code</em></b> principles, management of agile work methodologies such as <b><em>SCRUM</em></b> and <b><em>Kanban</em></b>.",
+    "technologies": "Experience and advanced knowledge in technologies such as **React JS**, **Next JS**, **Stencil JS**, **Typescript**, **Web Components**, **Framer Motion**, **Micro Frontends**, **GraphQL**, version control with **Git**, design patterns, **SOLID** and **Clean Code** principles, management of agile work methodologies such as **SCRUM** and **Kanban**.",
     "skills": "Skills in problem solving, teamwork, learning ability and adaptability to different environments. Lover of great challenges and with a great investigative character.",
     "findMe": "If you want to know a little more you can find me on [**Linkedin**](https://linkedin.com/in/jaimetorresv) and take a look at my open source projects. [**Github**](https://github.com/jaime00)"
   },
@@ -53,7 +55,8 @@
     "title": "Contact",
     "subtitle": "Interested in my work?",
     "question": "Do you have any questions, proposals, or projects in mind? Would you like to work together? Don't hesitate to contact me.",
-    "emailCopied": "Email copied to clipboard!"
+    "emailCopied": "Copied!",
+    "copyEmailLabel": "Copy email"
   },
   "footer": {
     "general": "General",
@@ -75,5 +78,39 @@
   "languages": {
     "spanish": "Español",
     "english": "English"
+  },
+  "a11y": {
+    "enableDarkMode": "Enable dark mode",
+    "disableDarkMode": "Disable dark mode"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "The page you're looking for doesn't exist.",
+    "back": "Go home"
+  },
+  "meta": {
+    "home": {
+      "title": "Jaime Torres — Frontend Developer",
+      "description": "Frontend Developer and Tech Lead specializing in React, TypeScript, and scalable web applications."
+    },
+    "about": {
+      "title": "About — Jaime Torres",
+      "description": "Systems Engineer and Frontend Developer with years of experience building scalable, reusable web applications."
+    },
+    "projects": {
+      "title": "Projects — Jaime Torres",
+      "description": "A curated selection of Jaime Torres's favorite side projects and open source work."
+    },
+    "experiences": {
+      "title": "Experiences — Jaime Torres",
+      "description": "Key moments and companies in Jaime Torres's professional career."
+    },
+    "contact": {
+      "title": "Contact — Jaime Torres",
+      "description": "Get in touch with Jaime Torres for projects, proposals, or just to say hello."
+    },
+    "notFound": {
+      "title": "404 — Page Not Found"
+    }
   }
 }

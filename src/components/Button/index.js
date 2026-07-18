@@ -51,18 +51,19 @@ export default function Button({
 
   if (openUrl) {
     return (
-      <motion.button
+      <motion.a
         aria-label={ariaLabel}
-        type="button"
+        href={openUrl}
+        target="_blank"
+        rel="noreferrer"
         className={classes}
-        onClick={() => window.open(openUrl)}
         style={magneticStyle}
         onMouseMove={onMagMouseMove}
         onMouseLeave={onMagMouseLeave}
         {...tapAndHover}
       >
         {children}
-      </motion.button>
+      </motion.a>
     )
   }
 

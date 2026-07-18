@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ruslan+Display&display=swap');
-
 body {
   scroll-behavior: smooth;
 }
@@ -141,6 +139,18 @@ html.dark::view-transition-old(root) {
 
 .link-underline:hover {
   background-size: 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-carousel-item,
+  .animate-ambient-glow {
+    animation: none;
+  }
+
+  ::view-transition-new(root),
+  ::view-transition-old(root) {
+    animation: none;
+  }
 }
 
 :root {

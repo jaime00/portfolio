@@ -17,7 +17,7 @@ export default function ProjectDetail({ slug }) {
   }
 
   return (
-    <div className="relative mx-auto mb-5 mt-8 flex max-w-6xl animate-fade flex-col justify-center px-4 font-sans dark:text-white">
+    <div className="relative mx-auto mb-5 mt-8 flex max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
       <ReadingProgress />
       <CaseStudy project={project} adjacentProjects={adjacentProjects} />
     </div>

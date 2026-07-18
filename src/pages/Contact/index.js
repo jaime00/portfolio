@@ -1,7 +1,7 @@
 import { floatVariants } from '@/animations'
+import useDarkMode from '@/contexts/DarkMode'
 import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
-import { toast } from 'sonner'
 
 import { CopyIcon } from '@/assets/animatedIcons/CopyIcon'
 import { MailCheckIcon } from '@/assets/animatedIcons/EmailCheckIcon'
@@ -9,10 +9,9 @@ import { LinkedinIcon } from '@/assets/animatedIcons/LinkedinIcon'
 import { ReactComponent as WhatsappIcon } from '@/assets/icons/whatsapp.svg'
 
 import Button from '@/components/Button'
+import PageMeta from '@/components/PageMeta'
 import ShinyText from '@/components/ShinyText'
 import Titles from '@/components/Titles'
-
-import useDarkMode from '@/hooks/useDarkMode'
 
 import { useTranslation } from '@/i18n'
 
@@ -33,7 +32,7 @@ const characterVariants = {
 
 export default function Contact() {
   const { t } = useTranslation()
-  const isDark = useDarkMode()
+  const { isDark } = useDarkMode()
   const [copied, setCopied] = useState(false)
   const resetTimerRef = useRef(null)
 
@@ -43,35 +42,11 @@ export default function Contact() {
     return () => clearTimeout(resetTimerRef.current)
   }, [])
 
-  const CopiedIcon = () => (
-    <motion.svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-5 w-5 text-teal-500"
-      initial={{ scale: 0, rotate: -90 }}
-      animate={{ scale: 1, rotate: 0 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-    >
-      <motion.path
-        d="M20 6 9 17l-5-5"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{ duration: 0.4, delay: 0.2, ease: 'easeOut' }}
-      />
-    </motion.svg>
-  )
-
   const handleCopyEmail = () => {
     navigator.clipboard
       .writeText(email)
       .then(() => {
         setCopied(true)
-        toast(t('contact.emailCopied'), { icon: <CopiedIcon /> })
         clearTimeout(resetTimerRef.current)
         resetTimerRef.current = setTimeout(() => setCopied(false), 2000)
       })
@@ -106,7 +81,7 @@ export default function Contact() {
           )}
         </AnimatePresence>
       ),
-      label: 'Copy email'
+      label: t('contact.copyEmailLabel')
     },
     {
       openUrl: 'https://linkedin.com/in/jaimetorresv',
@@ -121,7 +96,11 @@ export default function Contact() {
   ]
 
   return (
-    <div className="relative mx-auto mb-5 mt-8 flex min-h-[calc(100vh-20rem)] max-w-6xl animate-fade flex-col justify-center px-4 font-sans dark:text-white">
+    <div className="relative mx-auto mb-5 mt-8 flex min-h-[calc(100vh-20rem)] max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
+      <PageMeta
+        titleKey="meta.contact.title"
+        descriptionKey="meta.contact.description"
+      />
       <Titles
         className="float-left"
         title={t('contact.title')}
@@ -153,13 +132,25 @@ export default function Contact() {
             ))}
           </div>
           <p className="mt-8 text-center text-gray-500 dark:text-gray-400">
-            <button
-              type="button"
-              onClick={handleCopyEmail}
-              className="cursor-pointer transition-colors hover:text-teal-600 dark:hover:text-teal-400"
-            >
-              {email}
-            </button>
+            <span className="relative inline-block">
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="cursor-pointer transition-colors hover:text-teal-600 dark:hover:text-teal-400"
+              >
+                {email}
+              </button>
+              <span
+                className={`pointer-events-none absolute top-full left-1/2 mt-2 -translate-x-1/2 transition-all duration-150 ${copied ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
+              >
+                <span className="relative flex items-center rounded-lg border border-white/10 bg-neutral-900 px-3 py-2 whitespace-nowrap shadow-[0_8px_24px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]">
+                  <span className="text-xs leading-none font-medium text-white/80">
+                    {t('contact.emailCopied')}
+                  </span>
+                  <span className="absolute -top-[5px] left-1/2 h-2.5 w-2.5 -translate-x-1/2 rotate-45 border-t border-l border-white/10 bg-neutral-900" />
+                </span>
+              </span>
+            </span>
           </p>
         </div>
         <div className="col-span-2 mt-10 hidden pb-8 md:flex md:justify-center">

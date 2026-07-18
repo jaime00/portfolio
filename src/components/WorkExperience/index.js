@@ -48,7 +48,7 @@ export default function WorkExperience() {
             key={i}
             variants={staggerItemVariants}
           >
-            <span className="gover-hover:underline flex-none text-lg font-normal text-gray-800 dark:text-white">
+            <span className="group-hover:underline flex-none text-lg font-normal text-gray-800 dark:text-white">
               {company}
             </span>
             <motion.span

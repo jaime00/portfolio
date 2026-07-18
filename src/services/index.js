@@ -40,6 +40,7 @@ const parseMonthYear = (dateStr) => {
 }
 
 const getYearsOfExperience = () => {
+  // Always use .en because parseMonthYear relies on English month names (e.g. "January 2020")
   const jobs = DataSite.work_experience.en
   const intervals = jobs.map((job) => {
     const start = parseMonthYear(job.year_initial)
@@ -70,19 +71,17 @@ const getYearsOfExperience = () => {
   return Math.floor(totalMonths / 12)
 }
 
-const getStyleButton = ({ isDark, size } = {}) => {
-  if (size === 'icon') {
-    const base =
-      'flex h-[65px] w-[65px] items-center justify-center rounded-full p-[15px] font-medium text-sm transition-all'
-    if (isDark)
-      return `${base} bg-gradient-to-r from-teal-500 to-teal-400 text-white shadow-md shadow-teal-500/20 hover:shadow-lg hover:shadow-teal-500/25 hover:brightness-105 dark:from-teal-400 dark:to-emerald-400 dark:shadow-teal-400/10 dark:text-gray-900`
-    return `${base} bg-gray-200 text-gray-900 hover:ring-4 hover:ring-teal-500/30 dark:bg-gray-900 dark:text-white dark:hover:ring-teal-400/30`
-  }
+const GRADIENT_CLASSES =
+  'bg-gradient-to-r from-teal-500 to-teal-400 text-white shadow-md shadow-teal-500/20 hover:shadow-lg hover:shadow-teal-500/25 hover:brightness-105 dark:from-teal-400 dark:to-emerald-400 dark:shadow-teal-400/10 dark:text-gray-900'
+const NEUTRAL_CLASSES =
+  'bg-gray-200 text-gray-900 hover:ring-4 hover:ring-teal-500/30 dark:bg-gray-900 dark:text-white dark:hover:ring-teal-400/30'
 
-  const base = `text-sm md:text-xl md:w-auto md:inline-flex py-3 px-2 md:px-12 rounded-full w-full items-center justify-center font-medium text-center mr-2 transition-all`
-  if (isDark)
-    return `${base} bg-gradient-to-r from-teal-500 to-teal-400 text-white shadow-md shadow-teal-500/20 hover:shadow-lg hover:shadow-teal-500/25 hover:brightness-105 dark:from-teal-400 dark:to-emerald-400 dark:shadow-teal-400/10 dark:text-gray-900`
-  return `${base} bg-gray-200 text-gray-900 hover:ring-4 hover:ring-teal-500/30 dark:bg-gray-900 dark:text-white dark:hover:ring-teal-400/30`
+const getStyleButton = ({ isDark, size } = {}) => {
+  const base =
+    size === 'icon'
+      ? 'flex h-[65px] w-[65px] items-center justify-center rounded-full p-[15px] font-medium text-sm transition-all'
+      : 'text-sm md:text-xl md:w-auto md:inline-flex py-3 px-2 md:px-12 rounded-full w-full items-center justify-center font-medium text-center mr-2 transition-all'
+  return `${base} ${isDark ? GRADIENT_CLASSES : NEUTRAL_CLASSES}`
 }
 
 const getProjectBySlug = (slug, lang = 'en') => {
@@ -100,6 +99,8 @@ const getAdjacentProjects = (slug, lang = 'en') => {
   }
 }
 
+const getPlaylist = () => DataSite.playlist
+
 export {
   getProjects,
   getExperiences,
@@ -108,5 +109,6 @@ export {
   getStyleButton,
   getYearsOfExperience,
   getProjectBySlug,
-  getAdjacentProjects
+  getAdjacentProjects,
+  getPlaylist
 }

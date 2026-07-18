@@ -9,12 +9,12 @@ const LanguageContext = createContext()
 
 const getBrowserLanguage = () => {
   const browserLang = navigator.language || navigator.userLanguage
-  return browserLang.startsWith('ES') ? 'es' : 'en'
+  return browserLang.toLowerCase().startsWith('es') ? 'es' : 'en'
 }
 
 const getInitialLanguage = () => {
   const stored = localStorage.getItem('language')
-  if (stored) return stored
+  if (stored && translations[stored]) return stored
   return getBrowserLanguage()
 }
 

@@ -4,62 +4,9 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { PauseIcon } from '@/assets/animatedIcons/PauseIcon'
 import { PlayIcon } from '@/assets/animatedIcons/PlayIcon'
 
-const playlist = [
-  {
-    title: "I'm in Love",
-    artist: 'Tomoko Aran',
-    file: "I'm in Love.mp3",
-    cover: '/covers/cover-im-in-love.jpg'
-  },
-  {
-    title: 'Last Summer Whisper',
-    artist: 'Anri',
-    file: 'Last Summer Whisper.mp3',
-    cover: '/covers/cover-last-summer-whisper.jpg'
-  },
-  {
-    title: 'Mayonaka no Door / Stay With Me',
-    artist: 'Miki Matsubara',
-    file: 'Mayonaka no Door _ Stay With Me.mp3',
-    cover: '/covers/cover-mayonaka-no-door.jpg'
-  },
-  {
-    title: 'Midnight Pretenders',
-    artist: 'Tomoko Aran',
-    file: 'Midnight Pretenders.mp3',
-    cover: '/covers/cover-midnight-pretenders.jpg'
-  },
-  {
-    title: 'Resort For Blue',
-    artist: 'Makoto Matsushita',
-    file: 'Resort For Blue - 2018 Remaster.mp3',
-    cover: '/covers/cover-resort-for-blue.jpg'
-  },
-  {
-    title: "メカファイター '87",
-    artist: 'EVADE FROM 宇宙',
-    file: "メカファイター '87.mp3",
-    cover: '/covers/cover-mecha-fighter.jpg'
-  },
-  {
-    title: 'High Heel (Non Stop Mix)',
-    artist: 'Kaoru Akimoto',
-    file: '我がままなハイヒール - Non Stop Mix ver..mp3',
-    cover: '/covers/cover-high-heel.jpg'
-  },
-  {
-    title: 'Midnight Joke',
-    artist: 'Takako Mamiya',
-    file: '真夜中のジョーク.mp3',
-    cover: '/covers/cover-midnight-joke.jpg'
-  },
-  {
-    title: 'Twilight BAY CITY',
-    artist: 'Junko Yagami',
-    file: '黄昏のBAY CITY.mp3',
-    cover: '/covers/cover-twilight-bay-city.jpg'
-  }
-]
+import { getPlaylist } from '@/services'
+
+const playlist = getPlaylist()
 
 function FloatingNotes({ isPlaying }) {
   return (
@@ -333,7 +280,7 @@ export default function MusicPlayer() {
   useEffect(() => {
     const audio = audioRef.current
     if (!audio) return
-    audio.src = `/songs/${currentSong.file}`
+    audio.src = currentSong.url
     audio.load()
     localStorage.setItem('music-index', currentIndex)
 
@@ -352,7 +299,7 @@ export default function MusicPlayer() {
     }
     audio.addEventListener('canplay', onCanPlay)
     return () => audio.removeEventListener('canplay', onCanPlay)
-  }, [currentIndex, currentSong.file])
+  }, [currentIndex, currentSong.url])
 
   useEffect(() => {
     const audio = audioRef.current
@@ -424,9 +371,8 @@ export default function MusicPlayer() {
       aria-label="Music player"
       className="pointer-events-none fixed bottom-6 left-6 z-[999998] flex items-end gap-3 [&_*]:[-webkit-tap-highlight-color:transparent]"
     >
-      <audio ref={audioRef} preload="auto">
-        <track kind="captions" src="" />
-      </audio>
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <audio ref={audioRef} preload="none" />
 
       <div className="pointer-events-auto relative">
         <FloatingNotes isPlaying={isPlaying} />

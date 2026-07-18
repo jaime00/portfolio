@@ -1,11 +1,10 @@
+import useDarkMode from '@/contexts/DarkMode'
 import { Poster } from 'smooth-components'
 
 import AnimatedCounter from '@/components/AnimatedCounter'
 import { renderRichText } from '@/components/CaseStudy/richText'
 import ShinyText from '@/components/ShinyText'
 import Titles from '@/components/Titles'
-
-import useDarkMode from '@/hooks/useDarkMode'
 
 import { useTranslation } from '@/i18n'
 
@@ -16,7 +15,7 @@ const image_profile =
 
 export default function MyHistory() {
   const { t } = useTranslation()
-  const isDark = useDarkMode()
+  const { isDark } = useDarkMode()
   const targetYears = getYearsOfExperience()
   return (
     <div className="">
@@ -49,7 +48,7 @@ export default function MyHistory() {
         </p>
         <br />
 
-        <p dangerouslySetInnerHTML={{ __html: t('about.technologies') }} />
+        <p>{renderRichText(t('about.technologies'))}</p>
         <div className="mt-5 grid grid-cols-1 gap-0 md:grid-cols-4 md:gap-x-10">
           <div className="col-span-1 self-center">
             <Poster
