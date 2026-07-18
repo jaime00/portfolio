@@ -22,7 +22,9 @@ module.exports = {
       backgroundImage: {
         'radial-gradient':
           'radial-gradient(circle, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 100%)',
-        'linear-gradient': 'linear-gradient(90deg, white, rgba(10,116,218,0))'
+        'linear-gradient': 'linear-gradient(90deg, white, rgba(10,116,218,0))',
+        'aurora-teal':
+          'radial-gradient(ellipse at center, rgba(20,184,166,0.35), transparent 70%)'
       },
       transitionDuration: {
         fast: '150ms',
@@ -41,11 +43,30 @@ module.exports = {
         'fade-in-keyframe': {
           '0%': { opacity: 0, transform: 'translateY(12px) scale(0.98)' },
           '100%': { opacity: 1, transform: 'translateY(0) scale(1)' }
+        },
+        'aurora-drift-1': {
+          '0%, 100%': { transform: 'translate(0%, 0%) scale(1)' },
+          '33%': { transform: 'translate(3%, -5%) scale(1.08)' },
+          '66%': { transform: 'translate(-3%, 3%) scale(0.95)' }
+        },
+        'aurora-drift-2': {
+          '0%, 100%': { transform: 'translate(0%, 0%) scale(1)' },
+          '33%': { transform: 'translate(-5%, 3%) scale(1.1)' },
+          '66%': { transform: 'translate(4%, -4%) scale(0.97)' }
+        },
+        'particle-float': {
+          '0%': { transform: 'translateY(0px)', opacity: '0' },
+          '20%': { opacity: '0.5' },
+          '80%': { opacity: '0.5' },
+          '100%': { transform: 'translateY(-30px)', opacity: '0' }
         }
       },
       animation: {
         'carousel-item': 'carousel-keyframe 30s linear infinite',
-        fade: 'fade-in-keyframe 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+        fade: 'fade-in-keyframe 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'aurora-slow': 'aurora-drift-1 18s ease-in-out infinite',
+        'aurora-slower': 'aurora-drift-2 26s ease-in-out infinite',
+        particle: 'particle-float 12s ease-in-out infinite'
       },
       scale: {
         103: '1.03'

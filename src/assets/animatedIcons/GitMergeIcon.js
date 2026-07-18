@@ -1,5 +1,11 @@
 import { motion, useAnimation } from 'motion/react'
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
+import {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef
+} from 'react'
 
 const DURATION = 0.3
 
@@ -9,10 +15,24 @@ const CALCULATE_DELAY = (i) => {
   return i * DURATION + 0.1
 }
 
-const GitBranchIcon = forwardRef(
-  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+const GitMergeIcon = forwardRef(
+  (
+    {
+      onMouseEnter,
+      onMouseLeave,
+      className,
+      size = 28,
+      autoAnimate = false,
+      ...props
+    },
+    ref
+  ) => {
     const controls = useAnimation()
     const isControlledRef = useRef(false)
+
+    useEffect(() => {
+      if (autoAnimate) controls.start('animate')
+    }, [autoAnimate, controls])
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true
@@ -66,7 +86,7 @@ const GitBranchIcon = forwardRef(
           <motion.circle
             animate={controls}
             cx="18"
-            cy="6"
+            cy="18"
             r="3"
             transition={{
               duration: DURATION,
@@ -82,36 +102,10 @@ const GitBranchIcon = forwardRef(
             }}
           />
 
-          <motion.line
-            animate={controls}
-            transition={{
-              duration: DURATION,
-              delay: CALCULATE_DELAY(1),
-              opacity: { delay: CALCULATE_DELAY(1) }
-            }}
-            variants={{
-              normal: {
-                pathLength: 1,
-                pathOffset: 0,
-                opacity: 1,
-                transition: { delay: 0 }
-              },
-              animate: {
-                pathLength: [0, 1],
-                opacity: [0, 1],
-                pathOffset: [1, 0]
-              }
-            }}
-            x1="6"
-            x2="6"
-            y1="3"
-            y2="15"
-          />
-
           <motion.circle
             animate={controls}
             cx="6"
-            cy="18"
+            cy="6"
             r="3"
             transition={{
               duration: DURATION,
@@ -129,7 +123,7 @@ const GitBranchIcon = forwardRef(
 
           <motion.path
             animate={controls}
-            d="M18 9a9 9 0 0 1-9 9"
+            d="M6 21V9a9 9 0 0 0 9 9"
             transition={{
               duration: DURATION,
               delay: CALCULATE_DELAY(1),
@@ -155,6 +149,6 @@ const GitBranchIcon = forwardRef(
   }
 )
 
-GitBranchIcon.displayName = 'GitBranchIcon'
+GitMergeIcon.displayName = 'GitMergeIcon'
 
-export { GitBranchIcon }
+export { GitMergeIcon }

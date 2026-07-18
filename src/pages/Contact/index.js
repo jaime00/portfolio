@@ -1,3 +1,4 @@
+import { floatVariants } from '@/animations'
 import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 import { toast } from 'sonner'
@@ -74,14 +75,7 @@ export default function Contact() {
         delay: 0.2
       }
     },
-    float: {
-      y: [0, -12, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: 'easeInOut'
-      }
-    }
+    float: floatVariants.animate
   }
 
   const contactMethods = [
@@ -152,6 +146,7 @@ export default function Contact() {
                 ariaLabel={method.label}
                 onClick={method.onClick}
                 openUrl={method.openUrl}
+                magnetic
               >
                 {method.icon}
               </Button>

@@ -1,9 +1,8 @@
+import { EASE_OUT_EXPO as ease } from '@/animations'
 import { motion } from 'motion/react'
 import { useEffect, useRef } from 'react'
 
 import { renderRichText } from './richText'
-
-const ease = [0.16, 1, 0.3, 1]
 
 export default function NarrativeSection({ section }) {
   const videoRef = useRef(null)

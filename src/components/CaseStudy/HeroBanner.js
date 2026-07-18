@@ -1,5 +1,6 @@
+import { EASE_OUT_EXPO as ease } from '@/animations'
 import { motion } from 'motion/react'
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { BundlephobiaWidget } from 'smooth-components'
 import { Link } from 'wouter'
 
@@ -9,37 +10,26 @@ import { BoxIcon } from '@/assets/animatedIcons/BoxIcon'
 import { CartIcon } from '@/assets/animatedIcons/CartIcon'
 import { ClapIcon } from '@/assets/animatedIcons/ClapIcon'
 import { EyeIcon } from '@/assets/animatedIcons/EyeIcon'
-import { GitBranchIcon } from '@/assets/animatedIcons/GitBranchIcon'
+import { GitMergeIcon } from '@/assets/animatedIcons/GitMergeIcon'
 
 import ShinyText from '@/components/ShinyText'
+
+import useDarkMode from '@/hooks/useDarkMode'
 
 import { useTranslation } from '@/i18n'
 
 import { getReadingTime } from './readingTime'
 
-const ease = [0.16, 1, 0.3, 1]
-
 const SLUG_ICONS = {
   'cinepolis-web': ClapIcon,
   'smooth-components': BoxIcon,
   negos: CartIcon,
-  'eazy-git': GitBranchIcon
+  'eazy-git': GitMergeIcon
 }
 
 export default function HeroBanner({ project }) {
   const { t } = useTranslation()
-  const [isDark, setIsDark] = useState(
-    document.documentElement.classList.contains('dark')
-  )
-
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      setIsDark(document.documentElement.classList.contains('dark'))
-    })
-    observer.observe(document.documentElement, { attributeFilter: ['class'] })
-    return () => observer.disconnect()
-  }, [])
-
+  const isDark = useDarkMode()
   const arrowRef = useRef(null)
   const backRef = useRef(null)
   const eyeRef = useRef(null)
@@ -141,6 +131,7 @@ export default function HeroBanner({ project }) {
             {SlugIcon && (
               <SlugIcon
                 size={80}
+                autoAnimate
                 className="absolute -right-5 -top-10 z-10 text-gray-400 dark:text-gray-500"
               />
             )}

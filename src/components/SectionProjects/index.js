@@ -1,4 +1,6 @@
-import Button from '@/components/Button'
+import { EASE_OUT_EXPO, VIEWPORT_ONCE } from '@/animations'
+import { motion } from 'motion/react'
+
 import ListOfProjects from '@/components/ListOfProjects'
 
 import { useTranslation } from '@/i18n'
@@ -10,17 +12,25 @@ export default function SectionProjects() {
   return (
     <div>
       <div className="relative mx-auto flex max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
-        <h2 className="my-8 text-4xl font-bold">{t('home.iLoveSharing')}</h2>
-        <p className="text-gray-700 dark:text-gray-300 md:text-xl">
+        <motion.h2
+          className="my-8 text-4xl font-bold"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={VIEWPORT_ONCE}
+          transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
+        >
+          {t('home.iLoveSharing')}
+        </motion.h2>
+        <motion.p
+          className="text-gray-700 dark:text-gray-300 md:text-xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={VIEWPORT_ONCE}
+          transition={{ duration: 0.5, delay: 0.1, ease: EASE_OUT_EXPO }}
+        >
           {t('home.checkProjects')}
-        </p>
+        </motion.p>
         <ListOfProjects limit={quantityOfProjectsInHome} />
-
-        {quantityOfProjectsInHome > 3 && (
-          <div className="w-50 mx-5 mt-10">
-            <Button to="/side-projects">{t('home.seeAllProjects')}</Button>
-          </div>
-        )}
       </div>
     </div>
   )
