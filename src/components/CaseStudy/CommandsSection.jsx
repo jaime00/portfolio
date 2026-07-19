@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 
 export default function CommandsSection({ section }) {
   return (
-    <section className="mb-20">
+    <section className="mb-16">
       <motion.h2
         className="mb-6 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl"
         initial={{ opacity: 0, x: -20 }}

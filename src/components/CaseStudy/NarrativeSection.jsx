@@ -20,7 +20,7 @@ export default function NarrativeSection({ section }) {
     !section.title && !section.image && !section.images && !section.highlights
 
   return (
-    <section className={isCompact ? 'mb-8' : 'mb-20'}>
+    <section className={isCompact ? 'mb-8' : 'mb-16'}>
       {section.title && (
         <motion.h2
           className="mb-6 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl"

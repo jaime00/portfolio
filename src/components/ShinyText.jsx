@@ -112,7 +112,7 @@ const ShinyText = ({
 
   return (
     <motion.span
-      className={`inline-block py-[0.15em] ${className}`}
+      className={`inline-block pb-[0.15em] ${className}`}
       style={{ ...gradientStyle, backgroundPosition }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

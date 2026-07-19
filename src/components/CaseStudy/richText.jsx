@@ -10,7 +10,7 @@ export function renderRichText(text) {
   if (!text) return text
 
   return text
-    .split(/(`[^`]+`|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g)
+    .split(/(`[^`]+`|\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g)
     .map((part, i) => {
       if (part.startsWith('`') && part.endsWith('`')) {
         return (
@@ -20,6 +20,13 @@ export function renderRichText(text) {
           >
             {part.slice(1, -1)}
           </code>
+        )
+      }
+      if (part.startsWith('***') && part.endsWith('***')) {
+        return (
+          <strong key={i} className="font-semibold italic">
+            {part.slice(3, -3)}
+          </strong>
         )
       }
       if (part.startsWith('**') && part.endsWith('**')) {

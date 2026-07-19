@@ -48,7 +48,7 @@ export default function HeroBanner({ project }) {
       >
         <Link
           to="/side-projects"
-          className="mb-6 inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-400"
+          className="mb-3 inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-400"
           onMouseEnter={() => backRef.current?.startAnimation()}
           onMouseLeave={() => backRef.current?.stopAnimation()}
         >
