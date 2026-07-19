@@ -154,7 +154,7 @@ export default function HeroBanner({ project }) {
             <dl className="mt-6 space-y-3 border-t border-gray-200 pt-5 dark:border-gray-800">
               {caseStudy.role && (
                 <div className="flex items-baseline justify-between gap-3">
-                  <dt className="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500">
+                  <dt className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                     {t('projectDetail.role')}
                   </dt>
                   <dd className="text-right text-sm font-semibold text-gray-800 dark:text-gray-100">
@@ -164,7 +164,7 @@ export default function HeroBanner({ project }) {
               )}
               {caseStudy.duration && (
                 <div className="flex items-baseline justify-between gap-3">
-                  <dt className="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500">
+                  <dt className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                     {t('projectDetail.duration')}
                   </dt>
                   <dd className="text-right text-sm font-semibold text-gray-800 dark:text-gray-100">
@@ -174,7 +174,7 @@ export default function HeroBanner({ project }) {
               )}
               {caseStudy.team && (
                 <div className="flex items-baseline justify-between gap-3">
-                  <dt className="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500">
+                  <dt className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                     {t('projectDetail.team')}
                   </dt>
                   <dd className="text-right text-sm font-semibold text-gray-800 dark:text-gray-100">

@@ -8,7 +8,7 @@ export default function ExperienceDescription({
 }) {
   return (
     <div className="col-span-1 flex flex-col gap-2 self-center">
-      <p className="font-medium italic text-gray-400">
+      <p className="font-medium italic text-gray-500 dark:text-gray-400">
         {year_initial} <span className="text-teal-500">-</span> {year_end}
       </p>
       <h3 className="mb-5 text-3xl font-medium">{position}</h3>

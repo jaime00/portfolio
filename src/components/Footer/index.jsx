@@ -25,9 +25,9 @@ export default function Footer() {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                 {t('footer.general')}
-              </h3>
+              </h2>
               <ul>
                 <li className="mb-4">
                   <Link
@@ -65,9 +65,9 @@ export default function Footer() {
                 ease: [0.16, 1, 0.3, 1]
               }}
             >
-              <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                 {t('footer.extra')}
-              </h3>
+              </h2>
               <ul>
                 <li className="mb-4">
                   <a

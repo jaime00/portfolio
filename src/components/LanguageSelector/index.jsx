@@ -22,14 +22,17 @@ const flags = {
 }
 
 export default function LanguageSelector() {
-  const { language, changeLanguage } = useTranslation()
+  const { language, changeLanguage, t } = useTranslation()
   const nextLang = language === 'en' ? 'es' : 'en'
+  const switchLabel = t(
+    nextLang === 'es' ? 'common.switchToSpanish' : 'common.switchToEnglish'
+  )
 
   return (
     <IconButton
       onClick={() => changeLanguage(nextLang)}
-      ariaLabel={`Switch to ${nextLang === 'es' ? 'Spanish' : 'English'}`}
-      title={nextLang === 'es' ? 'Cambiar a Español' : 'Switch to English'}
+      ariaLabel={switchLabel}
+      title={switchLabel}
     >
       {flags[language]}
     </IconButton>
