@@ -24,7 +24,7 @@ export function renderRichText(text) {
       }
       if (part.startsWith('***') && part.endsWith('***')) {
         return (
-          <strong key={i} className="font-semibold italic">
+          <strong key={i} className="font-bold italic">
             {part.slice(3, -3)}
           </strong>
         )
