@@ -8,17 +8,17 @@ Personal portfolio built with React 19, showcasing my work as a Frontend Develop
 
 ## Tech Stack
 
-| Category   | Technology                                                                                            |
-| ---------- | ----------------------------------------------------------------------------------------------------- |
-| Framework  | [React 19](https://react.dev) + [CRA](https://create-react-app.dev) via [Craco](https://craco.js.org) |
-| Styling    | [Tailwind CSS 3](https://tailwindcss.com)                                                             |
-| Animations | [Motion](https://motion.dev)                                                                          |
-| Routing    | [Wouter](https://github.com/molefrog/wouter)                                                          |
-| i18n       | Custom context-based system (EN/ES, auto-detected)                                                    |
-| Toasts     | [Sonner](https://sonner.emilkoez.dev)                                                                 |
-| Components | [smooth-components](https://www.npmjs.com/package/smooth-components)                                  |
-| Images     | [Cloudinary](https://cloudinary.com)                                                                  |
-| Deployment | [Netlify](https://www.netlify.com)                                                                    |
+| Category   | Technology                                                           |
+| ---------- | -------------------------------------------------------------------- |
+| Framework  | [React 19](https://react.dev) + [Vite 6](https://vitejs.dev)         |
+| Styling    | [Tailwind CSS 3](https://tailwindcss.com)                            |
+| Animations | [Motion](https://motion.dev)                                         |
+| Routing    | [Wouter v3](https://github.com/molefrog/wouter)                      |
+| i18n       | Custom context-based system (EN/ES, auto-detected)                   |
+| Toasts     | [Sonner](https://sonner.emilkoez.dev)                                |
+| Components | [smooth-components](https://www.npmjs.com/package/smooth-components) |
+| Images     | [Cloudinary](https://cloudinary.com)                                 |
+| Deployment | [Netlify](https://www.netlify.com)                                   |
 
 ## Getting Started
 
@@ -28,23 +28,21 @@ git clone https://github.com/jaime00/portfolio.git
 cd portfolio
 npm install
 
-# Start development (dev server + Tailwind CSS watcher)
+# Start development
 npm run dev
 ```
 
-The app runs at `http://localhost:3000`.
+The app runs at `http://localhost:5173`.
 
 ## Scripts
 
-| Command             | Description                                           |
-| ------------------- | ----------------------------------------------------- |
-| `npm run dev`       | Dev server + CSS rebuild on JS changes (concurrently) |
-| `npm start`         | Dev server only (Craco)                               |
-| `npm run build`     | Production build                                      |
-| `npm run watch:css` | Compile Tailwind CSS                                  |
-| `npm run lint`      | Lint source files                                     |
-| `npm run lint:fix`  | Lint and auto-fix                                     |
-| `npm test`          | Run tests (Jest, watch mode)                          |
+| Command            | Description                      |
+| ------------------ | -------------------------------- |
+| `npm run dev`      | Development server (Vite)        |
+| `npm run build`    | Production build → `dist/`       |
+| `npm run preview`  | Preview production build locally |
+| `npm run lint`     | Lint source files                |
+| `npm run lint:fix` | Lint and auto-fix                |
 
 ## Features
 
@@ -58,14 +56,16 @@ The app runs at `http://localhost:3000`.
 
 ```
 src/
+├── animations/    # Shared Motion primitives (variants, easings)
 ├── assets/        # Local images, animated icon components
 ├── components/    # Reusable UI components (one folder per component)
+├── contexts/      # React contexts (DarkMode)
 ├── data/          # dataSite.json — projects, experience, site content
-├── hooks/         # Custom hooks (useTypewriter, useDarkMode, useTilt)
+├── hooks/         # Custom hooks (useTypewriter, useTilt)
 ├── i18n/          # Language provider, translation files (en.json, es.json)
 ├── pages/         # Page components (Home, About, Projects, ProjectDetail, Experiences, Contact)
 ├── services/      # Data getters (getProjects, getWorkExperience, etc.)
-└── styles/        # Tailwind source, generated output, and custom CSS
+└── styles/        # Tailwind source and custom CSS
 ```
 
 ## License

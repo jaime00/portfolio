@@ -2,6 +2,7 @@ import { EASE_OUT_EXPO as ease } from '@/animations'
 import { motion } from 'motion/react'
 import { useEffect, useRef } from 'react'
 
+import ImageCarousel from './ImageCarousel'
 import { renderRichText } from './richText'
 
 export default function NarrativeSection({ section }) {
@@ -87,24 +88,8 @@ export default function NarrativeSection({ section }) {
       </div>
 
       {section.images && (
-        <div className="mt-8 grid grid-cols-1 gap-6 min-445:grid-cols-5">
-          {section.images.map((src, i) => (
-            <motion.div
-              key={i}
-              className={i === 0 ? 'min-445:col-span-3' : 'min-445:col-span-2'}
-              initial={{ opacity: 0, y: 30, scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.6, delay: 0.2 + i * 0.15, ease }}
-            >
-              <img
-                src={src}
-                alt={`${section.title || ''} ${i + 1}`}
-                className="h-full w-full rounded-xl bg-gray-100 object-cover shadow-lg dark:bg-gray-900 dark:shadow-teal-500/10"
-                loading="lazy"
-              />
-            </motion.div>
-          ))}
+        <div className="mt-8">
+          <ImageCarousel images={section.images} title={section.title} />
         </div>
       )}
     </section>
