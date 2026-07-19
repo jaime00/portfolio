@@ -56,7 +56,7 @@ export default function CommandsSection({ section }) {
                 {cmd.name}
               </code>
               {cmd.command && (
-                <code className="font-mono text-xs text-gray-400 dark:text-gray-500">
+                <code className="font-mono text-xs text-gray-500 dark:text-gray-400">
                   {cmd.command}
                 </code>
               )}

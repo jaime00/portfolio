@@ -114,7 +114,7 @@ function PlayerPanel({
                 delay: 0.06,
                 ease: [0.4, 0, 0.2, 1]
               }}
-              className="truncate text-[10px] text-gray-400 dark:text-gray-500"
+              className="truncate text-[10px] text-gray-500 dark:text-gray-400"
             >
               {currentSong.artist}
             </motion.p>
@@ -164,7 +164,7 @@ function PlayerPanel({
             <button
               onClick={prevTrack}
               aria-label="Previous track"
-              className="rounded p-1 text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
+              className="rounded p-1 text-gray-500 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-400 dark:hover:text-teal-400"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -209,7 +209,7 @@ function PlayerPanel({
             <button
               onClick={nextTrack}
               aria-label="Next track"
-              className="rounded p-1 text-gray-400 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-500 dark:hover:text-teal-400"
+              className="rounded p-1 text-gray-500 transition-colors hover:text-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 dark:text-gray-400 dark:hover:text-teal-400"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

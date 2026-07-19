@@ -28,7 +28,7 @@ export default function ProjectNavigation({ prev, next }) {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-gray-400 transition-transform group-hover:-translate-x-1"
+                className="text-gray-500 transition-transform group-hover:-translate-x-1 dark:text-gray-400"
               >
                 <path d="M15 18l-6-6 6-6" />
               </svg>
@@ -71,7 +71,7 @@ export default function ProjectNavigation({ prev, next }) {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-gray-400 transition-transform group-hover:translate-x-1"
+                className="text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400"
               >
                 <path d="M9 18l6-6-6-6" />
               </svg>

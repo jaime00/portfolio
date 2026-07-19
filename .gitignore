@@ -12,7 +12,7 @@
 /build
 /dist
 
-# generated CSS (rebuilt at dev/build time by Vite+PostCSS)
+# legacy generated CSS (pre-Vite postcss-cli output, no longer used)
 /src/styles/output.css
 
 # misc
@@ -30,4 +30,3 @@ yarn-error.log*
 .agents
 .skills-lock.json
 NOTES.md
-ignore
