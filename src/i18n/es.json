@@ -24,7 +24,7 @@
     "workExperience": "Experiencia laboral",
     "workExperienceSubtitle": "Aquí te presento un resumen de mis experiencias más recientes.",
     "learnMore": "Ver más",
-    "viewResume": "Ver mi currículum",
+    "viewResume": "Ver currículum",
     "iLoveSharing": "Me encanta compartir mi conocimiento y aprender cosas nuevas.",
     "checkProjects": "Echa un vistazo a algunos de mis proyectos más recientes.",
     "seeAllProjects": "Ver todos los proyectos"
@@ -80,8 +80,10 @@
     "english": "English"
   },
   "a11y": {
-    "enableDarkMode": "Activar modo oscuro",
-    "disableDarkMode": "Desactivar modo oscuro"
+    "enableDarkMode": "Cambiar a modo oscuro",
+    "disableDarkMode": "Cambiar a modo claro",
+    "switchToSpanish": "Cambiar a Español",
+    "switchToEnglish": "Cambiar a Inglés"
   },
   "notFound": {
     "title": "Página no encontrada",

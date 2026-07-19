@@ -92,8 +92,10 @@
               "title": "My Inspiration",
               "text": "Every detail of the Poster component has a physical reference. The **shine that sweeps across the surface** was born from watching how cinema display lights create a reflection that shifts as you change your angle. The **hover with a slight tilt** replicates that feeling of leaning in to see the details up close. And the **entrance animation with scale** mimics that moment when a poster catches your eye from afar and draws you in.\n\nI didn't want a component that simply displayed an image. I wanted one that provoked the same reaction as a well-mounted physical poster: making you stop and stare.",
               "images": [
-                "https://res.cloudinary.com/personal-jaime00/image/upload/v1782754785/projects/portfolio/projects/smooth-components/inspiration-poster.png",
-                "https://res.cloudinary.com/personal-jaime00/image/upload/v1782754827/projects/portfolio/projects/smooth-components/poster-inspiration-2.png"
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1784488006/projects/portfolio/projects/smooth-components/image1.avif",
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1784488005/projects/portfolio/projects/smooth-components/image2.avif",
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1784488006/projects/portfolio/projects/smooth-components/image3.png",
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1784488005/projects/portfolio/projects/smooth-components/image4.jpg"
               ]
             },
             {
@@ -311,8 +313,10 @@
               "title": "Mi inspiración",
               "text": "Cada detalle del componente Poster tiene un referente físico. El **brillo que recorre la superficie** nació de observar cómo la luz de los displays del cine crea un reflejo que se mueve cuando cambias de ángulo. El **hover con ligera inclinación** replica esa sensación de acercarte al póster para ver los detalles de cerca. Y la **animación de entrada con escala** imita ese momento en que un póster llama tu atención desde lejos y te acercas.\n\nNo quería un componente que simplemente mostrara una imagen. Quería uno que provocara la misma reacción que un póster físico bien montado: que te detuvieras a mirarlo.",
               "images": [
-                "https://res.cloudinary.com/personal-jaime00/image/upload/v1782754785/projects/portfolio/projects/smooth-components/inspiration-poster.png",
-                "https://res.cloudinary.com/personal-jaime00/image/upload/v1782754827/projects/portfolio/projects/smooth-components/poster-inspiration-2.png"
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1784488006/projects/portfolio/projects/smooth-components/image1.avif",
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1784488005/projects/portfolio/projects/smooth-components/image2.avif",
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1784488006/projects/portfolio/projects/smooth-components/image3.png",
+                "https://res.cloudinary.com/personal-jaime00/image/upload/v1784488005/projects/portfolio/projects/smooth-components/image4.jpg"
               ]
             },
             {

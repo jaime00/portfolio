@@ -58,7 +58,7 @@ export default function HeroBanner({ project }) {
       </motion.div>
 
       <motion.div
-        className="mb-10 flex flex-wrap items-end gap-4"
+        className="mb-6 flex flex-wrap items-end gap-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1, ease }}

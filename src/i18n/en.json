@@ -24,7 +24,7 @@
     "workExperience": "Work experience",
     "workExperienceSubtitle": "Here's a brief rundown of my most recent experiences.",
     "learnMore": "Learn more",
-    "viewResume": "View my resume",
+    "viewResume": "View resume",
     "iLoveSharing": "I love sharing my knowledge and learning new things.",
     "checkProjects": "Check out some of my most recent projects.",
     "seeAllProjects": "See all projects"
@@ -80,8 +80,10 @@
     "english": "English"
   },
   "a11y": {
-    "enableDarkMode": "Enable dark mode",
-    "disableDarkMode": "Disable dark mode"
+    "enableDarkMode": "Switch to dark mode",
+    "disableDarkMode": "Switch to light mode",
+    "switchToSpanish": "Switch to Spanish",
+    "switchToEnglish": "Switch to English"
   },
   "notFound": {
     "title": "Page not found",
