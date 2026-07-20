@@ -101,7 +101,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="text-gray-500 transition hover:rotate-6 hover:text-black dark:hover:text-white"
+              className="text-gray-500 transition hover:rotate-6 hover:text-white"
             >
               <LinkedinIcon />
             </a>

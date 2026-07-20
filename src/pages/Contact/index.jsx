@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from 'react'
 import { CopyIcon } from '@/assets/animatedIcons/CopyIcon'
 import { MailCheckIcon } from '@/assets/animatedIcons/EmailCheckIcon'
 import { LinkedinIcon } from '@/assets/animatedIcons/LinkedinIcon'
-import WhatsappIcon from '@/assets/icons/whatsapp.svg?react'
 
 import Button from '@/components/Button'
 import PageMeta from '@/components/PageMeta'
@@ -14,6 +13,9 @@ import ShinyText from '@/components/ShinyText'
 import Titles from '@/components/Titles'
 
 import { useTranslation } from '@/i18n'
+
+const WHATSAPP_ICON =
+  'https://res.cloudinary.com/personal-jaime00/image/upload/v1784587275/projects/portfolio/whatsapp.svg'
 
 const CharacterSit =
   'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597333/projects/portfolio/characterSit.png'
@@ -85,12 +87,12 @@ export default function Contact() {
     },
     {
       openUrl: 'https://linkedin.com/in/jaimetorresv',
-      icon: <LinkedinIcon />,
+      icon: <LinkedinIcon className="text-white" />,
       label: 'LinkedIn'
     },
     {
       openUrl: 'https://api.whatsapp.com/send?phone=573015834942',
-      icon: <WhatsappIcon />,
+      icon: <img src={WHATSAPP_ICON} alt="WhatsApp" width={28} height={28} />,
       label: 'WhatsApp'
     }
   ]

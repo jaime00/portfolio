@@ -1,4 +1,4 @@
-[![Portfolio Preview](public/home.jpeg)](https://jaimetorresv.com)
+[![Portfolio Preview](https://res.cloudinary.com/personal-jaime00/image/upload/v1784587097/projects/portfolio/home.jpg)](https://jaimetorresv.com)
 
 # Portfolio
 

@@ -74,7 +74,10 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
             onClick={(e) => e.stopPropagation()}
           >
             {menuItems.map((item, i) => {
-              const isActive = location === item.to
+              const isActive =
+                location === item.to ||
+                (item.to === '/side-projects' &&
+                  location.startsWith('/side-projects'))
               return (
                 <motion.div
                   key={item.to}

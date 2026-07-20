@@ -13,7 +13,7 @@ export const CopyIcon = createAnimatedIcon('CopyIcon', (controls, size) => (
   <svg
     fill="none"
     height={size}
-    stroke="currentColor"
+    stroke="white"
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeWidth="2"
