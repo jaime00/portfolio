@@ -7,7 +7,7 @@ import { useTranslation } from '@/i18n'
 const flags = {
   en: (
     <img
-      src="/US.svg"
+      src="https://res.cloudinary.com/personal-jaime00/image/upload/v1784586915/projects/portfolio/US.svg"
       alt="US flag"
       className="h-4 w-6 rounded-sm"
       aria-hidden="true"
@@ -15,7 +15,7 @@ const flags = {
   ),
   es: (
     <img
-      src="/CO.svg"
+      src="https://res.cloudinary.com/personal-jaime00/image/upload/v1784586915/projects/portfolio/CO.svg"
       alt="Colombia flag"
       className="h-4 w-6 rounded-sm"
       aria-hidden="true"

@@ -20,7 +20,7 @@ export const MailCheckIcon = createAnimatedIcon(
     <svg
       fill="none"
       height={size}
-      stroke="currentColor"
+      stroke="white"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"

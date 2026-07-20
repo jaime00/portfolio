@@ -391,7 +391,7 @@ export default function MusicPlayer() {
           aria-label="Toggle Music Player"
         >
           <img
-            src="/vinyl.png"
+            src="https://res.cloudinary.com/personal-jaime00/image/upload/v1784587151/projects/portfolio/vinyl.png"
             alt="Vinyl disc"
             draggable={false}
             className="pointer-events-none h-full w-full select-none rounded-full"

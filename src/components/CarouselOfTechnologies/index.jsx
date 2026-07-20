@@ -1,19 +1,30 @@
 import useDarkMode from '@/contexts/DarkMode'
 
-import angularIcon from '@/assets/icons/angular.png'
-import javascriptIcon from '@/assets/icons/js.png'
-import nextIcon from '@/assets/icons/next.png'
-import reactIcon from '@/assets/icons/react.png'
-import svelteIcon from '@/assets/icons/svelte.png'
-import typescriptIcon from '@/assets/icons/ts.png'
-
 const BASE_TECHNOLOGIES = [
-  { src: reactIcon, alt: 'React Logo' },
-  { src: nextIcon, alt: 'Next.js Logo' },
-  { src: svelteIcon, alt: 'Svelte Logo' },
-  { src: typescriptIcon, alt: 'TypeScript Logo' },
-  { src: angularIcon, alt: 'Angular Logo' },
-  { src: javascriptIcon, alt: 'JavaScript Logo' }
+  {
+    src: 'https://res.cloudinary.com/personal-jaime00/image/upload/v1784587273/projects/portfolio/react.png',
+    alt: 'React Logo'
+  },
+  {
+    src: 'https://res.cloudinary.com/personal-jaime00/image/upload/v1784587272/projects/portfolio/next.png',
+    alt: 'Next.js Logo'
+  },
+  {
+    src: 'https://res.cloudinary.com/personal-jaime00/image/upload/v1784587273/projects/portfolio/svelte.png',
+    alt: 'Svelte Logo'
+  },
+  {
+    src: 'https://res.cloudinary.com/personal-jaime00/image/upload/v1784587274/projects/portfolio/ts.png',
+    alt: 'TypeScript Logo'
+  },
+  {
+    src: 'https://res.cloudinary.com/personal-jaime00/image/upload/v1784587271/projects/portfolio/angular.png',
+    alt: 'Angular Logo'
+  },
+  {
+    src: 'https://res.cloudinary.com/personal-jaime00/image/upload/v1784587272/projects/portfolio/js.png',
+    alt: 'JavaScript Logo'
+  }
 ]
 
 // Repeated ×5 to create an infinite-loop carousel
@@ -32,7 +43,7 @@ export default function CarouselOfTechnologies() {
       {technologies.map((tech, index) => (
         <div key={index} className="animate-carousel-item px-1">
           <img
-            className="min-h-[40px] min-w-[40px] transition-transform duration-300 hover:-translate-y-1 hover:scale-125"
+            className="min-h-[40px] min-w-[40px]"
             src={tech.src}
             alt={tech.alt}
           />
