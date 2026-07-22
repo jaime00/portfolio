@@ -25,7 +25,7 @@ React 19 portfolio site using Vite, Wouter v3 routing, Tailwind CSS, and Motion 
 
 **Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList using the View Transition API (`document.startViewTransition`). Falls back gracefully on Safari (no View Transition). State managed by `DarkModeProvider` (`src/contexts/DarkMode.jsx`) which wraps the app in `App.jsx`. Any component needing dark mode calls `useDarkMode()` (default export of `src/contexts/DarkMode.jsx`) → `{ isDark, toggleDark }`. No prop-drilling of `isDark`. Persisted in `localStorage.isDark`. Use Tailwind's `dark:` prefix for dark variants. `LanguageProvider` wraps `DarkModeProvider` in `App.jsx` — order matters.
 
-**Animations:** Import from `motion/react` (not `framer-motion`). Example: `import { motion, AnimatePresence } from 'motion/react'`. Shared animation primitives live in `src/animations/index.jsx` — exports `EASE_OUT_EXPO`, `VIEWPORT_ONCE`, `staggerContainerVariants`, `staggerItemVariants`, and `floatVariants`. Always import from there instead of redefining these values inline.
+**Animations:** Import from `motion/react` (not `framer-motion`). Example: `import { motion, AnimatePresence } from 'motion/react'`. The app uses `<LazyMotion features={domAnimation}>` (not `domMax`) — only the standard animation feature set is available. Shared animation primitives live in `src/animations/index.jsx` — exports `EASE_OUT_EXPO`, `VIEWPORT_ONCE`, `staggerContainerVariants`, `staggerItemVariants`, and `floatVariants`. Always import from there instead of redefining these values inline.
 
 **Toasts:** Sonner is used for toast notifications.
 
@@ -53,7 +53,7 @@ React 19 portfolio site using Vite, Wouter v3 routing, Tailwind CSS, and Motion 
 - **Custom CSS** (fonts, scrollbars, gradients) lives in `src/styles/general.css`.
 - **Component structure:** One folder per component with `index.jsx` barrel export. All source files use `.jsx` extension (including those without JSX). Exceptions: `CarouselOfTechnologies/index.jsx` and `ShinyText.jsx` (flat file, no folder).
 - **Images:** Project previews hosted on Cloudinary. Local assets in `src/assets/`. Lazy-loaded with Lozad (`.lozad` class).
-- **Public static assets:** Music files in `public/songs/`, album covers in `public/covers/`, vinyl image at `public/vinyl.png`.
+- **Public static assets:** `public/` contains only favicons, manifests, and SEO files. Music MP3s, album covers, and the vinyl image are all hosted on Cloudinary — URLs live in `dataSite.json` under `playlist[].url` and `playlist[].cover`.
 - **localStorage keys in use:** `isDark`, `language`, `music-index`, `music-time`, `music-playing`.
 - **Custom Tailwind breakpoints:** `min-1045` and `min-445` (min-width).
 - **Prettier config:** No semicolons, single quotes, no trailing commas, 80 char width. Plugins: `prettier-plugin-tailwindcss` (class sorting) and `@trivago/prettier-plugin-sort-imports` (import ordering: third-party first, then `@/` groups alphabetically, then relative).
