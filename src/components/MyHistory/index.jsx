@@ -34,7 +34,9 @@ export default function MyHistory() {
       <section className="text-xl leading-8 text-gray-600 dark:text-gray-300">
         <br />
         <p>
-          {t('about.systemsEngineer')}, {t('about.frontend')}.{' '}
+          <b>
+            <em>{t('about.systemsEngineer')}</em>
+          </b>{' '}
           {t('about.yearsExperienceBefore')}{' '}
           <AnimatedCounter target={targetYears} />{' '}
           {t('about.yearsExperienceAfter')}
@@ -44,7 +46,11 @@ export default function MyHistory() {
           <b>
             <em>{t('home.frontendDeveloper')}</em>
           </b>
-          , {t('about.technicalLead')}, {t('about.careerDescription')}
+          ,{' '}
+          <b>
+            <em>{t('about.technicalLead')}</em>
+          </b>
+          , {t('about.careerDescription')}
         </p>
         <br />
 
