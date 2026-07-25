@@ -1,5 +1,7 @@
 import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
 
+import { renderRichText } from '@/components/CaseStudy/richText'
+
 export default function ExperienceDescription({
   year_initial,
   year_end,
@@ -22,7 +24,7 @@ export default function ExperienceDescription({
             size={20}
           />
           <p className="text-left text-sm leading-[28px] text-gray-600 dark:text-gray-300">
-            {detail}
+            {renderRichText(detail)}
           </p>
         </div>
       ))}
