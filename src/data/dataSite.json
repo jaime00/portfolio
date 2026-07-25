@@ -52,7 +52,7 @@
         "title": "smooth-components",
         "description": "Library of beautifully designed, reusable UI components for React. Perfect for portfolios, dashboards, or e-commerce sites.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png",
-        "stack": ["Typescript", "vite", "Wouter", "Motion"],
+        "stack": ["TypeScript", "vite", "Wouter", "Motion"],
         "urlCode": "https://www.npmjs.com/package/smooth-components",
         "caseStudy": {
           "role": "Creator & Maintainer",
@@ -274,7 +274,7 @@
         "title": "smooth-components",
         "description": "Biblioteca de componentes UI bellamente diseñados y reutilizables para React. Ideal para portafolios, dashboards o sitios de comercio electrónico.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png",
-        "stack": ["Typescript", "vite", "Wouter", "Motion"],
+        "stack": ["TypeScript", "vite", "Wouter", "Motion"],
         "urlCode": "https://www.npmjs.com/package/smooth-components",
         "caseStudy": {
           "role": "Creador y Mantenedor",
