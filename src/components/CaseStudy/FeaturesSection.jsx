@@ -1,11 +1,14 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
 import { motion } from 'motion/react'
+import { useRef } from 'react'
 
 import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
 
 import { renderRichText } from './richText'
 
 export default function FeaturesSection({ section }) {
+  const arrowRefs = useRef([])
+
   return (
     <section className="mb-16">
       <motion.h2
@@ -39,8 +42,11 @@ export default function FeaturesSection({ section }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.06, ease }}
+            onMouseEnter={() => arrowRefs.current[i]?.startAnimation()}
+            onMouseLeave={() => arrowRefs.current[i]?.stopAnimation()}
           >
             <ArrowRightIcon
+              ref={(el) => (arrowRefs.current[i] = el)}
               className="mt-[6.8px] shrink-0 text-gray-500 dark:text-gray-300"
               size={20}
             />

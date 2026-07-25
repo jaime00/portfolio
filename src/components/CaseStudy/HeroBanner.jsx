@@ -94,11 +94,7 @@ export default function HeroBanner({ project }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease }}
         >
-          <motion.div
-            className="relative h-full overflow-hidden rounded-2xl shadow-lg"
-            whileHover={{ scale: 1.015, y: -4 }}
-            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
+          <div className="relative h-full overflow-hidden rounded-2xl shadow-lg">
             <motion.img
               src={img}
               alt={title}
@@ -118,15 +114,11 @@ export default function HeroBanner({ project }) {
                 <ArrowSquareRightIcon ref={arrowRef} size={22} />
               </a>
             )}
-          </motion.div>
+          </div>
         </motion.div>
 
         <div className="flex flex-col gap-4">
-          <motion.div
-            className="relative rounded-3xl bg-gray-100 p-6 shadow-lg dark:bg-gray-900 min-445:p-8"
-            whileHover={{ scale: 1.015, y: -4 }}
-            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
+          <div className="relative rounded-3xl bg-gray-100 p-6 shadow-lg dark:bg-gray-900 min-445:p-8">
             {SlugIcon && (
               <SlugIcon
                 size={80}
@@ -194,38 +186,24 @@ export default function HeroBanner({ project }) {
                 {t('projectDetail.viewCode')}
               </a>
             )}
-          </motion.div>
+          </div>
 
           {project.slug === 'smooth-components' ? (
-            <motion.div
-              whileHover={{ scale: 1.015, y: -4 }}
-              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            >
-              <BundlephobiaWidget
-                pkg="smooth-components@1.1.18"
-                isDarkMode={isDark}
-                size="sm"
-                repository="https://github.com/jaime00/smooth-components"
-              />
-            </motion.div>
+            <BundlephobiaWidget
+              pkg="smooth-components@1.1.18"
+              isDarkMode={isDark}
+              size="sm"
+              repository="https://github.com/jaime00/smooth-components"
+            />
           ) : project.slug === 'eazy-git' ? (
-            <motion.div
-              whileHover={{ scale: 1.015, y: -4 }}
-              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            >
-              <BundlephobiaWidget
-                pkg="eazy-git@0.2.3"
-                isDarkMode={isDark}
-                size="sm"
-              />
-            </motion.div>
+            <BundlephobiaWidget
+              pkg="eazy-git@0.2.3"
+              isDarkMode={isDark}
+              size="sm"
+            />
           ) : (
             lastHighlights && (
-              <motion.div
-                className="flex flex-1 flex-col justify-center rounded-3xl bg-gradient-to-br from-teal-500/10 to-emerald-500/10 p-6 shadow-lg dark:from-teal-400/10 dark:to-emerald-400/10"
-                whileHover={{ scale: 1.015, y: -4 }}
-                transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-              >
+              <div className="flex flex-1 flex-col justify-center rounded-3xl bg-gradient-to-br from-teal-500/10 to-emerald-500/10 p-6 shadow-lg dark:from-teal-400/10 dark:to-emerald-400/10">
                 <div className="grid grid-cols-2 gap-4 min-1045:grid-cols-1">
                   {lastHighlights.map((h, i) => (
                     <div key={i} className="min-1045:text-center">
@@ -238,7 +216,7 @@ export default function HeroBanner({ project }) {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )
           )}
         </div>

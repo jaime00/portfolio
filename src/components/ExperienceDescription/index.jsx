@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+
 import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
 
 import { renderRichText } from '@/components/CaseStudy/richText'
@@ -8,6 +10,8 @@ export default function ExperienceDescription({
   position,
   items
 }) {
+  const arrowRefs = useRef([])
+
   return (
     <div className="col-span-1 flex flex-col gap-2 self-center">
       <p className="font-medium italic text-gray-400">
@@ -18,8 +22,11 @@ export default function ExperienceDescription({
         <div
           className="flex items-start gap-3"
           key={`experience-description-${index}`}
+          onMouseEnter={() => arrowRefs.current[index]?.startAnimation()}
+          onMouseLeave={() => arrowRefs.current[index]?.stopAnimation()}
         >
           <ArrowRightIcon
+            ref={(el) => (arrowRefs.current[index] = el)}
             className="mt-[6.8px] shrink-0 text-gray-500 dark:text-gray-300"
             size={20}
           />
