@@ -192,6 +192,7 @@ export default function HeroBanner({ project }) {
             <BundlephobiaWidget
               pkg="smooth-components@1.1.18"
               isDarkMode={isDark}
+              hasHoverEffect={false}
               size="sm"
               repository="https://github.com/jaime00/smooth-components"
             />
