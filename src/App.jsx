@@ -25,6 +25,7 @@ import '@/styles/tailwind.css'
 
 function SkipLink() {
   const { t } = useTranslation()
+  console.log('t: ', t)
   return (
     <a
       href="#main-content"

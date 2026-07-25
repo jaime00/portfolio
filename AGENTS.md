@@ -3,46 +3,49 @@
 ## Commands
 
 ```bash
-npm install              # Install
-npm run dev              # Dev server + Tailwind CSS watcher (concurrently)
-npm start                # Dev server only (Craco)
-npm run build            # watch:css then craco build → build/
-npm run watch:css        # Compile src/styles/tailwind.css → src/styles/output.css
-npm test                 # Jest via Craco (watch mode)
-npm test -- -t "<patt>"  # Single test
-npm test -- --watchAll=false  # Once
-npx eslint "src/**/*.{js,jsx}"  # Lint (eslintConfig in package.json)
+npm install          # Install
+npm run dev          # Vite dev server (port 9999, opens browser)
+npm run build        # Vite build → dist/
+npm run preview      # Preview production build
+npm run lint         # ESLint src/**/*.{js,jsx}
+npm run lint:fix     # ESLint --fix
+npm run prepare      # Husky install (runs on npm install)
 ```
+
+No test runner configured. No tests exist.
 
 ## Architecture
 
-React 19 + CRA/Craco + Wouter routing + Tailwind CSS 3 + Motion (Framer Motion) + Sonner (toasts).  
-Custom context-based i18n (`LanguageProvider` + `useTranslation`).  
-Lozad.js for lazy image loading.  
-Deployed to Netlify (`build/`, `npm run build`).
+React 19 + Vite + Wouter v3 + Tailwind CSS 3 + Motion + Sonner.  
+Custom i18n (`LanguageProvider` + `useTranslation` → `t('section.key')`).  
+Deployed to Netlify (`dist/`, `npm run build`).
 
-**Entry:** `src/index.js` → `App.js`. Routes in `App.js` (`/`, `/about`, `/side-projects`, `/side-projects/:slug`, `/experiences`, `/contact`).
+**Entry:** `src/index.jsx` → `src/App.jsx`. All routes in `App.jsx` inside `<Switch>`. Pages eagerly imported (no lazy loading).
 
-**Data flow:** Static content in `src/data/dataSite.json` (keyed by language). Accessed only through service functions in `src/services/index.js` (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`, `getStyleButton`, `getYearsOfExperience`, `getProjectBySlug`, `getAdjacentProjects`). Components never import dataSite.json directly.
+**Routes:** `/`, `/about`, `/side-projects`, `/side-projects/:slug`, `/experiences`, `/contact`. Unknown → `<NotFound />`. `<ErrorBoundary>` wraps `<Switch>`.
 
-**i18n:** UI strings in `src/i18n/en.json` / `es.json`, dot-notation keys, accessed via `t('section.key')`. Language auto-detected from browser, persisted in localStorage.
+**Data:** Static content in `src/data/dataSite.json` (keyed by language). Access ONLY through `src/services/index.jsx` (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`, `getStyleButton`, `getYearsOfExperience`, `getProjectBySlug`, `getAdjacentProjects`, `getPlaylist`). Never import `dataSite.json` directly.
+
+**Dark mode:** `DarkModeProvider` in `src/contexts/DarkMode.jsx` wraps app in `App.jsx`. Call `useDarkMode()` → `{ isDark, toggleDark }`. Class-based (`darkMode: 'class'`), persisted in `localStorage.isDark`.
+
+**Animations:** Import from `motion/react` (not `framer-motion`). `<LazyMotion features={domAnimation}>` — only `domAnimation`, not `domMax`. Shared primitives in `src/animations/index.jsx` (`EASE_OUT_EXPO`, `VIEWPORT_ONCE`, `staggerContainerVariants`, `staggerItemVariants`, `floatVariants`) — import from there, don't redefine inline.
 
 ## Style & Conventions
 
-- **Path alias:** `@/` maps to `src/` (configured in `craco.config.js`). All imports use `@/components/...`, `@/pages/...`, etc. — never relative paths for cross-directory imports.
-- **Prettier:** No semicolons, single quotes, no trailing commas, 80 width, `prettier-plugin-tailwindcss` for class sorting, `@trivago/prettier-plugin-sort-imports` for import ordering (third-party → `@/` groups → relative).
-- **Components:** One folder per component, `index.js` barrel export, default export, destructure props. The only `.jsx` file is `CarouselOfTechnologies`.
-- **Motion:** Import from `motion/react` (not `framer-motion`).
-- **Never edit `src/styles/output.css`** — it's generated from `tailwind.css`. Custom CSS (fonts, gradients, view transitions) in `general.css`.
-- **Dark mode:** Class-based (`darkMode: 'class'`). Toggle via `<html>` classList. Uses View Transition API (`document.startViewTransition`). Persisted in `localStorage.isDark`.
-- **Custom breakpoints:** `min-1045` (1045px), `min-445` (445px).
+- **All source files use `.jsx` extension** — including files without JSX. The only exceptions are config files.
+- **Path alias:** `@/` → `src/` (Vite resolve alias). All cross-directory imports use `@/components/...` — never relative `../` paths.
+- **Pre-commit hook (Husky):** Enforces `@/` alias (rejects `../` relative imports across dirs), runs ESLint on staged `.js/.jsx`, then Prettier on all staged files. Both must pass.
+- **Prettier:** No semicolons, single quotes, no trailing commas, 80 width. Plugins: `prettier-plugin-tailwindcss` (class sorting) + `@trivago/prettier-plugin-sort-imports` (ordering: third-party → `@/` groups alphabetically → relative).
+- **Component structure:** One folder per component, `index.jsx` barrel export, default export, destructure props.
+- **Custom CSS:** `src/styles/general.css` (fonts, scrollbars, gradients). `src/styles/tailwind.css` is the Tailwind entry — Vite + PostCSS regenerate on save.
+- **Custom breakpoints:** `min-1045` (1045px), `min-445` (min-width).
 - **Images:** Project previews on Cloudinary. Local assets in `src/assets/`. Lazy-loaded with Lozad (`.lozad` class).
-- **Pre-commit hook (Husky):** Runs `npx prettier` on staged files only (no lint check).
-- **No tests exist yet** in codebase.
+- **Animated icons HOC:** `src/assets/animatedIcons/createAnimatedIcon.jsx` — most icons use it; `GithubIcon` is exception. Icons accept `size` prop, expose `startAnimation`/`stopAnimation` via ref. `autoAnimate` prop for mount animation.
+- **localStorage keys:** `isDark`, `language`, `music-index`, `music-time`, `music-playing`.
 
 ## Adding a Page
 
-1. Create `src/pages/PageName/index.js`
-2. Register route in `src/App.js`
-3. Add NavBar link if needed
-4. Add i18n keys to `en.json` / `es.json`
+1. Create `src/pages/PageName/index.jsx`
+2. Register route in `src/App.jsx` (inside `<Switch>`)
+3. Add NavBar link if needed (in `NavBarOptions`)
+4. Add i18n keys to `src/i18n/en.json` and `src/i18n/es.json`
