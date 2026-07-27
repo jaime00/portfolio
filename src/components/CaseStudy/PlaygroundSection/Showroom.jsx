@@ -4,31 +4,29 @@ import { Poster } from 'smooth-components'
 
 const DEFAULT_CODE = `import { Poster } from "smooth-components"
 
-// Available images: "./pulp-fiction.jpg" or "./taxi-driver.jpg"
-// Try editing the props below!
+// Available images to try editing the props below!
+// "./michael.webp"
+// "./severance.webp"
+// "./breaking-bad.webp"
 
 <Poster
-  alt="Pulp Fiction"
-  src="./pulp-fiction.jpg"
+  alt="My favorite poster"
+  src="./michael.webp"
   hasFrame={true}
-  frameSize="md"
+  frameSize="sm"
   hasGlintEffect={true}
   followCursor={true}
   onClick={() => alert("Clicked!")}
-  styles={{
-    height: "600px",
-  }}
 />`
 
 const DEFAULT_PROPS = {
-  alt: 'Pulp Fiction',
+  alt: 'My favorite poster hey!',
   hasGlintEffect: true,
   hasFrame: true,
-  frameSize: 'md',
+  frameSize: 'sm',
   followCursor: true,
   onClick: () => alert('Clicked!'),
-  styles: { height: '600px' },
-  src: '/pulp-fiction.jpg'
+  src: '/michael.webp'
 }
 
 function parseProps(code, prev) {
@@ -173,22 +171,36 @@ const SUGGESTIONS = [
 
 function EditorTitleBar({ isMac, copied, handleCopy }) {
   return (
-    <div className="flex items-center gap-2 bg-[#13141c] px-4 py-2.5">
+    <div
+      className="flex items-center gap-2 px-4 py-2.5"
+      style={{ backgroundColor: 'var(--editor-titlebar)' }}
+    >
       <div className="flex gap-1.5">
-        <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-        <div className="h-3 w-3 rounded-full bg-[#febc2e]" />
-        <div className="h-3 w-3 rounded-full bg-[#28c840]" />
+        <div
+          className="h-3 w-3 rounded-full"
+          style={{ backgroundColor: 'var(--editor-dot-red)' }}
+        />
+        <div
+          className="h-3 w-3 rounded-full"
+          style={{ backgroundColor: 'var(--editor-dot-yellow)' }}
+        />
+        <div
+          className="h-3 w-3 rounded-full"
+          style={{ backgroundColor: 'var(--editor-dot-green)' }}
+        />
       </div>
-      <span className="ml-2 font-mono text-xs text-[#a9b1d6]">example.tsx</span>
+      <span
+        className="ml-2 font-mono text-xs"
+        style={{ color: 'var(--editor-text)' }}
+      >
+        example.tsx
+      </span>
       <button
         type="button"
-        className="group ml-auto flex cursor-pointer items-center gap-2 bg-transparent border-0 p-0"
+        className="group ml-auto flex cursor-pointer items-center gap-2 border-0 bg-transparent p-0"
         onClick={handleCopy}
         aria-label="Copy code"
       >
-        <span className="hidden font-mono text-xs text-[#565a6e] transition-colors group-hover:text-[#a9b1d6] md:inline">
-          {isMac ? '⌘' : 'Ctrl'}+C to copy
-        </span>
         <motion.div whileHover={{ x: 2 }} whileTap={{ scale: 0.92 }}>
           {copied ? (
             <svg
@@ -197,7 +209,7 @@ function EditorTitleBar({ isMac, copied, handleCopy }) {
               height="14"
               viewBox="0 0 24 24"
               fill="none"
-              className="stroke-[#28c840]"
+              style={{ stroke: 'var(--editor-dot-green)' }}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -206,7 +218,8 @@ function EditorTitleBar({ isMac, copied, handleCopy }) {
             </svg>
           ) : (
             <svg
-              className="stroke-[#565a6e] transition-colors group-hover:stroke-[#a9b1d6]"
+              className="transition-colors"
+              style={{ stroke: 'var(--editor-muted)' }}
               xmlns="http://www.w3.org/2000/svg"
               width="14"
               height="14"
@@ -237,8 +250,13 @@ function AutocompleteDropdown({ autocomplete, applySuggestion }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -4, scale: 0.97 }}
           transition={{ duration: 0.1, ease: 'easeOut' }}
-          style={{ top: autocomplete.top, left: autocomplete.left }}
-          className="absolute z-50 max-w-xs min-w-52 overflow-hidden rounded-md border border-white/10 bg-[#13141c] shadow-2xl"
+          style={{
+            top: autocomplete.top,
+            left: autocomplete.left,
+            backgroundColor: 'var(--editor-titlebar)',
+            borderColor: 'var(--editor-border)'
+          }}
+          className="absolute z-50 min-w-52 max-w-xs overflow-hidden rounded-md border shadow-2xl"
         >
           {autocomplete.suggestions.map((s, i) => {
             const active = i === autocomplete.index
@@ -248,9 +266,13 @@ function AutocompleteDropdown({ autocomplete, applySuggestion }) {
                 role="option"
                 aria-selected={active}
                 tabIndex={-1}
-                className={`flex cursor-pointer items-baseline gap-1.5 px-3 py-1.5 font-mono text-xs ${
-                  active ? 'bg-white/10' : 'text-[#a9b1d6] hover:bg-white/5'
-                }`}
+                className="flex cursor-pointer items-baseline gap-1.5 px-3 py-1.5 font-mono text-xs"
+                style={{
+                  backgroundColor: active
+                    ? 'rgba(20, 184, 166, 0.15)'
+                    : undefined,
+                  color: active ? 'var(--editor-text)' : 'var(--editor-muted)'
+                }}
                 onMouseDown={(e) => {
                   e.preventDefault()
                   applySuggestion(s)
@@ -258,19 +280,27 @@ function AutocompleteDropdown({ autocomplete, applySuggestion }) {
               >
                 <span
                   className="shrink-0 text-[10px]"
-                  style={{ color: active ? '#80cbc480' : '#7aa2f7' }}
+                  style={{
+                    color: active
+                      ? 'rgba(20, 184, 166, 0.5)'
+                      : 'var(--editor-prop)'
+                  }}
                 >
                   prop
                 </span>
                 <span
                   className="font-semibold"
-                  style={{ color: active ? '#80cbc4' : '#a9b1d6' }}
+                  style={{
+                    color: active ? '#14b8a6' : 'var(--editor-text)'
+                  }}
                 >
                   {s.name}
                   {s.defaultValue && (
                     <span
                       style={{
-                        color: active ? '#80cbc4b3' : '#565a6e'
+                        color: active
+                          ? 'rgba(20, 184, 166, 0.6)'
+                          : 'var(--editor-muted)'
                       }}
                     >
                       ?
@@ -279,14 +309,22 @@ function AutocompleteDropdown({ autocomplete, applySuggestion }) {
                 </span>
                 <span
                   className="text-[10px]"
-                  style={{ color: active ? '#80cbc480' : '#565a6e' }}
+                  style={{
+                    color: active
+                      ? 'rgba(20, 184, 166, 0.5)'
+                      : 'var(--editor-muted)'
+                  }}
                 >
                   : {s.type}
                 </span>
                 {s.defaultValue && (
                   <span
                     className="text-[10px]"
-                    style={{ color: active ? '#80cbc466' : '#565a6e' }}
+                    style={{
+                      color: active
+                        ? 'rgba(20, 184, 166, 0.4)'
+                        : 'var(--editor-muted)'
+                    }}
                   >
                     = {s.defaultValue}
                   </span>
@@ -294,7 +332,13 @@ function AutocompleteDropdown({ autocomplete, applySuggestion }) {
               </div>
             )
           })}
-          <div className="border-t border-white/5 px-3 py-1 font-mono text-[10px] text-[#565a6e]">
+          <div
+            className="border-t px-3 py-1 font-mono text-[10px]"
+            style={{
+              borderColor: 'var(--editor-border)',
+              color: 'var(--editor-muted)'
+            }}
+          >
             {'↑↓'} navigate &middot; {'↵'} insert &middot; esc close
           </div>
         </motion.div>
@@ -340,10 +384,6 @@ export default function Showroom() {
     if (!el) return
     const onKeyDown = (e) => {
       const mod = isMac ? e.metaKey : e.ctrlKey
-      if (mod && !e.shiftKey && e.code === 'KeyC') {
-        e.preventDefault()
-        handleCopy()
-      }
       if (mod && !e.shiftKey && e.code === 'KeyD') {
         e.preventDefault()
         handleReset()
@@ -501,7 +541,11 @@ export default function Showroom() {
       <div className="flex min-w-0 flex-1 flex-col">
         <div
           ref={editorRef}
-          className="flex h-[24rem] flex-col overflow-hidden rounded-lg border border-white/10 bg-[#1a1b26] lg:h-auto lg:min-h-0 lg:flex-1"
+          className="flex h-[24rem] flex-col overflow-hidden rounded-lg border lg:h-auto lg:min-h-0 lg:flex-1"
+          style={{
+            backgroundColor: 'var(--editor-bg)',
+            borderColor: 'var(--editor-border)'
+          }}
         >
           <EditorTitleBar
             isMac={isMac}
@@ -513,14 +557,16 @@ export default function Showroom() {
           <div className="relative min-h-0 flex-1">
             <pre
               ref={preRef}
-              className="pointer-events-none absolute inset-0 overflow-hidden py-3 pr-3 pl-8 font-mono text-xs leading-relaxed whitespace-pre-wrap break-words text-[#a9b1d6] md:py-4 md:pr-4 md:pl-10 md:text-sm"
+              className="scrollbar-hidden pointer-events-none absolute inset-0 overflow-auto py-3 pr-3 pl-8 font-mono text-xs leading-relaxed whitespace-pre md:py-4 md:pr-4 md:pl-10 md:text-sm"
               aria-hidden="true"
+              style={{ color: 'var(--editor-text)' }}
               dangerouslySetInnerHTML={{ __html: highlightedLines }}
             />
             <textarea
               ref={textareaRef}
               aria-label="Code editor"
-              className="absolute inset-0 w-full resize-none bg-transparent py-3 pr-3 pl-8 font-mono text-xs leading-relaxed whitespace-pre-wrap break-words text-transparent caret-white focus:outline-none md:py-4 md:pr-4 md:pl-10 md:text-sm"
+              className="scrollbar-hidden absolute inset-0 w-full resize-none bg-transparent py-3 pr-3 pl-8 font-mono text-xs leading-relaxed whitespace-pre text-transparent focus:outline-none md:py-4 md:pr-4 md:pl-10 md:text-sm"
+              style={{ caretColor: 'var(--editor-caret)' }}
               value={code}
               onInput={handleChange}
               onKeyDown={handleKeyDown}
@@ -545,7 +591,7 @@ export default function Showroom() {
                 whileHover={{ x: 2 }}
                 whileTap={{ scale: 0.92 }}
                 onClick={handleReset}
-                className="flex cursor-pointer items-center gap-1.5 px-4 py-2 font-mono text-xs text-[#565a6e] transition-colors hover:text-[#a9b1d6]"
+                className="editor-btn flex cursor-pointer items-center gap-1.5 px-4 py-2 font-mono text-xs"
               >
                 <motion.svg
                   animate={resetting ? { rotate: -360 } : { rotate: 0 }}

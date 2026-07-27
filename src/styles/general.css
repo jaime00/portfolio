@@ -91,7 +91,7 @@ html.dark::view-transition-old(root) {
   left: 0;
   width: 1.5rem;
   text-align: right;
-  color: #3b3e50;
+  color: var(--editor-line-number);
   font-size: 0.75rem;
   user-select: none;
   pointer-events: none;
@@ -172,4 +172,40 @@ html.dark::view-transition-old(root) {
     0.9915 68.74%,
     1 100%
   );
+
+  /* Editor theme — light defaults */
+  --editor-bg: #f8f9fa;
+  --editor-titlebar: #e9ecef;
+  --editor-text: #383a42;
+  --editor-muted: #a0a1a7;
+  --editor-line-number: #c4c6cf;
+  --editor-prop: #4078f2;
+  --editor-dot-red: #ff5f57;
+  --editor-dot-yellow: #febc2e;
+  --editor-dot-green: #28c840;
+  --editor-border: #dee2e6;
+  --editor-caret: #383a42;
+  --editor-scrollbar: hsl(0 0% 70% / 0.3);
+}
+
+html.dark {
+  /* Editor theme — dark overrides */
+  --editor-bg: #1a1b26;
+  --editor-titlebar: #13141c;
+  --editor-text: #a9b1d6;
+  --editor-muted: #565a6e;
+  --editor-line-number: #3b3e50;
+  --editor-prop: #7aa2f7;
+  --editor-border: rgba(255, 255, 255, 0.1);
+  --editor-caret: #ffffff;
+  --editor-scrollbar: hsl(0 0% 50% / 0.3);
+}
+
+/* Editor button hover */
+.editor-btn {
+  color: var(--editor-muted);
+  transition: color 0.15s;
+}
+.editor-btn:hover {
+  color: var(--editor-text);
 }
