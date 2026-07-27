@@ -169,7 +169,7 @@ const SUGGESTIONS = [
   }
 ]
 
-function EditorTitleBar({ isMac, copied, handleCopy }) {
+function EditorTitleBar({ copied, handleCopy }) {
   return (
     <div
       className="flex items-center gap-2 px-4 py-2.5"
@@ -547,11 +547,7 @@ export default function Showroom() {
             borderColor: 'var(--editor-border)'
           }}
         >
-          <EditorTitleBar
-            isMac={isMac}
-            copied={copied}
-            handleCopy={handleCopy}
-          />
+          <EditorTitleBar copied={copied} handleCopy={handleCopy} />
 
           {/* Editor body */}
           <div className="relative min-h-0 flex-1">
