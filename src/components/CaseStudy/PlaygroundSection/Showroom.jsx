@@ -10,7 +10,7 @@ const DEFAULT_CODE = `import { Poster } from "smooth-components"
 // "./breaking-bad.webp"
 
 <Poster
-  alt="My favorite poster"
+  alt="My favorite poster hey!"
   src="./michael.webp"
   hasFrame={true}
   frameSize="sm"
@@ -620,7 +620,7 @@ export default function Showroom() {
         <Poster
           key={propsKey}
           alt={props.alt}
-          src={props.src || '/pulp-fiction.jpg'}
+          src={props.src || '/michael.webp'}
           hasGlintEffect={props.hasGlintEffect}
           hasFrame={props.hasFrame}
           frameSize={props.frameSize}
