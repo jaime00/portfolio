@@ -48,7 +48,7 @@
       {
         "id": 2,
         "slug": "smooth-components",
-        "urlPreview": "https://smooth-components.netlify.app",
+        "urlPreview": "https://smooth-components.com",
         "title": "smooth-components",
         "description": "Library of beautifully designed, reusable UI components for React. Perfect for portfolios, dashboards, or e-commerce sites.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png",
@@ -79,7 +79,7 @@
                 "**Lightweight** — React and react-dom are externalized, keeping the bundle small.",
                 "**ESM & UMD** — works with any bundler or via CDN."
               ],
-              "footer": "You can find all the detailed documentation [**here**](https://smooth-components.netlify.app/docs)."
+              "footer": "You can find all the detailed documentation [**here**](https://smooth-components.com/docs)."
             },
             {
               "type": "playground",
@@ -270,7 +270,7 @@
       {
         "id": 2,
         "slug": "smooth-components",
-        "urlPreview": "https://smooth-components.netlify.app",
+        "urlPreview": "https://smooth-components.com",
         "title": "smooth-components",
         "description": "Biblioteca de componentes UI bellamente diseñados y reutilizables para React. Ideal para portafolios, dashboards o sitios de comercio electrónico.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png",
@@ -300,7 +300,7 @@
                 "**Ligero** — React y react-dom se externalizan, manteniendo el bundle pequeño.",
                 "**ESM & UMD** — funciona con cualquier bundler o vía CDN."
               ],
-              "footer": "Toda la documentación detallada la encontrarás [**aquí**](https://smooth-components.netlify.app/docs)."
+              "footer": "Toda la documentación detallada la encontrarás [**aquí**](https://smooth-components.com/docs)."
             },
             {
               "type": "playground",

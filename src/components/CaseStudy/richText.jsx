@@ -1,5 +1,5 @@
 const CUSTOM_FAVICONS = {
-  'smooth-components.netlify.app':
+  'smooth-components.com':
     'https://res.cloudinary.com/personal-jaime00/image/upload/v1782770148/projects/smooth-components/favicon_otcbmz.ico',
   'posteritati.com': 'https://a.favicon.im/posteritati.com?larger=true'
 }
