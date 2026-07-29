@@ -84,7 +84,7 @@
             {
               "type": "playground",
               "title": "Playground",
-              "subtitle": "If you want to play around with the component using real images, I recommend [**Posteritati**](https://posteritati.com/new?size%5B%5D=2): a website where you'll find real movie posters with the perfect fit",
+              "subtitle": "If you want to try the component with real images, I recommend two of my favorite websites for finding movie posters: [**Posteritati**](https://posteritati.com/new?size%5B%5D=2) and [**Cosmos**](https://www.cosmos.so/search/elements/movie). Both have pieces with the perfect proportions and plenty of visual inspiration",
               "text": "Convinced? Try it yourself. Import, use, done. No CSS files, no configuration needed. Edit the code below and see the result in real time."
             },
             {
@@ -305,7 +305,7 @@
             {
               "type": "playground",
               "title": "Playground",
-              "subtitle": "Si quieres jugar con el componente con imágenes reales, te recomiendo [**Posteritati**](https://posteritati.com/new?size%5B%5D=2): una web donde encontrarás pósters de cine reales con el fit perfecto",
+              "subtitle": "Si quieres probar el componente con imágenes reales, te recomiendo dos de mis webs favoritas para encontrar pósters de cine: [**Posteritati**](https://posteritati.com/new?size%5B%5D=2) y [**Cosmos**](https://www.cosmos.so/search/elements/movie). En ambas encontrarás piezas con las proporciones perfectas y mucha inspiración visual",
               "text": "¿Te convencí? Pruébalo tú mismo. Importa, usa, listo. Sin archivos CSS, sin configuración. Edita el código a continuación y mira el resultado en tiempo real."
             },
             {
