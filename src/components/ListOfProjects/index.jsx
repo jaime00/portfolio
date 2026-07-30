@@ -17,8 +17,9 @@ export default function ListOfProjects({ limit }) {
 
   useEffect(() => {
     if (!limit) {
-      iconRef.current?.startAnimation()
-      return () => iconRef.current?.stopAnimation()
+      const icon = iconRef.current
+      icon?.startAnimation()
+      return () => icon?.stopAnimation()
     }
   }, [limit])
 
