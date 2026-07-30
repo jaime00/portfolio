@@ -1,3 +1,11 @@
+:root {
+  --color-primary: #14b8a6;
+}
+
+html.dark {
+  --color-primary: #2dd4bf;
+}
+
 body {
   scroll-behavior: smooth;
 }

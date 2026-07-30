@@ -1,9 +1,9 @@
 import { motion } from 'motion/react'
-import { Link } from 'wouter'
 
 import { GithubIcon } from '@/assets/animatedIcons/GithubIcon'
 import { LinkedinIcon } from '@/assets/animatedIcons/LinkedinIcon'
 
+import { HyperLink } from '@/components/HyperLink'
 import Top from '@/components/Top'
 
 import { useTranslation } from '@/i18n'
@@ -30,28 +30,34 @@ export default function Footer() {
               </h3>
               <ul>
                 <li className="mb-4">
-                  <Link
+                  <HyperLink
                     to="/"
-                    className="link-underline text-gray-800 dark:text-gray-300"
+                    className="text-gray-700 dark:text-gray-200"
+                    textClassName="font-normal"
+                    showUnderline={false}
                   >
                     {t('common.home')}
-                  </Link>
+                  </HyperLink>
                 </li>
                 <li className="mb-4">
-                  <Link
+                  <HyperLink
                     to="/about"
-                    className="link-underline text-gray-800 dark:text-gray-300"
+                    className="text-gray-700 dark:text-gray-200"
+                    textClassName="font-normal"
+                    showUnderline={false}
                   >
                     {t('common.about')}
-                  </Link>
+                  </HyperLink>
                 </li>
                 <li className="mb-4">
-                  <Link
+                  <HyperLink
                     to="/side-projects"
-                    className="link-underline text-gray-800 dark:text-gray-300"
+                    className="text-gray-700 dark:text-gray-200"
+                    textClassName="font-normal"
+                    showUnderline={false}
                   >
                     {t('common.projects')}
-                  </Link>
+                  </HyperLink>
                 </li>
               </ul>
             </motion.div>
@@ -70,22 +76,25 @@ export default function Footer() {
               </h3>
               <ul>
                 <li className="mb-4">
-                  <a
+                  <HyperLink
                     href={curriculumUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="link-underline text-gray-800 dark:text-gray-300"
+                    showIcon={false}
+                    className="text-gray-700 dark:text-gray-200"
+                    textClassName="font-normal"
+                    showUnderline={false}
                   >
                     {t('footer.resume')}
-                  </a>
+                  </HyperLink>
                 </li>
                 <li className="mb-4">
-                  <Link
+                  <HyperLink
                     to="/contact"
-                    className="link-underline text-gray-800 dark:text-gray-300"
+                    className="text-gray-700 dark:text-gray-200"
+                    textClassName="font-normal"
+                    showUnderline={false}
                   >
                     {t('common.contact')}
-                  </Link>
+                  </HyperLink>
                 </li>
               </ul>
             </motion.div>

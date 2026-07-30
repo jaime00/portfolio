@@ -1,9 +1,4 @@
-const CUSTOM_FAVICONS = {
-  'smooth-components.com':
-    'https://res.cloudinary.com/personal-jaime00/image/upload/v1782770148/projects/smooth-components/favicon_otcbmz.ico',
-  'posteritati.com': 'https://a.favicon.im/posteritati.com?larger=true',
-  'cosmos.so': 'https://a.favicon.im/cosmos.so?larger=true'
-}
+import { HyperLink } from '@/components/HyperLink'
 
 // Renders inline `code` spans (backticks) and **bold** spans inside
 // case-study text.
@@ -44,36 +39,15 @@ export function renderRichText(text) {
       if (linkMatch) {
         const label = linkMatch[1].replace(/^\*\*(.+)\*\*$/, '$1')
         const isBold = linkMatch[1] !== label
-        const url = linkMatch[2]
-        let faviconUrl = null
-        try {
-          const domain = new URL(url).hostname
-          if (domain in CUSTOM_FAVICONS) {
-            faviconUrl = CUSTOM_FAVICONS[domain]
-          } else {
-            faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=32`
-          }
-        } catch {}
         const link = (
-          <a
+          <HyperLink
             key={i}
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-1 inline-flex items-center gap-1 text-teal-600 underline decoration-teal-600/30 underline-offset-2 hover:decoration-teal-600 dark:text-teal-400 dark:decoration-teal-400/30 dark:hover:decoration-teal-400"
+            href={linkMatch[2]}
+            className="ml-1 text-gray-700 dark:text-gray-300"
+            styles={{ underscoreColor: 'var(--color-primary)' }}
           >
-            {faviconUrl && (
-              <img
-                src={faviconUrl}
-                alt=""
-                width={16}
-                height={16}
-                className="inline-block shrink-0"
-                loading="lazy"
-              />
-            )}
             {label}
-          </a>
+          </HyperLink>
         )
         return isBold ? (
           <strong
