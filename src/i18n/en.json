@@ -45,7 +45,8 @@
   "projects": {
     "title": "Side Projects",
     "subtitle": "A selection of my favorite works.",
-    "viewProject": "View project"
+    "viewProject": "View project",
+    "workingOn": "Working on documenting and blogging my other projects."
   },
   "experiences": {
     "title": "Work Experiences",

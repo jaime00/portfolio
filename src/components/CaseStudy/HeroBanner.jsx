@@ -95,12 +95,27 @@ export default function HeroBanner({ project }) {
           transition={{ duration: 0.6, delay: 0.2, ease }}
         >
           <div className="relative h-full overflow-hidden rounded-2xl shadow-lg">
-            <motion.img
-              src={img}
-              alt={title}
-              className={`${project.slug === 'smooth-components' ? 'object-cover' : ''} ${project.slug === 'eazy-git' ? 'object-cover object-left' : ''} min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px]`}
-              loading="eager"
-            />
+            {project.slug === 'smooth-components' ? (
+              <video
+                src={
+                  isDark
+                    ? 'https://res.cloudinary.com/personal-jaime00/video/upload/v1785377395/projects/portfolio/projects/smooth-components/smooth-components-dark.mov'
+                    : 'https://res.cloudinary.com/personal-jaime00/video/upload/v1785377562/projects/portfolio/projects/smooth-components/smooth-components-light.mov'
+                }
+                className="object-cover object-right min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px]"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            ) : (
+              <motion.img
+                src={img}
+                alt={title}
+                className={`${project.slug === 'eazy-git' ? 'object-cover object-left' : ''} min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px]`}
+                loading="eager"
+              />
+            )}
             {urlPreview && (
               <a
                 href={urlPreview}

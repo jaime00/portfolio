@@ -1,7 +1,9 @@
 import DataSite from '@/data/dataSite.json'
 
 const getProjects = ({ limit, lang = 'en' } = { limit: null, lang: 'en' }) => {
-  const projects = DataSite.projects[lang] || DataSite.projects.en
+  const projects = (DataSite.projects[lang] || DataSite.projects.en).filter(
+    (p) => p.enabled !== false
+  )
   if (limit && limit > 0) {
     return projects.slice(0, limit)
   } else {

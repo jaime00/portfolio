@@ -45,7 +45,8 @@
   "projects": {
     "title": "Proyectos Personales",
     "subtitle": "Una selección de mis trabajos favoritos.",
-    "viewProject": "Ver proyecto"
+    "viewProject": "Ver proyecto",
+    "workingOn": "Trabajando para documentar y blogear mis otros proyectos."
   },
   "experiences": {
     "title": "Experiencias Laborales",

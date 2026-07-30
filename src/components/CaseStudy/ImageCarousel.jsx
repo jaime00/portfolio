@@ -1,5 +1,5 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, motion, useInView } from 'motion/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 const INTERVAL = 4000
@@ -16,6 +16,8 @@ export default function ImageCarousel({ images, title }) {
   const [dir, setDir] = useState(1)
   const [paused, setPaused] = useState(false)
   const timerRef = useRef(null)
+  const containerRef = useRef(null)
+  const inView = useInView(containerRef, { once: false, margin: '-80px' })
 
   const go = useCallback(
     (index, direction) => {
@@ -29,13 +31,14 @@ export default function ImageCarousel({ images, title }) {
   const advance = useCallback(() => go(current + 1, 1), [current, go])
 
   useEffect(() => {
-    if (paused) return
+    if (paused || !inView) return
     timerRef.current = setInterval(advance, INTERVAL)
     return () => clearInterval(timerRef.current)
-  }, [paused, advance])
+  }, [paused, inView, advance])
 
   return (
     <motion.div
+      ref={containerRef}
       className="relative overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
       initial={{ opacity: 0, y: 30, scale: 0.97 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -104,7 +107,7 @@ export default function ImageCarousel({ images, title }) {
                 className="h-full rounded-full bg-white"
                 style={{
                   animation: `progress-fill ${INTERVAL}ms linear forwards`,
-                  animationPlayState: paused ? 'paused' : 'running'
+                  animationPlayState: paused || !inView ? 'paused' : 'running'
                 }}
               />
             )}

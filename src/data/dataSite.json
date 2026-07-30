@@ -3,55 +3,13 @@
     "en": [
       {
         "id": 1,
-        "slug": "cinepolis-web",
-        "urlPreview": "https://cinepolis.com/mx",
-        "title": "Cinépolis",
-        "description": "WEB platform for movie lovers to explore showtimes, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png",
-        "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
-        "caseStudy": {
-          "role": "Frontend Developer",
-          "duration": "2024 - Present",
-          "team": "8 developers",
-          "sections": [
-            {
-              "type": "narrative",
-              "title": "The Challenge",
-              "text": "Cinépolis needed a complete redesign of their WEB platform to modernize the user experience and improve performance across all devices. The existing platform had slow load times and a dated interface that didn't represent the premium cinema experience the brand offers.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1782700130/projects/portfolio/projects/smooth-components/poster-demo.mov"
-            },
-            {
-              "type": "narrative",
-              "title": "My Role",
-              "text": "As a Frontend Developer, I led the implementation of interactive animations using Motion in the food ordering screen and search section. I also worked on the cinema selection flow, ticket booking, food ordering, and the loyalty program integration with 'Cine Puntos'.",
-              "imagePosition": "left"
-            },
-            {
-              "type": "narrative",
-              "title": "Technical Approach",
-              "text": "The platform was built using Next.js with a Micro-Frontend architecture powered by Module Federation. This allowed multiple teams to work independently on different sections of the site while maintaining a cohesive user experience. We used GraphQL for efficient queries and Tailwind CSS for consistent styling.",
-              "imagePosition": "right"
-            },
-            {
-              "type": "narrative",
-              "title": "Results",
-              "text": "The redesigned platform delivers a significantly improved user experience with faster load times, smoother animations, and a modern interface that reflects the Cinépolis brand identity.",
-              "highlights": [
-                { "value": "2M+", "label": "Monthly users" },
-                { "value": "40%", "label": "Faster load times" },
-                { "value": "5", "label": "Countries" }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "id": 2,
         "slug": "smooth-components",
         "urlPreview": "https://smooth-components.com",
         "title": "smooth-components",
         "description": "Library of beautifully designed, reusable UI components for React. Perfect for portfolios, dashboards, or e-commerce sites.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785295625/projects/smooth-components/landing.png",
+        "imgLight": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785378016/projects/portfolio/projects/smooth-components/smooth-components-landing-light.png",
+        "imgDark": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785377970/projects/portfolio/projects/smooth-components/smooth-components-landing-dark.png",
         "stack": ["TypeScript", "vite", "Wouter", "Motion"],
         "urlCode": "https://www.npmjs.com/package/smooth-components",
         "caseStudy": {
@@ -103,16 +61,25 @@
               "title": "Conclusion",
               "text": "`smooth-components` was born from a personal obsession and today it's an open-source library published on [**npm**](https://www.npmjs.com/package/smooth-components) that any developer can use. I'm currently working on new components with the same philosophy: bringing real-world aesthetics to the browser. If you're interested in exploring the library or have ideas for new components, the repository is open.",
               "highlights": [
-                { "value": "~98 kB", "label": "Package Size" },
-                { "value": "100%", "label": "TypeScript" },
-                { "value": "npm", "label": "Published" }
+                {
+                  "value": "~98 kB",
+                  "label": "Package Size"
+                },
+                {
+                  "value": "100%",
+                  "label": "TypeScript"
+                },
+                {
+                  "value": "npm",
+                  "label": "Published"
+                }
               ]
             }
           ]
         }
       },
       {
-        "id": 3,
+        "id": 2,
         "slug": "eazy-git",
         "urlPreview": "https://www.npmjs.com/package/eazy-git",
         "urlCode": "https://github.com/jaime00/eazy-git",
@@ -176,9 +143,72 @@
               "title": "Conclusion",
               "text": "**eazy-git** is an excellent option if you want to **optimize your terminal-based Git workflow.**\n\nIt lets you work faster, cleaner, and with fewer errors thanks to preconfigured commands that adapt to your branching strategy and development environment. It also automates common manual tasks, like authentication and dependency installation.\n\nIf you work on large projects or with separate environments (like **DEV, UAT, PROD**), this tool can **save you hours of repetitive work** and help you keep a clear, tidy branch structure.",
               "highlights": [
-                { "value": "npm", "label": "Published" },
-                { "value": "CLI", "label": "Interactive" },
-                { "value": "Open", "label": "Source" }
+                {
+                  "value": "npm",
+                  "label": "Published"
+                },
+                {
+                  "value": "CLI",
+                  "label": "Interactive"
+                },
+                {
+                  "value": "Open",
+                  "label": "Source"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "enabled": false,
+        "slug": "cinepolis-web",
+        "urlPreview": "https://cinepolis.com/mx",
+        "title": "Cinépolis",
+        "description": "WEB platform for movie lovers to explore showtimes, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png",
+        "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
+        "caseStudy": {
+          "role": "Frontend Developer",
+          "duration": "2024 - Present",
+          "team": "8 developers",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "The Challenge",
+              "text": "Cinépolis needed a complete redesign of their WEB platform to modernize the user experience and improve performance across all devices. The existing platform had slow load times and a dated interface that didn't represent the premium cinema experience the brand offers.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1782700130/projects/portfolio/projects/smooth-components/poster-demo.mov"
+            },
+            {
+              "type": "narrative",
+              "title": "My Role",
+              "text": "As a Frontend Developer, I led the implementation of interactive animations using Motion in the food ordering screen and search section. I also worked on the cinema selection flow, ticket booking, food ordering, and the loyalty program integration with 'Cine Puntos'.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Technical Approach",
+              "text": "The platform was built using Next.js with a Micro-Frontend architecture powered by Module Federation. This allowed multiple teams to work independently on different sections of the site while maintaining a cohesive user experience. We used GraphQL for efficient queries and Tailwind CSS for consistent styling.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "Results",
+              "text": "The redesigned platform delivers a significantly improved user experience with faster load times, smoother animations, and a modern interface that reflects the Cinépolis brand identity.",
+              "highlights": [
+                {
+                  "value": "2M+",
+                  "label": "Monthly users"
+                },
+                {
+                  "value": "40%",
+                  "label": "Faster load times"
+                },
+                {
+                  "value": "5",
+                  "label": "Countries"
+                }
               ]
             }
           ]
@@ -186,6 +216,7 @@
       },
       {
         "id": 4,
+        "enabled": false,
         "slug": "negos",
         "urlPreview": "https://www.negos.co",
         "title": "Negos",
@@ -213,9 +244,18 @@
               "title": "Tech Stack",
               "text": "SvelteKit handles server-side rendering and routing, while Supabase provides the backend with real-time database, authentication, and file storage. Tailwind CSS ensures a consistent and responsive design across all devices.",
               "highlights": [
-                { "value": "Real-time", "label": "Database sync" },
-                { "value": "SSR", "label": "Server rendered" },
-                { "value": "PWA", "label": "Installable" }
+                {
+                  "value": "Real-time",
+                  "label": "Database sync"
+                },
+                {
+                  "value": "SSR",
+                  "label": "Server rendered"
+                },
+                {
+                  "value": "PWA",
+                  "label": "Installable"
+                }
               ]
             }
           ]
@@ -225,55 +265,13 @@
     "es": [
       {
         "id": 1,
-        "slug": "cinepolis-web",
-        "urlPreview": "https://cinepolis.com/mx",
-        "title": "Cinépolis",
-        "description": "Plataforma WEB para amantes del cine que permite explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png",
-        "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
-        "caseStudy": {
-          "role": "Desarrollador Frontend",
-          "duration": "2024 - Presente",
-          "team": "8 desarrolladores",
-          "sections": [
-            {
-              "type": "narrative",
-              "title": "El Desafío",
-              "text": "Cinépolis necesitaba un rediseño completo de su plataforma WEB para modernizar la experiencia de usuario y mejorar el rendimiento en todos los dispositivos. La plataforma existente tenía tiempos de carga lentos y una interfaz anticuada que no representaba la experiencia premium de cine que la marca ofrece.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1782700130/projects/portfolio/projects/smooth-components/poster-demo.mov"
-            },
-            {
-              "type": "narrative",
-              "title": "Mi Rol",
-              "text": "Como Desarrollador Frontend, lideré la implementación de animaciones interactivas usando Motion en la pantalla de pedido de comida y la sección de búsqueda. También trabajé en el flujo de selección de cine, reserva de boletos, pedidos de comida y la integración del programa de lealtad con 'Cine Puntos'.",
-              "imagePosition": "left"
-            },
-            {
-              "type": "narrative",
-              "title": "Enfoque Técnico",
-              "text": "La plataforma fue construida usando Next.js con una arquitectura de Micro-Frontends impulsada por Module Federation. Esto permitió que múltiples equipos trabajaran de forma independiente en diferentes secciones del sitio manteniendo una experiencia de usuario cohesiva. Usamos GraphQL para consultas eficientes y Tailwind CSS para estilos consistentes.",
-              "imagePosition": "right"
-            },
-            {
-              "type": "narrative",
-              "title": "Resultados",
-              "text": "La plataforma rediseñada ofrece una experiencia de usuario significativamente mejorada con tiempos de carga más rápidos, animaciones más fluidas y una interfaz moderna que refleja la identidad de marca de Cinépolis.",
-              "highlights": [
-                { "value": "2M+", "label": "Usuarios mensuales" },
-                { "value": "40%", "label": "Carga más rápida" },
-                { "value": "5", "label": "Países" }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "id": 2,
         "slug": "smooth-components",
         "urlPreview": "https://smooth-components.com",
         "title": "smooth-components",
         "description": "Biblioteca de componentes UI bellamente diseñados y reutilizables para React. Ideal para portafolios, dashboards o sitios de comercio electrónico.",
-        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597819/projects/portfolio/projects/smooth-components/smooth-components.png",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785295625/projects/smooth-components/landing.png",
+        "imgLight": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785378016/projects/portfolio/projects/smooth-components/smooth-components-landing-light.png",
+        "imgDark": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785377970/projects/portfolio/projects/smooth-components/smooth-components-landing-dark.png",
         "stack": ["TypeScript", "vite", "Wouter", "Motion"],
         "urlCode": "https://www.npmjs.com/package/smooth-components",
         "caseStudy": {
@@ -324,16 +322,25 @@
               "title": "Conclusión",
               "text": "`smooth-components` nació de una obsesión personal y hoy es una librería open source publicada en [**npm**](https://www.npmjs.com/package/smooth-components) que cualquier desarrollador puede usar. Actualmente estoy trabajando en nuevos componentes con la misma filosofía: llevar la estética del mundo físico al navegador. Si te interesa explorar la librería o tienes ideas para nuevos componentes, el repositorio está abierto.",
               "highlights": [
-                { "value": "~98 kB", "label": "Peso del paquete" },
-                { "value": "100%", "label": "TypeScript" },
-                { "value": "npm", "label": "Publicado" }
+                {
+                  "value": "~98 kB",
+                  "label": "Peso del paquete"
+                },
+                {
+                  "value": "100%",
+                  "label": "TypeScript"
+                },
+                {
+                  "value": "npm",
+                  "label": "Publicado"
+                }
               ]
             }
           ]
         }
       },
       {
-        "id": 3,
+        "id": 2,
         "slug": "eazy-git",
         "urlPreview": "https://www.npmjs.com/package/eazy-git",
         "urlCode": "https://github.com/jaime00/eazy-git",
@@ -397,9 +404,72 @@
               "title": "Conclusión",
               "text": "**eazy-git** es una excelente opción si quieres **optimizar tu flujo de trabajo con Git desde la terminal.**\n\nTe permite trabajar de forma más rápida, más limpia y con menos errores gracias a comandos preconfigurados que se adaptan a tu estrategia de ramas y entorno de desarrollo. Además, automatiza tareas manuales comunes, como la autenticación e instalación de dependencias.\n\nSi trabajas en grandes proyectos o con entornos separados (como **DEV, UAT, PROD**), esta herramienta puede **ahorrarte horas de trabajo repetitivo** y ayudarte a mantener una estructura de ramas clara y ordenada.",
               "highlights": [
-                { "value": "npm", "label": "Publicado" },
-                { "value": "CLI", "label": "Interactivo" },
-                { "value": "Open", "label": "Source" }
+                {
+                  "value": "npm",
+                  "label": "Publicado"
+                },
+                {
+                  "value": "CLI",
+                  "label": "Interactivo"
+                },
+                {
+                  "value": "Open",
+                  "label": "Source"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "enabled": false,
+        "slug": "cinepolis-web",
+        "urlPreview": "https://cinepolis.com/mx",
+        "title": "Cinépolis",
+        "description": "Plataforma WEB para amantes del cine que permite explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
+        "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png",
+        "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
+        "caseStudy": {
+          "role": "Desarrollador Frontend",
+          "duration": "2024 - Presente",
+          "team": "8 desarrolladores",
+          "sections": [
+            {
+              "type": "narrative",
+              "title": "El Desafío",
+              "text": "Cinépolis necesitaba un rediseño completo de su plataforma WEB para modernizar la experiencia de usuario y mejorar el rendimiento en todos los dispositivos. La plataforma existente tenía tiempos de carga lentos y una interfaz anticuada que no representaba la experiencia premium de cine que la marca ofrece.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1782700130/projects/portfolio/projects/smooth-components/poster-demo.mov"
+            },
+            {
+              "type": "narrative",
+              "title": "Mi Rol",
+              "text": "Como Desarrollador Frontend, lideré la implementación de animaciones interactivas usando Motion en la pantalla de pedido de comida y la sección de búsqueda. También trabajé en el flujo de selección de cine, reserva de boletos, pedidos de comida y la integración del programa de lealtad con 'Cine Puntos'.",
+              "imagePosition": "left"
+            },
+            {
+              "type": "narrative",
+              "title": "Enfoque Técnico",
+              "text": "La plataforma fue construida usando Next.js con una arquitectura de Micro-Frontends impulsada por Module Federation. Esto permitió que múltiples equipos trabajaran de forma independiente en diferentes secciones del sitio manteniendo una experiencia de usuario cohesiva. Usamos GraphQL para consultas eficientes y Tailwind CSS para estilos consistentes.",
+              "imagePosition": "right"
+            },
+            {
+              "type": "narrative",
+              "title": "Resultados",
+              "text": "La plataforma rediseñada ofrece una experiencia de usuario significativamente mejorada con tiempos de carga más rápidos, animaciones más fluidas y una interfaz moderna que refleja la identidad de marca de Cinépolis.",
+              "highlights": [
+                {
+                  "value": "2M+",
+                  "label": "Usuarios mensuales"
+                },
+                {
+                  "value": "40%",
+                  "label": "Carga más rápida"
+                },
+                {
+                  "value": "5",
+                  "label": "Países"
+                }
               ]
             }
           ]
@@ -407,6 +477,7 @@
       },
       {
         "id": 4,
+        "enabled": false,
         "slug": "negos",
         "urlPreview": "https://www.negos.co",
         "title": "Negos",
@@ -434,9 +505,18 @@
               "title": "Stack Tecnológico",
               "text": "SvelteKit maneja el renderizado del lado del servidor y el enrutamiento, mientras que Supabase proporciona el backend con base de datos en tiempo real, autenticación y almacenamiento de archivos. Tailwind CSS asegura un diseño consistente y responsive en todos los dispositivos.",
               "highlights": [
-                { "value": "Real-time", "label": "Sincronización BD" },
-                { "value": "SSR", "label": "Server rendered" },
-                { "value": "PWA", "label": "Instalable" }
+                {
+                  "value": "Real-time",
+                  "label": "Sincronización BD"
+                },
+                {
+                  "value": "SSR",
+                  "label": "Server rendered"
+                },
+                {
+                  "value": "PWA",
+                  "label": "Instalable"
+                }
               ]
             }
           ]

@@ -1,3 +1,4 @@
+import useDarkMode from '@/contexts/DarkMode'
 import { motion } from 'motion/react'
 import { useState } from 'react'
 import { useLocation } from 'wouter'
@@ -14,17 +15,23 @@ export default function Project({
   title,
   description,
   img,
+  imgLight,
+  imgDark,
   stack,
   id,
   slug,
-  caseStudy
+  caseStudy,
+  enabled = true
 }) {
   const readingTime = caseStudy ? getReadingTime(caseStudy.sections) : null
   const [loaded, setLoaded] = useState(false)
+  const { isDark } = useDarkMode()
+  const resolvedImg = imgLight && imgDark ? (isDark ? imgDark : imgLight) : img
   const [, navigate] = useLocation()
   const { rotateX, rotateY, handleMouseMove, handleMouseLeave } = useTilt()
 
   const handleCardClick = (e) => {
+    if (!enabled) return
     if (e.target.closest('a')) return
     navigate(`/side-projects/${slug}`)
   }
@@ -34,28 +41,29 @@ export default function Project({
       <div className="wrapper group min-w-[350px] max-w-[405px] pb-6 text-gray-900 antialiased">
         <div style={{ perspective: 800 }}>
           <motion.div
-            role="link"
-            tabIndex={0}
+            role={enabled ? 'link' : undefined}
+            tabIndex={enabled ? 0 : -1}
             onClick={handleCardClick}
             onKeyDown={(e) => {
+              if (!enabled) return
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault()
                 handleCardClick(e)
               }
             }}
-            className="cursor-pointer"
-            style={{ rotateX, rotateY }}
-            whileHover={{ y: -4 }}
+            className={enabled ? 'cursor-pointer' : 'cursor-default opacity-50'}
+            style={enabled ? { rotateX, rotateY } : undefined}
+            whileHover={enabled ? { y: -4 } : undefined}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
+            onMouseMove={enabled ? handleMouseMove : undefined}
+            onMouseLeave={enabled ? handleMouseLeave : undefined}
           >
             <div className="rounded-lg bg-gray-100 dark:bg-gray-900">
               <img
                 loading="lazy"
                 width={405}
                 height={260}
-                src={img}
+                src={resolvedImg}
                 alt={title}
                 onLoad={() => setLoaded(true)}
                 className={`h-[260px] w-full rounded-lg object-cover object-top shadow-md transition-transform duration-700 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
