@@ -261,6 +261,7 @@ export default function HeroBanner({ project }) {
               pkg="eazy-git@0.2.3"
               isDarkMode={isDark}
               size="sm"
+              hasHoverEffect={false}
             />
           ) : (
             lastHighlights && (

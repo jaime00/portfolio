@@ -46,7 +46,7 @@ export default function NotFound() {
       <div className="relative z-10 flex w-full max-w-5xl flex-col items-start gap-12 md:flex-row md:items-center md:justify-between">
         <div className="flex flex-col gap-6">
           <FoldText
-            text="NOT FOUND"
+            text="404"
             splitBy="char"
             hinge="top"
             fontSize="clamp(3rem, 8vw, 7rem)"
@@ -54,8 +54,19 @@ export default function NotFound() {
             color={isDark ? '#ffffff' : '#111827'}
             trigger="mount"
           />
-          <p className="text-lg text-gray-500 dark:text-gray-400">
-            {t('notFound.message')}
+          <p className="ml-1 text-2xl text-gray-500 dark:text-gray-400">
+            {t('notFound.message')
+              .split('URL')
+              .flatMap((part, i, arr) =>
+                i < arr.length - 1
+                  ? [
+                      part,
+                      <span key={i} className="font-semibold">
+                        URL
+                      </span>
+                    ]
+                  : [part]
+              )}
           </p>
           <Link
             to="/"
@@ -81,7 +92,7 @@ export default function NotFound() {
           src={CharacterSit}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none hidden w-48 select-none min-1045:block min-1045:w-64 lg:w-72"
+          className="pointer-events-none hidden w-72 select-none min-807:block "
           loading="lazy"
           width={305}
           height={415}

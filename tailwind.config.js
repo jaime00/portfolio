@@ -78,6 +78,7 @@ module.exports = {
       },
       screens: {
         'min-1045': '1045px',
+        'min-807': '807px',
         'min-445': '445px'
       }
     }
