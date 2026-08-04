@@ -1,4 +1,5 @@
 import { motion, useScroll, useTransform } from 'motion/react'
+import { useRef } from 'react'
 
 import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCode'
 
@@ -15,6 +16,7 @@ const image_profile =
 
 export default function Presentation() {
   const { t } = useTranslation()
+  const iconRef = useRef(null)
   const targetYears = getYearsOfExperience()
   const { scrollY } = useScroll()
   const parallaxY = useTransform(scrollY, [0, 500], [0, 60])
@@ -31,9 +33,14 @@ export default function Presentation() {
   return (
     <div className="relative mb-5 mt-12 grid grid-cols-1 items-center text-center md:mt-24 md:grid-cols-6 md:text-left">
       <div className="col-span-5 mx-2">
-        <p className="mb-5 flex items-center gap-3 text-left text-lg font-medium text-gray-500 dark:text-gray-400">
-          <span className="group inline-flex text-gray-500 transition-all duration-300 hover:rotate-12 hover:scale-125 hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.5)] dark:text-gray-400">
+        <p
+          className="group mb-5 flex items-center gap-3 text-left text-lg font-medium text-gray-500 dark:text-gray-400"
+          onMouseEnter={() => iconRef.current?.startAnimation()}
+          onMouseLeave={() => iconRef.current?.stopAnimation()}
+        >
+          <span className="inline-flex text-gray-500 transition-all duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.5)] dark:text-gray-400">
             <FolderCodeIcon
+              ref={iconRef}
               className="transition-colors duration-300 group-hover:text-teal-500"
               size={22}
             />
