@@ -44,7 +44,7 @@ export default function LanguageSelector() {
         {flags[nextLang]}
       </IconButton>
       <span
-        className={`pointer-events-none absolute top-full left-1/2 mt-2 -translate-x-1/2 transition-all duration-150 ${hovered ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
+        className={`pointer-events-none absolute top-full left-1/2 mt-2 -translate-x-1/2 transition-all duration-150 [@media(hover:none)]:hidden ${hovered ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
       >
         <span className="relative flex items-center rounded-lg border border-white/10 bg-neutral-900 px-3 py-2 whitespace-nowrap shadow-[0_8px_24px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]">
           <span className="text-xs leading-none font-medium text-white/80">
