@@ -1,8 +1,5 @@
 import { motion } from 'motion/react'
 
-import { GithubIcon } from '@/assets/animatedIcons/GithubIcon'
-import { LinkedinIcon } from '@/assets/animatedIcons/LinkedinIcon'
-
 import { HyperLink } from '@/components/HyperLink'
 import Top from '@/components/Top'
 
