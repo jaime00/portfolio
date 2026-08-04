@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 npm install          # Install dependencies
-npm run dev          # Development server (Vite — includes PostCSS/Tailwind natively)
+npm run dev          # Development server (Vite — port 9999, opens browser)
 npm run build        # Production build → dist/
 npm run preview      # Preview production build locally
 npm run lint         # Lint src/**/*.{js,jsx}
@@ -17,11 +17,11 @@ npm run lint:fix     # Lint and auto-fix
 
 React 19 portfolio site using Vite, Wouter v3 routing, Tailwind CSS, and Motion for animations. Deployed to Netlify.
 
-**Routing:** `App.jsx` defines all routes using Wouter v3 — `/`, `/about`, `/side-projects`, `/side-projects/:slug`, `/experiences`, `/contact`. Unknown routes render `<NotFound />` (`src/pages/NotFound/`). `<ErrorBoundary>` wraps the `<Switch>` to catch render errors.
+**Routing:** `App.jsx` defines all routes using Wouter v3 — `/`, `/about`, `/side-projects`, `/side-projects/:slug`, `/experiences`, `/contact`. Unknown routes render `<NotFound />` (`src/pages/NotFound/`). `<ErrorBoundary>` wraps the `<Switch>` to catch render errors. Gotcha: `/side-projects` renders `src/pages/Projects/` — folder name does not match the route path.
 
-**Data flow:** Static data lives in `src/data/dataSite.json`. Service functions in `src/services/index.jsx` expose getters (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`, `getStyleButton`, `getYearsOfExperience`, `getProjectBySlug`, `getAdjacentProjects`, `getPlaylist`). Components never import `dataSite.json` directly — always go through services. The music playlist lives in `dataSite.json` under the `playlist` key.
+**Data flow:** Static data lives in `src/data/dataSite.json`. Service functions in `src/services/index.jsx` expose getters (`getProjects`, `getWorkExperience`, `getExperiences`, `getCurriculumUrl`, `getStyleButton`, `getYearsOfExperience`, `getProjectBySlug`, `getAdjacentProjects`, `getPlaylist`). Components never import `dataSite.json` directly — always go through services. The music playlist lives in `dataSite.json` under the `playlist` key. Gotcha: `getYearsOfExperience` always parses `.en` work entries (English month names) — do not change it to use `lang`.
 
-**i18n:** Custom context-based system in `src/i18n/`. `LanguageProvider` wraps the app (in `App.js`) and exposes `useTranslation()` → `{ language, t, changeLanguage }`. UI strings live in `src/i18n/en.json` and `src/i18n/es.json`; use dot-notation keys with `t('section.key')`. Content data in `dataSite.json` is keyed by language (`projects.en`, `projects.es`); service functions accept a `lang` parameter. Language is auto-detected from browser and persisted in localStorage.
+**i18n:** Custom context-based system in `src/i18n/`. `LanguageProvider` wraps the app (in `App.jsx`) and exposes `useTranslation()` → `{ language, t, changeLanguage }`. UI strings live in `src/i18n/en.json` and `src/i18n/es.json`; use dot-notation keys with `t('section.key')`. Content data in `dataSite.json` is keyed by language (`projects.en`, `projects.es`); service functions accept a `lang` parameter. Language is auto-detected from browser and persisted in localStorage.
 
 **Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList using the View Transition API (`document.startViewTransition`). Falls back gracefully on Safari (no View Transition). State managed by `DarkModeProvider` (`src/contexts/DarkMode.jsx`) which wraps the app in `App.jsx`. Any component needing dark mode calls `useDarkMode()` (default export of `src/contexts/DarkMode.jsx`) → `{ isDark, toggleDark }`. No prop-drilling of `isDark`. Persisted in `localStorage.isDark`. Use Tailwind's `dark:` prefix for dark variants. `LanguageProvider` wraps `DarkModeProvider` in `App.jsx` — order matters.
 
@@ -31,7 +31,7 @@ React 19 portfolio site using Vite, Wouter v3 routing, Tailwind CSS, and Motion 
 
 **Path alias:** `@/` maps to `src/` (configured in `vite.config.js`). All imports use `@/components/...`, `@/pages/...`, etc. — never relative paths for cross-directory imports.
 
-**Animated icons:** `src/assets/animatedIcons/createAnimatedIcon.jsx` is a HOC factory — `createAnimatedIcon(displayName, renderSVG, wrapperTag)`. Most icons use it; `GithubIcon` is the exception (multi-control animation). All icons accept a `size` prop and expose `startAnimation`/`stopAnimation` via `ref`. Pass `autoAnimate` to make an icon animate on mount without needing a ref.
+**Animated icons:** `src/assets/animatedIcons/createAnimatedIcon.jsx` is a HOC factory — `createAnimatedIcon(displayName, renderSVG, wrapperTag)`. Most icons use it; `GithubIcon` (multi-control animation) and `ExternalLinkIcon` (custom ref logic) are exceptions and implement `forwardRef` manually. All icons accept a `size` prop and expose `startAnimation`/`stopAnimation` via `ref`. Pass `autoAnimate` to make an icon animate on mount without needing a ref.
 
 **Project detail (CaseStudy):** `ProjectDetail` page fetches a project by slug and renders `<CaseStudy>`. If the slug doesn't exist or has no `caseStudy`, it redirects to `/side-projects` (using Wouter's `<Redirect>`). The `caseStudy.sections` array in `dataSite.json` is type-driven — supported types: `narrative`, `gallery`, `video`, `features`, `commands`, `playground`. Each maps to a sub-component in `src/components/CaseStudy/`. The `playground` type renders an interactive live code editor (`PlaygroundSection/Showroom.jsx`) using the `smooth-components` npm package (`Poster` component). The last section may include a `highlights` array (`[{ value, label }]`) rendered as stat cards in `HeroBanner`. `HeroBanner` also renders a `BundlephobiaWidget` (from `smooth-components`) for the `smooth-components` and `eazy-git` slugs.
 
@@ -45,19 +45,26 @@ React 19 portfolio site using Vite, Wouter v3 routing, Tailwind CSS, and Motion 
 
 **Background:** `src/components/Background/` composes three layers — `Aurora` (gradient blobs), `Grain` (SVG noise texture), and `Particles` (floating dots). Rendered once at the app root, below the NavBar.
 
+**HyperLink:** `src/components/HyperLink.jsx` (flat file, no folder) renders inline links with animated underline shrink on hover. Props: `href` (external) or `to` (Wouter internal), `external` (default `true`), `showIcon`, `showUnderline`, `styles.textColor`/`styles.underscoreColor`, `textClassName`. Uses `ExternalLinkIcon` ref animation on hover.
+
+**ReadingProgress:** `src/components/ReadingProgress/` — fixed top bar (3px, teal gradient) tracking `scrollYProgress` via Motion spring. Used in CaseStudy pages.
+
+**AnimatedCounter:** `src/components/AnimatedCounter/` — counts from 1 to `target` prop with per-step motion animation. Used in `HeroBanner` highlights stat cards.
+
 **Hooks:** `src/hooks/useTypewriter.jsx` returns `{ visible, hidden }` for a typewriter effect; render as `<span>{visible}<span style={{ visibility:'hidden' }}>{hidden}</span></span>`. `src/hooks/useTilt.jsx` provides a mouse-tracking tilt transform via a ref.
 
 ## Key Conventions
 
 - **Tailwind-first styling.** Modify `src/styles/tailwind.css` or `tailwind.config.js` — Vite + PostCSS regenerate CSS automatically on save. Never edit `src/styles/output.css` (legacy; unused since Vite migration).
 - **Custom CSS** (fonts, scrollbars, gradients) lives in `src/styles/general.css`.
-- **Component structure:** One folder per component with `index.jsx` barrel export. All source files use `.jsx` extension (including those without JSX). Exceptions: `CarouselOfTechnologies/index.jsx` and `ShinyText.jsx` (flat file, no folder).
+- **Component structure:** One folder per component with `index.jsx` barrel export. All source files use `.jsx` extension (including those without JSX). Flat file exceptions (no folder): `HyperLink.jsx` and `ShinyText.jsx`.
 - **Images:** Project previews hosted on Cloudinary. Local assets in `src/assets/`. Lazy-loaded with Lozad (`.lozad` class).
 - **Public static assets:** `public/` contains only favicons, manifests, and SEO files. Music MP3s, album covers, and the vinyl image are all hosted on Cloudinary — URLs live in `dataSite.json` under `playlist[].url` and `playlist[].cover`.
 - **localStorage keys in use:** `isDark`, `language`, `music-index`, `music-time`, `music-playing`.
 - **Custom Tailwind breakpoints:** `min-1045` and `min-445` (min-width).
 - **Prettier config:** No semicolons, single quotes, no trailing commas, 80 char width. Plugins: `prettier-plugin-tailwindcss` (class sorting) and `@trivago/prettier-plugin-sort-imports` (import ordering: third-party first, then `@/` groups alphabetically, then relative).
-- **Pre-commit hook (Husky):** Runs Prettier on staged files only — no lint check on commit.
+- **Pre-commit hook (Husky):** Rejects relative imports using `../` across directories, runs ESLint on staged `.js/.jsx`, then runs Prettier on all staged files. All must pass.
+- **ESLint a11y:** `eslint-plugin-jsx-a11y` is active — accessibility violations are lint errors.
 - **No tests exist yet** in the codebase.
 - **Pages are eagerly imported** in `App.jsx` — no `React.lazy()` is used.
 

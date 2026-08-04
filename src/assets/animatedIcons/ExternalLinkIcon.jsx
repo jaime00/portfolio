@@ -50,7 +50,7 @@ const ExternalLinkIcon = forwardRef(
     )
 
     return (
-      <div
+      <span
         className={className}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -73,7 +73,7 @@ const ExternalLinkIcon = forwardRef(
             <path d="M10 14 21 3" />
           </motion.g>
         </svg>
-      </div>
+      </span>
     )
   }
 )

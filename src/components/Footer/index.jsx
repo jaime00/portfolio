@@ -17,7 +17,7 @@ export default function Footer() {
     <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto flex max-w-6xl animate-fade flex-col justify-center p-4 px-4 font-sans sm:p-6">
       <hr className="my-12 dark:border-gray-700" />
       <footer className="">
-        <div className="mb-12 flex flex-col gap-8 sm:flex-row sm:justify-between">
+        <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">
           <div className="grid grid-cols-2 gap-8 sm:gap-20">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -101,28 +101,6 @@ export default function Footer() {
           </div>
           <div className="flex items-start justify-end">
             <Top />
-          </div>
-        </div>
-        <div className="flex items-center justify-between">
-          <div className="flex space-x-6">
-            <a
-              href="https://linkedin.com/in/jaimetorresv"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="text-gray-500 transition hover:rotate-6 hover:text-white"
-            >
-              <LinkedinIcon />
-            </a>
-            <a
-              href="https://github.com/jaime00"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="text-gray-500 transition hover:rotate-6 hover:text-black dark:hover:text-white"
-            >
-              <GithubIcon />
-            </a>
           </div>
         </div>
       </footer>

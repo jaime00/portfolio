@@ -139,6 +139,11 @@ export default function HeroBanner({ project }) {
                 size={80}
                 autoAnimate
                 className="absolute -right-5 -top-10 z-10 text-gray-400 dark:text-gray-500"
+                style={
+                  project.slug === 'smooth-components'
+                    ? { color: 'hsl(167 80% 52%)' }
+                    : undefined
+                }
               />
             )}
             <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 md:text-base">

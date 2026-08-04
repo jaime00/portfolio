@@ -1,10 +1,9 @@
 import { floatVariants } from '@/animations'
 import useDarkMode from '@/contexts/DarkMode'
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
-import { CopyIcon } from '@/assets/animatedIcons/CopyIcon'
-import { MailCheckIcon } from '@/assets/animatedIcons/EmailCheckIcon'
+import { GithubIcon } from '@/assets/animatedIcons/GithubIcon'
 import { LinkedinIcon } from '@/assets/animatedIcons/LinkedinIcon'
 
 import Button from '@/components/Button'
@@ -19,6 +18,8 @@ const WHATSAPP_ICON =
 
 const CharacterSit =
   'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597333/projects/portfolio/characterSit.png'
+
+const EMAIL = 'imjaimetorresv@gmail.com'
 
 const characterVariants = {
   initial: { opacity: 0 },
@@ -38,15 +39,13 @@ export default function Contact() {
   const [copied, setCopied] = useState(false)
   const resetTimerRef = useRef(null)
 
-  const email = 'imjaimetorresv@gmail.com'
-
   useEffect(() => {
     return () => clearTimeout(resetTimerRef.current)
   }, [])
 
   const handleCopyEmail = () => {
     navigator.clipboard
-      .writeText(email)
+      .writeText(EMAIL)
       .then(() => {
         setCopied(true)
         clearTimeout(resetTimerRef.current)
@@ -57,38 +56,14 @@ export default function Contact() {
 
   const contactMethods = [
     {
-      onClick: handleCopyEmail,
-      icon: (
-        <AnimatePresence mode="wait">
-          {copied ? (
-            <motion.div
-              key="copy"
-              initial={{ opacity: 0, scale: 0.6, rotate: -90 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              exit={{ opacity: 0, scale: 0.6 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <CopyIcon autoAnimate />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="mail"
-              initial={{ opacity: 0, scale: 0.6 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.6, rotate: 90 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <MailCheckIcon />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      ),
-      label: t('contact.copyEmailLabel')
-    },
-    {
       openUrl: 'https://linkedin.com/in/jaimetorresv',
       icon: <LinkedinIcon className="text-white" />,
       label: 'LinkedIn'
+    },
+    {
+      openUrl: 'https://github.com/jaime00',
+      icon: <GithubIcon className="text-white" />,
+      label: 'Github'
     },
     {
       openUrl: 'https://api.whatsapp.com/send?phone=573015834942',
@@ -140,7 +115,7 @@ export default function Contact() {
                 onClick={handleCopyEmail}
                 className="cursor-pointer transition-colors hover:text-teal-600 dark:hover:text-teal-400"
               >
-                {email}
+                {EMAIL}
               </button>
               <span
                 className={`pointer-events-none absolute top-full left-1/2 mt-2 -translate-x-1/2 transition-all duration-150 ${copied ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
