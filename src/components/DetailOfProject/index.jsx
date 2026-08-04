@@ -17,7 +17,7 @@ export default function DetailOfProject({
   const { t } = useTranslation()
   return (
     <>
-      <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div className="mt-5 flex flex-col gap-1">
         <h3 className="text-xl font-semibold leading-tight">{title}</h3>
         {readingTime && (
           <span className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">

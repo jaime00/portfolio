@@ -1,7 +1,7 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
 import useDarkMode from '@/contexts/DarkMode'
 import { motion } from 'motion/react'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BundlephobiaWidget } from 'smooth-components'
 import { Link } from 'wouter'
 
@@ -12,6 +12,7 @@ import { CartIcon } from '@/assets/animatedIcons/CartIcon'
 import { ClapIcon } from '@/assets/animatedIcons/ClapIcon'
 import { EyeIcon } from '@/assets/animatedIcons/EyeIcon'
 import { GitMergeIcon } from '@/assets/animatedIcons/GitMergeIcon'
+import { LinkIcon } from '@/assets/animatedIcons/LinkIcon'
 
 import ShinyText from '@/components/ShinyText'
 
@@ -32,6 +33,24 @@ export default function HeroBanner({ project }) {
   const arrowRef = useRef(null)
   const backRef = useRef(null)
   const eyeRef = useRef(null)
+  const linkRef = useRef(null)
+  const [copied, setCopied] = useState(false)
+  const resetTimerRef = useRef(null)
+
+  useEffect(() => {
+    return () => clearTimeout(resetTimerRef.current)
+  }, [])
+
+  const handleCopyLink = () => {
+    navigator.clipboard
+      .writeText(window.location.href)
+      .then(() => {
+        setCopied(true)
+        clearTimeout(resetTimerRef.current)
+        resetTimerRef.current = setTimeout(() => setCopied(false), 2000)
+      })
+      .catch(() => {})
+  }
   const SlugIcon = SLUG_ICONS[project.slug]
   const { title, description, img, stack, caseStudy, urlPreview, urlCode } =
     project
@@ -58,12 +77,12 @@ export default function HeroBanner({ project }) {
       </motion.div>
 
       <motion.div
-        className="mb-6 flex flex-wrap items-end gap-4"
+        className="mb-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1, ease }}
       >
-        <div>
+        <div className="flex items-baseline gap-3">
           <h1 className="font-sans text-4xl font-bold md:text-5xl min-1045:text-6xl">
             <ShinyText
               text={title}
@@ -73,10 +92,31 @@ export default function HeroBanner({ project }) {
               speed={3}
             />
           </h1>
+          <span className="relative inline-block">
+            <button
+              type="button"
+              onClick={handleCopyLink}
+              onMouseEnter={() => linkRef.current?.startAnimation()}
+              onMouseLeave={() => linkRef.current?.stopAnimation()}
+              className="shrink-0 text-gray-400 transition-colors hover:text-teal-500 dark:text-gray-500 dark:hover:text-teal-400"
+              aria-label="Copy link to project"
+            >
+              <LinkIcon ref={linkRef} size={22} />
+            </button>
+            <span
+              className={`pointer-events-none absolute top-1/2 left-full ml-2 -translate-y-1/2 transition-all duration-150 ${copied ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
+            >
+              <span className="relative flex items-center rounded-lg border border-white/10 bg-neutral-900 px-3 py-2 whitespace-nowrap shadow-[0_8px_24px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]">
+                <span className="text-xs leading-none font-medium text-white/80">
+                  {t('contact.emailCopied')}
+                </span>
+                <span className="absolute -left-[5px] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rotate-45 border-b border-l border-white/10 bg-neutral-900" />
+              </span>
+            </span>
+          </span>
         </div>
-
         <div
-          className="flex shrink-0 items-center gap-2 pb-1 text-sm text-gray-500 dark:text-gray-400"
+          className="mt-2 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
           onMouseEnter={() => eyeRef.current?.startAnimation()}
           onMouseLeave={() => eyeRef.current?.stopAnimation()}
         >

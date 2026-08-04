@@ -88,8 +88,8 @@
   },
   "notFound": {
     "title": "Página no encontrada",
-    "message": "La página que buscas no existe.",
-    "back": "Ir al inicio"
+    "message": "Lo sentimos, no hay nada en esta URL.",
+    "back": "Volver al inicio"
   },
   "meta": {
     "home": {

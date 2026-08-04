@@ -1,10 +1,10 @@
 import { useTranslation } from '@/i18n'
 
-export default function PageMeta({ titleKey, descriptionKey }) {
+export default function PageMeta({ titleKey, title, descriptionKey }) {
   const { t } = useTranslation()
   return (
     <>
-      <title>{t(titleKey)}</title>
+      <title>{title ?? t(titleKey)}</title>
       {descriptionKey && (
         <meta name="description" content={t(descriptionKey)} />
       )}

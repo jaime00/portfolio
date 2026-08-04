@@ -1,6 +1,7 @@
 import { Redirect } from 'wouter'
 
 import CaseStudy from '@/components/CaseStudy'
+import PageMeta from '@/components/PageMeta'
 import ReadingProgress from '@/components/ReadingProgress'
 
 import { useTranslation } from '@/i18n'
@@ -17,9 +18,12 @@ export default function ProjectDetail({ slug }) {
   }
 
   return (
-    <div className="relative mx-auto mb-5 mt-0 flex max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
-      <ReadingProgress />
-      <CaseStudy project={project} adjacentProjects={adjacentProjects} />
-    </div>
+    <>
+      <PageMeta title={`${project.title} — Jaime Torres`} />
+      <div className="relative mx-auto mb-5 mt-0 flex max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
+        <ReadingProgress />
+        <CaseStudy project={project} adjacentProjects={adjacentProjects} />
+      </div>
+    </>
   )
 }
