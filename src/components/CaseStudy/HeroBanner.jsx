@@ -35,7 +35,16 @@ export default function HeroBanner({ project }) {
   const eyeRef = useRef(null)
   const linkRef = useRef(null)
   const [copied, setCopied] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const resetTimerRef = useRef(null)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   useEffect(() => {
     return () => clearTimeout(resetTimerRef.current)
@@ -67,7 +76,7 @@ export default function HeroBanner({ project }) {
       >
         <Link
           to="/side-projects"
-          className="mb-3 inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-400"
+          className={`mb-3 inline-flex items-center gap-1 text-sm text-gray-500 transition-all duration-300 hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-400 ${scrolled ? 'pointer-events-none opacity-0' : 'opacity-100'}`}
           onMouseEnter={() => backRef.current?.startAnimation()}
           onMouseLeave={() => backRef.current?.stopAnimation()}
         >

@@ -65,7 +65,7 @@
     "resume": "Currículum"
   },
   "projectDetail": {
-    "backToProjects": "Volver",
+    "backToProjects": "Regresar",
     "role": "Rol",
     "duration": "Duración",
     "team": "Equipo",
@@ -89,7 +89,7 @@
   "notFound": {
     "title": "Página no encontrada",
     "message": "Lo sentimos, no hay nada en esta URL.",
-    "back": "Volver al inicio"
+    "back": "Regresar al inicio"
   },
   "meta": {
     "home": {

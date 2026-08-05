@@ -92,7 +92,8 @@ const getProjectBySlug = (slug, lang = 'en') => {
 }
 
 const getAdjacentProjects = (slug, lang = 'en') => {
-  const projects = DataSite.projects[lang] || DataSite.projects.en
+  const all = DataSite.projects[lang] || DataSite.projects.en
+  const projects = all.filter((p) => p.enabled !== false)
   const index = projects.findIndex((p) => p.slug === slug)
   if (index === -1) return { prev: null, next: null }
   return {
