@@ -1,4 +1,10 @@
-[![Portfolio Preview](https://res.cloudinary.com/personal-jaime00/image/upload/v1784587097/projects/portfolio/home.jpg)](https://jaimetorresv.com)
+<a href="https://jaimetorresv.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://res.cloudinary.com/personal-jaime00/image/upload/v1786044398/projects/portfolio/home-dark.jpg">
+    <source media="(prefers-color-scheme: light)" srcset="https://res.cloudinary.com/personal-jaime00/image/upload/v1786044325/projects/portfolio/home.jpg">
+    <img alt="Portfolio Preview" src="https://res.cloudinary.com/personal-jaime00/image/upload/v1786044325/projects/portfolio/home.jpg">
+  </picture>
+</a>
 
 # Portfolio
 
