@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
+import { HyperLink } from 'smooth-components'
+import { Link } from 'wouter'
 
-import { HyperLink } from '@/components/HyperLink'
 import Top from '@/components/Top'
 
 import { useTranslation } from '@/i18n'
@@ -28,9 +29,10 @@ export default function Footer() {
               <ul>
                 <li className="mb-4">
                   <HyperLink
+                    as={Link}
                     to="/"
                     className="text-gray-700 dark:text-gray-200"
-                    textClassName="font-normal"
+                    contentClassName="font-normal"
                     showUnderline={false}
                   >
                     {t('common.home')}
@@ -38,9 +40,10 @@ export default function Footer() {
                 </li>
                 <li className="mb-4">
                   <HyperLink
+                    as={Link}
                     to="/about"
                     className="text-gray-700 dark:text-gray-200"
-                    textClassName="font-normal"
+                    contentClassName="font-normal"
                     showUnderline={false}
                   >
                     {t('common.about')}
@@ -48,9 +51,10 @@ export default function Footer() {
                 </li>
                 <li className="mb-4">
                   <HyperLink
+                    as={Link}
                     to="/side-projects"
                     className="text-gray-700 dark:text-gray-200"
-                    textClassName="font-normal"
+                    contentClassName="font-normal"
                     showUnderline={false}
                   >
                     {t('common.projects')}
@@ -77,7 +81,7 @@ export default function Footer() {
                     href={curriculumUrl}
                     showIcon={false}
                     className="text-gray-700 dark:text-gray-200"
-                    textClassName="font-normal"
+                    contentClassName="font-normal"
                     showUnderline={false}
                   >
                     {t('footer.resume')}
@@ -85,9 +89,10 @@ export default function Footer() {
                 </li>
                 <li className="mb-4">
                   <HyperLink
+                    as={Link}
                     to="/contact"
                     className="text-gray-700 dark:text-gray-200"
-                    textClassName="font-normal"
+                    contentClassName="font-normal"
                     showUnderline={false}
                   >
                     {t('common.contact')}

@@ -1,4 +1,4 @@
-import { HyperLink } from '@/components/HyperLink'
+import { HyperLink } from 'smooth-components'
 
 // Renders inline `code` spans (backticks) and **bold** spans inside
 // case-study text.
