@@ -18,10 +18,9 @@ Personal portfolio built with React 19, showcasing my work as a Frontend Develop
 | ---------- | -------------------------------------------------------------------- |
 | Framework  | [React 19](https://react.dev) + [Vite 6](https://vitejs.dev)         |
 | Styling    | [Tailwind CSS 3](https://tailwindcss.com)                            |
-| Animations | [Motion](https://motion.dev)                                         |
+| Animations | [Motion](https://motion.dev) + [GSAP](https://gsap.com)              |
 | Routing    | [Wouter v3](https://github.com/molefrog/wouter)                      |
 | i18n       | Custom context-based system (EN/ES, auto-detected)                   |
-| Toasts     | [Sonner](https://sonner.emilkoez.dev)                                |
 | Components | [smooth-components](https://www.npmjs.com/package/smooth-components) |
 | Images     | [Cloudinary](https://cloudinary.com)                                 |
 | Deployment | [Netlify](https://www.netlify.com)                                   |
@@ -38,7 +37,7 @@ npm install
 npm run dev
 ```
 
-The app runs at `http://localhost:5173`.
+The app runs at `http://localhost:9999`.
 
 ## Scripts
 

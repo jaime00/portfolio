@@ -1,6 +1,5 @@
 import { DarkModeProvider } from '@/contexts/DarkMode'
 import { LazyMotion, MotionConfig, domAnimation } from 'motion/react'
-import { Toaster } from 'sonner'
 import { Route, Switch, useLocation } from 'wouter'
 
 import Background from '@/components/Background'
@@ -108,21 +107,6 @@ function App() {
       <LazyMotion features={domAnimation}>
         <LanguageProvider>
           <DarkModeProvider>
-            <Toaster
-              position="bottom-center"
-              toastOptions={{
-                style: {
-                  background: 'rgba(255, 255, 255, 0.8)',
-                  backdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(20, 184, 166, 0.1)',
-                  boxShadow: '0 20px 25px -5px rgba(20, 184, 166, 0.05)',
-                  borderRadius: '16px',
-                  color: '#1f2937'
-                },
-                className:
-                  'dark:!bg-gray-800/80 dark:!text-white dark:!border-teal-400/10'
-              }}
-            />
             <AppContent />
           </DarkModeProvider>
         </LanguageProvider>
