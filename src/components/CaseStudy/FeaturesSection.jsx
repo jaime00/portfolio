@@ -1,6 +1,6 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
 import { motion } from 'motion/react'
-import { useRef } from 'react'
+import { useCallback, useRef } from 'react'
 
 import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
 
@@ -8,6 +8,21 @@ import { renderRichText } from './richText'
 
 export default function FeaturesSection({ section }) {
   const arrowRefs = useRef([])
+  const intervalRefs = useRef([])
+
+  const handleMouseEnter = useCallback((index) => {
+    const ref = arrowRefs.current[index]
+    if (!ref) return
+    ref.startAnimation()
+    intervalRefs.current[index] = setInterval(() => {
+      ref.startAnimation()
+    }, 800)
+  }, [])
+
+  const handleMouseLeave = useCallback((index) => {
+    clearInterval(intervalRefs.current[index])
+    arrowRefs.current[index]?.stopAnimation()
+  }, [])
 
   return (
     <section className="mb-16">
@@ -42,8 +57,8 @@ export default function FeaturesSection({ section }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.06, ease }}
-            onMouseEnter={() => arrowRefs.current[i]?.startAnimation()}
-            onMouseLeave={() => arrowRefs.current[i]?.stopAnimation()}
+            onMouseEnter={() => handleMouseEnter(i)}
+            onMouseLeave={() => handleMouseLeave(i)}
           >
             <ArrowRightIcon
               ref={(el) => (arrowRefs.current[i] = el)}

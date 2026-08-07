@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useCallback, useRef } from 'react'
 
 import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
 
@@ -11,6 +11,21 @@ export default function ExperienceDescription({
   items
 }) {
   const arrowRefs = useRef([])
+  const intervalRefs = useRef([])
+
+  const handleMouseEnter = useCallback((index) => {
+    const ref = arrowRefs.current[index]
+    if (!ref) return
+    ref.startAnimation()
+    intervalRefs.current[index] = setInterval(() => {
+      ref.startAnimation()
+    }, 800)
+  }, [])
+
+  const handleMouseLeave = useCallback((index) => {
+    clearInterval(intervalRefs.current[index])
+    arrowRefs.current[index]?.stopAnimation()
+  }, [])
 
   return (
     <div className="col-span-1 flex flex-col gap-2 self-center">
@@ -22,8 +37,8 @@ export default function ExperienceDescription({
         <div
           className="flex items-start gap-3"
           key={`experience-description-${index}`}
-          onMouseEnter={() => arrowRefs.current[index]?.startAnimation()}
-          onMouseLeave={() => arrowRefs.current[index]?.stopAnimation()}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={() => handleMouseLeave(index)}
         >
           <ArrowRightIcon
             ref={(el) => (arrowRefs.current[index] = el)}
