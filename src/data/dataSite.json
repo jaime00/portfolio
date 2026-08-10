@@ -3,6 +3,7 @@
     "en": [
       {
         "id": 1,
+        "order": 2,
         "slug": "smooth-components",
         "urlPreview": "https://smooth-components.com",
         "title": "smooth-components",
@@ -18,12 +19,12 @@
           "sections": [
             {
               "type": "narrative",
-              "text": "One of my favorite and can't-miss plans is going to the movies. Not just for the film itself, but for the whole experience: being able to arrive and see those **bright, perfectly lit posters** behind glass, each one competing for your attention. There's something about a well-presented poster that makes you stop and say: **\"This is the next movie I have to see.\"**"
+              "text": "One of my favorite rituals is going to the movies. Not just for the film itself, but for the whole experience: being able to arrive and see those **bright, perfectly lit posters** behind glass, each one competing for your attention. There's something about a well-presented poster that makes you stop and say: **\"This is the next movie I have to see.\"**"
             },
             {
               "type": "narrative",
               "title": "The Problem",
-              "text": "That feeling **—the shine, the scale, the visual impact—** is something I searched for across dozens of component libraries and never found. I tried several, but they all felt flat, soulless. So I did what any stubborn developer would do: I built my own. `smooth-components` exists because I wanted to have this kind of animated components like this cinema poster but brought to the web browser."
+              "text": "That feeling, **the shine, the scale, the visual impact**, is something I searched for across dozens of component libraries and never found. I tried several, but they all felt flat, soulless. So I did what any stubborn developer would do: I built my own. `smooth-components` exists because I wanted animated components like this cinema poster, brought to the web browser."
             },
             {
               "type": "features",
@@ -42,7 +43,7 @@
             {
               "type": "playground",
               "title": "Playground",
-              "subtitle": "If you want to try the component with real images, I recommend two of my favorite websites for finding movie posters: [**Posteritati**](https://posteritati.com/new?size%5B%5D=2) and [**Cosmos**](https://www.cosmos.so/search/elements/movie). Both have pieces with the perfect proportions and plenty of visual inspiration",
+              "subtitle": "If you want to try the component with real images, I recommend two of my favorite websites for finding movie posters: [**Posteritati**](https://posteritati.com/new?size%5B%5D=2) and [**Cosmos**](https://www.cosmos.so/search/elements/movie). Both have pieces with the perfect proportions and plenty of visual inspiration.",
               "text": "Convinced? Try it yourself. Import, use, done. No CSS files, no configuration needed. Edit the code below and see the result in real time."
             },
             {
@@ -59,7 +60,7 @@
             {
               "type": "narrative",
               "title": "Conclusion",
-              "text": "`smooth-components` was born from a personal obsession and today it's an open-source library published on [**npm**](https://www.npmjs.com/package/smooth-components) that any developer can use. I'm currently working on new components with the same philosophy: bringing real-world aesthetics to the browser. If you're interested in exploring the library or have ideas for new components, the repository is open.",
+              "text": "`smooth-components` was born from a personal obsession and today it's an open-source library published on [**npm**](https://www.npmjs.com/package/smooth-components) that any developer can use. I'm currently working on new components with the same philosophy: bringing real-world aesthetics to the browser. Explore the full documentation at [**smooth-components.com**](https://smooth-components.com/docs) or contribute on [**GitHub**](https://github.com/jaime00/smooth-components).",
               "highlights": [
                 {
                   "value": "~98 kB",
@@ -80,6 +81,7 @@
       },
       {
         "id": 2,
+        "order": 3,
         "slug": "eazy-git",
         "urlPreview": "https://www.npmjs.com/package/eazy-git",
         "urlCode": "https://github.com/jaime00/eazy-git",
@@ -93,40 +95,30 @@
           "sections": [
             {
               "type": "narrative",
-              "text": "If you work with Git constantly **—especially from the terminal—** and manage a somewhat complex branching strategy, **this is for you**.\n\nPersonally, I'd rather work straight from the terminal than use visual clients like **GitHub Desktop or SourceTree**. I like having full control over every step of the flow. If you're that kind of developer too, `eazy-git` will probably interest you."
+              "text": "If you work with Git constantly, **especially from the terminal**, and manage a somewhat complex branching strategy, **this is for you**.\n\nPersonally, I'd rather work straight from the terminal than use visual clients like **GitHub Desktop or SourceTree**. I like having full control over every step of the flow. If you're that kind of developer too, `eazy-git` will interest you."
             },
             {
               "type": "narrative",
               "title": "But… What Is eazy-git?",
               "text": "eazy-git is an open-source tool that works as a command-line interface **(CLI)**. It automates common Git tasks like creating branches, committing, pushing changes, merging, and more, all with simplified commands. Its main goal is to help you keep a standardized branch structure while you save time and focus on what really matters: **the business logic.**",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1783650393/projects/portfolio/projects/eazy-git/eazy-git-demo.mov"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1783650393/projects/portfolio/projects/eazy-git/eazy-git-demo.mp4"
             },
             {
               "type": "features",
               "title": "What Problem Does It Solve?",
               "text": "On many teams we follow a strategy where we must:",
               "items": [
-                "Create **\"original\"** branches based on `master`.",
-                "Spawn several **\"temporary\"** branches to later auto-merge into `develop` or `release`.",
-                "Avoid mistakes with branch naming.",
-                "Install dependencies with manual configuration."
+                "Create **\"original\"** branches based on `master` and spawn **\"temporary\"** ones to auto-merge into `develop` or `release`.",
+                "Standardize common Git operations (pull, push, commit, checkout…) and **minimize errors** with branch naming.",
+                "Install dependencies with private tokens or restart the dev server cleanly.",
+                "Extra commands for `npm` projects. Ideal for Unix terminals (Linux, macOS, Git Bash on Windows)."
               ],
-              "footer": "All of this can become repetitive and prone to human error. eazy-git automates a big part of this flow. Even tasks like installing dependencies with private tokens or running the dev server cleanly (we remove the `.next` folder and run `npm run dev` again) are simplified with simple, custom commands already built into the tool."
-            },
-            {
-              "type": "features",
-              "title": "Why Use eazy-git?",
-              "items": [
-                "Standardizes common Git operations (pull, push, commit, checkout…).",
-                "Minimizes errors when creating or switching branches.",
-                "Includes handy extra commands for `npm` projects and web environments.",
-                "Ideal for Unix terminals (Linux, macOS, Git Bash on Windows)."
-              ]
+              "footer": "All of this can become repetitive and prone to human error. eazy-git automates the entire flow."
             },
             {
               "type": "narrative",
               "title": "AI Commit Suggestions",
-              "text": "When running `commit` interactively or using **\"Add Changes to Branch\"**, eazy-git can generate commit message suggestions using AI. No API key configuration needed inside the tool — it invokes the local CLI binaries directly.\n\nSupported providers: **Claude** and **Opencode**. Configure your preferred provider via `eg config`."
+              "text": "When running `commit` interactively or using **\"Add Changes to Branch\"**, eazy-git can generate commit message suggestions using AI. No API key configuration needed inside the tool, it invokes the local CLI binaries directly.\n\nSupported providers: **Claude** and **Opencode**. Configure your preferred provider via `eg config`."
             },
             {
               "type": "features",
@@ -141,7 +133,7 @@
             {
               "type": "narrative",
               "title": "Conclusion",
-              "text": "**eazy-git** is an excellent option if you want to **optimize your terminal-based Git workflow.**\n\nIt lets you work faster, cleaner, and with fewer errors thanks to preconfigured commands that adapt to your branching strategy and development environment. It also automates common manual tasks, like authentication and dependency installation.\n\nIf you work on large projects or with separate environments (like **DEV, UAT, PROD**), this tool can **save you hours of repetitive work** and help you keep a clear, tidy branch structure.",
+              "text": "**eazy-git** lets you work faster, cleaner, and with fewer errors thanks to preconfigured commands that adapt to your branching strategy and development environment.\n\nIf you work on large projects or with separate environments (like **DEV, UAT, PROD**), this tool can **save you hours of repetitive work** and help you keep a clear, tidy branch structure.",
               "highlights": [
                 {
                   "value": "npm",
@@ -162,7 +154,8 @@
       },
       {
         "id": 3,
-        "enabled": false,
+        "order": 1,
+        "enabled": true,
         "slug": "cinepolis-web",
         "urlPreview": "https://cinepolis.com/mx",
         "title": "Cinépolis",
@@ -176,26 +169,58 @@
           "sections": [
             {
               "type": "narrative",
-              "title": "The Challenge",
-              "text": "Cinépolis needed a complete redesign of their WEB platform to modernize the user experience and improve performance across all devices. The existing platform had slow load times and a dated interface that didn't represent the premium cinema experience the brand offers.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1782700130/projects/portfolio/projects/smooth-components/poster-demo.mov"
+              "text": "Of all my work experiences, the Cinépolis redesign has been my favorite project. Its business logic fascinates anyone who loves cinema, and it pushed me to explore my creativity solving real usability problems. Beyond any day-to-day assignment, I want to share a selection of improvements I implemented **on my own initiative**."
             },
             {
               "type": "narrative",
-              "title": "My Role",
-              "text": "As a Frontend Developer, I led the implementation of interactive animations using Motion in the food ordering screen and search section. I also worked on the cinema selection flow, ticket booking, food ordering, and the loyalty program integration with 'Cine Puntos'.",
-              "imagePosition": "left"
+              "title": "Poster",
+              "text": "Walking into a theater, the first thing that grabs you is the poster at the entrance. I wanted to bring that same feeling to the screen: when users open a movie's detail page, the poster gains **3D depth through a lighting effect that follows the cursor**, adding realism with every movement.\n\nThis component is part of **smooth-components**, an open-source library I built. [smooth-components](/side-projects/smooth-components)",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786325762/projects/portfolio/projects/cinepolis/poster_demo.mp4"
             },
             {
               "type": "narrative",
-              "title": "Technical Approach",
-              "text": "The platform was built using Next.js with a Micro-Frontend architecture powered by Module Federation. This allowed multiple teams to work independently on different sections of the site while maintaining a cohesive user experience. We used GraphQL for efficient queries and Tailwind CSS for consistent styling.",
-              "imagePosition": "right"
+              "title": "Select Your Country",
+              "text": "The original met the requirement and nothing more: flat background, pixelated flags, text dimmed by opacity, and a list that left **half the screen empty**. Zero motion, zero hierarchy. The first impression of a cinema brand felt like a form. I decided to treat it not as a selector, but as a **scene**: if the user picks a country, they should see where Cinépolis is.",
+              "image": "https://res.cloudinary.com/personal-jaime00/image/upload/v1786330206/projects/portfolio/projects/cinepolis/selecciona-tu-pais-antes.png",
+              "imagePosition": "bottom"
+            },
+            {
+              "type": "narrative",
+              "text": "I replaced the list with an **interactive 3D globe**, pinning each country's flag over its location. Both sides respond to **synchronized hover**: hovering a card rotates the globe to that country and highlights its pin; hovering a pin lights up the card. Vector flags instead of rasterized ones, contrast restored without opacity, cards packed into a **three-column grid**. The dead space vanished and the screen went from checkout step to **experience**.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786331758/projects/portfolio/projects/cinepolis/selecciona-tu-pais-despues_nxrejb.mp4"
+            },
+            {
+              "type": "narrative",
+              "title": "Food Search",
+              "text": "The food search had **no visual feedback**. Users tapped elements that gave no response. I built a **micro-interaction system** across the entire flow: the trigger button, the modal, the input, and every result item now respond to hover, focus, and click. The modal fades in with **staggered reveals** instead of appearing all at once.\n\nTwo details made a real difference: the **results counter animates progressively** instead of jumping between numbers, and a clear button inside the input slides in with its own entrance animation, reducing friction when correcting a search.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320717/projects/portfolio/projects/cinepolis/buscador_de_alimentos.mp4"
+            },
+            {
+              "type": "narrative",
+              "title": "Secondary Top Header",
+              "text": "**Two separate components did the exact same job**. Switching between them caused visual jumps, sizes and spacing broke on every transition.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320716/projects/portfolio/projects/cinepolis/Header_secundario_antes.mp4"
+            },
+            {
+              "type": "narrative",
+              "text": "I merged both into **one component**, preserving every feature. Then I added **smooth collapse animations** on scroll to replace the abrupt swap. Cleaner code, fluid experience, **no trade-offs**.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320715/projects/portfolio/projects/cinepolis/Header_secundario_despues.mp4"
+            },
+            {
+              "type": "narrative",
+              "title": "Food Navigation",
+              "text": "**My own frustration as a customer** sparked this one. The food menu has **dozens of sections**, no first-time user can memorize where each product lives, and even regulars waste time scrolling back up to navigate.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320719/projects/portfolio/projects/cinepolis/antes_-nav_de_alimentos.mp4"
+            },
+            {
+              "type": "narrative",
+              "text": "**I pinned the food nav, search bar and section menu** so it stays visible at any scroll depth. Now users have **two fast paths**: browse by section or search directly. No more scrolling back to the top.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320720/projects/portfolio/projects/cinepolis/nav_de_alimentos_despues.mp4"
             },
             {
               "type": "narrative",
               "title": "Results",
-              "text": "The redesigned platform delivers a significantly improved user experience with faster load times, smoother animations, and a modern interface that reflects the Cinépolis brand identity.",
+              "text": "These improvements ship on a platform serving **millions of users across five countries**: faster load times, fluid animations, and a modern interface worthy of the Cinépolis brand.",
               "highlights": [
                 {
                   "value": "2M+",
@@ -216,6 +241,7 @@
       },
       {
         "id": 4,
+        "order": 4,
         "enabled": false,
         "slug": "negos",
         "urlPreview": "https://www.negos.co",
@@ -265,6 +291,7 @@
     "es": [
       {
         "id": 1,
+        "order": 2,
         "slug": "smooth-components",
         "urlPreview": "https://smooth-components.com",
         "title": "smooth-components",
@@ -284,7 +311,7 @@
             },
             {
               "type": "narrative",
-              "text": "Esa sensación **—el brillo, la escala, el impacto visual—** es algo que busqué en decenas de librerías de componentes y nunca encontré. Probé varias, pero todas se sentían planas, sin alma. Así que hice lo que cualquier desarrollador terco haría: construí la mía. `smooth-components` existe porque quería tener este tipo de componentes animados como este póster de cine pero llevado al navegador web."
+              "text": "Esa sensación, **el brillo, la escala, el impacto visual**, es algo que busqué en decenas de librerías de componentes y nunca encontré. Probé varias, pero todas se sentían planas, sin alma. Así que hice lo que cualquier desarrollador terco haría: construí la mía. `smooth-components` existe porque quería componentes animados como este póster de cine, llevados al navegador web."
             },
             {
               "type": "features",
@@ -292,7 +319,7 @@
               "text": "Más allá de la estética, estas son las ventajas técnicas que hacen que la librería valga la pena:",
               "items": [
                 "**Zero CSS imports** — los estilos se inyectan automáticamente en tiempo de ejecución, sin configuración extra.",
-                "**Fully typed** — construido con TypeScript, incluye declaraciones de tipos de fábrica.",
+                "**Fully typed** — construido con TypeScript, incluye declaraciones de tipos desde el inicio.",
                 "**Accesible** — los componentes exigen props de accesibilidad (ej. texto alt obligatorio).",
                 "**Animaciones suaves** — efectos hover, brillos superpuestos, bordes 3D y reflejos de cristal.",
                 "**Ligero** — React y react-dom se externalizan, manteniendo el bundle pequeño.",
@@ -303,7 +330,7 @@
             {
               "type": "playground",
               "title": "Playground",
-              "subtitle": "Si quieres probar el componente con imágenes reales, te recomiendo dos de mis webs favoritas para encontrar pósters de cine: [**Posteritati**](https://posteritati.com/new?size%5B%5D=2) y [**Cosmos**](https://www.cosmos.so/search/elements/movie). En ambas encontrarás piezas con las proporciones perfectas y mucha inspiración visual",
+              "subtitle": "Si quieres probar el componente con imágenes reales, te recomiendo dos de mis webs favoritas para encontrar pósters de cine: [**Posteritati**](https://posteritati.com/new?size%5B%5D=2) y [**Cosmos**](https://www.cosmos.so/search/elements/movie). En ambas encontrarás piezas con las proporciones perfectas y mucha inspiración visual.",
               "text": "¿Te convencí? Pruébalo tú mismo. Importa, usa, listo. Sin archivos CSS, sin configuración. Edita el código a continuación y mira el resultado en tiempo real."
             },
             {
@@ -320,7 +347,7 @@
             {
               "type": "narrative",
               "title": "Conclusión",
-              "text": "`smooth-components` nació de una obsesión personal y hoy es una librería open source publicada en [**npm**](https://www.npmjs.com/package/smooth-components) que cualquier desarrollador puede usar. Actualmente estoy trabajando en nuevos componentes con la misma filosofía: llevar la estética del mundo físico al navegador. Si te interesa explorar la librería o tienes ideas para nuevos componentes, el repositorio está abierto.",
+              "text": "`smooth-components` nació de una obsesión personal y hoy es una librería open source publicada en [**npm**](https://www.npmjs.com/package/smooth-components) que cualquier desarrollador puede usar. Actualmente estoy trabajando en nuevos componentes con la misma filosofía: llevar la estética del mundo físico al navegador. Explora la documentación completa en [**smooth-components.com**](https://smooth-components.com/docs) o contribuye en [**GitHub**](https://github.com/jaime00/smooth-components).",
               "highlights": [
                 {
                   "value": "~98 kB",
@@ -341,6 +368,7 @@
       },
       {
         "id": 2,
+        "order": 3,
         "slug": "eazy-git",
         "urlPreview": "https://www.npmjs.com/package/eazy-git",
         "urlCode": "https://github.com/jaime00/eazy-git",
@@ -354,40 +382,30 @@
           "sections": [
             {
               "type": "narrative",
-              "text": "Si trabajas con Git de forma constante **—especialmente desde la terminal—** y manejas una estrategia de ramas algo compleja, **esto es para ti**.\n\nPersonalmente, prefiero trabajar directamente desde la terminal en lugar de usar clientes visuales como **GitHub Desktop o SourceTree**. Me gusta tener control total sobre cada paso del flujo. Si tú también eres de ese tipo de desarrolladores, probablemente `eazy-git` te va a interesar."
+              "text": "Si trabajas con Git de forma constante, **especialmente desde la terminal**, y manejas una estrategia de ramas algo compleja, **esto es para ti**.\n\nPersonalmente, prefiero trabajar directamente desde la terminal en lugar de usar clientes visuales como **GitHub Desktop o SourceTree**. Me gusta tener control total sobre cada paso del flujo. Si tú también eres de ese tipo de desarrolladores, `eazy-git` te va a interesar."
             },
             {
               "type": "narrative",
               "title": "Pero… ¿Qué es eazy-git?",
               "text": "Es una herramienta open source que funciona como interfaz de línea de comandos **(CLI)**. Automatiza tareas comunes de Git como crear ramas, hacer commits, pushear cambios, hacer merge y más, todo con comandos simplificados. Su objetivo principal es ayudarte a mantener una estructura de ramas estandarizada mientras ahorras tiempo y te enfocas en lo realmente importante: **la lógica de negocio.**",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1783650393/projects/portfolio/projects/eazy-git/eazy-git-demo.mov"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1783650393/projects/portfolio/projects/eazy-git/eazy-git-demo.mp4"
             },
             {
               "type": "features",
               "title": "¿Qué problema resuelve?",
               "text": "En muchos equipos seguimos una estrategia donde debemos:",
               "items": [
-                "Crear ramas **«originales»** con base en `master`.",
-                "Generar varias ramas **«temporales»** para posteriormente mergear automáticamente con `develop` o `release`.",
-                "Evitar errores con la nomenclatura de las ramas.",
-                "Instalar dependencias con configuraciones manuales."
+                "Crear ramas **«originales»** con base en `master` y generar **«temporales»** para mergear automáticamente con `develop` o `release`.",
+                "Estandarizar operaciones comunes de Git (pull, push, commit, checkout…) y **minimizar errores** con la nomenclatura de ramas.",
+                "Instalar dependencias con tokens privados o reiniciar el servidor de desarrollo de forma limpia.",
+                "Comandos extra para proyectos `npm`. Ideal para terminales Unix (Linux, macOS, Git Bash en Windows)."
               ],
-              "footer": "Todo esto puede volverse repetitivo y propenso a errores humanos. eazy-git automatiza gran parte de este flujo. Incluso tareas como instalar dependencias con tokens privados o ejecutar el servidor de desarrollo de manera limpia (removemos la carpeta `.next` y ejecutamos nuevamente `npm run dev`) se simplifican con comandos sencillos y personalizados ya incluidos en la herramienta."
-            },
-            {
-              "type": "features",
-              "title": "¿Por qué usar eazy-git?",
-              "items": [
-                "Estandariza operaciones comunes de Git (pull, push, commit, checkout…).",
-                "Minimiza errores al crear o cambiar de ramas.",
-                "Incluye comandos extra útiles para proyectos con `npm` o entornos web.",
-                "Ideal para terminales Unix (Linux, macOS, Git Bash en Windows)."
-              ]
+              "footer": "Todo esto puede volverse repetitivo y propenso a errores humanos. eazy-git automatiza el flujo completo."
             },
             {
               "type": "narrative",
               "title": "Sugerencias de Commits con IA",
-              "text": "Al ejecutar `commit` de forma interactiva o usar **\"Agregar Cambios a la Rama\"**, eazy-git puede generar sugerencias de mensajes de commit usando IA. No se necesita configurar API keys dentro de la herramienta — invoca directamente los binarios CLI locales.\n\nProveedores soportados: **Claude** y **Opencode**. Configura tu proveedor preferido con `eg config`."
+              "text": "Al ejecutar `commit` de forma interactiva o usar **\"Agregar Cambios a la Rama\"**, eazy-git puede generar sugerencias de mensajes de commit usando IA. No se necesita configurar API keys dentro de la herramienta, invoca directamente los binarios CLI locales.\n\nProveedores soportados: **Claude** y **Opencode**. Configura tu proveedor preferido con `eg config`."
             },
             {
               "type": "features",
@@ -402,7 +420,7 @@
             {
               "type": "narrative",
               "title": "Conclusión",
-              "text": "**eazy-git** es una excelente opción si quieres **optimizar tu flujo de trabajo con Git desde la terminal.**\n\nTe permite trabajar de forma más rápida, más limpia y con menos errores gracias a comandos preconfigurados que se adaptan a tu estrategia de ramas y entorno de desarrollo. Además, automatiza tareas manuales comunes, como la autenticación e instalación de dependencias.\n\nSi trabajas en grandes proyectos o con entornos separados (como **DEV, UAT, PROD**), esta herramienta puede **ahorrarte horas de trabajo repetitivo** y ayudarte a mantener una estructura de ramas clara y ordenada.",
+              "text": "**eazy-git** te permite trabajar más rápido, más limpio y con menos errores gracias a comandos preconfigurados que se adaptan a tu estrategia de ramas y entorno de desarrollo.\n\nSi trabajas en grandes proyectos o con entornos separados (como **DEV, UAT, PROD**), esta herramienta puede **ahorrarte horas de trabajo repetitivo** y ayudarte a mantener una estructura de ramas clara y ordenada.",
               "highlights": [
                 {
                   "value": "npm",
@@ -423,7 +441,8 @@
       },
       {
         "id": 3,
-        "enabled": false,
+        "order": 1,
+        "enabled": true,
         "slug": "cinepolis-web",
         "urlPreview": "https://cinepolis.com/mx",
         "title": "Cinépolis",
@@ -437,26 +456,58 @@
           "sections": [
             {
               "type": "narrative",
-              "title": "El Desafío",
-              "text": "Cinépolis necesitaba un rediseño completo de su plataforma WEB para modernizar la experiencia de usuario y mejorar el rendimiento en todos los dispositivos. La plataforma existente tenía tiempos de carga lentos y una interfaz anticuada que no representaba la experiencia premium de cine que la marca ofrece.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/v1782700130/projects/portfolio/projects/smooth-components/poster-demo.mov"
+              "text": "De todas mis experiencias laborales, el rediseño de Cinépolis ha sido mi proyecto favorito. Su lógica de negocio fascina a cualquiera que ame el cine, y me empujó a explorar mi creatividad resolviendo problemas reales de usabilidad. Más allá de cualquier asignación del día a día, quiero compartirles una selección de mejoras que implementé **por iniciativa propia**."
             },
             {
               "type": "narrative",
-              "title": "Mi Rol",
-              "text": "Como Desarrollador Frontend, lideré la implementación de animaciones interactivas usando Motion en la pantalla de pedido de comida y la sección de búsqueda. También trabajé en el flujo de selección de cine, reserva de boletos, pedidos de comida y la integración del programa de lealtad con 'Cine Puntos'.",
-              "imagePosition": "left"
+              "title": "Póster",
+              "text": "Al llegar al cine, lo primero que captura tu atención es el póster en la entrada. Quise trasladar esa sensación a la pantalla: al entrar al detalle de una película, el póster cobra **profundidad 3D mediante un efecto de iluminación que sigue el cursor**, aportando realismo con cada movimiento.\n\nEste componente forma parte de **smooth-components**, una librería open-source que construí. [smooth-components](/side-projects/smooth-components)",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786325762/projects/portfolio/projects/cinepolis/poster_demo.mp4"
             },
             {
               "type": "narrative",
-              "title": "Enfoque Técnico",
-              "text": "La plataforma fue construida usando Next.js con una arquitectura de Micro-Frontends impulsada por Module Federation. Esto permitió que múltiples equipos trabajaran de forma independiente en diferentes secciones del sitio manteniendo una experiencia de usuario cohesiva. Usamos GraphQL para consultas eficientes y Tailwind CSS para estilos consistentes.",
-              "imagePosition": "right"
+              "title": "Selecciona tu País",
+              "text": "El original cumplía el requisito y nada más: fondo plano, banderas pixeladas, texto diluido por opacidad y una lista que dejaba **media pantalla vacía**. Cero movimiento, cero jerarquía. La primera impresión de una marca de cine era la de un formulario. Decidí no tratarla como un selector, sino como una **escena**: si el usuario elige un país, que vea dónde está Cinépolis.",
+              "image": "https://res.cloudinary.com/personal-jaime00/image/upload/v1786330206/projects/portfolio/projects/cinepolis/selecciona-tu-pais-antes.png",
+              "imagePosition": "bottom"
+            },
+            {
+              "type": "narrative",
+              "text": "Reemplacé la lista por un **globo 3D interactivo**, con un pin y bandera por país sobre su ubicación. Ambos lados responden al **hover sincronizado**: al pasar sobre una tarjeta, el globo gira hasta ese país y resalta su pin; al pasar sobre el pin, se ilumina la tarjeta. Banderas vectoriales en lugar de rasterizadas, contraste recuperado sin opacidad, tarjetas compactadas en una **rejilla de tres columnas**. El espacio muerto desapareció y la pantalla pasó de trámite a **experiencia**.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786331758/projects/portfolio/projects/cinepolis/selecciona-tu-pais-despues_nxrejb.mp4"
+            },
+            {
+              "type": "narrative",
+              "title": "Buscador de Alimentos",
+              "text": "La búsqueda de alimentos **no tenía retroalimentación visual**. El usuario tocaba elementos que no daban respuesta. Construí un **sistema de micro-interacciones** en todo el flujo: el botón de apertura, el modal, el input y cada resultado ahora responden al hover, focus y clic. El modal aparece con un **fade-in escalonado** en vez de mostrarse todo de golpe.\n\nDos detalles marcaron diferencia: el **contador de resultados anima progresivamente** en lugar de saltar entre números, y un botón de limpiar dentro del input se desliza con su propia animación de entrada, reduciendo la fricción al corregir una búsqueda.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320717/projects/portfolio/projects/cinepolis/buscador_de_alimentos.mp4"
+            },
+            {
+              "type": "narrative",
+              "title": "Top Header Secundario",
+              "text": "**Dos componentes separados hacían exactamente lo mismo**. Alternar entre ellos rompía tamaños y espaciados, generando saltos visuales en cada transición.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320716/projects/portfolio/projects/cinepolis/Header_secundario_antes.mp4"
+            },
+            {
+              "type": "narrative",
+              "text": "Unifiqué ambos en **un solo componente**, conservando cada funcionalidad. Luego añadí **animaciones suaves de colapso** al hacer scroll, reemplazando el cambio abrupto. Código más limpio, experiencia más fluida, **sin concesiones**.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320715/projects/portfolio/projects/cinepolis/Header_secundario_despues.mp4"
+            },
+            {
+              "type": "narrative",
+              "title": "Navegación de Alimentos",
+              "text": "**Mi propia frustración como cliente** de Cinépolis detonó esta mejora. El menú de alimentos tiene **decenas de secciones**, ningún usuario nuevo puede memorizar dónde está cada producto, y hasta los recurrentes pierden tiempo desplazándose hacia arriba para navegar.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320719/projects/portfolio/projects/cinepolis/antes_-nav_de_alimentos.mp4"
+            },
+            {
+              "type": "narrative",
+              "text": "Fijé **el nav de alimentos, buscador y las secciones del menú** para que permanezca visible sin importar cuánto se desplace el usuario. Ahora tiene **dos caminos rápidos**: explorar por sección o buscar directamente. Se acabó el scroll de vuelta al inicio.",
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320720/projects/portfolio/projects/cinepolis/nav_de_alimentos_despues.mp4"
             },
             {
               "type": "narrative",
               "title": "Resultados",
-              "text": "La plataforma rediseñada ofrece una experiencia de usuario significativamente mejorada con tiempos de carga más rápidos, animaciones más fluidas y una interfaz moderna que refleja la identidad de marca de Cinépolis.",
+              "text": "Estas mejoras corren en una plataforma que sirve a **millones de usuarios en cinco países**: tiempos de carga más rápidos, animaciones fluidas y una interfaz moderna a la altura de la marca Cinépolis.",
               "highlights": [
                 {
                   "value": "2M+",
@@ -477,6 +528,7 @@
       },
       {
         "id": 4,
+        "order": 4,
         "enabled": false,
         "slug": "negos",
         "urlPreview": "https://www.negos.co",
@@ -714,7 +766,7 @@
         "link": "https://www.extreme.com.co/extreme",
         "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947977/projects/portfolio/experiences/extreme-technologies.jpg",
         "items": [
-          "Desarrollo de módulos web dinámicos y mantenibles para **EGA**, plataforma de gestión comercial y operativa para empresas de servicios públicos en Colombia.",
+          "Desarrollé módulos web dinámicos y mantenibles para **EGA**, plataforma de gestión comercial y operativa para empresas de servicios públicos en Colombia.",
           "Introduje pruebas unitarias con **Jest** en múltiples proyectos, sentando las bases de calidad que luego escalaría como Líder Técnico.",
           "Diseñé e implementé soluciones frontend para incidencias y requerimientos complejos de lógica de negocio del sector regulado.",
           "Aseguré la calidad del código entregado mediante buenas prácticas y revisión continua.",

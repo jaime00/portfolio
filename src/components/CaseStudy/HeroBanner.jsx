@@ -148,8 +148,8 @@ export default function HeroBanner({ project }) {
               <video
                 src={
                   isDark
-                    ? 'https://res.cloudinary.com/personal-jaime00/video/upload/v1785377395/projects/portfolio/projects/smooth-components/smooth-components-dark.mov'
-                    : 'https://res.cloudinary.com/personal-jaime00/video/upload/v1785377562/projects/portfolio/projects/smooth-components/smooth-components-light.mov'
+                    ? 'https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1785377395/projects/portfolio/projects/smooth-components/smooth-components-dark.mp4'
+                    : 'https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1785377562/projects/portfolio/projects/smooth-components/smooth-components-light.mp4'
                 }
                 className="object-cover object-right min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px]"
                 autoPlay

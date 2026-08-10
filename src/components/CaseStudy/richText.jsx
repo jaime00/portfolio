@@ -29,7 +29,7 @@ export function renderRichText(text) {
         return (
           <strong
             key={i}
-            className="font-semibold text-gray-900 dark:text-white"
+            className="font-semibold italic text-gray-700 dark:text-gray-200"
           >
             {part.slice(2, -2)}
           </strong>
