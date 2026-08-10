@@ -169,7 +169,7 @@
           "sections": [
             {
               "type": "narrative",
-              "text": "Of all my work experiences, the Cinépolis redesign has been my favorite project. Its business logic fascinates anyone who loves cinema, and it pushed me to explore my creativity solving real usability problems. Beyond any day-to-day assignment, I want to share a selection of improvements I implemented **on my own initiative**."
+              "text": "Of all my work experiences, the Cinépolis redesign has been my favorite project. Its business logic fascinates anyone who loves cinema, and it was my motivation to explore my creativity solving real usability problems. Beyond any day-to-day assignment, I want to share a selection of improvements I implemented **on my own initiative**."
             },
             {
               "type": "narrative",
@@ -209,7 +209,7 @@
             {
               "type": "narrative",
               "title": "Food Navigation",
-              "text": "**My own frustration as a customer** sparked this one. The food menu has **dozens of sections**, no first-time user can memorize where each product lives, and even regulars waste time scrolling back up to navigate.",
+              "text": "**My own frustration as a customer** was the driving force behind this improvement. The food menu has **dozens of sections**, no first-time user can memorize where each product lives, and even regulars waste time scrolling back up to navigate.",
               "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320719/projects/portfolio/projects/cinepolis/antes_-nav_de_alimentos.mp4"
             },
             {
@@ -456,7 +456,7 @@
           "sections": [
             {
               "type": "narrative",
-              "text": "De todas mis experiencias laborales, el rediseño de Cinépolis ha sido mi proyecto favorito. Su lógica de negocio fascina a cualquiera que ame el cine, y me empujó a explorar mi creatividad resolviendo problemas reales de usabilidad. Más allá de cualquier asignación del día a día, quiero compartirles una selección de mejoras que implementé **por iniciativa propia**."
+              "text": "De todas mis experiencias laborales, el rediseño de Cinépolis ha sido mi proyecto favorito. Su lógica de negocio fascina a cualquiera que ame el cine, y fue mi motivo para explorar mi creatividad resolviendo problemas reales de usabilidad. Más allá de cualquier asignación del día a día, quiero compartirles una selección de mejoras que implementé **por iniciativa propia**."
             },
             {
               "type": "narrative",
@@ -496,7 +496,7 @@
             {
               "type": "narrative",
               "title": "Navegación de Alimentos",
-              "text": "**Mi propia frustración como cliente** de Cinépolis detonó esta mejora. El menú de alimentos tiene **decenas de secciones**, ningún usuario nuevo puede memorizar dónde está cada producto, y hasta los recurrentes pierden tiempo desplazándose hacia arriba para navegar.",
+              "text": "**Mi propia frustración como cliente** de Cinépolis fue el impulso de esta mejora. El menú de alimentos tiene **decenas de secciones**, ningún usuario nuevo puede memorizar dónde está cada producto, y hasta los recurrentes pierden tiempo desplazándose hacia arriba para navegar.",
               "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320719/projects/portfolio/projects/cinepolis/antes_-nav_de_alimentos.mp4"
             },
             {
