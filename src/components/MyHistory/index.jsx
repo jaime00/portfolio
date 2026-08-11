@@ -1,5 +1,5 @@
 import useDarkMode from '@/contexts/DarkMode'
-import { Poster } from 'smooth-components'
+import { ContributionsOnGithub, Poster } from 'smooth-components'
 
 import AnimatedCounter from '@/components/AnimatedCounter'
 import { renderRichText } from '@/components/CaseStudy/richText'
@@ -68,7 +68,23 @@ export default function MyHistory() {
           <div className="col-span-3">
             <p className="mt-7">{t('about.skills')}</p>
             <br />
-            <p>{renderRichText(t('about.findMe'))}</p>
+            <p>
+              {renderRichText(t('about.findMe'), {
+                'https://github.com/jaime00': {
+                  previewConfig: {
+                    type: 'custom',
+                    content: (
+                      <ContributionsOnGithub
+                        username="jaime00"
+                        year={2026}
+                        isDarkMode={isDark}
+                      />
+                    ),
+                    placement: 'bottom'
+                  }
+                }
+              })}
+            </p>{' '}
           </div>
         </div>
       </section>

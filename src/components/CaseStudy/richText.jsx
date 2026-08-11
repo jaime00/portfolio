@@ -1,8 +1,9 @@
 import { HyperLink } from 'smooth-components'
 
 // Renders inline `code` spans (backticks) and **bold** spans inside
-// case-study text.
-export function renderRichText(text) {
+// case-study text. `extraPropsByHref` maps a link href to props that get
+// spread onto that link's HyperLink (e.g. previewConfig).
+export function renderRichText(text, extraPropsByHref = {}) {
   if (!text) return text
 
   return text
@@ -45,6 +46,7 @@ export function renderRichText(text) {
             href={linkMatch[2]}
             className="ml-1 text-gray-700 dark:text-gray-300"
             styles={{ underscoreColor: 'var(--color-primary)' }}
+            {...extraPropsByHref[linkMatch[2]]}
           >
             {label}
           </HyperLink>

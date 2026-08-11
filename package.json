@@ -7,7 +7,7 @@
     "motion": "^12.6.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "smooth-components": "^1.1.41",
+    "smooth-components": "^1.1.45",
     "wouter": "^3.0.0"
   },
   "scripts": {
