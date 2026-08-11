@@ -195,7 +195,7 @@ export default function HeroBanner({ project }) {
                 }
               />
             )}
-            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 md:text-base">
+            <p className="min-h-[6rem] text-sm leading-relaxed text-gray-600 dark:text-gray-300 min-1045:min-h-[120px] md:text-base">
               {description}
             </p>
 

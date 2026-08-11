@@ -70,12 +70,17 @@ export default function NarrativeSection({ section }) {
 
           {section.video && (
             <motion.div
-              className="mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
+              className="relative mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: 0.2, ease }}
             >
+              {section.videoLabel && (
+                <span className="absolute left-0 top-0 z-10 rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 backdrop-blur-md dark:bg-gray-800/70 dark:text-gray-300">
+                  {section.videoLabel}
+                </span>
+              )}
               <video
                 ref={videoRef}
                 src={section.video}
@@ -109,12 +114,17 @@ export default function NarrativeSection({ section }) {
 
       {section.image && isImageBottom && (
         <motion.div
-          className="mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
+          className="relative mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
           initial={{ opacity: 0, y: 30, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, delay: 0.2, ease }}
         >
+          {section.imageLabel && (
+            <span className="absolute left-0 top-0 z-10 rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 backdrop-blur-md dark:bg-gray-800/70 dark:text-gray-300">
+              {section.imageLabel}
+            </span>
+          )}
           <img
             src={section.image}
             alt={section.title}

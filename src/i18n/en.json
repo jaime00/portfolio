@@ -9,8 +9,7 @@
     "code": "Code"
   },
   "nav": {
-    "menu": "Menu",
-    "close": "Close"
+    "menu": "Menu"
   },
   "home": {
     "yearsExperienceBefore": "Over",
@@ -26,14 +25,12 @@
     "learnMore": "Learn more",
     "viewResume": "View resume",
     "iLoveSharing": "I love sharing my knowledge and learning new things.",
-    "checkProjects": "Check out some of my most recent projects.",
-    "seeAllProjects": "See all projects"
+    "checkProjects": "Check out some of my most recent projects."
   },
   "about": {
     "title": "About me",
     "subtitle": "Here's my story.",
     "systemsEngineer": "Systems Engineer",
-    "frontend": "Frontend",
     "yearsExperienceBefore": "with more than",
     "yearsExperienceAfter": "years of experience adding value to business processes in the commercial and public service sectors.",
     "technicalLead": "Tech Lead",
@@ -56,8 +53,7 @@
     "title": "Contact",
     "subtitle": "Interested in my work?",
     "question": "Do you have any questions, proposals, or projects in mind? Would you like to work together? Don't hesitate to contact me.",
-    "emailCopied": "Copied!",
-    "copyEmailLabel": "Copy email"
+    "emailCopied": "Copied!"
   },
   "footer": {
     "general": "General",
@@ -75,10 +71,6 @@
     "previousProject": "Previous Project",
     "contactMe": "Contact me",
     "readingTime": "min read"
-  },
-  "languages": {
-    "spanish": "Español",
-    "english": "English"
   },
   "a11y": {
     "enableDarkMode": "Switch to dark mode",

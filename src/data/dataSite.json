@@ -59,8 +59,6 @@
             },
             {
               "type": "narrative",
-              "title": "Conclusion",
-              "text": "`smooth-components` was born from a personal obsession and today it's an open-source library published on [**npm**](https://www.npmjs.com/package/smooth-components) that any developer can use. I'm currently working on new components with the same philosophy: bringing real-world aesthetics to the browser. Explore the full documentation at [**smooth-components.com**](https://smooth-components.com/docs) or contribute on [**GitHub**](https://github.com/jaime00/smooth-components).",
               "highlights": [
                 {
                   "value": "~98 kB",
@@ -159,7 +157,7 @@
         "slug": "cinepolis-web",
         "urlPreview": "https://cinepolis.com/mx",
         "title": "Cinépolis",
-        "description": "WEB platform for movie lovers to explore showtimes, watch trailers, and purchase tickets. It offers a seamless movie experience with seat selection, loyalty programs, and digital ticket sales.",
+        "description": "Web platform for Latin America's largest movie theater chain. Showtimes, trailers, seat selection, and digital ticket purchasing.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png",
         "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
         "caseStudy": {
@@ -182,12 +180,14 @@
               "title": "Select Your Country",
               "text": "The original met the requirement and nothing more: flat background, pixelated flags, text dimmed by opacity, and a list that left **half the screen empty**. Zero motion, zero hierarchy. The first impression of a cinema brand felt like a form. I decided to treat it not as a selector, but as a **scene**: if the user picks a country, they should see where Cinépolis is.",
               "image": "https://res.cloudinary.com/personal-jaime00/image/upload/v1786330206/projects/portfolio/projects/cinepolis/selecciona-tu-pais-antes.png",
-              "imagePosition": "bottom"
+              "imagePosition": "bottom",
+              "imageLabel": "Before"
             },
             {
               "type": "narrative",
               "text": "I replaced the list with an **interactive 3D globe**, pinning each country's flag over its location. Both sides respond to **synchronized hover**: hovering a card rotates the globe to that country and highlights its pin; hovering a pin lights up the card. Vector flags instead of rasterized ones, contrast restored without opacity, cards packed into a **three-column grid**. The dead space vanished and the screen went from checkout step to **experience**.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786331758/projects/portfolio/projects/cinepolis/selecciona-tu-pais-despues_nxrejb.mp4"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786331758/projects/portfolio/projects/cinepolis/selecciona-tu-pais-despues_nxrejb.mp4",
+              "videoLabel": "After"
             },
             {
               "type": "narrative",
@@ -199,31 +199,33 @@
               "type": "narrative",
               "title": "Secondary Top Header",
               "text": "**Two separate components did the exact same job**. Switching between them caused visual jumps, sizes and spacing broke on every transition.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320716/projects/portfolio/projects/cinepolis/Header_secundario_antes.mp4"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320716/projects/portfolio/projects/cinepolis/Header_secundario_antes.mp4",
+              "videoLabel": "Before"
             },
             {
               "type": "narrative",
               "text": "I merged both into **one component**, preserving every feature. Then I added **smooth collapse animations** on scroll to replace the abrupt swap. Cleaner code, fluid experience, **no trade-offs**.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320715/projects/portfolio/projects/cinepolis/Header_secundario_despues.mp4"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320715/projects/portfolio/projects/cinepolis/Header_secundario_despues.mp4",
+              "videoLabel": "After"
             },
             {
               "type": "narrative",
               "title": "Food Navigation",
               "text": "**My own frustration as a customer** was the driving force behind this improvement. The food menu has **dozens of sections**, no first-time user can memorize where each product lives, and even regulars waste time scrolling back up to navigate.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320719/projects/portfolio/projects/cinepolis/antes_-nav_de_alimentos.mp4"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320719/projects/portfolio/projects/cinepolis/antes_-nav_de_alimentos.mp4",
+              "videoLabel": "Before"
             },
             {
               "type": "narrative",
               "text": "**I pinned the food nav, search bar and section menu** so it stays visible at any scroll depth. Now users have **two fast paths**: browse by section or search directly. No more scrolling back to the top.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320720/projects/portfolio/projects/cinepolis/nav_de_alimentos_despues.mp4"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320720/projects/portfolio/projects/cinepolis/nav_de_alimentos_despues.mp4",
+              "videoLabel": "After"
             },
             {
               "type": "narrative",
-              "title": "Results",
-              "text": "These improvements ship on a platform serving **millions of users across five countries**: faster load times, fluid animations, and a modern interface worthy of the Cinépolis brand.",
               "highlights": [
                 {
-                  "value": "2M+",
+                  "value": "16M+",
                   "label": "Monthly users"
                 },
                 {
@@ -346,8 +348,6 @@
             },
             {
               "type": "narrative",
-              "title": "Conclusión",
-              "text": "`smooth-components` nació de una obsesión personal y hoy es una librería open source publicada en [**npm**](https://www.npmjs.com/package/smooth-components) que cualquier desarrollador puede usar. Actualmente estoy trabajando en nuevos componentes con la misma filosofía: llevar la estética del mundo físico al navegador. Explora la documentación completa en [**smooth-components.com**](https://smooth-components.com/docs) o contribuye en [**GitHub**](https://github.com/jaime00/smooth-components).",
               "highlights": [
                 {
                   "value": "~98 kB",
@@ -446,7 +446,7 @@
         "slug": "cinepolis-web",
         "urlPreview": "https://cinepolis.com/mx",
         "title": "Cinépolis",
-        "description": "Plataforma WEB para amantes del cine que permite explorar la cartelera, ver trailers y comprar boletos. Ofrece una experiencia cinematográfica perfecta con selección de asientos, programas de lealtad y venta de boletos digitales.",
+        "description": "Plataforma web de la cadena de cines más grande de Latinoamérica. Cartelera, trailers, selección de asientos y compra de boletos digitales.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597635/projects/portfolio/projects/cinepolis/homepage.png",
         "stack": ["NextJS", "ReactJS", "Micro-Fronts", "Module Federation"],
         "caseStudy": {
@@ -469,12 +469,14 @@
               "title": "Selecciona tu País",
               "text": "El original cumplía el requisito y nada más: fondo plano, banderas pixeladas, texto diluido por opacidad y una lista que dejaba **media pantalla vacía**. Cero movimiento, cero jerarquía. La primera impresión de una marca de cine era la de un formulario. Decidí no tratarla como un selector, sino como una **escena**: si el usuario elige un país, que vea dónde está Cinépolis.",
               "image": "https://res.cloudinary.com/personal-jaime00/image/upload/v1786330206/projects/portfolio/projects/cinepolis/selecciona-tu-pais-antes.png",
-              "imagePosition": "bottom"
+              "imagePosition": "bottom",
+              "imageLabel": "Antes"
             },
             {
               "type": "narrative",
               "text": "Reemplacé la lista por un **globo 3D interactivo**, con un pin y bandera por país sobre su ubicación. Ambos lados responden al **hover sincronizado**: al pasar sobre una tarjeta, el globo gira hasta ese país y resalta su pin; al pasar sobre el pin, se ilumina la tarjeta. Banderas vectoriales en lugar de rasterizadas, contraste recuperado sin opacidad, tarjetas compactadas en una **rejilla de tres columnas**. El espacio muerto desapareció y la pantalla pasó de trámite a **experiencia**.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786331758/projects/portfolio/projects/cinepolis/selecciona-tu-pais-despues_nxrejb.mp4"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786331758/projects/portfolio/projects/cinepolis/selecciona-tu-pais-despues_nxrejb.mp4",
+              "videoLabel": "Después"
             },
             {
               "type": "narrative",
@@ -486,31 +488,33 @@
               "type": "narrative",
               "title": "Top Header Secundario",
               "text": "**Dos componentes separados hacían exactamente lo mismo**. Alternar entre ellos rompía tamaños y espaciados, generando saltos visuales en cada transición.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320716/projects/portfolio/projects/cinepolis/Header_secundario_antes.mp4"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320716/projects/portfolio/projects/cinepolis/Header_secundario_antes.mp4",
+              "videoLabel": "Antes"
             },
             {
               "type": "narrative",
               "text": "Unifiqué ambos en **un solo componente**, conservando cada funcionalidad. Luego añadí **animaciones suaves de colapso** al hacer scroll, reemplazando el cambio abrupto. Código más limpio, experiencia más fluida, **sin concesiones**.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320715/projects/portfolio/projects/cinepolis/Header_secundario_despues.mp4"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320715/projects/portfolio/projects/cinepolis/Header_secundario_despues.mp4",
+              "videoLabel": "Después"
             },
             {
               "type": "narrative",
               "title": "Navegación de Alimentos",
               "text": "**Mi propia frustración como cliente** de Cinépolis fue el impulso de esta mejora. El menú de alimentos tiene **decenas de secciones**, ningún usuario nuevo puede memorizar dónde está cada producto, y hasta los recurrentes pierden tiempo desplazándose hacia arriba para navegar.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320719/projects/portfolio/projects/cinepolis/antes_-nav_de_alimentos.mp4"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320719/projects/portfolio/projects/cinepolis/antes_-nav_de_alimentos.mp4",
+              "videoLabel": "Antes"
             },
             {
               "type": "narrative",
               "text": "Fijé **el nav de alimentos, buscador y las secciones del menú** para que permanezca visible sin importar cuánto se desplace el usuario. Ahora tiene **dos caminos rápidos**: explorar por sección o buscar directamente. Se acabó el scroll de vuelta al inicio.",
-              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320720/projects/portfolio/projects/cinepolis/nav_de_alimentos_despues.mp4"
+              "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786320720/projects/portfolio/projects/cinepolis/nav_de_alimentos_despues.mp4",
+              "videoLabel": "Después"
             },
             {
               "type": "narrative",
-              "title": "Resultados",
-              "text": "Estas mejoras corren en una plataforma que sirve a **millones de usuarios en cinco países**: tiempos de carga más rápidos, animaciones fluidas y una interfaz moderna a la altura de la marca Cinépolis.",
               "highlights": [
                 {
-                  "value": "2M+",
+                  "value": "16M+",
                   "label": "Usuarios mensuales"
                 },
                 {

@@ -9,8 +9,7 @@
     "code": "Código"
   },
   "nav": {
-    "menu": "Menú",
-    "close": "Cerrar"
+    "menu": "Menú"
   },
   "home": {
     "yearsExperienceBefore": "Más de",
@@ -26,14 +25,12 @@
     "learnMore": "Ver más",
     "viewResume": "Ver currículum",
     "iLoveSharing": "Me encanta compartir mi conocimiento y aprender cosas nuevas.",
-    "checkProjects": "Echa un vistazo a algunos de mis proyectos más recientes.",
-    "seeAllProjects": "Ver todos los proyectos"
+    "checkProjects": "Echa un vistazo a algunos de mis proyectos más recientes."
   },
   "about": {
     "title": "Sobre mí",
     "subtitle": "Aquí está mi historia.",
     "systemsEngineer": "Ingeniero de Sistemas",
-    "frontend": "Frontend",
     "yearsExperienceBefore": "con más de",
     "yearsExperienceAfter": "años de experiencia agregando valor a procesos de negocio en los sectores comercial y de servicios públicos.",
     "technicalLead": "Líder Técnico",
@@ -56,8 +53,7 @@
     "title": "Contacto",
     "subtitle": "¿Interesado en mi trabajo?",
     "question": "¿Tienes alguna pregunta, propuesta o proyecto en mente? ¿Te gustaría trabajar juntos? No dudes en contactarme.",
-    "emailCopied": "¡Copiado!",
-    "copyEmailLabel": "Copiar email"
+    "emailCopied": "¡Copiado!"
   },
   "footer": {
     "general": "General",
@@ -75,10 +71,6 @@
     "previousProject": "Proyecto Anterior",
     "contactMe": "Contáctame",
     "readingTime": "min de lectura"
-  },
-  "languages": {
-    "spanish": "Español",
-    "english": "English"
   },
   "a11y": {
     "enableDarkMode": "Cambiar a modo oscuro",
