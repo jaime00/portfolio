@@ -19,7 +19,11 @@ export default function ProjectDetail({ slug }) {
 
   return (
     <>
-      <PageMeta title={`${project.title} — Jaime Torres`} />
+      <PageMeta
+        title={`${project.title} — Jaime Torres`}
+        description={project.description}
+        ogImage={project.imgDark ?? project.img}
+      />
       <div className="relative mx-auto mb-5 mt-0 flex max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
         <ReadingProgress />
         <CaseStudy project={project} adjacentProjects={adjacentProjects} />
