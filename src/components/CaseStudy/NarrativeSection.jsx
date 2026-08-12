@@ -77,7 +77,7 @@ export default function NarrativeSection({ section }) {
               transition={{ duration: 0.6, delay: 0.2, ease }}
             >
               {section.videoLabel && (
-                <span className="absolute left-0 top-0 z-10 rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 backdrop-blur-md dark:bg-gray-800/70 dark:text-gray-300">
+                <span className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300">
                   {section.videoLabel}
                 </span>
               )}
@@ -121,7 +121,7 @@ export default function NarrativeSection({ section }) {
           transition={{ duration: 0.6, delay: 0.2, ease }}
         >
           {section.imageLabel && (
-            <span className="absolute left-0 top-0 z-10 rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 backdrop-blur-md dark:bg-gray-800/70 dark:text-gray-300">
+            <span className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300">
               {section.imageLabel}
             </span>
           )}
