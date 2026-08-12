@@ -77,9 +77,15 @@ export default function NarrativeSection({ section }) {
               transition={{ duration: 0.6, delay: 0.2, ease }}
             >
               {section.videoLabel && (
-                <span className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300">
+                <motion.span
+                  className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300"
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5, ease }}
+                >
                   {section.videoLabel}
-                </span>
+                </motion.span>
               )}
               <video
                 ref={videoRef}
@@ -121,9 +127,15 @@ export default function NarrativeSection({ section }) {
           transition={{ duration: 0.6, delay: 0.2, ease }}
         >
           {section.imageLabel && (
-            <span className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300">
+            <motion.span
+              className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300"
+              initial={{ opacity: 0, x: -12 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5, ease }}
+            >
               {section.imageLabel}
-            </span>
+            </motion.span>
           )}
           <img
             src={section.image}
