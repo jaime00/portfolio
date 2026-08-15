@@ -79,21 +79,6 @@ export default function ProjectNavigation({ prev, next }) {
           </motion.div>
         )}
       </div>
-
-      <motion.div
-        className="mt-10 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2, ease }}
-      >
-        <Link
-          to="/contact"
-          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal-500 to-teal-400 px-8 py-3 text-sm font-medium text-white shadow-md shadow-teal-500/20 transition-all hover:shadow-lg hover:shadow-teal-500/25 hover:brightness-105 dark:from-teal-400 dark:to-emerald-400 dark:text-gray-900 dark:shadow-teal-400/10"
-        >
-          {t('projectDetail.contactMe')}
-        </Link>
-      </motion.div>
     </section>
   )
 }
