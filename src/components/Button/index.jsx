@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useSpring } from 'motion/react'
+import { m, useMotionValue, useSpring } from 'motion/react'
 import { Link } from 'wouter'
 
 import { getStyleButton } from '@/services'
@@ -51,7 +51,7 @@ export default function Button({
 
   if (openUrl) {
     return (
-      <motion.a
+      <m.a
         aria-label={ariaLabel}
         href={openUrl}
         target="_blank"
@@ -63,13 +63,13 @@ export default function Button({
         {...tapAndHover}
       >
         {children}
-      </motion.a>
+      </m.a>
     )
   }
 
   if (onClick) {
     return (
-      <motion.button
+      <m.button
         aria-label={ariaLabel}
         type="button"
         className={classes}
@@ -80,42 +80,42 @@ export default function Button({
         {...tapAndHover}
       >
         {children}
-      </motion.button>
+      </m.button>
     )
   }
 
   if (magnetic) {
     return (
-      <motion.span
+      <m.span
         className={`inline-block ${wrapperClassName}`}
         style={magneticStyle}
         onMouseMove={onMagMouseMove}
         onMouseLeave={onMagMouseLeave}
       >
         <Link to={to}>
-          <motion.button
+          <m.button
             aria-label={ariaLabel}
             type="button"
             className={classes}
             {...tapAndHover}
           >
             {children}
-          </motion.button>
+          </m.button>
         </Link>
-      </motion.span>
+      </m.span>
     )
   }
 
   return (
     <Link to={to}>
-      <motion.button
+      <m.button
         aria-label={ariaLabel}
         type="button"
         className={classes}
         {...tapAndHover}
       >
         {children}
-      </motion.button>
+      </m.button>
     </Link>
   )
 }

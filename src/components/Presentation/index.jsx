@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'motion/react'
+import { m, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 
 import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCode'
@@ -38,7 +38,7 @@ export default function Presentation() {
           onMouseEnter={() => iconRef.current?.startAnimation()}
           onMouseLeave={() => iconRef.current?.stopAnimation()}
         >
-          <span className="inline-flex text-gray-500/90 transition-all duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.5)] dark:text-gray-300/90">
+          <span className="inline-flex text-gray-500/90 transition-[transform,filter] duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.5)] dark:text-gray-300/90">
             <FolderCodeIcon
               ref={iconRef}
               className="transition-colors duration-300 group-hover:text-teal-500"
@@ -76,18 +76,18 @@ export default function Presentation() {
       </div>
 
       {/* Parallax wrapper */}
-      <motion.div
+      <m.div
         className="mask-image pointer-events-none absolute bottom-[60px] right-0 top-0 z-[4] h-[415px] select-none justify-end"
         style={{ y: parallaxY }}
       >
         {/* Entrance animation */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Float animation */}
-          <motion.div
+          <m.div
             animate={{ y: [0, -12, 0] }}
             transition={{
               duration: 4,
@@ -102,9 +102,9 @@ export default function Presentation() {
               src={image_profile || '/placeholder.svg'}
               className="col-span-1 h-0 w-auto min-1045:h-[415px]"
             />
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </m.div>
+        </m.div>
+      </m.div>
     </div>
   )
 }

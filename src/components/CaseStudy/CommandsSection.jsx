@@ -1,10 +1,10 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 export default function CommandsSection({ section }) {
   return (
     <section className="mb-16">
-      <motion.h2
+      <m.h2
         className="mb-6 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -12,10 +12,10 @@ export default function CommandsSection({ section }) {
         transition={{ duration: 0.5, ease }}
       >
         {section.title} <span className="inline-block scale-x-150 ml-2">—</span>
-      </motion.h2>
+      </m.h2>
 
       {section.text && (
-        <motion.p
+        <m.p
           className="mb-8 text-base leading-relaxed text-gray-700 dark:text-gray-300 md:text-lg"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,11 +23,11 @@ export default function CommandsSection({ section }) {
           transition={{ duration: 0.5, delay: 0.1, ease }}
         >
           {section.text}
-        </motion.p>
+        </m.p>
       )}
 
       {section.install && (
-        <motion.div
+        <m.div
           className="mb-8 overflow-x-auto rounded-xl border border-gray-800 bg-gray-900 p-4 font-mono text-sm shadow-lg dark:shadow-teal-500/10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,13 +38,13 @@ export default function CommandsSection({ section }) {
             <span className="select-none text-teal-400">$ </span>
             {section.install}
           </code>
-        </motion.div>
+        </m.div>
       )}
 
       <div className="space-y-3">
         {section.commands.map((cmd, i) => (
-          <motion.div
-            key={i}
+          <m.div
+            key={cmd.name}
             className="rounded-xl border border-gray-200/80 bg-white/70 p-4 backdrop-blur-sm dark:border-gray-700 dark:bg-gray-800/70"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export default function CommandsSection({ section }) {
             <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               {cmd.description}
             </p>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </section>

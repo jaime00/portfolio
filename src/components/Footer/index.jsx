@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { HyperLink } from 'smooth-components'
 import { Link } from 'wouter'
 
@@ -17,7 +17,7 @@ export default function Footer() {
       <footer className="">
         <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">
           <div className="grid grid-cols-2 gap-8 sm:gap-20">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
@@ -61,8 +61,8 @@ export default function Footer() {
                   </HyperLink>
                 </li>
               </ul>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
@@ -99,7 +99,7 @@ export default function Footer() {
                   </HyperLink>
                 </li>
               </ul>
-            </motion.div>
+            </m.div>
           </div>
           <div className="flex items-start justify-end">
             <Top />

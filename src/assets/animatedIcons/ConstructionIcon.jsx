@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'motion/react'
+import { m, useAnimation } from 'motion/react'
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
 
 const ConstructionIcon = forwardRef(
@@ -55,7 +55,7 @@ const ConstructionIcon = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <motion.pattern
+            <m.pattern
               animate={controls}
               height="14"
               id="stripes"
@@ -78,7 +78,7 @@ const ConstructionIcon = forwardRef(
               width="6"
             >
               <path d="M-4 -2 L14 30" stroke="currentColor" strokeWidth="2" />
-            </motion.pattern>
+            </m.pattern>
           </defs>
           <rect fill="url(#stripes)" height="8" rx="1" width="20" x="2" y="6" />
           <path d="M17 14v7" />

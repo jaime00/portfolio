@@ -1,4 +1,11 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState
+} from 'react'
 
 import en from './en.json'
 import es from './es.json'
@@ -26,23 +33,31 @@ export function LanguageProvider({ children }) {
     document.documentElement.lang = language
   }, [language])
 
-  const t = (key) => {
-    const keys = key.split('.')
-    let value = translations[language]
-    for (const k of keys) {
-      value = value?.[k]
-    }
-    return value || key
-  }
+  const t = useCallback(
+    (key) => {
+      const keys = key.split('.')
+      let value = translations[language]
+      for (const k of keys) {
+        value = value?.[k]
+      }
+      return value || key
+    },
+    [language]
+  )
 
-  const changeLanguage = (lang) => {
+  const changeLanguage = useCallback((lang) => {
     if (translations[lang]) {
       setLanguage(lang)
     }
-  }
+  }, [])
+
+  const value = useMemo(
+    () => ({ language, t, changeLanguage }),
+    [language, t, changeLanguage]
+  )
 
   return (
-    <LanguageContext.Provider value={{ language, t, changeLanguage }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   )

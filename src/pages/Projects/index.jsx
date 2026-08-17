@@ -1,4 +1,4 @@
-import useDarkMode from '@/contexts/DarkMode'
+import useDarkMode from '@/contexts/useDarkMode'
 
 import ListOfProjects from '@/components/ListOfProjects'
 import PageMeta from '@/components/PageMeta'

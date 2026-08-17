@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { Link, useLocation } from 'wouter'
 
 import { useTilt } from '@/hooks/useTilt'
@@ -12,7 +12,7 @@ export default function NavLink(props) {
   return (
     <li className="list-none" style={{ perspective: 600 }}>
       <Link {...props}>
-        <motion.span
+        <m.span
           className={`relative block cursor-pointer whitespace-nowrap rounded-full px-4 py-1.5 text-center text-lg ${
             isActive ? '' : 'hover:bg-gray-900/5 dark:hover:bg-white/5'
           }`}
@@ -23,7 +23,7 @@ export default function NavLink(props) {
           onMouseLeave={handleMouseLeave}
         >
           {isActive && (
-            <motion.span
+            <m.span
               layoutId="active-pill"
               className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-500 to-teal-400 shadow-lg shadow-teal-500/25 dark:from-teal-400 dark:to-emerald-400 dark:shadow-teal-400/15"
               transition={{ type: 'spring', stiffness: 350, damping: 30 }}
@@ -38,7 +38,7 @@ export default function NavLink(props) {
           >
             {props.children}
           </span>
-        </motion.span>
+        </m.span>
       </Link>
     </li>
   )

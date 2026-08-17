@@ -1,4 +1,4 @@
-import useDarkMode from '@/contexts/DarkMode'
+import useDarkMode from '@/contexts/useDarkMode'
 import { ContributionsOnGithub, Poster } from 'smooth-components'
 
 import AnimatedCounter from '@/components/AnimatedCounter'

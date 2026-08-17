@@ -15,9 +15,9 @@ export default function Particles() {
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-[2] hidden md:block"
     >
-      {PARTICLES.map((p, i) => (
+      {PARTICLES.map((p) => (
         <span
-          key={i}
+          key={`${p.top}-${p.left}`}
           className="absolute animate-particle rounded-full bg-teal-400 opacity-0"
           style={{
             top: p.top,

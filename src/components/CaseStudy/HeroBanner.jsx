@@ -1,6 +1,6 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
-import useDarkMode from '@/contexts/DarkMode'
-import { motion } from 'motion/react'
+import useDarkMode from '@/contexts/useDarkMode'
+import { m } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 import { BundlephobiaWidget } from 'smooth-components'
 import { Link } from 'wouter'
@@ -69,7 +69,7 @@ export default function HeroBanner({ project }) {
 
   return (
     <section className="mb-16">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease }}
@@ -83,9 +83,9 @@ export default function HeroBanner({ project }) {
           <ChevronLeftIcon ref={backRef} size={18} />
           {t('projectDetail.backToProjects')}
         </Link>
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         className="mb-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -134,10 +134,10 @@ export default function HeroBanner({ project }) {
             {readingTime} {t('projectDetail.readingTime')}
           </span>
         </div>
-      </motion.div>
+      </m.div>
 
       <div className="grid gap-4 min-1045:grid-cols-3">
-        <motion.div
+        <m.div
           className="group relative min-1045:col-span-2"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -158,7 +158,7 @@ export default function HeroBanner({ project }) {
                 playsInline
               />
             ) : (
-              <motion.img
+              <m.img
                 src={img}
                 alt={title}
                 className={`${project.slug === 'eazy-git' ? 'object-cover object-left' : ''} min-1045:aspect-auto min-1045:h-full min-1045:min-h-[480px]`}
@@ -179,7 +179,7 @@ export default function HeroBanner({ project }) {
               </a>
             )}
           </div>
-        </motion.div>
+        </m.div>
 
         <div className="flex flex-col gap-4">
           <div className="relative rounded-3xl bg-gray-100 p-6 shadow-lg dark:bg-gray-900 min-445:p-8">
@@ -250,7 +250,7 @@ export default function HeroBanner({ project }) {
                 href={urlCode}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-gray-200 px-5 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-gray-200 px-5 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
               >
                 {t('projectDetail.viewCode')}
               </a>
@@ -276,8 +276,8 @@ export default function HeroBanner({ project }) {
             lastHighlights && (
               <div className="flex flex-1 flex-col justify-center rounded-3xl bg-gradient-to-br from-teal-500/10 to-emerald-500/10 p-6 shadow-lg dark:from-teal-400/10 dark:to-emerald-400/10">
                 <div className="grid grid-cols-2 gap-4 min-1045:grid-cols-1">
-                  {lastHighlights.map((h, i) => (
-                    <div key={i} className="min-1045:text-center">
+                  {lastHighlights.map((h) => (
+                    <div key={h.label} className="min-1045:text-center">
                       <span className="text-gradient-teal text-3xl font-bold">
                         {h.value}
                       </span>

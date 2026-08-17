@@ -13,17 +13,21 @@ const HINGE_CONFIG = {
 
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value))
 
-const renderWhitespace = (value, key) =>
-  value.split(/(\n)/).map((part, index) => {
-    if (part === '\n') return <br key={`${key}-br-${index}`} />
+const renderWhitespace = (value, key) => {
+  let offset = 0
+  return value.split(/(\n)/).map((part) => {
+    const partKey = offset
+    offset += part.length
+    if (part === '\n') return <br key={`${key}-br-${partKey}`} />
     if (!part) return null
 
     return (
-      <span className="fold-text-whitespace" key={`${key}-space-${index}`}>
+      <span className="fold-text-whitespace" key={`${key}-space-${partKey}`}>
         {part.replace(/ /g, '\u00A0')}
       </span>
     )
   })
+}
 
 const FOLD_TEXT_STYLES = `.fold-text {
   display: inline-block;
@@ -165,26 +169,34 @@ const FoldText = ({
     }
 
     if (splitBy === 'line') {
-      return text.split('\n').map((line, index) => (
-        <span className="fold-text-line" key={`line-${index}`}>
-          {renderSegment(line || '\u00A0', `segment-line-${index}`, 'line')}
-        </span>
-      ))
+      let lineOffset = 0
+      return text.split('\n').map((line) => {
+        const key = lineOffset
+        lineOffset += line.length + 1
+        return (
+          <span className="fold-text-line" key={`line-${key}`}>
+            {renderSegment(line || '\u00A0', `segment-line-${key}`, 'line')}
+          </span>
+        )
+      })
     }
 
     if (splitBy === 'word') {
-      return text.split(/(\s+)/).flatMap((part, index) => {
+      let wordOffset = 0
+      return text.split(/(\s+)/).flatMap((part) => {
+        const key = wordOffset
+        wordOffset += part.length
         if (!part) return []
-        if (/^\s+$/.test(part)) return renderWhitespace(part, `ws-${index}`)
+        if (/^\s+$/.test(part)) return renderWhitespace(part, `ws-${key}`)
         return renderSegment(part, `segment-word-${segmentIndex}`)
       })
     }
 
-    return Array.from(text).map((char, index) => {
-      if (char === '\n') return <br key={`br-${index}`} />
+    return Array.from(text).map((char, charIdx) => {
+      if (char === '\n') return <br key={`br-${charIdx}`} />
       return renderSegment(
         char === ' ' ? '\u00A0' : char,
-        `segment-char-${index}`
+        `segment-char-${charIdx}`
       )
     })
   }, [text, splitBy, hinge, hingeConfig.origin, safePerspective])

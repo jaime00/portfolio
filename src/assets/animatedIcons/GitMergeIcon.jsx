@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'motion/react'
+import { m, useAnimation } from 'motion/react'
 import {
   forwardRef,
   useCallback,
@@ -83,7 +83,7 @@ const GitMergeIcon = forwardRef(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.circle
+          <m.circle
             animate={controls}
             cx="18"
             cy="18"
@@ -102,7 +102,7 @@ const GitMergeIcon = forwardRef(
             }}
           />
 
-          <motion.circle
+          <m.circle
             animate={controls}
             cx="6"
             cy="6"
@@ -121,7 +121,7 @@ const GitMergeIcon = forwardRef(
             }}
           />
 
-          <motion.path
+          <m.path
             animate={controls}
             d="M6 21V9a9 9 0 0 0 9 9"
             transition={{

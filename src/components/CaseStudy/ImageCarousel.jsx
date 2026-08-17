@@ -1,5 +1,5 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
-import { AnimatePresence, motion, useInView } from 'motion/react'
+import { AnimatePresence, m, useInView } from 'motion/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 const INTERVAL = 4000
@@ -37,7 +37,7 @@ export default function ImageCarousel({ images, title }) {
   }, [paused, inView, advance])
 
   return (
-    <motion.div
+    <m.div
       ref={containerRef}
       className="relative overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
       initial={{ opacity: 0, y: 30, scale: 0.97 }}
@@ -47,7 +47,7 @@ export default function ImageCarousel({ images, title }) {
     >
       <div className="relative aspect-[16/9] bg-gray-100 dark:bg-gray-900">
         <AnimatePresence mode="popLayout" custom={dir}>
-          <motion.img
+          <m.img
             key={current}
             src={images[current]}
             alt={`${title || ''} ${current + 1}`}
@@ -93,9 +93,9 @@ export default function ImageCarousel({ images, title }) {
 
       {/* Progress bar */}
       <div className="absolute bottom-0 left-0 right-0 flex gap-1 p-2">
-        {images.map((_, i) => (
+        {images.map((image, i) => (
           <button
-            key={i}
+            key={image}
             type="button"
             aria-label={`Go to image ${i + 1}`}
             className="h-0.5 flex-1 cursor-pointer overflow-hidden rounded-full bg-white/30"
@@ -124,6 +124,6 @@ export default function ImageCarousel({ images, title }) {
           to   { width: 100% }
         }
       `}</style>
-    </motion.div>
+    </m.div>
   )
 }

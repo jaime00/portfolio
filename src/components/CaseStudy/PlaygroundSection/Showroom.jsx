@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, m } from 'motion/react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Poster } from 'smooth-components'
 
@@ -201,7 +201,7 @@ function EditorTitleBar({ copied, handleCopy }) {
         onClick={handleCopy}
         aria-label="Copy code"
       >
-        <motion.div whileHover={{ x: 2 }} whileTap={{ scale: 0.92 }}>
+        <m.div whileHover={{ x: 2 }} whileTap={{ scale: 0.92 }}>
           {copied ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -233,7 +233,7 @@ function EditorTitleBar({ copied, handleCopy }) {
               <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
             </svg>
           )}
-        </motion.div>
+        </m.div>
       </button>
     </div>
   )
@@ -243,7 +243,7 @@ function AutocompleteDropdown({ autocomplete, applySuggestion }) {
   return (
     <AnimatePresence>
       {autocomplete && (
-        <motion.div
+        <m.div
           role="listbox"
           aria-label="Autocomplete suggestions"
           initial={{ opacity: 0, y: -4, scale: 0.97 }}
@@ -341,7 +341,7 @@ function AutocompleteDropdown({ autocomplete, applySuggestion }) {
           >
             {'↑↓'} navigate &middot; {'↵'} insert &middot; esc close
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   )
@@ -391,7 +391,7 @@ export default function Showroom() {
     }
     el.addEventListener('keydown', onKeyDown)
     return () => el.removeEventListener('keydown', onKeyDown)
-  }, [handleCopy, handleReset, isMac])
+  }, [handleReset, isMac])
 
   function computeAutocomplete(value, cursor) {
     const before = value.slice(0, cursor)
@@ -402,7 +402,10 @@ export default function Showroom() {
     }
     const typed = match[1]
     const usedProps = new Set(
-      SUGGESTIONS.filter((s) => code.includes(s.name + '=')).map((s) => s.name)
+      SUGGESTIONS.reduce((acc, s) => {
+        if (code.indexOf(s.name + '=') !== -1) acc.push(s.name)
+        return acc
+      }, [])
     )
     const filtered = SUGGESTIONS.filter(
       (s) =>
@@ -579,7 +582,7 @@ export default function Showroom() {
           {/* Footer bar */}
           <AnimatePresence>
             {code !== DEFAULT_CODE && (
-              <motion.button
+              <m.button
                 initial={{ opacity: 0, x: -12, filter: 'blur(4px)' }}
                 animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                 exit={{ opacity: 0, x: -12, filter: 'blur(4px)' }}
@@ -589,7 +592,7 @@ export default function Showroom() {
                 onClick={handleReset}
                 className="editor-btn flex cursor-pointer items-center gap-1.5 px-4 py-2 font-mono text-xs"
               >
-                <motion.svg
+                <m.svg
                   animate={resetting ? { rotate: -360 } : { rotate: 0 }}
                   transition={{ duration: 0.4, ease: 'easeInOut' }}
                   xmlns="http://www.w3.org/2000/svg"
@@ -604,12 +607,12 @@ export default function Showroom() {
                 >
                   <polyline points="1 4 1 10 7 10" />
                   <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
-                </motion.svg>
+                </m.svg>
                 Reset
                 <span className="ml-1 hidden md:inline">
                   {isMac ? '⌘' : 'Ctrl'}+D
                 </span>
-              </motion.button>
+              </m.button>
             )}
           </AnimatePresence>
         </div>

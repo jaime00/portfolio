@@ -1,6 +1,6 @@
 import DataSite from '@/data/dataSite.json'
 
-const getProjects = ({ limit, lang = 'en' } = { limit: null, lang: 'en' }) => {
+const getProjects = ({ limit = null, lang = 'en' } = {}) => {
   const projects = (DataSite.projects[lang] || DataSite.projects.en)
     .filter((p) => p.enabled !== false)
     .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity))
@@ -11,9 +11,7 @@ const getProjects = ({ limit, lang = 'en' } = { limit: null, lang: 'en' }) => {
   }
 }
 
-const getWorkExperience = (
-  { limit, lang = 'en' } = { limit: null, lang: 'en' }
-) => {
+const getWorkExperience = ({ limit = null, lang = 'en' } = {}) => {
   const workExp = DataSite.work_experience[lang] || DataSite.work_experience.en
   if (limit && limit > 0) {
     return workExp.slice(0, limit)

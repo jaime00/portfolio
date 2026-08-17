@@ -1,4 +1,4 @@
-import { AnimatePresence, LayoutGroup, motion } from 'motion/react'
+import { AnimatePresence, LayoutGroup, m } from 'motion/react'
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { Link, useLocation } from 'wouter'
@@ -36,7 +36,7 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
   const mobileModal = createPortal(
     <AnimatePresence>
       {menuIsOpen && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -79,7 +79,7 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
                 (item.to === '/side-projects' &&
                   location.startsWith('/side-projects'))
               return (
-                <motion.div
+                <m.div
                   key={item.to}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -100,11 +100,11 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
                       {item.label}
                     </div>
                   </Link>
-                </motion.div>
+                </m.div>
               )
             })}
           </nav>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>,
     document.body

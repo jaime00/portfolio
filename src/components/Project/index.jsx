@@ -1,5 +1,5 @@
-import useDarkMode from '@/contexts/DarkMode'
-import { motion } from 'motion/react'
+import useDarkMode from '@/contexts/useDarkMode'
+import { m } from 'motion/react'
 import { useState } from 'react'
 import { useLocation } from 'wouter'
 
@@ -40,7 +40,7 @@ export default function Project({
     <>
       <div className="wrapper group min-w-[350px] max-w-[405px] pb-6 text-gray-900 antialiased">
         <div style={{ perspective: 800 }}>
-          <motion.div
+          <m.div
             role={enabled ? 'link' : undefined}
             tabIndex={enabled ? 0 : -1}
             onClick={handleCardClick}
@@ -82,7 +82,7 @@ export default function Project({
                 />
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </>

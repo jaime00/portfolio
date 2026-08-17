@@ -4,7 +4,7 @@ import {
   staggerContainerVariants,
   staggerItemVariants
 } from '@/animations'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { useState } from 'react'
 
 import Button from '@/components/Button'
@@ -20,7 +20,7 @@ export default function WorkExperience() {
   const [hoveredIndex, setHoveredIndex] = useState(null)
   return (
     <div className="mt-6 space-y-6 text-xl text-gray-700 dark:text-gray-300">
-      <motion.h2
+      <m.h2
         className="text-3xl font-bold text-gray-900 dark:text-white"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -28,16 +28,16 @@ export default function WorkExperience() {
         transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
       >
         {t('home.workExperience')}
-      </motion.h2>
-      <motion.p
+      </m.h2>
+      <m.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={VIEWPORT_ONCE}
         transition={{ duration: 0.5, delay: 0.1, ease: EASE_OUT_EXPO }}
       >
         {t('home.workExperienceSubtitle')}
-      </motion.p>
-      <motion.div
+      </m.p>
+      <m.div
         className="space-y-2 text-xs md:text-sm"
         initial="hidden"
         whileInView="visible"
@@ -45,8 +45,8 @@ export default function WorkExperience() {
         variants={staggerContainerVariants}
       >
         {experiences.map(({ company, position, year_initial, year_end }, i) => (
-          <motion.div
-            key={i}
+          <m.div
+            key={company}
             className={`group flex flex-none items-center space-x-1 truncate transition-opacity duration-200 ${hoveredIndex !== null && hoveredIndex !== i ? 'opacity-40' : 'opacity-100'}`}
             variants={staggerItemVariants}
             whileHover={{ x: 4 }}
@@ -58,7 +58,7 @@ export default function WorkExperience() {
               {company}
             </span>
             <span className="relative w-full shrink">
-              <motion.span
+              <m.span
                 className="block border-t border-dashed border-gray-300 dark:border-gray-700"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
@@ -69,7 +69,7 @@ export default function WorkExperience() {
                 }}
                 style={{ originX: 0 }}
               />
-              <motion.span
+              <m.span
                 className="absolute inset-0 block border-t border-dashed border-teal-500 dark:border-teal-400"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: hoveredIndex === i ? 1 : 0 }}
@@ -81,9 +81,9 @@ export default function WorkExperience() {
             <span className="flex-none truncate">
               ({year_initial} - {year_end})
             </span>
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
       <div className="mt-4 flex gap-2">
         <Button to="/experiences">{t('home.learnMore')}</Button>
         <Button openUrl={url} isDark={false}>

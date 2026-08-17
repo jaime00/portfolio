@@ -1,5 +1,5 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { useState } from 'react'
 
 import Lightbox from './Lightbox'
@@ -9,7 +9,7 @@ export default function GallerySection({ section }) {
 
   return (
     <section className="mb-16">
-      <motion.h2
+      <m.h2
         className="mb-6 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -17,10 +17,10 @@ export default function GallerySection({ section }) {
         transition={{ duration: 0.5, ease }}
       >
         {section.title} <span className="inline-block scale-x-150 ml-2">—</span>
-      </motion.h2>
+      </m.h2>
 
       {section.text && (
-        <motion.p
+        <m.p
           className="mb-8 text-base leading-relaxed text-gray-700 dark:text-gray-300 md:text-lg"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,13 +28,13 @@ export default function GallerySection({ section }) {
           transition={{ duration: 0.5, delay: 0.1, ease }}
         >
           {section.text}
-        </motion.p>
+        </m.p>
       )}
 
       <div className="grid grid-cols-2 gap-4 min-445:grid-cols-2 min-1045:grid-cols-3">
         {section.images.map((src, i) => (
-          <motion.button
-            key={i}
+          <m.button
+            key={src}
             onClick={() => setLightboxIndex(i)}
             className="cursor-pointer overflow-hidden rounded-xl shadow-lg transition-shadow hover:shadow-xl dark:shadow-teal-500/10 dark:hover:shadow-teal-500/15"
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -48,7 +48,7 @@ export default function GallerySection({ section }) {
               className="aspect-video w-full bg-gray-100 object-cover transition-transform duration-300 hover:scale-105 dark:bg-gray-900"
               loading="lazy"
             />
-          </motion.button>
+          </m.button>
         ))}
       </div>
 

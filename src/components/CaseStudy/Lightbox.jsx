@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, m } from 'motion/react'
 import { useCallback, useEffect } from 'react'
 
 export default function Lightbox({ images, index, onClose, onNavigate }) {
@@ -26,7 +26,7 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
 
   return (
     <AnimatePresence>
-      <motion.div
+      <m.div
         className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -73,8 +73,8 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
           </svg>
         </button>
 
-        <motion.img
-          key={index}
+        <m.img
+          key={images[index]}
           src={images[index]}
           alt={`Image ${index + 1}`}
           className="max-h-[85vh] max-w-[90vw] rounded-xl object-contain shadow-2xl"
@@ -108,7 +108,7 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
         <div className="absolute bottom-4 text-sm text-white/70">
           {index + 1} / {images.length}
         </div>
-      </motion.div>
+      </m.div>
     </AnimatePresence>
   )
 }

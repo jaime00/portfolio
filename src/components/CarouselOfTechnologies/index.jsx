@@ -1,4 +1,4 @@
-import useDarkMode from '@/contexts/DarkMode'
+import useDarkMode from '@/contexts/useDarkMode'
 
 const BASE_TECHNOLOGIES = [
   {
@@ -40,8 +40,8 @@ export default function CarouselOfTechnologies() {
         isDark ? 'after:from-[#1f2a37]' : 'after:from-white'
       } to-transparent after:absolute after:bottom-0 after:top-0 after:z-10 after:w-[190px]`}
     >
-      {technologies.map((tech, index) => (
-        <div key={index} className="animate-carousel-item px-1">
+      {technologies.map((tech) => (
+        <div key={tech.alt} className="animate-carousel-item px-1">
           <img
             className="min-h-[40px] min-w-[40px]"
             src={tech.src}

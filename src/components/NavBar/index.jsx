@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, m } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'wouter'
 
@@ -50,7 +50,7 @@ export default function NavBar() {
               height={48}
               alt="Jaime Torres Icono Navbar"
               src={image_profile}
-              className="general-ring-state relative z-10 h-12 w-auto cursor-pointer select-none rounded-full transition-all duration-500 hover:scale-110 active:scale-95"
+              className="general-ring-state relative z-10 h-12 w-auto cursor-pointer select-none rounded-full transition-transform duration-500 hover:scale-110 active:scale-95"
             />
           </Link>
         </div>
@@ -90,7 +90,7 @@ export default function NavBar() {
       {/* Tab inferior izquierdo — extiende el navbar hacia abajo formando la forma irregular */}
       <AnimatePresence>
         {showBack && (
-          <motion.div
+          <m.div
             className="absolute left-0 top-full rounded-b-xl bg-white/70 backdrop-blur-md dark:bg-gray-800/70"
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,7 +106,7 @@ export default function NavBar() {
               <ChevronLeftIcon ref={backRef} size={16} />
               {t('projectDetail.backToProjects')}
             </Link>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>

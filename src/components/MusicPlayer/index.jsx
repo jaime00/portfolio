@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, m } from 'motion/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { PauseIcon } from '@/assets/animatedIcons/PauseIcon'
@@ -8,14 +8,22 @@ import { getPlaylist } from '@/services'
 
 const playlist = getPlaylist()
 
+const NOTES = [
+  { id: 'n0', char: '♪' },
+  { id: 'n1', char: '♫' },
+  { id: 'n2', char: '♩' },
+  { id: 'n3', char: '♬' },
+  { id: 'n4', char: '♪' }
+]
+
 function FloatingNotes({ isPlaying }) {
   return (
     <AnimatePresence>
       {isPlaying && (
         <>
-          {['♪', '♫', '♩', '♬', '♪'].map((note, i) => (
-            <motion.span
-              key={`note-${i}`}
+          {NOTES.map(({ id, char }, i) => (
+            <m.span
+              key={id}
               initial={{ opacity: 0, y: 0, x: 0, scale: 0.5 }}
               animate={{
                 opacity: [0, 1, 1, 0],
@@ -37,8 +45,8 @@ function FloatingNotes({ isPlaying }) {
               }}
               className="pointer-events-none absolute -top-2 left-1/2 select-none text-sm text-teal-500 dark:text-teal-400"
             >
-              {note}
-            </motion.span>
+              {char}
+            </m.span>
           ))}
         </>
       )}
@@ -63,7 +71,7 @@ function PlayerPanel({
   audioRef
 }) {
   return (
-    <motion.div
+    <m.div
       initial={false}
       animate={
         isOpen
@@ -76,7 +84,7 @@ function PlayerPanel({
       <div className="flex w-[280px] gap-3 rounded-2xl border border-teal-500/10 bg-white/80 p-3 shadow-xl shadow-teal-500/5 backdrop-blur-md dark:border-teal-400/10 dark:bg-gray-800/80">
         <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg">
           <AnimatePresence mode="popLayout">
-            <motion.img
+            <m.img
               key={currentIndex}
               src={currentSong.cover}
               alt={currentSong.title}
@@ -92,7 +100,7 @@ function PlayerPanel({
 
         <div className="flex min-w-0 flex-1 flex-col gap-1 overflow-hidden">
           <AnimatePresence mode="popLayout">
-            <motion.p
+            <m.p
               key={`title-${currentIndex}`}
               initial={{ x: 20 * direction, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -101,10 +109,10 @@ function PlayerPanel({
               className="truncate text-xs font-semibold text-gray-800 dark:text-white"
             >
               {currentSong.title}
-            </motion.p>
+            </m.p>
           </AnimatePresence>
           <AnimatePresence mode="popLayout">
-            <motion.p
+            <m.p
               key={`artist-${currentIndex}`}
               initial={{ x: 20 * direction, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -117,7 +125,7 @@ function PlayerPanel({
               className="truncate text-[10px] text-gray-400 dark:text-gray-500"
             >
               {currentSong.artist}
-            </motion.p>
+            </m.p>
           </AnimatePresence>
 
           <div
@@ -176,7 +184,7 @@ function PlayerPanel({
                 <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
               </svg>
             </button>
-            <motion.button
+            <m.button
               onClick={togglePlay}
               whileTap={{ scale: 0.8, rotate: 15 }}
               aria-label={isPlaying ? 'Pause' : 'Play'}
@@ -184,28 +192,28 @@ function PlayerPanel({
             >
               <AnimatePresence mode="wait">
                 {isPlaying ? (
-                  <motion.div
+                  <m.div
                     key="pause"
-                    initial={{ scale: 0, rotate: -90 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    exit={{ scale: 0, rotate: 90 }}
+                    initial={{ scale: 0.5, opacity: 0, rotate: -90 }}
+                    animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                    exit={{ scale: 0.5, opacity: 0, rotate: 90 }}
                     transition={{ duration: 0.2, ease: 'easeOut' }}
                   >
                     <PauseIcon size={14} />
-                  </motion.div>
+                  </m.div>
                 ) : (
-                  <motion.div
+                  <m.div
                     key="play"
-                    initial={{ scale: 0, rotate: 90 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    exit={{ scale: 0, rotate: -90 }}
+                    initial={{ scale: 0.5, opacity: 0, rotate: 90 }}
+                    animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                    exit={{ scale: 0.5, opacity: 0, rotate: -90 }}
                     transition={{ duration: 0.2, ease: 'easeOut' }}
                   >
                     <PlayIcon size={14} />
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
-            </motion.button>
+            </m.button>
             <button
               onClick={nextTrack}
               aria-label="Next track"
@@ -224,7 +232,7 @@ function PlayerPanel({
           </div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   )
 }
 
@@ -356,7 +364,7 @@ export default function MusicPlayer() {
     const handleUp = () => setIsDragging(false)
     window.addEventListener('mousemove', handleMove)
     window.addEventListener('mouseup', handleUp)
-    window.addEventListener('touchmove', handleTouchMove)
+    window.addEventListener('touchmove', handleTouchMove, { passive: true })
     window.addEventListener('touchend', handleUp)
     return () => {
       window.removeEventListener('mousemove', handleMove)
@@ -371,13 +379,14 @@ export default function MusicPlayer() {
       aria-label="Music player"
       className="pointer-events-none fixed bottom-6 left-6 z-[999998] flex items-end gap-3 [&_*]:[-webkit-tap-highlight-color:transparent]"
     >
-      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <audio ref={audioRef} preload="none" />
+      <audio ref={audioRef} preload="none">
+        <track kind="captions" />
+      </audio>
 
       <div className="pointer-events-auto relative">
         <FloatingNotes isPlaying={isPlaying} />
 
-        <motion.button
+        <m.button
           onClick={() => setIsOpen(!isOpen)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
@@ -396,7 +405,7 @@ export default function MusicPlayer() {
             draggable={false}
             className="pointer-events-none h-full w-full select-none rounded-full"
           />
-        </motion.button>
+        </m.button>
       </div>
 
       <PlayerPanel

@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 import { createAnimatedIcon } from './createAnimatedIcon'
 
@@ -35,7 +35,7 @@ export const SunIcon = createAnimatedIcon('SunIcon', (controls, size) => (
   >
     <circle cx="12" cy="12" r="4" />
     {rays.map((d, i) => (
-      <motion.path
+      <m.path
         key={d}
         d={d}
         animate={controls}

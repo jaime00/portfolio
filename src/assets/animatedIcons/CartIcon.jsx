@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'motion/react'
+import { m, useAnimation } from 'motion/react'
 import {
   forwardRef,
   useCallback,
@@ -76,7 +76,7 @@ const CartIcon = forwardRef(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <motion.svg
+        <m.svg
           animate={controls}
           fill="none"
           height={size}
@@ -91,7 +91,7 @@ const CartIcon = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M6.3 5H21L19 12H7.38M20 16H8L6 3H3M9 20C9 20.55 8.55 21 8 21C7.45 21 7 20.55 7 20C7 19.45 7.45 19 8 19C8.55 19 9 19.45 9 20ZM20 20C20 20.55 19.55 21 19 21C18.45 21 18 20.55 18 20C18 19.45 18.45 19 19 19C19.55 19 20 19.45 20 20Z" />
-        </motion.svg>
+        </m.svg>
       </div>
     )
   }

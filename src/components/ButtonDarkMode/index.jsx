@@ -1,4 +1,4 @@
-import useDarkMode from '@/contexts/DarkMode'
+import useDarkMode from '@/contexts/useDarkMode'
 import { useState } from 'react'
 
 import { MoonIcon } from '@/assets/animatedIcons/Moon'

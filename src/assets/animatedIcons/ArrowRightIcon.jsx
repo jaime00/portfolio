@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 import { createAnimatedIcon } from './createAnimatedIcon'
 
@@ -33,12 +33,8 @@ const ArrowRightIcon = createAnimatedIcon(
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <motion.path d="M5 12h14" variants={lineVariants} animate={controls} />
-      <motion.path
-        d="m12 5 7 7-7 7"
-        variants={arrowVariants}
-        animate={controls}
-      />
+      <m.path d="M5 12h14" variants={lineVariants} animate={controls} />
+      <m.path d="m12 5 7 7-7 7" variants={arrowVariants} animate={controls} />
     </svg>
   )
 )

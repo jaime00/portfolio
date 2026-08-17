@@ -1,5 +1,5 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { useEffect, useRef } from 'react'
 
 import ImageCarousel from './ImageCarousel'
@@ -38,7 +38,7 @@ export default function NarrativeSection({ section }) {
   return (
     <section className={isCompact ? 'mb-8' : 'mb-16'}>
       {section.title && (
-        <motion.h2
+        <m.h2
           className="mb-6 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -47,7 +47,7 @@ export default function NarrativeSection({ section }) {
         >
           {section.title}{' '}
           <span className="inline-block scale-x-150 ml-2">—</span>
-        </motion.h2>
+        </m.h2>
       )}
 
       <div
@@ -58,7 +58,7 @@ export default function NarrativeSection({ section }) {
             section.image && !isImageBottom ? 'min-1045:w-1/2' : 'w-full'
           }
         >
-          <motion.p
+          <m.p
             className="whitespace-pre-line text-base leading-relaxed text-gray-700 dark:text-gray-300 md:text-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -66,10 +66,10 @@ export default function NarrativeSection({ section }) {
             transition={{ duration: 0.5, delay: 0.1, ease }}
           >
             {renderRichText(section.text)}
-          </motion.p>
+          </m.p>
 
           {section.video && (
-            <motion.div
+            <m.div
               className="relative mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -77,7 +77,7 @@ export default function NarrativeSection({ section }) {
               transition={{ duration: 0.6, delay: 0.2, ease }}
             >
               {section.videoLabel && (
-                <motion.span
+                <m.span
                   className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300"
                   initial={{ opacity: 0, x: -12 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -85,7 +85,7 @@ export default function NarrativeSection({ section }) {
                   transition={{ duration: 0.5, delay: 0.5, ease }}
                 >
                   {section.videoLabel}
-                </motion.span>
+                </m.span>
               )}
               <video
                 ref={videoRef}
@@ -96,12 +96,12 @@ export default function NarrativeSection({ section }) {
                 playsInline
                 preload="none"
               />
-            </motion.div>
+            </m.div>
           )}
         </div>
 
         {section.image && !isImageBottom && (
-          <motion.div
+          <m.div
             className="min-1045:w-1/2"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -114,12 +114,12 @@ export default function NarrativeSection({ section }) {
               className="w-full rounded-xl bg-gray-100 object-cover shadow-lg dark:bg-gray-900 dark:shadow-teal-500/10"
               loading="lazy"
             />
-          </motion.div>
+          </m.div>
         )}
       </div>
 
       {section.image && isImageBottom && (
-        <motion.div
+        <m.div
           className="relative mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
           initial={{ opacity: 0, y: 30, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -127,7 +127,7 @@ export default function NarrativeSection({ section }) {
           transition={{ duration: 0.6, delay: 0.2, ease }}
         >
           {section.imageLabel && (
-            <motion.span
+            <m.span
               className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300"
               initial={{ opacity: 0, x: -12 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -135,7 +135,7 @@ export default function NarrativeSection({ section }) {
               transition={{ duration: 0.5, delay: 0.5, ease }}
             >
               {section.imageLabel}
-            </motion.span>
+            </m.span>
           )}
           <img
             src={section.image}
@@ -143,7 +143,7 @@ export default function NarrativeSection({ section }) {
             className="w-full rounded-xl bg-gray-100 object-cover dark:bg-gray-900"
             loading="lazy"
           />
-        </motion.div>
+        </m.div>
       )}
 
       {section.images && (

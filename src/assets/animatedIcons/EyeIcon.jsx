@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'motion/react'
+import { m, useAnimation } from 'motion/react'
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
 
 const EyeIcon = forwardRef(
@@ -54,7 +54,7 @@ const EyeIcon = forwardRef(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.path
+          <m.path
             animate={controls}
             d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
             style={{ originY: '50%' }}
@@ -64,7 +64,7 @@ const EyeIcon = forwardRef(
               animate: { scaleY: [1, 0.1, 1], opacity: [1, 0.3, 1] }
             }}
           />
-          <motion.circle
+          <m.circle
             animate={controls}
             cx="12"
             cy="12"

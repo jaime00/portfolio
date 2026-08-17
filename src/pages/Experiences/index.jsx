@@ -1,6 +1,6 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
-import useDarkMode from '@/contexts/DarkMode'
-import { motion } from 'motion/react'
+import useDarkMode from '@/contexts/useDarkMode'
+import { m } from 'motion/react'
 
 import ExperienceDescription from '@/components/ExperienceDescription'
 import ExperienceLogo from '@/components/ExperienceLogo'
@@ -38,8 +38,8 @@ export default function Experiences() {
       />
       <div className="xxs:py-20 mt-14 flex flex-col justify-center gap-16 px-5 min-445:px-10">
         {experiences.map((experience, index) => (
-          <motion.div
-            key={index}
+          <m.div
+            key={experience.link}
             className="xxs:grid-cols-1 grid items-center justify-items-center gap-10 self-center md:grid-cols-2"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export default function Experiences() {
               position={workExperiences[index].position}
               items={experience.items}
             />
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </div>

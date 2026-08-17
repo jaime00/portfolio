@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 import { createAnimatedIcon } from './createAnimatedIcon'
 
@@ -27,7 +27,7 @@ export const PauseIcon = createAnimatedIcon('PauseIcon', (controls, size) => (
     width={size}
     xmlns="http://www.w3.org/2000/svg"
   >
-    <motion.rect
+    <m.rect
       animate={controls}
       height="16"
       rx="1"
@@ -36,7 +36,7 @@ export const PauseIcon = createAnimatedIcon('PauseIcon', (controls, size) => (
       x="6"
       y="4"
     />
-    <motion.rect
+    <m.rect
       animate={controls}
       height="16"
       rx="1"

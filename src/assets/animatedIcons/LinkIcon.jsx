@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 import { createAnimatedIcon } from './createAnimatedIcon'
 
@@ -29,12 +29,12 @@ export const LinkIcon = createAnimatedIcon('LinkIcon', (controls, size) => (
     width={size}
     xmlns="http://www.w3.org/2000/svg"
   >
-    <motion.path
+    <m.path
       animate={controls}
       d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
       variants={PATH_VARIANTS}
     />
-    <motion.path
+    <m.path
       animate={controls}
       d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
       variants={PATH_VARIANTS}

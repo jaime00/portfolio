@@ -1,6 +1,6 @@
 import { floatVariants } from '@/animations'
-import useDarkMode from '@/contexts/DarkMode'
-import { motion } from 'motion/react'
+import useDarkMode from '@/contexts/useDarkMode'
+import { m } from 'motion/react'
 import { useRef } from 'react'
 import { Link } from 'wouter'
 
@@ -38,7 +38,7 @@ export default function NotFound() {
               height={48}
               alt="Jaime Torres Icono Navbar"
               src={image_profile}
-              className="general-ring-state relative z-10 h-12 w-auto cursor-pointer select-none rounded-full transition-all duration-500 hover:scale-110 active:scale-95"
+              className="general-ring-state relative z-10 h-12 w-auto cursor-pointer select-none rounded-full transition-transform duration-500 hover:scale-110 active:scale-95"
             />
           </Link>
         </div>
@@ -61,7 +61,7 @@ export default function NotFound() {
                 i < arr.length - 1
                   ? [
                       part,
-                      <span key={i} className="font-semibold">
+                      <span key="url-highlight" className="font-semibold">
                         URL
                       </span>
                     ]
@@ -83,12 +83,12 @@ export default function NotFound() {
               {t('notFound.back')}
             </span>
             <span
-              className="block h-[1.2px] mt-1 origin-left transition-transform duration-300 group-hover:scale-x-0"
+              className="block h-[1.2px] mt-1 origin-left transition-[transform,opacity] duration-300 group-hover:scale-x-[0.01] group-hover:opacity-0"
               style={{ backgroundColor: 'var(--color-primary)' }}
             />
           </Link>
         </div>
-        <motion.img
+        <m.img
           src={CharacterSit}
           alt=""
           aria-hidden="true"

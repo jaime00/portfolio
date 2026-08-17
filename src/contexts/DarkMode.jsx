@@ -1,8 +1,7 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { DarkModeContext } from '@/contexts/DarkModeContext'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
-const DarkModeContext = createContext()
-
-export function DarkModeProvider({ children }) {
+export default function DarkModeProvider({ children }) {
   const [isDark, setIsDark] = useState(localStorage.isDark === 'true')
 
   useEffect(() => {
@@ -13,7 +12,7 @@ export function DarkModeProvider({ children }) {
     }
   }, [isDark])
 
-  const toggleDark = () => {
+  const toggleDark = useCallback(() => {
     const next = !isDark
     const apply = () => {
       localStorage.isDark = next
@@ -25,19 +24,13 @@ export function DarkModeProvider({ children }) {
     } else {
       document.startViewTransition(apply)
     }
-  }
+  }, [isDark])
+
+  const value = useMemo(() => ({ isDark, toggleDark }), [isDark, toggleDark])
 
   return (
-    <DarkModeContext.Provider value={{ isDark, toggleDark }}>
+    <DarkModeContext.Provider value={value}>
       {children}
     </DarkModeContext.Provider>
   )
-}
-
-export default function useDarkMode() {
-  const context = useContext(DarkModeContext)
-  if (!context) {
-    throw new Error('useDarkMode must be used within a DarkModeProvider')
-  }
-  return context
 }

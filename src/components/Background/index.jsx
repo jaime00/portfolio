@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'motion/react'
+import { m, useScroll, useTransform } from 'motion/react'
 
 import BackOne from '@/assets/images/background_one.avif'
 import BackTwo from '@/assets/images/background_two.avif'
@@ -18,7 +18,7 @@ export default function Background() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden"
       >
-        <motion.div
+        <m.div
           className="flex w-[108rem] flex-none justify-end"
           style={{ y, opacity }}
         >
@@ -40,7 +40,7 @@ export default function Background() {
               className="hidden w-[90rem] max-w-none flex-none dark:block"
             />
           </picture>
-        </motion.div>
+        </m.div>
       </div>
       <Aurora />
       <Grain />

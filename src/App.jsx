@@ -1,4 +1,4 @@
-import { DarkModeProvider } from '@/contexts/DarkMode'
+import DarkModeProvider from '@/contexts/DarkMode'
 import { LazyMotion, MotionConfig, domAnimation } from 'motion/react'
 import { Route, Switch, useLocation } from 'wouter'
 

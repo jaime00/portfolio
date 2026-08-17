@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 import { createAnimatedIcon } from './createAnimatedIcon'
 
@@ -11,7 +11,7 @@ const variants = {
 const transition = { duration: 1.2, ease: 'easeInOut' }
 
 export const MoonIcon = createAnimatedIcon('MoonIcon', (controls, size) => (
-  <motion.svg
+  <m.svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
     height={size}
@@ -26,5 +26,5 @@ export const MoonIcon = createAnimatedIcon('MoonIcon', (controls, size) => (
     transition={transition}
   >
     <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-  </motion.svg>
+  </m.svg>
 ))

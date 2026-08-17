@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'motion/react'
+import { m, useAnimation } from 'motion/react'
 import {
   forwardRef,
   useCallback,
@@ -93,19 +93,19 @@ const BoxIcon = forwardRef(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.path
+          <m.path
             animate={controls}
             d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
             initial="normal"
             variants={PATH_VARIANTS}
           />
-          <motion.path
+          <m.path
             animate={controls}
             d="m3.3 7 8.7 5 8.7-5"
             initial="normal"
             variants={PATH_VARIANTS}
           />
-          <motion.path
+          <m.path
             animate={controls}
             d="M12 22V12"
             initial="normal"

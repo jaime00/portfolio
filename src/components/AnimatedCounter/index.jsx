@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { useEffect, useState } from 'react'
 
 export default function AnimatedCounter({ target, duration = 1200 }) {
@@ -21,7 +21,7 @@ export default function AnimatedCounter({ target, duration = 1200 }) {
       className="inline-block text-center"
       style={{ width: `${String(target).length}ch` }}
     >
-      <motion.span
+      <m.span
         key={count}
         initial={{ y: -8, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -29,7 +29,7 @@ export default function AnimatedCounter({ target, duration = 1200 }) {
         className="inline-block"
       >
         {count}
-      </motion.span>
+      </m.span>
     </span>
   )
 }

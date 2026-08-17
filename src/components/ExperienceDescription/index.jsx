@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
 
@@ -11,21 +11,19 @@ export default function ExperienceDescription({
   items
 }) {
   const arrowRefs = useRef([])
-  const intervalRefs = useRef([])
+  const [hoveredIndex, setHoveredIndex] = useState(null)
 
-  const handleMouseEnter = useCallback((index) => {
-    const ref = arrowRefs.current[index]
+  useEffect(() => {
+    if (hoveredIndex === null) return
+    const ref = arrowRefs.current[hoveredIndex]
     if (!ref) return
     ref.startAnimation()
-    intervalRefs.current[index] = setInterval(() => {
-      ref.startAnimation()
-    }, 800)
-  }, [])
-
-  const handleMouseLeave = useCallback((index) => {
-    clearInterval(intervalRefs.current[index])
-    arrowRefs.current[index]?.stopAnimation()
-  }, [])
+    const id = setInterval(() => ref.startAnimation(), 800)
+    return () => {
+      clearInterval(id)
+      ref.stopAnimation()
+    }
+  }, [hoveredIndex])
 
   return (
     <div className="col-span-1 flex flex-col gap-2 self-center">
@@ -36,9 +34,9 @@ export default function ExperienceDescription({
       {items.map((detail, index) => (
         <div
           className="flex items-start gap-3"
-          key={`experience-description-${index}`}
-          onMouseEnter={() => handleMouseEnter(index)}
-          onMouseLeave={() => handleMouseLeave(index)}
+          key={detail}
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(null)}
         >
           <ArrowRightIcon
             ref={(el) => (arrowRefs.current[index] = el)}

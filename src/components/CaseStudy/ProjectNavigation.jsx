@@ -1,5 +1,5 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { Link } from 'wouter'
 
 import { useTranslation } from '@/i18n'
@@ -11,7 +11,7 @@ export default function ProjectNavigation({ prev, next }) {
     <section className="mt-16 border-t border-gray-200 pt-12 dark:border-gray-700">
       <div className="flex flex-col gap-4 min-445:flex-row min-445:justify-between">
         {prev && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -19,7 +19,7 @@ export default function ProjectNavigation({ prev, next }) {
           >
             <Link
               to={`/side-projects/${prev.slug}`}
-              className="group flex items-center gap-3 rounded-xl border border-gray-200/80 bg-white/70 px-6 py-4 backdrop-blur-sm transition-all hover:scale-105 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/70 dark:hover:shadow-teal-500/10"
+              className="group flex items-center gap-3 rounded-xl border border-gray-200/80 bg-white/70 px-6 py-4 backdrop-blur-sm transition-[transform,box-shadow] hover:scale-105 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/70 dark:hover:shadow-teal-500/10"
             >
               <svg
                 width="20"
@@ -41,11 +41,11 @@ export default function ProjectNavigation({ prev, next }) {
                 </span>
               </div>
             </Link>
-          </motion.div>
+          </m.div>
         )}
 
         {next && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -54,7 +54,7 @@ export default function ProjectNavigation({ prev, next }) {
           >
             <Link
               to={`/side-projects/${next.slug}`}
-              className="group flex items-center justify-end gap-3 rounded-xl border border-gray-200/80 bg-white/70 px-6 py-4 text-right backdrop-blur-sm transition-all hover:scale-105 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/70 dark:hover:shadow-teal-500/10"
+              className="group flex items-center justify-end gap-3 rounded-xl border border-gray-200/80 bg-white/70 px-6 py-4 text-right backdrop-blur-sm transition-[transform,box-shadow] hover:scale-105 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/70 dark:hover:shadow-teal-500/10"
             >
               <div>
                 <span className="block text-xs text-gray-500 dark:text-gray-400">
@@ -76,7 +76,7 @@ export default function ProjectNavigation({ prev, next }) {
                 <path d="M9 18l6-6-6-6" />
               </svg>
             </Link>
-          </motion.div>
+          </m.div>
         )}
       </div>
     </section>

@@ -1,5 +1,5 @@
 import {
-  motion,
+  m,
   useAnimationFrame,
   useMotionValue,
   useTransform
@@ -111,14 +111,14 @@ const ShinyText = ({
   }
 
   return (
-    <motion.span
+    <m.span
       className={`inline-block pb-[0.15em] ${className}`}
       style={{ ...gradientStyle, backgroundPosition }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {text}
-    </motion.span>
+    </m.span>
   )
 }
 

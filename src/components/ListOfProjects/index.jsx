@@ -1,5 +1,5 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { useEffect, useRef } from 'react'
 
 import { ConstructionIcon } from '@/assets/animatedIcons/ConstructionIcon'
@@ -26,18 +26,18 @@ export default function ListOfProjects({ limit }) {
   return (
     <div className="mt-6 flex list-none flex-wrap justify-center gap-5 py-8">
       {projects.map((project, i) => (
-        <motion.div
-          key={i}
+        <m.div
+          key={project.slug}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, delay: i * 0.1, ease }}
         >
           <Project {...project} />
-        </motion.div>
+        </m.div>
       ))}
       {!limit && (
-        <motion.div
+        <m.div
           className="mt-4 flex w-full items-center justify-center gap-2 opacity-50"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 0.5 }}
@@ -46,7 +46,7 @@ export default function ListOfProjects({ limit }) {
         >
           <ConstructionIcon ref={iconRef} size={18} />
           <p className="text-sm">{t('projects.workingOn')}</p>
-        </motion.div>
+        </m.div>
       )}
     </div>
   )

@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'motion/react'
+import { m, useAnimation } from 'motion/react'
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
 
 const ARROW_VARIANTS = {
@@ -63,21 +63,9 @@ const ArrowSquareRightIcon = forwardRef(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.path
-            d="M7 7H17"
-            animate={controls}
-            variants={ARROW_VARIANTS}
-          />
-          <motion.path
-            d="M17 7V17"
-            animate={controls}
-            variants={ARROW_VARIANTS}
-          />
-          <motion.path
-            d="M7 17L17 7"
-            animate={controls}
-            variants={ARROW_VARIANTS}
-          />
+          <m.path d="M7 7H17" animate={controls} variants={ARROW_VARIANTS} />
+          <m.path d="M17 7V17" animate={controls} variants={ARROW_VARIANTS} />
+          <m.path d="M7 17L17 7" animate={controls} variants={ARROW_VARIANTS} />
         </svg>
       </div>
     )

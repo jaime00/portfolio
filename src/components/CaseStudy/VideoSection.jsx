@@ -1,10 +1,10 @@
 import { EASE_OUT_EXPO as ease } from '@/animations'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 export default function VideoSection({ section }) {
   return (
     <section className="mb-20">
-      <motion.h2
+      <m.h2
         className="mb-6 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -12,9 +12,9 @@ export default function VideoSection({ section }) {
         transition={{ duration: 0.5, ease }}
       >
         {section.title} <span className="inline-block scale-x-150 ml-2">—</span>
-      </motion.h2>
+      </m.h2>
 
-      <motion.div
+      <m.div
         className="overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
         initial={{ opacity: 0, y: 30, scale: 0.97 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -28,10 +28,10 @@ export default function VideoSection({ section }) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
-      </motion.div>
+      </m.div>
 
       {section.text && (
-        <motion.p
+        <m.p
           className="mt-4 text-base text-gray-600 dark:text-gray-400"
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export default function VideoSection({ section }) {
           transition={{ duration: 0.4, delay: 0.3, ease }}
         >
           {section.text}
-        </motion.p>
+        </m.p>
       )}
     </section>
   )

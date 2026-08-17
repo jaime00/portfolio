@@ -1,6 +1,6 @@
 import { floatVariants } from '@/animations'
-import useDarkMode from '@/contexts/DarkMode'
-import { motion } from 'motion/react'
+import useDarkMode from '@/contexts/useDarkMode'
+import { m } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
 import { GithubIcon } from '@/assets/animatedIcons/GithubIcon'
@@ -20,6 +20,24 @@ const CharacterSit =
   'https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597333/projects/portfolio/characterSit.png'
 
 const EMAIL = 'imjaimetorresv@gmail.com'
+
+const CONTACT_METHODS = [
+  {
+    openUrl: 'https://linkedin.com/in/jaimetorresv',
+    icon: <LinkedinIcon className="text-white" />,
+    label: 'LinkedIn'
+  },
+  {
+    openUrl: 'https://github.com/jaime00',
+    icon: <GithubIcon className="text-white" />,
+    label: 'Github'
+  },
+  {
+    openUrl: 'https://api.whatsapp.com/send?phone=573015834942',
+    icon: <img src={WHATSAPP_ICON} alt="WhatsApp" width={28} height={28} />,
+    label: 'WhatsApp'
+  }
+]
 
 const characterVariants = {
   initial: { opacity: 0 },
@@ -54,24 +72,6 @@ export default function Contact() {
       .catch(() => {})
   }
 
-  const contactMethods = [
-    {
-      openUrl: 'https://linkedin.com/in/jaimetorresv',
-      icon: <LinkedinIcon className="text-white" />,
-      label: 'LinkedIn'
-    },
-    {
-      openUrl: 'https://github.com/jaime00',
-      icon: <GithubIcon className="text-white" />,
-      label: 'Github'
-    },
-    {
-      openUrl: 'https://api.whatsapp.com/send?phone=573015834942',
-      icon: <img src={WHATSAPP_ICON} alt="WhatsApp" width={28} height={28} />,
-      label: 'WhatsApp'
-    }
-  ]
-
   return (
     <div className="relative mx-auto mb-5 mt-8 flex min-h-[calc(100vh-20rem)] max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
       <PageMeta
@@ -95,9 +95,9 @@ export default function Contact() {
         <div className="col-span-3">
           <p className="mb-10 text-xl">{t('contact.question')}</p>
           <div className="flex justify-center gap-3 text-center">
-            {contactMethods.map((method, index) => (
+            {CONTACT_METHODS.map((method) => (
               <Button
-                key={index}
+                key={method.label}
                 size="icon"
                 ariaLabel={method.label}
                 onClick={method.onClick}
@@ -131,7 +131,7 @@ export default function Contact() {
           </p>
         </div>
         <div className="col-span-2 mt-10 hidden pb-8 md:flex md:justify-center">
-          <motion.img
+          <m.img
             src={CharacterSit}
             alt="Character on the side"
             className="pointer-events-none select-none"
