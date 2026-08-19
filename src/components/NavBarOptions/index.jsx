@@ -27,7 +27,6 @@ export default function NavBarOptions({ menuIsOpen, setMenuIsOpen }) {
   const menuItems = [
     { to: '/', label: t('common.home') },
     { to: '/about', label: t('common.about') },
-    { to: '/experiences', label: t('common.experiences') },
     { to: '/side-projects', label: t('common.projects') },
     { to: '/contact', label: t('common.contact') }
   ]

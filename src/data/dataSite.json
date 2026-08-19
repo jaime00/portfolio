@@ -584,30 +584,35 @@
     "en": [
       {
         "company": "IA Interactive",
+        "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738382362/projects/portfolio/experiences/IA.jpg",
         "position": "Frontend Developer",
         "year_initial": "Jul 2024",
         "year_end": "Now"
       },
       {
         "company": "LinkTIC",
+        "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947672/projects/portfolio/experiences/linktic-minimalist.jpg",
         "position": "Frontend Developer - Part time",
         "year_initial": "Mar 2024",
         "year_end": "Jun 2024"
       },
       {
         "company": "Qrvey",
+        "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738384285/projects/portfolio/experiences/QRVEY.jpg",
         "position": "Frontend Developer",
         "year_initial": "Apr 2022",
         "year_end": "Dec 2023"
       },
       {
         "company": "Extreme Technologies",
+        "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947977/projects/portfolio/experiences/extreme-technologies.jpg",
         "position": "Tech Lead",
         "year_initial": "Jan 2021",
         "year_end": "Mar 2022"
       },
       {
         "company": "Extreme Technologies",
+        "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947977/projects/portfolio/experiences/extreme-technologies.jpg",
         "position": "Frontend Developer",
         "year_initial": "Nov 2019",
         "year_end": "Dec 2020"
@@ -616,167 +621,38 @@
     "es": [
       {
         "company": "IA Interactive",
+        "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738382362/projects/portfolio/experiences/IA.jpg",
         "position": "Desarrollador Frontend",
         "year_initial": "Jul 2024",
         "year_end": "Ahora"
       },
       {
         "company": "LinkTIC",
+        "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947672/projects/portfolio/experiences/linktic-minimalist.jpg",
         "position": "Desarrollador Frontend - Medio tiempo",
         "year_initial": "Mar 2024",
         "year_end": "Jun 2024"
       },
       {
         "company": "Qrvey",
+        "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738384285/projects/portfolio/experiences/QRVEY.jpg",
         "position": "Desarrollador Frontend",
         "year_initial": "Abr 2022",
         "year_end": "Dic 2023"
       },
       {
         "company": "Extreme Technologies",
+        "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947977/projects/portfolio/experiences/extreme-technologies.jpg",
         "position": "Líder Técnico",
         "year_initial": "Ene 2021",
         "year_end": "Mar 2022"
       },
       {
         "company": "Extreme Technologies",
+        "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947977/projects/portfolio/experiences/extreme-technologies.jpg",
         "position": "Desarrollador Frontend",
         "year_initial": "Nov 2019",
         "year_end": "Dic 2020"
-      }
-    ]
-  },
-  "experiences": {
-    "en": [
-      {
-        "link": "https://www.ia.com.mx",
-        "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738382362/projects/portfolio/experiences/IA.jpg",
-        "items": [
-          "Led the redesign and maintenance of **Cinépolis**'s web platform, the largest movie theater chain in Latin America.",
-          "Developed under a Microfrontends architecture with **Module Federation**, enabling independent deployments and modular scalability of the platform.",
-          "Implemented and optimized interactive animations with **Framer Motion** in the food and search sections, enhancing fluidity and user experience.",
-          "Developed critical business flows: cinema selection, ticket booking, food ordering, **Cine Puntos** loyalty program, and payment integrations with **DeUna** and **Aplazo** in Mexico.",
-          "Applied semantic **HTML** and accessibility (**ARIA**, **WCAG**) as part of the **SEO** strategy, improving indexability and organic reach of the platform.",
-          "Managed multimedia assets at scale using **Amazon S3** for efficient image storage and delivery.",
-          "**Stack:** React, Next.js, GraphQL, Framer Motion, Sass, Tailwind CSS, Amazon S3, Module Federation."
-        ],
-        "rotate": true
-      },
-      {
-        "link": "https://linktic.com",
-        "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947672/projects/portfolio/experiences/linktic-minimalist.jpg",
-        "items": [
-          "Developed frontend applications with **Svelte** and **React**, prioritizing performance and user experience.",
-          "Optimized web performance through lazy loading, code splitting, and asset compression, significantly reducing load times.",
-          "Integrated backend services via **REST APIs** and **GraphQL**, ensuring efficient and decoupled data consumption.",
-          "Applied **SOLID** principles, **DRY**, and modular architecture to maintain a clean, scalable, and easy-to-maintain codebase.",
-          "Implemented unit and integration test suites with **Jest**, ensuring the quality and stability of delivered code.",
-          "**Stack:** SvelteKit, React, Sass, Tailwind CSS, Jest, Supabase."
-        ],
-        "rotate": false
-      },
-      {
-        "link": "https://qrvey.com",
-        "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738384285/projects/portfolio/experiences/QRVEY.jpg",
-        "items": [
-          "Developed highly customizable embedded analytics components for **Qrvey**'s multi-tenant SaaS platform.",
-          "Built **Web Components** with **Stencil.js** for embeddable chart widgets consumed by third-party applications without framework dependency.",
-          "Optimized frontend component speed and scalability to support large-scale multi-tenant architectures deployed on **AWS**.",
-          "Implemented unit test suites with **Jest** and **e2e** tests with **Cypress**, ensuring widget stability across multiple integration environments.",
-          "Developed internationalization support with i18next to adapt the platform to multiple markets and regions.",
-          "**Stack:** TypeScript, Stencil.js, React, SASS/SCSS, Styled Components, Mocha, Jest, Cypress, ECharts, Devextreme, D3, i18next."
-        ],
-        "rotate": false
-      },
-      {
-        "link": "https://www.extreme.com.co/extreme",
-        "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947977/projects/portfolio/experiences/extreme-technologies.jpg",
-        "items": [
-          "Led a team of 6+ developers in building critical modules for **EGA**, a SaaS platform for utility companies (energy, gas, water) in Colombia.",
-          "Implemented development standards, technical documentation, and unit testing with **Jest**, establishing a consistent codebase and reducing production regressions.",
-          "Provided technical mentoring to the team during sprints, resolving architecture and business logic blockers.",
-          "Ensured quality through systematic code reviews and technical acceptance criteria based on **Clean Code** and **SOLID** principles.",
-          "**Stack:** JavaScript, TypeScript, React, Jest, jQuery, PHP, PostgreSQL, Bootstrap."
-        ],
-        "rotate": false
-      },
-      {
-        "link": "https://www.extreme.com.co/extreme",
-        "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947977/projects/portfolio/experiences/extreme-technologies.jpg",
-        "items": [
-          "Developed dynamic and maintainable web modules for **EGA**, a commercial and operational management platform for utility companies in Colombia.",
-          "Introduced unit testing with **Jest** across multiple projects, laying the quality foundation I would later scale as Tech Lead.",
-          "Designed and implemented frontend solutions for complex incidents and business logic requirements in the regulated utilities sector.",
-          "Ensured the quality of delivered code through best practices and continuous review.",
-          "**Stack:** JavaScript, TypeScript, React, Jest, jQuery, PHP, PostgreSQL, Bootstrap."
-        ],
-        "rotate": true
-      }
-    ],
-    "es": [
-      {
-        "link": "https://www.ia.com.mx",
-        "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738382362/projects/portfolio/experiences/IA.jpg",
-        "items": [
-          "Lideré el rediseño y mantenimiento de la plataforma web de **Cinépolis**, la cadena de cines más grande de América Latina.",
-          "Desarrollé bajo una arquitectura de Microfrontends con **Module Federation**, permitiendo despliegues independientes y escalabilidad modular de la plataforma.",
-          "Implementé y optimicé animaciones interactivas con **Framer Motion** en las secciones de alimentos y búsqueda, elevando la fluidez y experiencia de usuario.",
-          "Desarrollé flujos críticos de negocio: selección de cines, reserva de boletos, pedido de comida, programa de fidelización **Cine Puntos** e integraciones de pago con **DeUna** y **Aplazo** en México.",
-          "Apliqué **HTML** semántico y accesibilidad (**ARIA**, **WCAG**) como parte de la estrategia **SEO**, mejorando la indexabilidad y el alcance orgánico de la plataforma.",
-          "Gestioné assets multimedia a escala mediante **Amazon S3** para almacenamiento y entrega eficiente de imágenes.",
-          "**Stack:** React, Next.js, GraphQL, Framer Motion, Sass, Tailwind CSS, Amazon S3, Module Federation."
-        ],
-        "rotate": true
-      },
-      {
-        "link": "https://linktic.com",
-        "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947672/projects/portfolio/experiences/linktic-minimalist.jpg",
-        "items": [
-          "Desarrollé aplicaciones frontend con **Svelte** y **React**, priorizando rendimiento y experiencia de usuario.",
-          "Optimicé el rendimiento web mediante lazy loading, code splitting y compresión de assets, reduciendo tiempos de carga significativamente.",
-          "Integré servicios backend a través de **APIs REST** y **GraphQL**, asegurando un consumo eficiente y desacoplado de datos.",
-          "Apliqué principios **SOLID**, **DRY** y arquitectura modular para mantener un codebase limpio, escalable y fácil de mantener.",
-          "Implementé suites de pruebas unitarias e integración con **Jest**, garantizando la calidad y estabilidad del código entregado.",
-          "**Stack:** SvelteKit, React, Sass, Tailwind CSS, Jest, Supabase."
-        ],
-        "rotate": false
-      },
-      {
-        "link": "https://qrvey.com",
-        "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1738384285/projects/portfolio/experiences/QRVEY.jpg",
-        "items": [
-          "Desarrollé componentes de analítica embebida altamente personalizables para la plataforma SaaS multi-tenant de **Qrvey**.",
-          "Construí **Web Components** con **Stencil.js** para widgets de gráficos embebibles consumidos por aplicaciones de terceros sin dependencia de framework.",
-          "Optimicé la velocidad y escalabilidad de los componentes frontend para soportar arquitecturas multi-tenant a gran escala desplegadas en **AWS**.",
-          "Implementé suites de pruebas unitarias con **Jest** y **e2e** con **Cypress**, garantizando la estabilidad de los widgets en múltiples entornos de integración.",
-          "Desarrollé soporte de internacionalización con i18next para adaptar la plataforma a múltiples mercados y regiones.",
-          "**Stack:** TypeScript, Stencil.js, React, SASS/SCSS, Styled Components, Mocha, Jest, Cypress, ECharts, Devextreme, D3, i18next."
-        ],
-        "rotate": false
-      },
-      {
-        "link": "https://www.extreme.com.co/extreme",
-        "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947977/projects/portfolio/experiences/extreme-technologies.jpg",
-        "items": [
-          "Lideré un equipo de 6+ desarrolladores en el desarrollo de módulos críticos para **EGA**, plataforma SaaS para empresas de servicios públicos (energía, gas, agua) en Colombia.",
-          "Implementé estándares de desarrollo, documentación técnica y pruebas unitarias con **Jest**, estableciendo una base de código consistente y reduciendo regresiones en producción.",
-          "Brindé mentoring técnico al equipo durante los sprints, resolviendo bloqueos de arquitectura y lógica de negocio.",
-          "Aseguré la calidad mediante code reviews sistemáticos y criterios de aceptación técnica basados en **Clean Code** y **SOLID**.",
-          "**Stack:** JavaScript, TypeScript, React, Jest, jQuery, PHP, PostgreSQL, Bootstrap."
-        ],
-        "rotate": false
-      },
-      {
-        "link": "https://www.extreme.com.co/extreme",
-        "src": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947977/projects/portfolio/experiences/extreme-technologies.jpg",
-        "items": [
-          "Desarrollé módulos web dinámicos y mantenibles para **EGA**, plataforma de gestión comercial y operativa para empresas de servicios públicos en Colombia.",
-          "Introduje pruebas unitarias con **Jest** en múltiples proyectos, sentando las bases de calidad que luego escalaría como Líder Técnico.",
-          "Diseñé e implementé soluciones frontend para incidencias y requerimientos complejos de lógica de negocio del sector regulado.",
-          "Aseguré la calidad del código entregado mediante buenas prácticas y revisión continua.",
-          "**Stack:** JavaScript, TypeScript, React, Jest, jQuery, PHP, PostgreSQL, Bootstrap."
-        ],
-        "rotate": true
       }
     ]
   },

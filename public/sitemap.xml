@@ -11,11 +11,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jaimetorresv.com/experiences</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://jaimetorresv.com/side-projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

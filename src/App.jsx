@@ -13,7 +13,6 @@ import { LanguageProvider, useTranslation } from '@/i18n'
 
 import About from '@/pages/About'
 import Contact from '@/pages/Contact'
-import Experiences from '@/pages/Experiences'
 import Home from '@/pages/Home'
 import NotFound from '@/pages/NotFound'
 import ProjectDetail from '@/pages/ProjectDetail'
@@ -22,13 +21,7 @@ import Projects from '@/pages/Projects'
 import '@/styles/general.css'
 import '@/styles/tailwind.css'
 
-const KNOWN_ROUTES = [
-  '/',
-  '/about',
-  '/side-projects',
-  '/contact',
-  '/experiences'
-]
+const KNOWN_ROUTES = ['/', '/about', '/side-projects', '/contact']
 
 function isKnownRoute(path) {
   if (KNOWN_ROUTES.includes(path)) return true
@@ -81,9 +74,6 @@ function AppContent() {
                   </Route>
                   <Route path="/contact">
                     <Contact />
-                  </Route>
-                  <Route path="/experiences">
-                    <Experiences />
                   </Route>
                 </Switch>
               </ErrorBoundary>

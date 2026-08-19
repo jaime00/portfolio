@@ -28,7 +28,12 @@ const BASE_TECHNOLOGIES = [
 ]
 
 // Repeated ×5 to create an infinite-loop carousel
-const technologies = Array.from({ length: 5 }).flatMap(() => BASE_TECHNOLOGIES)
+const technologies = Array.from({ length: 5 }).flatMap((_, copy) =>
+  BASE_TECHNOLOGIES.map((tech) => ({
+    ...tech,
+    id: `${tech.alt}-${copy}`
+  }))
+)
 
 export default function CarouselOfTechnologies() {
   const { isDark } = useDarkMode()
@@ -41,7 +46,7 @@ export default function CarouselOfTechnologies() {
       } to-transparent after:absolute after:bottom-0 after:top-0 after:z-10 after:w-[190px]`}
     >
       {technologies.map((tech) => (
-        <div key={tech.alt} className="animate-carousel-item px-1">
+        <div key={tech.id} className="animate-carousel-item px-1">
           <img
             className="min-h-[40px] min-w-[40px]"
             src={tech.src}

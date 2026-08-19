@@ -14,10 +14,14 @@ npm run prepare      # Husky install (runs on npm install)
 
 No test runner configured. No tests exist.
 
+## After editing
+
+Run `npm run lint` to verify. Pre-commit hook also enforces Prettier + import order on all staged files.
+
 ## Architecture
 
-React 19 + Vite + Wouter v3 + Tailwind CSS 3 + Motion. `gsap` (only in `FoldText.jsx`) and `smooth-components` (Poster, BundlephobiaWidget) are the other runtime deps.  
-Custom i18n (`LanguageProvider` + `useTranslation` → `t('section.key')`, `changeLanguage`).  
+React 19 + Vite + Wouter v3 + Tailwind CSS 3 + Motion. `gsap` (only in `FoldText.jsx`) and `smooth-components` (Poster, BundlephobiaWidget) are the other runtime deps.
+Custom i18n (`LanguageProvider` + `useTranslation` → `t('section.key')`, `changeLanguage`).
 Deployed to Netlify (`netlify.toml`: `npm run build`, SPA redirect `/*` → `/index.html`, immutable cache for `dist` assets).
 
 **Entry:** `src/index.jsx` → `src/App.jsx`. All routes in `App.jsx` inside `<Switch>`. Pages eagerly imported (no lazy loading).

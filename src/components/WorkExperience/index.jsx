@@ -44,48 +44,55 @@ export default function WorkExperience() {
         viewport={VIEWPORT_ONCE}
         variants={staggerContainerVariants}
       >
-        {experiences.map(({ company, position, year_initial, year_end }, i) => (
-          <m.div
-            key={company}
-            className={`group flex flex-none items-center space-x-1 truncate transition-opacity duration-200 ${hoveredIndex !== null && hoveredIndex !== i ? 'opacity-40' : 'opacity-100'}`}
-            variants={staggerItemVariants}
-            whileHover={{ x: 4 }}
-            transition={{ duration: 0.3, ease: EASE_OUT_EXPO }}
-            onMouseEnter={() => setHoveredIndex(i)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <span className="flex-none text-lg font-normal text-gray-800 dark:text-white">
-              {company}
-            </span>
-            <span className="relative w-full shrink">
-              <m.span
-                className="block border-t border-dashed border-gray-300 dark:border-gray-700"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.2 + i * 0.08,
-                  ease: EASE_OUT_EXPO
-                }}
-                style={{ originX: 0 }}
+        {experiences.map(
+          ({ company, logo, position, year_initial, year_end }, i) => (
+            <m.div
+              key={`${company}-${year_initial}`}
+              className={`group flex flex-none items-center space-x-1 truncate transition-opacity duration-200 ${hoveredIndex !== null && hoveredIndex !== i ? 'opacity-40' : 'opacity-100'}`}
+              variants={staggerItemVariants}
+              whileHover={{ x: 4 }}
+              transition={{ duration: 0.3, ease: EASE_OUT_EXPO }}
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <img
+                src={logo}
+                alt={company}
+                className="size-6 flex-none rounded-md object-cover"
+                loading="lazy"
               />
-              <m.span
-                className="absolute inset-0 block border-t border-dashed border-teal-500 dark:border-teal-400"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: hoveredIndex === i ? 1 : 0 }}
-                transition={{ duration: 0.45, ease: EASE_OUT_EXPO }}
-                style={{ originX: 0 }}
-              />
-            </span>
-            <span className="flex-none">{position}</span>
-            <span className="flex-none truncate">
-              ({year_initial} - {year_end})
-            </span>
-          </m.div>
-        ))}
+              <span className="flex-none text-lg font-normal text-gray-800 dark:text-white">
+                {company}
+              </span>
+              <span className="relative w-full shrink">
+                <m.span
+                  className="block border-t border-dashed border-gray-300 dark:border-gray-700"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.2 + i * 0.08,
+                    ease: EASE_OUT_EXPO
+                  }}
+                  style={{ originX: 0 }}
+                />
+                <m.span
+                  className="absolute inset-0 block border-t border-dashed border-teal-500 dark:border-teal-400"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: hoveredIndex === i ? 1 : 0 }}
+                  transition={{ duration: 0.45, ease: EASE_OUT_EXPO }}
+                  style={{ originX: 0 }}
+                />
+              </span>
+              <span className="flex-none">{position}</span>
+              <span className="flex-none truncate">
+                ({year_initial} - {year_end})
+              </span>
+            </m.div>
+          )
+        )}
       </m.div>
       <div className="mt-4 flex gap-2">
-        <Button to="/experiences">{t('home.learnMore')}</Button>
         <Button openUrl={url} isDark={false}>
           {t('home.viewResume')}
         </Button>

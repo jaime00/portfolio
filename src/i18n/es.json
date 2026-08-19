@@ -3,7 +3,6 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
-    "experiences": "Experiencias",
     "contact": "Contacto",
     "skipToContent": "Ir al contenido principal",
     "code": "Código"
@@ -22,7 +21,6 @@
     "moreAboutMe": "Más sobre mí",
     "workExperience": "Experiencia laboral",
     "workExperienceSubtitle": "Aquí te presento un resumen de mis experiencias más recientes.",
-    "learnMore": "Ver más",
     "viewResume": "Ver currículum",
     "iLoveSharing": "Me encanta compartir mi conocimiento y aprender cosas nuevas.",
     "checkProjects": "Echa un vistazo a algunos de mis proyectos más recientes."
@@ -44,10 +42,6 @@
     "subtitle": "Una selección de mis trabajos favoritos.",
     "viewProject": "Ver proyecto",
     "workingOn": "Trabajando para documentar y blogear mis otros proyectos."
-  },
-  "experiences": {
-    "title": "Experiencias Laborales",
-    "subtitle": "Momentos clave en mi carrera"
   },
   "contact": {
     "title": "Contacto",
@@ -95,10 +89,6 @@
     "projects": {
       "title": "Proyectos — Jaime Torres",
       "description": "Una selección de los proyectos personales y trabajos open source favoritos de Jaime Torres."
-    },
-    "experiences": {
-      "title": "Experiencias — Jaime Torres",
-      "description": "Momentos clave y empresas en la carrera profesional de Jaime Torres."
     },
     "contact": {
       "title": "Contacto — Jaime Torres",

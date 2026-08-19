@@ -20,9 +20,6 @@ const getWorkExperience = ({ limit = null, lang = 'en' } = {}) => {
   }
 }
 
-const getExperiences = (lang = 'en') =>
-  DataSite.experiences[lang] || DataSite.experiences.en
-
 const getCurriculumUrl = (lang = 'en') =>
   DataSite.curriculum_url[lang] || DataSite.curriculum_url.en
 
@@ -104,7 +101,6 @@ const getPlaylist = () => DataSite.playlist
 
 export {
   getProjects,
-  getExperiences,
   getWorkExperience,
   getCurriculumUrl,
   getStyleButton,
