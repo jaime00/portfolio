@@ -22,13 +22,10 @@ export default function CaseStudy({ project, adjacentProjects }) {
   return (
     <>
       <HeroBanner project={project} />
-      {caseStudy.sections.map((section) => {
+      {caseStudy.sections.map((section, index) => {
         const Component = sectionRenderers[section.type]
         return Component ? (
-          <Component
-            key={`${section.type}-${section.title}`}
-            section={section}
-          />
+          <Component key={`${section.type}-${index}`} section={section} />
         ) : null
       })}
       <ProjectNavigation
