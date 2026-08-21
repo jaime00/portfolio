@@ -38,6 +38,7 @@ export default function WorkExperience() {
         {t('home.workExperienceSubtitle')}
       </m.p>
       <m.div
+        key={language}
         className="space-y-2 text-xs md:text-sm"
         initial="hidden"
         whileInView="visible"

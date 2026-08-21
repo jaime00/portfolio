@@ -7,28 +7,13 @@ import PlaygroundSection from './PlaygroundSection'
 import ProjectNavigation from './ProjectNavigation'
 import VideoSection from './VideoSection'
 
-const sectionKey = (section) =>
-  `${section.type}-${section.title || section.subtitle || ''}`
-
 const sectionRenderers = {
-  narrative: (section) => (
-    <NarrativeSection key={sectionKey(section)} section={section} />
-  ),
-  gallery: (section) => (
-    <GallerySection key={sectionKey(section)} section={section} />
-  ),
-  video: (section) => (
-    <VideoSection key={sectionKey(section)} section={section} />
-  ),
-  features: (section) => (
-    <FeaturesSection key={sectionKey(section)} section={section} />
-  ),
-  commands: (section) => (
-    <CommandsSection key={sectionKey(section)} section={section} />
-  ),
-  playground: (section) => (
-    <PlaygroundSection key={sectionKey(section)} section={section} />
-  )
+  narrative: NarrativeSection,
+  gallery: GallerySection,
+  video: VideoSection,
+  features: FeaturesSection,
+  commands: CommandsSection,
+  playground: PlaygroundSection
 }
 
 export default function CaseStudy({ project, adjacentProjects }) {
@@ -37,9 +22,14 @@ export default function CaseStudy({ project, adjacentProjects }) {
   return (
     <>
       <HeroBanner project={project} />
-      {caseStudy.sections.map((section) => {
-        const renderer = sectionRenderers[section.type]
-        return renderer ? renderer(section) : null
+      {caseStudy.sections.map((section, i) => {
+        const Component = sectionRenderers[section.type]
+        return Component ? (
+          <Component
+            key={`${section.type}-${section.title}`}
+            section={section}
+          />
+        ) : null
       })}
       <ProjectNavigation
         prev={adjacentProjects.prev}
