@@ -22,7 +22,7 @@ export default function CaseStudy({ project, adjacentProjects }) {
   return (
     <>
       <HeroBanner project={project} />
-      {caseStudy.sections.map((section, i) => {
+      {caseStudy.sections.map((section) => {
         const Component = sectionRenderers[section.type]
         return Component ? (
           <Component
