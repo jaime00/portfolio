@@ -22,11 +22,11 @@ export default function Presentation() {
   const parallaxY = useTransform(scrollY, [0, 500], [0, 60])
 
   const displayText = useTypewriter([
-    'React JS.',
-    'Next JS.',
+    'React.',
+    'Next.js.',
     'Svelte.',
     'Stencil JS.',
-    'Typescript.',
+    'TypeScript.',
     'Web Components.'
   ])
 
