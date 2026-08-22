@@ -30,7 +30,7 @@ const CONTACT_METHODS = [
   {
     openUrl: 'https://github.com/jaime00',
     icon: <GithubIcon className="text-white" />,
-    label: 'Github'
+    label: 'GitHub'
   },
   {
     openUrl: 'https://api.whatsapp.com/send?phone=573015834942',
