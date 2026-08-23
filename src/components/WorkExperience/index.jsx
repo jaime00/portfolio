@@ -5,7 +5,9 @@ import {
   staggerItemVariants
 } from '@/animations'
 import { m } from 'motion/react'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+
+import { ExternalLinkIcon } from '@/assets/animatedIcons/ExternalLinkIcon'
 
 import Button from '@/components/Button'
 
@@ -18,6 +20,7 @@ export default function WorkExperience() {
   const experiences = getWorkExperience({ lang: language })
   const url = getCurriculumUrl(language)
   const [hoveredIndex, setHoveredIndex] = useState(null)
+  const externalIconRef = useRef(null)
   return (
     <div className="mt-6 space-y-6 text-xl text-gray-700 dark:text-gray-300">
       <m.h2
@@ -93,8 +96,17 @@ export default function WorkExperience() {
           )
         )}
       </m.div>
-      <div className="mt-4 flex gap-2">
-        <Button openUrl={url} isDark={false}>
+      <div
+        className="mt-4 flex gap-2"
+        onMouseEnter={() => externalIconRef.current?.startAnimation()}
+        onMouseLeave={() => externalIconRef.current?.stopAnimation()}
+      >
+        <Button
+          openUrl={url}
+          isDark={false}
+          className="flex items-center gap-2"
+        >
+          <ExternalLinkIcon ref={externalIconRef} size={18} />
           {t('home.viewResume')}
         </Button>
       </div>

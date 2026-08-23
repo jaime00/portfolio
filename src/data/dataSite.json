@@ -11,8 +11,9 @@
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785295625/projects/smooth-components/landing.png",
         "imgLight": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785378016/projects/portfolio/projects/smooth-components/smooth-components-landing-light.png",
         "imgDark": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785377970/projects/portfolio/projects/smooth-components/smooth-components-landing-dark.png",
-        "stack": ["TypeScript", "vite", "Wouter", "Motion"],
-        "urlCode": "https://www.npmjs.com/package/smooth-components",
+        "stack": ["TypeScript", "Vite", "Wouter", "Motion"],
+        "urlCode": "https://github.com/jaime00/smooth-components",
+        "urlNpm": "https://www.npmjs.com/package/smooth-components",
         "caseStudy": {
           "role": "Creator & Maintainer",
           "duration": "2025",
@@ -83,6 +84,7 @@
         "slug": "eazy-git",
         "urlPreview": "https://www.npmjs.com/package/eazy-git",
         "urlCode": "https://github.com/jaime00/eazy-git",
+        "urlNpm": "https://www.npmjs.com/package/eazy-git",
         "title": "eazy-git",
         "description": "CLI tool that simplifies branch management in Git. It automates common workflows and maintains a consistent branch structure.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597712/projects/portfolio/projects/eazy-git/preview-en.png",
@@ -226,11 +228,11 @@
               "highlights": [
                 {
                   "value": "16M+",
-                  "label": "Monthly users"
+                  "label": "Monthly Users"
                 },
                 {
                   "value": "40%",
-                  "label": "Faster load times"
+                  "label": "Faster Load Times"
                 },
                 {
                   "value": "5",
@@ -248,7 +250,7 @@
         "slug": "negos",
         "urlPreview": "https://www.negos.co",
         "title": "Negos",
-        "description": "WEB platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries.",
+        "description": "Web platform that simplifies inventory management. Allows business owners to upload, organize, and update products quickly and without intermediaries.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
         "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"],
         "caseStudy": {
@@ -274,11 +276,11 @@
               "highlights": [
                 {
                   "value": "Real-time",
-                  "label": "Database sync"
+                  "label": "Database Sync"
                 },
                 {
                   "value": "SSR",
-                  "label": "Server rendered"
+                  "label": "Server Rendered"
                 },
                 {
                   "value": "PWA",
@@ -301,8 +303,9 @@
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785295625/projects/smooth-components/landing.png",
         "imgLight": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785378016/projects/portfolio/projects/smooth-components/smooth-components-landing-light.png",
         "imgDark": "https://res.cloudinary.com/personal-jaime00/image/upload/v1785377970/projects/portfolio/projects/smooth-components/smooth-components-landing-dark.png",
-        "stack": ["TypeScript", "vite", "Wouter", "Motion"],
-        "urlCode": "https://www.npmjs.com/package/smooth-components",
+        "stack": ["TypeScript", "Vite", "Wouter", "Motion"],
+        "urlCode": "https://github.com/jaime00/smooth-components",
+        "urlNpm": "https://www.npmjs.com/package/smooth-components",
         "caseStudy": {
           "role": "Creador y Mantenedor",
           "duration": "2025",
@@ -313,6 +316,7 @@
             },
             {
               "type": "narrative",
+              "title": "El Problema",
               "text": "Esa sensación, **el brillo, la escala, el impacto visual**, es algo que busqué en decenas de librerías de componentes y nunca encontré. Probé varias, pero todas se sentían planas, sin alma. Así que hice lo que cualquier desarrollador terco haría: construí la mía. `smooth-components` existe porque quería componentes animados como este póster de cine, llevados al navegador web."
             },
             {
@@ -372,6 +376,7 @@
         "slug": "eazy-git",
         "urlPreview": "https://www.npmjs.com/package/eazy-git",
         "urlCode": "https://github.com/jaime00/eazy-git",
+        "urlNpm": "https://www.npmjs.com/package/eazy-git",
         "title": "eazy-git",
         "description": "Herramienta CLI que simplifica la gestión de ramas en Git. Automatiza flujos de trabajo comunes y mantiene una estructura de ramas consistente.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/f_auto,q_auto/v1782597713/projects/portfolio/projects/eazy-git/preview-es.png",
@@ -537,7 +542,7 @@
         "slug": "negos",
         "urlPreview": "https://www.negos.co",
         "title": "Negos",
-        "description": "Plataforma WEB que simplifica la gestión de inventario. Permite a los propietarios de negocios subir, organizar y actualizar productos rápidamente y sin intermediarios.",
+        "description": "Plataforma web que simplifica la gestión de inventario. Permite a los propietarios de negocios subir, organizar y actualizar productos rápidamente y sin intermediarios.",
         "img": "https://res.cloudinary.com/personal-jaime00/image/upload/v1747234713/projects/negos/preview.png",
         "stack": ["Svelte", "SvelteKit", "Supabase", "Sass", "Tailwind CSS"],
         "caseStudy": {
@@ -567,7 +572,7 @@
                 },
                 {
                   "value": "SSR",
-                  "label": "Server rendered"
+                  "label": "Server Rendered"
                 },
                 {
                   "value": "PWA",
@@ -592,7 +597,7 @@
       {
         "company": "LinkTIC",
         "logo": "https://res.cloudinary.com/personal-jaime00/image/upload/v1784947672/projects/portfolio/experiences/linktic-minimalist.jpg",
-        "position": "Frontend Developer - Part time",
+        "position": "Frontend Developer - Part-time",
         "year_initial": "Mar 2024",
         "year_end": "Jun 2024"
       },

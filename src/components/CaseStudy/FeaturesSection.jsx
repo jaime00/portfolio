@@ -2,7 +2,7 @@ import { EASE_OUT_EXPO as ease } from '@/animations'
 import { m } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
-import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
+import { ArrowRightIcon } from '@/assets/animatedIcons/ArrowRightIcon'
 
 import { renderRichText } from './richText'
 

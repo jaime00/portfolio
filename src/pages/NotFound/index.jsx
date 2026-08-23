@@ -4,7 +4,7 @@ import { m } from 'motion/react'
 import { useRef } from 'react'
 import { Link } from 'wouter'
 
-import { ChevronLeftIcon } from '@/assets/animatedIcons/BackIcon'
+import { ChevronLeftIcon } from '@/assets/animatedIcons/ChevronLeftIcon'
 
 import Background from '@/components/Background'
 import FoldText from '@/components/FoldText'

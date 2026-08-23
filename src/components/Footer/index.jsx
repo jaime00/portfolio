@@ -1,6 +1,9 @@
 import { m } from 'motion/react'
+import { useRef } from 'react'
 import { HyperLink } from 'smooth-components'
 import { Link } from 'wouter'
+
+import { ExternalLinkIcon } from '@/assets/animatedIcons/ExternalLinkIcon'
 
 import Top from '@/components/Top'
 
@@ -11,6 +14,7 @@ import { getCurriculumUrl } from '@/services'
 export default function Footer() {
   const { t, language } = useTranslation()
   const curriculumUrl = getCurriculumUrl(language)
+  const externalIconRef = useRef(null)
   return (
     <div className="prose prose-lg md:prose-xl dark:prose-dark relative mx-auto flex max-w-6xl animate-fade flex-col justify-center p-4 px-4 font-sans sm:p-6">
       <hr className="my-12 dark:border-gray-700" />
@@ -76,7 +80,11 @@ export default function Footer() {
                 {t('footer.extra')}
               </h3>
               <ul>
-                <li className="mb-4">
+                <li
+                  className="mb-4"
+                  onMouseEnter={() => externalIconRef.current?.startAnimation()}
+                  onMouseLeave={() => externalIconRef.current?.stopAnimation()}
+                >
                   <HyperLink
                     href={curriculumUrl}
                     showIcon={false}
@@ -84,7 +92,10 @@ export default function Footer() {
                     contentClassName="font-normal"
                     showUnderline={false}
                   >
-                    {t('footer.resume')}
+                    <span className="flex items-center gap-1.5">
+                      <ExternalLinkIcon ref={externalIconRef} size={16} />
+                      {t('footer.resume')}
+                    </span>
                   </HyperLink>
                 </li>
                 <li className="mb-4">

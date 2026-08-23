@@ -1,6 +1,6 @@
 import { ArrowSquareRightIcon } from '@/assets/animatedIcons/ArrowSquareRightIcon'
 import { EyeIcon } from '@/assets/animatedIcons/EyeIcon'
-import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCode'
+import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCodeIcon'
 
 import GoToOption from '@/components/GoToOption'
 
@@ -41,7 +41,7 @@ export default function DetailOfProject({
             <GoToOption
               url={urlCode}
               title={t('common.code')}
-              icon={<FolderCodeIcon size={25} />}
+              icon={<FolderCodeIcon size={27} />}
               id={id + 2}
             />
           )}

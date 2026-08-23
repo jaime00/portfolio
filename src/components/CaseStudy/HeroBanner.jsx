@@ -6,11 +6,13 @@ import { BundlephobiaWidget } from 'smooth-components'
 import { Link } from 'wouter'
 
 import { ArrowSquareRightIcon } from '@/assets/animatedIcons/ArrowSquareRightIcon'
-import { ChevronLeftIcon } from '@/assets/animatedIcons/BackIcon'
 import { BoxIcon } from '@/assets/animatedIcons/BoxIcon'
 import { CartIcon } from '@/assets/animatedIcons/CartIcon'
+import { ChevronLeftIcon } from '@/assets/animatedIcons/ChevronLeftIcon'
 import { ClapIcon } from '@/assets/animatedIcons/ClapIcon'
+import { ExternalLinkIcon } from '@/assets/animatedIcons/ExternalLinkIcon'
 import { EyeIcon } from '@/assets/animatedIcons/EyeIcon'
+import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCodeIcon'
 import { GitMergeIcon } from '@/assets/animatedIcons/GitMergeIcon'
 import { LinkIcon } from '@/assets/animatedIcons/LinkIcon'
 
@@ -34,6 +36,8 @@ export default function HeroBanner({ project }) {
   const backRef = useRef(null)
   const eyeRef = useRef(null)
   const linkRef = useRef(null)
+  const viewCodeRef = useRef(null)
+  const viewNpmRef = useRef(null)
   const [copied, setCopied] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const resetTimerRef = useRef(null)
@@ -61,8 +65,16 @@ export default function HeroBanner({ project }) {
       .catch(() => {})
   }
   const SlugIcon = SLUG_ICONS[project.slug]
-  const { title, description, img, stack, caseStudy, urlPreview, urlCode } =
-    project
+  const {
+    title,
+    description,
+    img,
+    stack,
+    caseStudy,
+    urlPreview,
+    urlCode,
+    urlNpm
+  } = project
   const lastHighlights =
     caseStudy.sections[caseStudy.sections.length - 1]?.highlights
   const readingTime = getReadingTime(caseStudy.sections)
@@ -245,15 +257,35 @@ export default function HeroBanner({ project }) {
               )}
             </dl>
 
-            {urlCode && (
-              <a
-                href={urlCode}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-gray-200 px-5 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-              >
-                {t('projectDetail.viewCode')}
-              </a>
+            {(urlCode || urlNpm) && (
+              <div className="mt-6 flex flex-wrap gap-3">
+                {urlCode && (
+                  <a
+                    href={urlCode}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-gray-200 px-5 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                    onMouseEnter={() => viewCodeRef.current?.startAnimation()}
+                    onMouseLeave={() => viewCodeRef.current?.stopAnimation()}
+                  >
+                    <FolderCodeIcon ref={viewCodeRef} size={16} />
+                    {t('projectDetail.viewCode')}
+                  </a>
+                )}
+                {urlNpm && (
+                  <a
+                    href={urlNpm}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-gray-200 px-5 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                    onMouseEnter={() => viewNpmRef.current?.startAnimation()}
+                    onMouseLeave={() => viewNpmRef.current?.stopAnimation()}
+                  >
+                    <ExternalLinkIcon ref={viewNpmRef} size={16} />
+                    {t('projectDetail.viewNpm')}
+                  </a>
+                )}
+              </div>
             )}
           </div>
 

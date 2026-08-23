@@ -39,4 +39,4 @@ const ArrowRightIcon = createAnimatedIcon(
   )
 )
 
-export default ArrowRightIcon
+export { ArrowRightIcon }

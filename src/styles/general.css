@@ -30,10 +30,6 @@ html.dark {
   animation-play-state: paused;
 }
 
-.drop-shadow-effect {
-  filter: drop-shadow(0px 15px 20px rgba(0, 0, 0, 0.6)) hue-rotate(90deg);
-}
-
 .text-gradient-teal {
   background: linear-gradient(
     90deg,
@@ -51,18 +47,6 @@ html.dark {
 
 .mask-image {
   mask-image: linear-gradient(black 89%, transparent);
-}
-
-.black-ops-one-regular {
-  font-family: 'Black Ops One', system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.ruslan-display-regular {
-  font-family: 'Ruslan Display', sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 ::view-transition-group(root) {
@@ -135,18 +119,6 @@ html.dark::view-transition-old(root) {
 
 .animate-ambient-glow {
   animation: ambient-glow 8s ease-in-out infinite;
-}
-
-.link-underline {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 1px;
-  transition: background-size 300ms var(--expo-out);
-}
-
-.link-underline:hover {
-  background-size: 100% 1px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,7 +1,7 @@
 import { HyperLink } from 'smooth-components'
 import { Link } from 'wouter'
 
-import ArrowRightIcon from '@/assets/animatedIcons/ArrowRightIcon'
+import { ArrowRightIcon } from '@/assets/animatedIcons/ArrowRightIcon'
 
 import Button from '@/components/Button'
 import CarouselOfTechnologies from '@/components/CarouselOfTechnologies'

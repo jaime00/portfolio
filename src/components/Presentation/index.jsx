@@ -1,7 +1,7 @@
 import { m, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 
-import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCode'
+import { FolderCodeIcon } from '@/assets/animatedIcons/FolderCodeIcon'
 
 import AnimatedCounter from '@/components/AnimatedCounter'
 

@@ -20,7 +20,7 @@
     "contactMe": "Contact me",
     "moreAboutMe": "More about me",
     "workExperience": "Work experience",
-    "workExperienceSubtitle": "Here's a brief rundown of my most recent experiences.",
+    "workExperienceSubtitle": "A brief overview of my most recent roles.",
     "viewResume": "View resume",
     "iLoveSharing": "I love sharing my knowledge and learning new things.",
     "checkProjects": "Check out some of my most recent projects."
@@ -32,22 +32,23 @@
     "yearsExperienceBefore": "with more than",
     "yearsExperienceAfter": "years of experience adding value to business processes in the commercial and public service sectors.",
     "technicalLead": "Tech Lead",
-    "careerDescription": "Implementing functional, scalable and reusable code solutions throughout my career, aligned with user needs and business goals, in addition to technically coordinating and mentoring a development team in their day-to-day activities, career paths, and technical growth.",
-    "technologies": "Experience and advanced knowledge in technologies such as ***React JS***, ***Next JS***, ***Stencil JS***, ***TypeScript***, ***Web Components***, ***Framer Motion***, ***Micro Frontends***, ***GraphQL***, version control with ***Git***, design patterns, ***SOLID*** and ***Clean Code*** principles, management of agile work methodologies such as ***SCRUM*** and ***Kanban***.",
-    "skills": "Skills in problem solving, teamwork, learning ability and adaptability to different environments. Lover of great challenges and with a great investigative character.",
+    "careerDescription": "Implementing functional, scalable and reusable code solutions throughout my career, aligned with user needs and business goals. I also technically coordinate and mentor a development team in their day-to-day activities, career paths, and technical growth.",
+    "technologies": "Experience and advanced knowledge in technologies such as ***React JS***, ***Next JS***, ***Stencil JS***, ***TypeScript***, ***Web Components***, ***Motion***, ***Micro Frontends***, ***GraphQL***, version control with ***Git***, design patterns, ***SOLID*** and ***Clean Code*** principles, management of agile work methodologies such as ***SCRUM*** and ***Kanban***.",
+    "skills": "Skills in problem solving, teamwork, learning ability and adaptability to different environments. Passionate about challenging problems, with a natural curiosity and research-driven mindset.",
     "findMe": "If you want to know a little more you can find me on [**LinkedIn**](https://linkedin.com/in/jaimetorresv) and take a look at my open source projects on [**GitHub**](https://github.com/jaime00)"
   },
   "projects": {
     "title": "Side Projects",
     "subtitle": "A selection of my favorite works.",
     "viewProject": "View project",
-    "workingOn": "Working on documenting and blogging my other projects."
+    "workingOn": "Working on documenting and writing about my other projects."
   },
   "contact": {
     "title": "Contact",
     "subtitle": "Interested in my work?",
-    "question": "Do you have any questions, proposals, or projects in mind? Would you like to work together? Don't hesitate to contact me.",
-    "emailCopied": "Copied!"
+    "question": "Got an idea, project, or proposal? I'd love to hear about it. Reach out and let's make it happen.",
+    "emailCopied": "Copied!",
+    "copyLink": "Copy mail"
   },
   "footer": {
     "general": "General",
@@ -60,10 +61,10 @@
     "duration": "Duration",
     "team": "Team",
     "viewLive": "View Live",
-    "viewCode": "View Code",
+    "viewCode": "View code",
+    "viewNpm": "View on npm",
     "nextProject": "Next Project",
     "previousProject": "Previous Project",
-    "contactMe": "Contact me",
     "readingTime": "min read"
   },
   "a11y": {
@@ -73,14 +74,13 @@
     "switchToEnglish": "Switch to English"
   },
   "notFound": {
-    "title": "Page not found",
     "message": "Sorry, there's nothing at this URL.",
     "back": "Go back home"
   },
   "meta": {
     "home": {
       "title": "Jaime Torres — Frontend Developer",
-      "description": "My place on the web, made with React and good ideas 👌"
+      "description": "My place on the web, made with React and good ideas"
     },
     "about": {
       "title": "About — Jaime Torres",

@@ -1,7 +1,7 @@
 import useDarkMode from '@/contexts/useDarkMode'
 import { useState } from 'react'
 
-import { MoonIcon } from '@/assets/animatedIcons/Moon'
+import { MoonIcon } from '@/assets/animatedIcons/MoonIcon'
 import { SunIcon } from '@/assets/animatedIcons/SunIcon'
 
 import IconButton from '@/components/IconButton'

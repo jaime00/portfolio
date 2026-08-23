@@ -2,7 +2,7 @@ import { AnimatePresence, m } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'wouter'
 
-import { ChevronLeftIcon } from '@/assets/animatedIcons/BackIcon'
+import { ChevronLeftIcon } from '@/assets/animatedIcons/ChevronLeftIcon'
 
 import ButtonDarkMode from '@/components/ButtonDarkMode'
 import LanguageSelector from '@/components/LanguageSelector'

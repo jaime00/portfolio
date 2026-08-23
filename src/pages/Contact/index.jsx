@@ -55,6 +55,7 @@ export default function Contact() {
   const { t } = useTranslation()
   const { isDark } = useDarkMode()
   const [copied, setCopied] = useState(false)
+  const [hovered, setHovered] = useState(false)
   const resetTimerRef = useRef(null)
 
   useEffect(() => {
@@ -113,16 +114,18 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={handleCopyEmail}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
                 className="cursor-pointer transition-colors hover:text-teal-600 dark:hover:text-teal-400"
               >
                 {EMAIL}
               </button>
               <span
-                className={`pointer-events-none absolute top-full left-1/2 mt-2 -translate-x-1/2 transition-all duration-150 ${copied ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
+                className={`pointer-events-none absolute top-full left-1/2 mt-2 -translate-x-1/2 transition-all duration-150 ${copied || hovered ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
               >
                 <span className="relative flex items-center rounded-lg border border-white/10 bg-neutral-900 px-3 py-2 whitespace-nowrap shadow-[0_8px_24px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]">
                   <span className="text-xs leading-none font-medium text-white/80">
-                    {t('contact.emailCopied')}
+                    {copied ? t('contact.emailCopied') : t('contact.copyLink')}
                   </span>
                   <span className="absolute -top-[5px] left-1/2 h-2.5 w-2.5 -translate-x-1/2 rotate-45 border-t border-l border-white/10 bg-neutral-900" />
                 </span>
