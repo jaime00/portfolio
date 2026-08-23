@@ -22,7 +22,7 @@ export default function Main() {
           <HyperLink
             as={Link}
             to="/about"
-            className="w-fit text-gray-500/90 dark:text-gray-300/90"
+            className="w-fit text-gray-700/90 dark:text-gray-300/90"
             contentClassName="font-semibold"
             icon={<ArrowRightIcon size={16} className="text-current" />}
             styles={{ underscoreColor: 'var(--color-primary)' }}
