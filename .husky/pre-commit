@@ -23,6 +23,9 @@ if [ -n "$STAGED_LINT" ]; then
   npx eslint $STAGED_LINT
 fi
 
+# React Doctor check
+npx react-doctor@latest
+
 # Prettier on all staged files
 npx prettier $STAGED_FILES --write --ignore-unknown
 git update-index --again
