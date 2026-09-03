@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
 import ImageCarousel from './ImageCarousel'
 import { renderRichText } from './richText'
 
-export default function NarrativeSection({ section }) {
+function VideoBlock({ section }) {
   const videoRef = useRef(null)
 
   useEffect(() => {
@@ -29,8 +29,91 @@ export default function NarrativeSection({ section }) {
     return () => observer.disconnect()
   }, [])
 
+  return (
+    <m.div
+      className="relative mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
+      initial={{ opacity: 0, y: 30, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.6, delay: 0.2, ease }}
+    >
+      {section.videoLabel && (
+        <m.span
+          className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300"
+          initial={{ opacity: 0, x: -12 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5, ease }}
+        >
+          {section.videoLabel}
+        </m.span>
+      )}
+      <video
+        ref={videoRef}
+        src={section.video}
+        className="aspect-video w-full bg-gray-100 object-cover dark:bg-gray-900"
+        loop
+        muted
+        playsInline
+        preload="none"
+      />
+    </m.div>
+  )
+}
+
+function BottomImageBlock({ section }) {
+  return (
+    <m.div
+      className="relative mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
+      initial={{ opacity: 0, y: 30, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.6, delay: 0.2, ease }}
+    >
+      {section.imageLabel && (
+        <m.span
+          className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300"
+          initial={{ opacity: 0, x: -12 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5, ease }}
+        >
+          {section.imageLabel}
+        </m.span>
+      )}
+      <img
+        src={section.image}
+        alt={section.title}
+        className="w-full rounded-xl bg-gray-100 object-cover dark:bg-gray-900"
+        loading="lazy"
+      />
+    </m.div>
+  )
+}
+
+function SideImage({ section }) {
+  return (
+    <m.div
+      className="min-1045:w-1/2"
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.6, delay: 0.2, ease }}
+    >
+      <img
+        src={section.image}
+        alt={section.title}
+        className="w-full rounded-xl bg-gray-100 object-cover shadow-lg dark:bg-gray-900 dark:shadow-teal-500/10"
+        loading="lazy"
+      />
+    </m.div>
+  )
+}
+
+export default function NarrativeSection({ section }) {
   const isImageRight = section.imagePosition === 'right'
   const isImageBottom = section.imagePosition === 'bottom'
+  const hasSideImage = section.image && !isImageBottom
 
   const isCompact =
     !section.title && !section.image && !section.images && !section.highlights
@@ -51,13 +134,9 @@ export default function NarrativeSection({ section }) {
       )}
 
       <div
-        className={`flex flex-col gap-8 ${section.image && !isImageBottom ? 'min-1045:flex-row' : ''} ${!isImageRight && section.image && !isImageBottom ? 'min-1045:flex-row-reverse' : ''}`}
+        className={`flex flex-col gap-8${hasSideImage ? (isImageRight ? ' min-1045:flex-row' : ' min-1045:flex-row min-1045:flex-row-reverse') : ''}`}
       >
-        <div
-          className={
-            section.image && !isImageBottom ? 'min-1045:w-1/2' : 'w-full'
-          }
-        >
+        <div className={hasSideImage ? 'min-1045:w-1/2' : 'w-full'}>
           <m.p
             className="whitespace-pre-line text-base leading-relaxed text-gray-700 dark:text-gray-300 md:text-lg"
             initial={{ opacity: 0, y: 20 }}
@@ -68,83 +147,13 @@ export default function NarrativeSection({ section }) {
             {renderRichText(section.text)}
           </m.p>
 
-          {section.video && (
-            <m.div
-              className="relative mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
-              initial={{ opacity: 0, y: 30, scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.6, delay: 0.2, ease }}
-            >
-              {section.videoLabel && (
-                <m.span
-                  className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300"
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5, ease }}
-                >
-                  {section.videoLabel}
-                </m.span>
-              )}
-              <video
-                ref={videoRef}
-                src={section.video}
-                className="aspect-video w-full bg-gray-100 object-cover dark:bg-gray-900"
-                loop
-                muted
-                playsInline
-                preload="none"
-              />
-            </m.div>
-          )}
+          {section.video && <VideoBlock section={section} />}
         </div>
 
-        {section.image && !isImageBottom && (
-          <m.div
-            className="min-1045:w-1/2"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6, delay: 0.2, ease }}
-          >
-            <img
-              src={section.image}
-              alt={section.title}
-              className="w-full rounded-xl bg-gray-100 object-cover shadow-lg dark:bg-gray-900 dark:shadow-teal-500/10"
-              loading="lazy"
-            />
-          </m.div>
-        )}
+        {hasSideImage && <SideImage section={section} />}
       </div>
 
-      {section.image && isImageBottom && (
-        <m.div
-          className="relative mt-8 overflow-hidden rounded-xl shadow-lg dark:shadow-teal-500/10"
-          initial={{ opacity: 0, y: 30, scale: 0.97 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, delay: 0.2, ease }}
-        >
-          {section.imageLabel && (
-            <m.span
-              className="absolute left-0 top-0 z-10 select-none rounded-br-xl bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-700 dark:bg-gray-800/70 dark:text-gray-300"
-              initial={{ opacity: 0, x: -12 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5, ease }}
-            >
-              {section.imageLabel}
-            </m.span>
-          )}
-          <img
-            src={section.image}
-            alt={section.title}
-            className="w-full rounded-xl bg-gray-100 object-cover dark:bg-gray-900"
-            loading="lazy"
-          />
-        </m.div>
-      )}
+      {section.image && isImageBottom && <BottomImageBlock section={section} />}
 
       {section.images && (
         <div className="mt-8">
