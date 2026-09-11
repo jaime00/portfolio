@@ -34,7 +34,7 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-[999999] mx-auto w-[100vw] max-w-6xl animate-fade border-gray-200 px-4 pb-3 pt-3 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-[999999] mx-auto w-[100vw] max-w-6xl animate-fade border-gray-200 px-4 pb-3 pt-3 transition-all duration-normal ${
         scrolled
           ? `bg-white/70 drop-shadow-md backdrop-blur-md dark:bg-gray-800/70 ${showBack ? 'rounded-t-2xl rounded-br-2xl' : 'rounded-2xl'}`
           : 'bg-transparent'
@@ -50,7 +50,7 @@ export default function NavBar() {
               height={48}
               alt="Jaime Torres Icono Navbar"
               src={image_profile}
-              className="general-ring-state relative z-10 h-12 w-auto cursor-pointer select-none rounded-full transition-transform duration-500 hover:scale-110 active:scale-95"
+              className="general-ring-state relative z-10 h-12 w-auto cursor-pointer select-none rounded-full transition-transform duration-slow hover:scale-110 active:scale-95"
             />
           </Link>
         </div>

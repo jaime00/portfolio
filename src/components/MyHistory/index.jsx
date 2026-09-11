@@ -31,7 +31,7 @@ export default function MyHistory() {
           />
         }
       />
-      <section className="text-xl leading-8 text-gray-600 dark:text-gray-300">
+      <section className="text-xl leading-relaxed text-gray-600 dark:text-gray-300">
         <br />
         <p>
           <b>

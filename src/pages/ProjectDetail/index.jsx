@@ -24,7 +24,7 @@ export default function ProjectDetail({ slug }) {
         description={project.description}
         ogImage={project.imgDark ?? project.img}
       />
-      <div className="relative mx-auto mb-5 mt-0 flex max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
+      <div className="relative mx-auto mb-5 mt-8 flex max-w-6xl flex-col justify-center px-4 font-sans dark:text-white">
         <ReadingProgress />
         <CaseStudy
           key={language}

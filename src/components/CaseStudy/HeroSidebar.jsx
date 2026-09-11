@@ -31,7 +31,7 @@ export default function HeroSidebar({ project }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="relative rounded-3xl bg-gray-100 p-6 shadow-lg dark:bg-gray-900 min-445:p-8">
+      <div className="relative rounded-2xl bg-gray-100 p-6 shadow-lg dark:bg-gray-900 min-445:p-8">
         {SlugIcon && (
           <SlugIcon
             size={80}
@@ -53,7 +53,7 @@ export default function HeroSidebar({ project }) {
             {stack.map((tech) => (
               <span
                 key={tech}
-                className="inline-block rounded-full bg-gradient-to-r from-teal-500 to-teal-400 px-2 text-xs font-semibold uppercase tracking-wide text-white shadow-md shadow-teal-500/20 dark:from-teal-400 dark:to-emerald-400 dark:text-gray-900 dark:shadow-teal-400/10"
+                className="inline-block rounded-full bg-gradient-to-r from-teal-500 to-teal-400 px-2 text-xs font-semibold uppercase tracking-wide text-white shadow-md shadow-teal-500/15 dark:from-teal-400 dark:to-emerald-400 dark:text-gray-900 dark:shadow-teal-400/10"
               >
                 {tech}
               </span>
@@ -61,7 +61,7 @@ export default function HeroSidebar({ project }) {
           </div>
         )}
 
-        <dl className="mt-6 space-y-3 border-t border-gray-200 pt-5 dark:border-gray-800">
+        <dl className="mt-6 space-y-3 border-t border-gray-200 pt-5 dark:border-gray-700">
           {caseStudy.role && (
             <div className="flex items-baseline justify-between gap-3">
               <dt className="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500">
@@ -143,7 +143,7 @@ export default function HeroSidebar({ project }) {
         />
       ) : (
         lastHighlights && (
-          <div className="flex flex-1 flex-col justify-center rounded-3xl bg-gradient-to-br from-teal-500/10 to-emerald-500/10 p-6 shadow-lg dark:from-teal-400/10 dark:to-emerald-400/10">
+          <div className="flex flex-1 flex-col justify-center rounded-2xl bg-gradient-to-br from-teal-500/10 to-emerald-500/10 p-6 shadow-lg dark:from-teal-400/10 dark:to-emerald-400/10">
             <div className="grid grid-cols-2 gap-4 min-1045:grid-cols-1">
               {lastHighlights.map((h) => (
                 <div key={h.label} className="min-1045:text-center">

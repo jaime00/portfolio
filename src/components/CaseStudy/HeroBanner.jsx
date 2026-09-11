@@ -62,7 +62,7 @@ export default function HeroBanner({ project }) {
       >
         <Link
           to="/side-projects"
-          className={`mb-3 inline-flex items-center gap-1 text-sm text-gray-500 transition-all duration-300 hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-400 ${scrolled ? 'pointer-events-none opacity-0' : 'opacity-100'}`}
+          className={`mb-3 inline-flex items-center gap-1 text-sm text-gray-500 transition-all duration-normal hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-400 ${scrolled ? 'pointer-events-none opacity-0' : 'opacity-100'}`}
           onMouseEnter={() => backRef.current?.startAnimation()}
           onMouseLeave={() => backRef.current?.stopAnimation()}
         >
@@ -99,13 +99,13 @@ export default function HeroBanner({ project }) {
               <LinkIcon ref={linkRef} size={22} />
             </button>
             <span
-              className={`pointer-events-none absolute top-1/2 left-full ml-2 -translate-y-1/2 transition-all duration-150 ${copied ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
+              className={`pointer-events-none absolute top-1/2 left-full ml-2 -translate-y-1/2 transition-all duration-fast ${copied ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
             >
-              <span className="relative flex items-center rounded-lg border border-white/10 bg-neutral-900 px-3 py-2 whitespace-nowrap shadow-[0_8px_24px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]">
+              <span className="relative flex items-center rounded-lg border border-white/10 bg-gray-800 px-3 py-2 whitespace-nowrap shadow-[0_8px_24px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]">
                 <span className="text-xs leading-none font-medium text-white/80">
                   {t('contact.emailCopied')}
                 </span>
-                <span className="absolute -left-[5px] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rotate-45 border-b border-l border-white/10 bg-neutral-900" />
+                <span className="absolute -left-[5px] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rotate-45 border-b border-l border-white/10 bg-gray-800" />
               </span>
             </span>
           </span>

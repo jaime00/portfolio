@@ -66,11 +66,11 @@ export default function Project({
                 src={resolvedImg}
                 alt={title}
                 onLoad={() => setLoaded(true)}
-                className={`h-[260px] w-full rounded-lg object-cover object-top shadow-md transition-transform duration-700 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`h-[260px] w-full rounded-lg object-cover object-top shadow-md transition-transform duration-slower group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
               />
             </div>
             <div className="relative -mt-16 px-4">
-              <div className="min-h-[20rem] rounded-lg bg-white p-5 shadow-lg transition-shadow duration-300 group-hover:shadow-xl dark:bg-gray-900 dark:text-white dark:shadow-teal-500/10 dark:group-hover:shadow-teal-500/15 sm:pb-5">
+              <div className="min-h-[20rem] rounded-lg bg-white p-5 shadow-lg transition-shadow duration-normal group-hover:shadow-xl dark:bg-gray-900 dark:text-white dark:shadow-teal-500/10 dark:group-hover:shadow-teal-500/15 sm:pb-5">
                 <StackOfProject stacks={stack} />
                 <DetailOfProject
                   urlPreview={urlPreview}

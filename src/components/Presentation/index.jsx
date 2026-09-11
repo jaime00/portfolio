@@ -38,10 +38,10 @@ export default function Presentation() {
           onMouseEnter={() => iconRef.current?.startAnimation()}
           onMouseLeave={() => iconRef.current?.stopAnimation()}
         >
-          <span className="inline-flex text-gray-500/90 transition-[transform,filter] duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.5)] dark:text-gray-300/90">
+          <span className="inline-flex text-gray-500/90 transition-[transform,filter] duration-normal group-hover:rotate-12 group-hover:scale-125 group-hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.5)] dark:text-gray-300/90">
             <FolderCodeIcon
               ref={iconRef}
-              className="transition-colors duration-300 group-hover:text-teal-500"
+              className="transition-colors duration-normal group-hover:text-teal-500"
               size={22}
             />
           </span>

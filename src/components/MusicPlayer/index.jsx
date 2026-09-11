@@ -396,7 +396,7 @@ export default function MusicPlayer() {
               ? { rotate: { duration: 3, ease: 'linear', repeat: Infinity } }
               : { rotate: { duration: 0.4, ease: 'easeOut' } }
           }
-          className={`relative h-14 w-14 overflow-hidden rounded-full outline-none transition-shadow duration-500 [-webkit-tap-highlight-color:transparent] focus-visible:ring-2 focus-visible:ring-teal-500/50 focus-visible:ring-offset-2 ${isPlaying ? 'shadow-[0_0_20px_rgba(20,184,166,0.4),0_0_40px_rgba(20,184,166,0.15)]' : 'shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_15px_rgba(20,184,166,0.3)]'}`}
+          className={`relative h-14 w-14 overflow-hidden rounded-full outline-none transition-shadow duration-slow [-webkit-tap-highlight-color:transparent] focus-visible:ring-2 focus-visible:ring-teal-500/50 focus-visible:ring-offset-2 ${isPlaying ? 'shadow-[0_0_20px_rgba(20,184,166,0.4),0_0_40px_rgba(20,184,166,0.15)]' : 'shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_15px_rgba(20,184,166,0.3)]'}`}
           aria-label="Toggle Music Player"
         >
           <img
