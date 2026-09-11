@@ -23,7 +23,7 @@ React 19 portfolio site using Vite, Wouter v3 routing, Tailwind CSS, Motion for 
 
 **i18n:** Custom context-based system in `src/i18n/`. `LanguageProvider` wraps the app (in `App.jsx`) and exposes `useTranslation()` → `{ language, t, changeLanguage }`. UI strings live in `src/i18n/en.json` and `src/i18n/es.json`; use dot-notation keys with `t('section.key')`. Content data in `dataSite.json` is keyed by language (`projects.en`, `projects.es`); service functions accept a `lang` parameter. Language is auto-detected from browser and persisted in localStorage.
 
-**Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList using the View Transition API (`document.startViewTransition`). Falls back gracefully on Safari (no View Transition). State managed by `DarkModeProvider` (`src/contexts/DarkMode.jsx`) which wraps the app in `App.jsx`. Any component needing dark mode calls `useDarkMode()` (default export of `src/contexts/DarkMode.jsx`) → `{ isDark, toggleDark }`. No prop-drilling of `isDark`. Persisted in `localStorage.isDark`. Use Tailwind's `dark:` prefix for dark variants. `LanguageProvider` wraps `DarkModeProvider` in `App.jsx` — order matters.
+**Dark mode:** Class-based (`darkMode: 'class'` in Tailwind config). Toggled via `<html>` classList using the View Transition API (`document.startViewTransition`). Falls back gracefully on Safari (no View Transition). State managed by `DarkModeProvider` (`src/contexts/DarkMode.jsx`) which wraps the app in `App.jsx`. Any component needing dark mode calls `useDarkMode()` (default export of `src/contexts/useDarkMode.jsx` — a separate file from the provider in `DarkMode.jsx`) → `{ isDark, toggleDark }`. No prop-drilling of `isDark`. Persisted in `localStorage.isDark`. Use Tailwind's `dark:` prefix for dark variants. `LanguageProvider` wraps `DarkModeProvider` in `App.jsx` — order matters.
 
 **Animations:** Import from `motion/react` (not `framer-motion`). Example: `import { motion, AnimatePresence } from 'motion/react'`. The app uses `<LazyMotion features={domAnimation}>` (not `domMax`) — only the standard animation feature set is available. Shared animation primitives live in `src/animations/index.jsx` — exports `EASE_OUT_EXPO`, `VIEWPORT_ONCE`, `staggerContainerVariants`, `staggerItemVariants`, and `floatVariants`. Always import from there instead of redefining these values inline.
 
@@ -53,22 +53,29 @@ React 19 portfolio site using Vite, Wouter v3 routing, Tailwind CSS, Motion for 
 
 ## Key Conventions
 
-- **Tailwind-first styling.** Modify `src/styles/tailwind.css` or `tailwind.config.js` — Vite + PostCSS regenerate CSS automatically on save. Never edit `src/styles/output.css` (legacy; unused since Vite migration).
+- **Tailwind-first styling.** Modify `src/styles/tailwind.css` or `tailwind.config.js` — Vite + PostCSS regenerate CSS automatically on save.
 - **Custom CSS** (fonts, scrollbars, gradients) lives in `src/styles/general.css`.
 - **Component structure:** One folder per component with `index.jsx` barrel export. All source files use `.jsx` extension (including those without JSX). Flat file exceptions (no folder): `FoldText.jsx` and `ShinyText.jsx`.
-- **Images:** Project previews hosted on Cloudinary. Local assets in `src/assets/`. Lazy-loaded with Lozad (`.lozad` class).
+- **Images:** Project previews hosted on Cloudinary. Local assets in `src/assets/`. Lazy-loaded with native `loading="lazy"` — Lozad is not used.
 - **Public static assets:** `public/` contains only favicons, manifests, and SEO files. Music MP3s, album covers, and the vinyl image are all hosted on Cloudinary — URLs live in `dataSite.json` under `playlist[].url` and `playlist[].cover`.
 - **localStorage keys in use:** `isDark`, `language`, `music-index`, `music-time`, `music-playing`.
 - **Custom Tailwind breakpoints:** `min-1045`, `min-807`, and `min-445` (min-width).
 - **Prettier config:** No semicolons, single quotes, no trailing commas, 80 char width. Plugins: `prettier-plugin-tailwindcss` (class sorting) and `@trivago/prettier-plugin-sort-imports` (import ordering: third-party first, then `@/` groups alphabetically, then relative).
-- **Pre-commit hook (Husky):** Rejects relative imports using `../` across directories, runs ESLint on staged `.js/.jsx`, then runs Prettier on all staged files. All must pass.
+- **Pre-commit hook (Husky):** Rejects relative imports using `../` across directories, runs ESLint on staged `.js/.jsx`, runs `npx react-doctor@latest` (needs network), then runs Prettier on all staged files. All must pass. Files under `.claude/skills/` are skipped.
 - **ESLint a11y:** `eslint-plugin-jsx-a11y` is active — accessibility violations are lint errors.
 - **No tests exist yet** in the codebase.
 - **Pages are eagerly imported** in `App.jsx` — no `React.lazy()` is used.
 
+**Design tokens in `tailwind.config.js`:** Semantic colors (`primary.DEFAULT/light/dark`, `surface.DEFAULT/dark`), custom fonts (`font-display` = Black Ops One, `font-accent` = Ruslan Display), transition durations (`duration-fast` 150ms, `duration-normal` 300ms, `duration-slow` 500ms, `duration-slower` 700ms), easing (`ease-out-expo`), and `animate-fade` (opacity+translateY+scale entry animation). Use these tokens instead of raw values.
+
+**IconButton:** `src/components/IconButton/index.jsx` — circular glassmorphism button shared by ButtonDarkMode and LanguageSelector.
+
+**PageMeta:** Each page uses `<PageMeta titleKey="meta.page.title" descriptionKey="meta.page.description" />` for per-route meta tags via React 19 native support. The `meta.*` i18n keys look "unused" to grep — they're consumed dynamically. Don't delete them when auditing.
+
 ## Adding a Page
 
 1. Create `src/pages/PageName/index.jsx`
-2. Register route in `src/App.jsx` (inside `<Switch>`)
-3. Add NavBar link if needed (in `NavBarOptions`)
-4. Add i18n keys to `src/i18n/en.json` and `src/i18n/es.json`
+2. Register route in `src/App.jsx` (inside `<Switch>` and in `isKnownRoute()`)
+3. Add `<PageMeta>` with `titleKey`/`descriptionKey` props
+4. Add NavBar link if needed (in `NavBarOptions`)
+5. Add i18n keys to `src/i18n/en.json` and `src/i18n/es.json` (including `meta.*` keys)

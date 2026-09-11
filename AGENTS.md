@@ -32,7 +32,7 @@ Deeper component guidance (CaseStudy section types, Button, Background, hooks) l
 
 **i18n:** Custom (`LanguageProvider` + `useTranslation` → `t('section.key')`, `changeLanguage`). `t()` returns the key itself if missing — a raw key on screen means a missing JSON entry. Meta tags go through `PageMeta` via `titleKey`/`descriptionKey` props (e.g. `titleKey="meta.home.title"`), so `meta.*` keys look "unused" to grep — they're consumed dynamically. Don't delete them when auditing.
 
-**Dark mode:** `DarkModeProvider` in `src/contexts/DarkMode.jsx`. Call `useDarkMode()` (default export) → `{ isDark, toggleDark }`. Class-based (`darkMode: 'class'`), persisted in `localStorage.isDark`. Toggle uses View Transition API, falls back instantly on Safari. Provider order in `App.jsx`: `LanguageProvider` wraps `DarkModeProvider`.
+**Dark mode:** `DarkModeProvider` (default export) in `src/contexts/DarkMode.jsx`; the `useDarkMode` hook is a separate default export in `src/contexts/useDarkMode.jsx` → `{ isDark, toggleDark }`. Class-based (`darkMode: 'class'`), persisted in `localStorage.isDark`. Toggle uses View Transition API, falls back instantly on Safari. Provider order in `App.jsx`: `LanguageProvider` wraps `DarkModeProvider`.
 
 **Animations:** Import from `motion/react` (not `framer-motion`). `<LazyMotion features={domAnimation}>` — only `domAnimation`, not `domMax`. Shared primitives in `src/animations/index.jsx` (`EASE_OUT_EXPO`, `VIEWPORT_ONCE`, `staggerContainerVariants`, `staggerItemVariants`, `floatVariants`) — import from there, don't redefine inline.
 
