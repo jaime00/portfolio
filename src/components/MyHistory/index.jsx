@@ -44,7 +44,7 @@ export default function MyHistory() {
         <br />
         <p>
           <b>
-            <em>{t('home.frontendDeveloper')}</em>
+            <em>{t('home.fullstackDeveloper')}</em>
           </b>
           ,{' '}
           <b>

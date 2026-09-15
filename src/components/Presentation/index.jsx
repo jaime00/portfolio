@@ -58,7 +58,7 @@ export default function Presentation() {
           <span className="leading-tight">
             {t('home.iam')} {t('home.a')}{' '}
             <span className="text-gradient-teal whitespace-nowrap">
-              {t('home.frontendDeveloper')}
+              {t('home.fullstackDeveloper')}
             </span>
           </span>
           <span className="leading-tight">

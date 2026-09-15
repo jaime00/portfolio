@@ -15,7 +15,7 @@
     "yearsExperienceAfter": "years of experience in web development",
     "iam": "I'm",
     "a": "a",
-    "frontendDeveloper": "Frontend Developer",
+    "fullstackDeveloper": "Fullstack Developer",
     "specializedIn": "specialized in",
     "contactMe": "Contact me",
     "moreAboutMe": "More about me",
@@ -79,12 +79,12 @@
   },
   "meta": {
     "home": {
-      "title": "Jaime Torres — Frontend Developer",
+      "title": "Jaime Torres — Fullstack Developer",
       "description": "My place on the web, made with React and good ideas"
     },
     "about": {
       "title": "About — Jaime Torres",
-      "description": "Systems Engineer and Frontend Developer with years of experience building scalable, reusable web applications."
+      "description": "Systems Engineer and Fullstack Developer with years of experience building scalable, reusable web applications."
     },
     "projects": {
       "title": "Projects — Jaime Torres",
