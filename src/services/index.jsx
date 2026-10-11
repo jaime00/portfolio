@@ -39,33 +39,17 @@ const parseMonthYear = (dateStr) => {
 const getYearsOfExperience = () => {
   // Always use .en because parseMonthYear relies on English month names (e.g. "January 2020")
   const jobs = DataSite.work_experience.en
-  const intervals = jobs.map((job) => {
+  const earliest = jobs.reduce((min, job) => {
     const start = parseMonthYear(job.year_initial)
-    const end = parseMonthYear(job.year_end)
-    return { start, end }
-  })
+    return start < min ? start : min
+  }, parseMonthYear(jobs[0].year_initial))
 
-  intervals.sort((a, b) => a.start - b.start)
+  const now = new Date()
+  const totalMonths =
+    (now.getFullYear() - earliest.getFullYear()) * 12 +
+    (now.getMonth() - earliest.getMonth())
 
-  const merged = [intervals[0]]
-  for (let i = 1; i < intervals.length; i++) {
-    const last = merged[merged.length - 1]
-    if (intervals[i].start <= last.end) {
-      last.end = new Date(Math.max(last.end, intervals[i].end))
-    } else {
-      merged.push(intervals[i])
-    }
-  }
-
-  const totalMonths = merged.reduce((sum, { start, end }) => {
-    return (
-      sum +
-      (end.getFullYear() - start.getFullYear()) * 12 +
-      (end.getMonth() - start.getMonth())
-    )
-  }, 0)
-
-  return Math.floor(totalMonths / 12)
+  return Math.round(totalMonths / 12)
 }
 
 const GRADIENT_CLASSES =
