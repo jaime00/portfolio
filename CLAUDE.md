@@ -11,6 +11,7 @@ npm run build        # Production build → dist/
 npm run preview      # Preview production build locally
 npm run lint         # Lint src/**/*.{js,jsx}
 npm run lint:fix     # Lint and auto-fix
+npm run prepare      # Husky install (runs automatically on npm install)
 ```
 
 ## Architecture
@@ -28,6 +29,8 @@ React 19 portfolio site using Vite, Wouter v3 routing, Tailwind CSS, Motion for 
 **Animations:** Import from `motion/react` (not `framer-motion`). Example: `import { motion, AnimatePresence } from 'motion/react'`. The app uses `<LazyMotion features={domAnimation}>` (not `domMax`) — only the standard animation feature set is available. Shared animation primitives live in `src/animations/index.jsx` — exports `EASE_OUT_EXPO`, `VIEWPORT_ONCE`, `staggerContainerVariants`, `staggerItemVariants`, and `floatVariants`. Always import from there instead of redefining these values inline.
 
 **Path alias:** `@/` maps to `src/` (configured in `vite.config.js`). All imports use `@/components/...`, `@/pages/...`, etc. — never relative paths for cross-directory imports.
+
+**SVGs:** `vite-plugin-svgr` is enabled — SVGs can be imported as React components with the `?react` suffix (e.g., `import Icon from '@/assets/icons/foo.svg?react'`).
 
 **Animated icons:** `src/assets/animatedIcons/createAnimatedIcon.jsx` is a HOC factory — `createAnimatedIcon(displayName, renderSVG, wrapperTag)`. Most icons use it; `GithubIcon` (multi-control animation) and `ExternalLinkIcon` (custom ref logic) are exceptions and implement `forwardRef` manually. All icons accept a `size` prop and expose `startAnimation`/`stopAnimation` via `ref`. Pass `autoAnimate` to make an icon animate on mount without needing a ref.
 
@@ -61,8 +64,8 @@ React 19 portfolio site using Vite, Wouter v3 routing, Tailwind CSS, Motion for 
 - **localStorage keys in use:** `isDark`, `language`, `music-index`, `music-time`, `music-playing`.
 - **Custom Tailwind breakpoints:** `min-1045`, `min-807`, and `min-445` (min-width).
 - **Prettier config:** No semicolons, single quotes, no trailing commas, 80 char width. Plugins: `prettier-plugin-tailwindcss` (class sorting) and `@trivago/prettier-plugin-sort-imports` (import ordering: third-party first, then `@/` groups alphabetically, then relative).
-- **Pre-commit hook (Husky):** Rejects relative imports using `../` across directories, runs ESLint on staged `.js/.jsx`, runs `npx react-doctor@latest` (needs network), then runs Prettier on all staged files. All must pass. Files under `.claude/skills/` are skipped.
-- **ESLint a11y:** `eslint-plugin-jsx-a11y` is active — accessibility violations are lint errors.
+- **Pre-commit hook (Husky):** Rejects relative imports using `../` across directories, runs ESLint on staged `.js/.jsx`, runs `npx react-doctor@latest` (config in `doctor.config.json`; needs network), then runs Prettier on all staged files. All must pass. Files under `.claude/skills/` are skipped.
+- **ESLint:** `react/prop-types` off; `no-unused-vars`/`no-console` warn; `jsx-a11y` recommended is error — a11y violations block commit. Also errors: `no-var`, `eqeqeq`, `no-duplicate-imports`, `react/jsx-no-target-blank`.
 - **No tests exist yet** in the codebase.
 - **Pages are eagerly imported** in `App.jsx` — no `React.lazy()` is used.
 
