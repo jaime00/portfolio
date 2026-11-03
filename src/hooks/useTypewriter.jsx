@@ -11,6 +11,16 @@ export function useTypewriter(initialWords) {
   const waiting$ = useRef(false)
 
   useEffect(() => {
+    const timeouts = new Set()
+
+    const scheduleTimeout = (callback, delay) => {
+      const tid = window.setTimeout(() => {
+        timeouts.delete(tid)
+        callback()
+      }, delay)
+      timeouts.add(tid)
+    }
+
     const id = window.setInterval(() => {
       if (waiting$.current) return
       const word = words$.current[0]
@@ -18,7 +28,7 @@ export function useTypewriter(initialWords) {
 
       if (count === 0) {
         waiting$.current = true
-        window.setTimeout(() => {
+        scheduleTimeout(() => {
           words$.current.push(words$.current.shift())
           direction$.current = 1
           letterCount$.current = 1
@@ -26,7 +36,7 @@ export function useTypewriter(initialWords) {
         }, 1000)
       } else if (count === word.length + 1) {
         waiting$.current = true
-        window.setTimeout(() => {
+        scheduleTimeout(() => {
           direction$.current = -1
           letterCount$.current--
           waiting$.current = false
@@ -42,7 +52,10 @@ export function useTypewriter(initialWords) {
       }
     }, 120)
 
-    return () => window.clearInterval(id)
+    return () => {
+      window.clearInterval(id)
+      timeouts.forEach((tid) => window.clearTimeout(tid))
+    }
   }, [])
 
   return display

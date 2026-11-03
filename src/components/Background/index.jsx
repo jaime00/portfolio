@@ -3,7 +3,6 @@ import { m, useScroll, useTransform } from 'motion/react'
 import BackOne from '@/assets/images/background_one.avif'
 import BackTwo from '@/assets/images/background_two.avif'
 
-import Aurora from './Aurora'
 import Grain from './Grain'
 import Particles from './Particles'
 
@@ -42,7 +41,6 @@ export default function Background() {
           </picture>
         </m.div>
       </div>
-      <Aurora />
       <Grain />
       <Particles />
     </>

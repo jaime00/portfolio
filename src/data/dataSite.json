@@ -174,7 +174,7 @@
             {
               "type": "narrative",
               "title": "Poster",
-              "text": "Walking into a theater, the first thing that grabs you is the poster at the entrance. I wanted to bring that same feeling to the screen: when users open a movie's detail page, the poster gains **3D depth through a lighting effect that follows the cursor**, adding realism with every movement.\n\nThis component is part of **smooth-components**, an open-source library I built. [smooth-components](/side-projects/smooth-components)",
+              "text": "Walking into a theater, the first thing that grabs you is the poster at the entrance. I wanted to bring that same feeling to the screen: when users open a movie's detail page, the poster gains **3D depth through a lighting effect that follows the cursor**, adding realism with every movement.\n\nThis component is part of **smooth-components**, an open-source library I built. [smooth-components](https://smooth-components.com/)",
               "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786325762/projects/portfolio/projects/cinepolis/poster_demo.mp4"
             },
             {
@@ -466,7 +466,7 @@
             {
               "type": "narrative",
               "title": "Póster",
-              "text": "Al llegar al cine, lo primero que captura tu atención es el póster en la entrada. Quise trasladar esa sensación a la pantalla: al entrar al detalle de una película, el póster cobra **profundidad 3D mediante un efecto de iluminación que sigue el cursor**, aportando realismo con cada movimiento.\n\nEste componente forma parte de **smooth-components**, una librería open-source que construí. [smooth-components](/side-projects/smooth-components)",
+              "text": "Al llegar al cine, lo primero que captura tu atención es el póster en la entrada. Quise trasladar esa sensación a la pantalla: al entrar al detalle de una película, el póster cobra **profundidad 3D mediante un efecto de iluminación que sigue el cursor**, aportando realismo con cada movimiento.\n\nEste componente forma parte de **smooth-components**, una librería open-source que construí. [smooth-components](https://smooth-components.com/)",
               "video": "https://res.cloudinary.com/personal-jaime00/video/upload/q_auto/v1786325762/projects/portfolio/projects/cinepolis/poster_demo.mp4"
             },
             {
